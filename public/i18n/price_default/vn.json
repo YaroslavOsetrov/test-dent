@@ -1,0 +1,112 @@
+{
+    "fee_labels":["Fee"],
+    "data":[
+        [{
+            "name": "Watch",
+            "price": [0],
+            "code": "N1254"
+        },{
+            "name": "Watch surface",
+            "price": [0],
+            "code": "N1255"
+        },{
+            "name": "Exam",
+            "price": [55.00],
+            "code": "T1356"
+        },{
+            "name": "Intraoral Periapical Film",
+            "price": [20.00],
+            "code": "T1546"
+        },{
+            "name": "2 Bitewings",
+            "price": [23.00],
+            "code": "T1632"
+        },{
+            "name": "Panoramic",
+            "price": [60.00],
+            "code": "T1665"
+        },{
+            "name": "4 Bitewings",
+            "price": [40.00],
+            "code": "T1698"
+        }],
+        [{
+            "name": "Build Up",
+            "price": [50.00],
+            "code": "T2345"
+        },{
+            "name": "Composite - 1 Surf, Anterior",
+            "price": [120.00],
+            "code": "T3512"
+        },{
+            "name": "Composite - 2 Surf, Anterior",
+            "price": [140.00],
+            "code": "T3522"
+        },{
+            "name": "Composite - 3 Surf, Anterior",
+            "price": [150.00],
+            "code": "T3532"
+        },{
+            "name": "Composite - 4+ Surf, Anterior",
+            "price": [160.00],
+            "code": "T3542"
+        },{
+            "name": "Composite - 1 Surf, Posterior",
+            "price": [20.00],
+            "code": "T5823"
+        },{
+            "name": "Composite - 2 Surf, Posterior",
+            "price": [140.00],
+            "code": "T5833"
+        },{
+            "name": "Composite - 3 Surf, Posterior",
+            "price": [150.00],
+            "code": "T5843"
+        },{
+            "name": "Composite - 4+ Surf, Posterior",
+            "price": [160.00],
+            "code": "T5853"
+        },{
+            "name": "Amalgam - 1 Surf",
+            "price": [70.00],
+            "code": "T4528"
+        },{
+            "name": "Amalgam - 2 Surf",
+            "price": [80.00],
+            "code": "T4538"
+        },{
+            "name": "Amalgam - 3 Surf",
+            "price": [90.00],
+            "code": "T4548"
+        },{
+            "name": "Amalgam - 4+ Surf",
+            "price": [100.00],
+            "code": "T4558"
+        }],
+        [{
+            "name": "Root Canal, Retreat Anterior",
+            "price": [100.00],
+            "code": "T6462"
+        },{
+            "name": "Root Canal, Retreat PreMolar",
+            "price": [150.00],
+            "code": "T6472"
+        },{
+            "name": "Root Canal, Retreat Molar",
+            "price": [200.00],
+            "code": "T6482"
+        },{
+            "name": "Root Canal, Anterior",
+            "price": [550.00],
+            "code": "T7956"
+        },{
+            "name": "Root Canal, Bicuspid",
+            "price": [700.00],
+            "code": "T7966"
+        },{
+            "name": "Root Canal, Molar",
+            "price": [800.00],
+            "code": "T7976"
+        }],[],[],[],[],[],[]
+    ]
+}

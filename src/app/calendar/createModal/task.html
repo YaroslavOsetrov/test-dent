@@ -1,0 +1,55 @@
+ <form [formGroup]="newTask" (ngSubmit)="submit()">
+    <div class="modal-body modal-appointment pa0">
+        <div class="container-inline-form">
+            <div class="form-group form-group-inline form-group-inline-div mb0 bt0">
+                <div class="section-label">
+                    <label>
+                        {{'task.user.title'|translate}} <sup>*</sup>
+                    </label>
+                    <small class="label-descr">
+                        {{'task.user.descr'|translate}}
+                    </small>
+                </div>
+                <div class="section-input">
+                    <section class="selection-container" dropdown>
+                        <a dropdownToggle class="selection-item">
+                            <span class="sl sl-icon-arrow-down-circle"></span>
+                            {{task?.provider?.fullname}}</a>
+                        <div *dropdownMenu class="dropdown-md-box dropdown-menu dropdown-menu-left userlist-wrapper">
+                            <users-list [onlyProviders]="false" (userSelected)="onProviderSelected($event)"></users-list>
+                            </div>
+                    </section>
+                </div>
+            </div>
+            <div class="form-group form-group-inline form-group-inline-div mb0 ba0">
+                <div class="section-label">
+                    <label>
+                        {{'user.pt_fulln.title'|translate}} <sup>*</sup>
+                    </label>
+                    <small class="label-descr">
+                        {{'user.pt_fulln.descr'|translate}}
+                    </small>
+                </div>
+                <div class="section-input pull-right">
+                    <patient-select formControlName="fullname" (patientSelected)="onPatientSelected($event)"></patient-select>
+                </div>
+            </div>
+            <div class="form-group form-group-inline">
+                <div class="section-label">
+                    <label for="email">
+                        {{'task.name.title'|translate}}<sup>*</sup>
+                    </label>
+                    <small class="label-descr">
+                        {{'task.name.descr'|translate}}
+                    </small>
+                </div>
+                <div class="section-input">
+                    <input placeholder="{{'task.name.ph'|translate}}" formControlName="title" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button [ladda]="isSubmitted" type="submit" class="btn btn-primary">{{'task.submit'|translate}}</button>
+    </div>
+ </form>

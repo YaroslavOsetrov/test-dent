@@ -1,0 +1,62 @@
+<div class="container-fluid settings-layout">
+    <div class="row row-no-padding">
+        <div class="col-md-10 col-md-offset-1 settings-container">
+            <legend class="ba0">
+                {{'settings.collaboration.title'|translate}}
+                <span class="ml10">
+                    <button (click)="createModal.show()" class="btn btn-sm">
+                        {{'settings.collaboration.invite.new'|translate}}
+                    </button>
+                </span>
+            </legend>
+            <table *ngIf="!isLoaded" class="table table-wide table-middle mb0 table-no-border">
+                <tr *ngFor="let i of [1,2,3,4]">
+                    <td style="width:80%" class="subs-service">
+                        <div class="animated-background text"></div>
+                        <div class="animated-background text-sm"></div>
+                    </td>
+                    <td></td>
+                </tr> 
+            </table>
+            <!--<div *ngIf="isLoaded && invitations.length == 0">
+                <div class="fullpage-message">
+                    <img style="width:200px" src="/public/illustrations/empty-users.svg"/>
+                    <h3 class="text-left">{{'patient.billing.empty.title'|translate}}</h3>
+                    <ul class="steps">
+                        <li *ngFor="let i of [1,2,3]">
+                            <span class="sl sl-icon-check"></span>
+                            <span class="caption">{{'patient.billing.empty.' + i|translate}}</span>
+                        </li>
+                    </ul>    
+                </div>
+            </div>-->
+            <table *ngIf="isLoaded" class="table-responsive table table-middle table-wide table-no-first-border mb0">
+                <tbody>
+                    <tr *ngFor="let item of invitations; let i = index">
+                        <td class="cell-avatar">
+                            <div *ngIf="!item.user" class="avatar-letters">{{item.email|nameLetters}}</div>
+                            <div *ngIf="item.user" class="avatar-letters">{{item.user.fullname|nameLetters}}</div>
+                        </td>
+                        <td class="">
+                            <a *ngIf="!item.user" class="no-decor">{{item.email}}</a>
+                            <a *ngIf="item.user" class="no-decor">{{item.user.fullname}}</a>
+                            <span class="td-descr">
+                                {{item.createdAt|datex:'short2'}}
+                            </span>
+                        </td>
+                        <td style="width:200px;">
+                            <label *ngIf="item.is_confirmed" class="label label-success filled">{{'settings.collaboration.status.act'|translate}}</label>
+                            <label *ngIf="!item.is_confirmed" class="label label-info filled">{{'settings.collaboration.status.pend'|translate}}</label>
+                        </td>
+                        <td (click)="accessModal.show(item.user)" style="width:100px" class="action">
+                            {{'settings.collaboration.details'|translate}} <span class="sl sl-icon-arrow-right-circle"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<access-modal (userDeleted)="onUserDeleted($event)" #accessModal="accessModal"></access-modal>
+<create-modal (userAdded)="onUserAdded($event)" #createModal="createModal"></create-modal>

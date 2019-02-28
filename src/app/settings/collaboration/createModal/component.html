@@ -1,0 +1,55 @@
+<div bsModal #createModal="bs-modal" class="modal zoom right">
+    <div class="modal-dialog modal-mdss">
+        <div class="modal-content modal-custom">
+            <div class="modal-header modal-header-light">
+                {{'settings.collaboration.invite.title'|translate}}
+                <div class="mt15">
+                    <a class="btn btn-sm pl0">
+                        {{'settings.collaboration.invite.email_explain'|translate}}
+                    </a>
+                </div>
+            </div>
+            <form [formGroup]="newUser" class="mb0" (ngSubmit)="submit()">
+                <div class="modal-body pa0">
+                    <div class="container-form-min appt-details-form">
+                        <div class="form-group-message mb0" style="background: #dedede;padding-top: 20px;">
+                            <div class="alert alert-default ba0 br0 mb0 pointer" (click)="toggleCheckbox('is_doctor')">
+                                {{'settings.collaboration.access.rules.is_doctor'|translate}}
+                                <div class="input-switch input-switch-1">
+                                    <input [checked]="newUser.controls.is_doctor.value" class="input" type="checkbox" id="is-doctor">
+                                    <label class="switch" for="is-doctor"></label>
+                                </div>                         
+                            </div>
+                        </div>
+                        <!--<div *ngFor="let rule of  ['online_access']; let i = index" class="form-group form-group-inline-toggles">
+                            
+                        </div>-->
+                        <div class="form-group">
+                            <div class="section-label">
+                                <label for="email">
+                                    {{'user.fulln.title'|translate}} <sup>*</sup>
+                                </label>
+                            </div>
+                            <div class="section-input">
+                                <input formControlName="fullname" class="form-control" placeholder="{{'user.fulln.ph'|translate}}">
+                            </div>
+                        </div>
+                        <div class="form-group ba0">
+                            <div class="section-label">
+                                <label for="email">
+                                    {{'user.email.title'|translate}} <sup>*</sup>
+                                </label>
+                            </div>
+                            <div class="section-input">
+                                <input formControlName="email" class="form-control" placeholder="{{'user.email.descr'|translate}}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button [ladda]="isSubmitted" (click)="submit()" class="btn btn-primary pull-left">{{'settings.collaboration.invite.submit'|translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

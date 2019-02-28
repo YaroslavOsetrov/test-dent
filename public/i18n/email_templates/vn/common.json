@@ -1,0 +1,25 @@
+{
+    "question":"For any questions - ",
+    "company":{
+        "links":{
+            "about":"About us",
+            "product":"Product",
+            "contact":"Contact us",
+            "privacy":"Privacy"
+        },
+        "address":{
+            "title":"Address",
+            "descr":"123 Hoang Dieu"
+        },
+        "phone":{
+            "title":"Phone",
+            "descr":"+8432712437132"
+        }
+    },
+    "follow":"Follow us on social media and be the first to learn about the latest company news and product updates",
+    "unsubscribe":{
+        "descr1":"",
+        "title":"Unsubscribe",
+        "descr2":""
+    }
+}

@@ -1,0 +1,41 @@
+<div class="panel panel-chart">
+    <div class="panel-heading panel-heading-btn">
+        {{'analyt.inv_period.title'|translate}}
+    </div>
+    <div class="panel-body stats-numbers">
+        <div class="row">
+            <div class="col-md-6 item" style="padding-bottom:70px">
+                <div class="number">
+                    {{invoiceStats.total_income|myCurrency}}
+                </div>
+                <div class="title">
+                     {{'analyt.paym_period.label.inc'|translate}}
+                </div>
+            </div>
+            <div class="col-md-6 item" style="padding-bottom:70px">  
+                <div class="number">
+                    {{invoiceStats.total_debts|myCurrency}}
+                </div>
+                <div class="title">
+                    {{'analyt.paym_period.label.debt'|translate}}
+                </div>
+            </div>
+            <div class="col-md-6 item" style="padding-bottom:30px"> 
+                <div class="number">
+                    {{invoiceStats.total_discounts|myCurrency}}
+                </div>
+                <div class="title">
+                    {{'analyt.paym_period.label.disc'|translate}}
+                </div>
+            </div>
+            <div class="col-md-6 item" style="padding-bottom:30px">  
+                <div class="number">
+                    {{invoiceStats.total_tax|myCurrency}}
+                </div>
+                <div class="title">
+                    {{'analyt.paym_period.label.tax'|translate}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

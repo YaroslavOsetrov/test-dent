@@ -1,0 +1,24 @@
+{
+    "development": {
+        "username": "sa",
+        "password": "1234",
+        "name": "dentaltap_dev",
+        "host": "DESKTOP-79L4KV8",
+        "dialect": "mssql"
+    },
+    "staging": {
+        "username": "root",
+        "password": null,
+        "name": "database_test",
+        "host": "127.0.0.1",
+        "dialect": "mssql"
+    },
+    "production": {
+        "username": "",
+        "password": "",
+        "name": "",
+        "port":"1433",
+        "host": "",
+        "dialect": "mssql"
+    }
+}

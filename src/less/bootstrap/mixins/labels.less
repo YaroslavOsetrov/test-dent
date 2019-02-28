@@ -1,0 +1,39 @@
+// Labels
+
+.label-variant(@color) {
+
+  border: 1px solid @color;
+  background:transparent;
+  color:@color;
+
+  &.filled{
+    border:0;
+  }
+  &.filled-in{
+    background:@color;
+    color:white;
+  }
+  &.label-circle{
+    &:before{
+      content:" ";
+      width: 16px;
+      height: 16px;
+      background: white;
+      display: block;
+      margin-left: -6px;
+      border-radius: 25px;
+      margin-top: -1px;
+      border:2px solid @color;
+    }
+    width: 16px;
+    height: 16px;
+    display: block;
+  }
+  &[href] {
+    &:hover,
+    &:focus {
+      background-color: @color;
+      color:@label-color;
+    }
+  }
+}

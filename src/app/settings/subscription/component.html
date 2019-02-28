@@ -1,0 +1,480 @@
+<div class="container-fluid settings-layout">
+    <div class="row row-no-padding">
+        <div class="col-md-10 col-md-offset-1 settings-container">
+            <legend class="ba0">
+                {{'settings.subscription.title'|translate}}
+                <span class="ml10" *ngIf="isInitialLoaded && organization?.stripe_id">
+                    <button class="btn btn-sm" (click)="createModal.show()" *ngIf="organization?.stripe_id">
+                        {{organization?.organization_subscription.card_type|uppercase}}
+                        **{{organization?.organization_subscription.card_last_digits}}
+                        &nbsp;
+                        <span class="sl sl-icon-note"></span>
+                    </button>
+                    <button class="btn btn-sm" *ngIf="!organization?.stripe_id" (click)="createModal.show()">
+                        {{'settings.subscription.create.title'|translate}}
+                    </button>
+                </span>
+            </legend>
+            <div *ngIf="organization?.organization_subscription.is_card_error" class="alert alert-danger br0 mb0">
+                <div class="row">
+                    <div class="col-md-9">
+                    {{'settings.subscription.unable.title'|translate}}
+                    </div>
+                    <div class="col-md-3 text-right">
+                        <button [ladda]="isLoadingRecharge" (click)="recharge()" class="btn btn-danger">{{'settings.subscription.unable.button'|translate}}</button>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div *ngIf="!organization?.organization_subscription.card_last4"  class="col-md-12 mt30 text-center">
+                <div class="review">
+                    <blockquote></blockquote>
+                </div>
+                {{'settings.subscription.free'|translate}}
+            </div>-->
+            <div class="row-eq-height">
+                <div class="col-md-8 p15 col-details">
+                    <div class="row">
+                        <div *ngIf="!isInitialLoaded" class="col-features-inc col-md-12 mt30">
+                            <div class="row">
+                                <div *ngFor="let i of [1,2,3]" class="col-md-4 col-subs-usage">
+                                    <div class="title">
+                                        <div class="animated-background text"></div>
+                                    </div>
+                                    <div class="number">
+                                        <div class="animated-background text-sm" style="width:40%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="isInitialLoaded" class="col-md-4 col-subs-fee">
+                            <span class="title">{{'settings.subscription.plan.title'|translate}}</span>
+                            <div class="price">
+                                <div *ngIf="!isInitialLoaded" class="animated-background text"></div>
+                                <span *ngIf="isInitialLoaded && organization?.stripe_id">{{'settings.subscription.plan.subs'|translate}}</span>
+                                <span *ngIf="isInitialLoaded && !organization?.stripe_id">{{'settings.subscription.plan.free'|translate}}</span>
+                            </div>
+                        </div>
+                        <div *ngIf="organization?.stripe_id" class="col-md-4 col-subs-fee">
+                            <span class="title">{{'settings.subscription.price_mo'|translate}}</span>
+                            <div *ngIf="!isInitialLoaded" class="animated-background text"></div>
+                            <span *ngIf="isInitialLoaded" class="price">{{organization?.organization_subscription.monthly_fee|myCurrency:subscriptionCurrencyCode}}</span>
+                        </div>
+                        <div *ngIf="!organization?.stripe_id && patientStats?.available>0" class="col-md-6 col-md-offset-2 col-subs-fee">
+                            <span class="title">{{'settings.subscription.use.title'|translate}}</span>
+                            <div *ngIf="!isInitialLoaded" class="animated-background text"></div>
+                                <span *ngIf="isInitialLoaded" class="price">{{patientStats?.created}}/{{patientStats?.available}} {{'settings.subscription.use.descr'|translate}}</span>
+                        </div>
+                        <div *ngIf="organization?.stripe_id" class="col-md-4 col-subs-fee">
+                            <span class="title">{{'settings.subscription.next_pay'|translate}}</span>
+                            <div *ngIf="!isInitialLoaded" class="animated-background text"></div>
+                            <span *ngIf="isInitialLoaded" class="price">{{organization?.organization_subscription.expire_date|datex:localeFormat.date_short_y}}</span>
+                            
+                        </div>
+                        <div class="col-md-12" *ngIf="isInitialLoaded && !organization?.stripe_id" class="col-subscription-new col-md-12">
+                            <div class="row">
+                                <div class="col-md-6 col-subs-fee">
+                                    <span class="title">{{'settings.subscription.price_mo'|translate}}</span>
+                                    <span class="price">{{organization?.organization_subscription.monthly_fee|myCurrency:subscriptionCurrencyCode}}</span>
+                                </div>
+                                <div class="col-md-6 col-subs-fee">
+                                    <span class="title">{{'settings.subscription.move_to.seats'|translate}}</span>
+                                    <span class="price">{{users?.length}}</span>
+                                </div>
+                                <div class="col-md-12 submit-section">
+                                    <p>{{'settings.subscription.move_to.descr'|translate}}</p>
+                                    <button *ngIf="!organization?.stripe_id" (click)="createModal.show()" class="btn btn-primary btn-sm">{{'settings.subscription.free.btn'|translate}}</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-features-inc" *ngIf="isInitialLoaded">
+                            <span class="header-title special text-success" *ngIf="organization?.stripe_id">{{'settings.subscription.services.title'|translate}}</span>
+                            <span class="header-title special text-primary" *ngIf="!organization?.stripe_id">{{'settings.subscription.free.title'|translate}}</span>
+                            <ul>
+                                <li *ngFor="let i of [1,2,3,4]">
+                                    <span class="sl sl-icon-check"></span> 
+                                    {{'settings.subscription.services.'+i+'.title'|translate}}
+                                    <small class="text-muted">
+                                        {{'settings.subscription.services.'+i+'.descr'|translate}}
+                                    </small>
+                                </li>
+                            </ul>
+                        </div>
+                   
+                        <div *ngIf="!isInitialLoaded" class="col-features-inc col-md-12 mt30">
+                            <span class="title">
+                                <div class="animated-background text"></div>
+                            </span>
+                            <ul>
+                                <li *ngFor="let i of [1,2,3,4]">
+                                    <div class="animated-background text"></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div *ngIf="!isInitialLoaded" class="col-features-inc col-md-12 mt30">
+                            <div class="row">
+                                <div *ngFor="let i of [1,2,3]" class="col-md-4 col-subs-usage">
+                                    <div class="title">
+                                        <div class="animated-background text"></div>
+                                    </div>
+                                    <div class="number">
+                                        <div class="animated-background text-sm" style="width:40%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="isInitialLoaded" class="col-md-12 col-features-inc mt30">
+                            <div class="row">
+                                <div class="col-md-4 col-subs-usage">
+                                    <span class="title">{{'settings.subscription.users.title'|translate}}</span>
+                                    <div [ngStyle]="{'width.%':users?.length*100/limits.users+1}" class="line"></div>
+                                    <span class="number">{{users.length}}</span>
+                                    <a style="line-height:50px" [routerLink]="['./../../collaboration']">
+                                        {{'settings.subscription.users.add'|translate}}🡒
+                                    </a>
+                                </div>
+                                <div class="col-md-4 col-subs-usage">
+                                    <span class="title">{{'settings.subscription.sms.title'|translate}}</span>
+                                    <div  [ngStyle]="{'width.%':organization?.organization_limit.sms_count*100/limits.sms+1}" class="line"></div>
+                                    <span class="number">{{organization?.organization_limit.sms_count}}</span>
+                                    <button (click)="addStorage()" class="btn btn-sm">
+                                        <span *ngIf="!organization?.stripe_id" class="sl sl-icon-lock"></span>
+                                        {{'settings.subscription.topup'|translate}}
+                                    </button>
+                                </div>
+                                <div class="col-md-4 col-subs-usage">
+                                    <span class="title">{{'settings.subscription.storage.title'|translate}}</span>
+                                    <div [ngStyle]="{'width.%':organization?.organization_limit.storage_size_free*100/limits.storage}" class="line"></div>
+                                    <span class="number">{{organization?.organization_limit.storage_size_free}} mb</span>
+                                    <button (click)="addSMS()" class="btn btn-sm">
+                                        <span *ngIf="!organization?.stripe_id" class="sl sl-icon-lock"></span>
+                                        {{'settings.subscription.topup'|translate}}
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="col-md-6">
+                            <div class="col-subs-service">
+                                <div class="row">
+                                    <div class="col-md-2 icon">
+                                        <span class="sl sl-icon-envelope-open"></span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="descr">
+                                            <h5>{{'settings.subscription.sms.title'|translate}}</h5>
+                                            <p *ngIf="isInitialLoaded" class="text-muted">
+                                                {{'settings.subscription.sms.available'|translate:translateParams}}
+                                            </p>
+                                            <section *ngIf="!isInitialLoaded">
+                                                <div class="animated-background text"></div>
+                                                <div style="margin-bottom:20px;" class="animated-background text-sm"></div>
+                                            </section>
+                                            <button *ngIf="!organization?.organization_subscription.card_last4" (click)="createModal.show()" class="btn btn-primary btn-sm">{{'settings.subscription.topup'|translate}}</button>
+                                            <button *ngIf="organization?.organization_subscription.card_last4" (click)="addSMS()" class="btn btn-primary btn-sm">{{'settings.subscription.topup'|translate}}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="col-subs-service">
+                                <div class="row">
+                                    <div class="col-md-2 icon">
+                                        <span class="sl sl-icon-folder-alt"></span>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="descr">
+                                            <h5>{{'settings.subscription.storage.title'|translate}}</h5>
+                                            <p *ngIf="isInitialLoaded" class="text-muted">
+                                                {{'settings.subscription.storage.available'|translate:translateParams}}
+                                            </p>
+                                            <section *ngIf="!isInitialLoaded">
+                                                <div class="animated-background text"></div>
+                                                <div style="margin-bottom:20px;" class="animated-background text-sm"></div>
+                                            </section>
+                                            <button *ngIf="!organization?.organization_subscription.card_last4" (click)="createModal.show()" class="btn btn-primary btn-sm">{{'settings.subscription.topup'|translate}}</button>
+                                            <button *ngIf="organization?.organization_subscription.card_last4" (click)="addStorage()" class="btn btn-primary btn-sm">{{'settings.subscription.topup'|translate}}</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+                    </div>
+                </div>
+                <div class="col-md-4 col-subs-review">
+                    <div class="review">
+                        <p>
+                            “ {{'settings.subscription.review.descr'|translate}} ”
+                        </p>
+                        <div class="user">
+                            <img src="/public/doc1.png"/> 
+                            <div class="user-name">
+                                {{'settings.subscription.review.title'|translate}}, 
+                                <small class="text-muted">{{'settings.subscription.review.sub'|translate}}</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row row-no-padding mt30">
+        <div class="col-md-10 col-md-offset-1 settings-container">
+            <legend class="ba0">
+                {{'settings.subscription.history.title'|translate}}
+            </legend>
+            <div class="row">
+                <div class="col-md-12" *ngIf="isInitialLoaded && subscriptionPayments?.length == 0">
+                    <div class="fullpage-message">
+                        <span class="sl sl-icon-wallet"></span>
+                        <h3 class="title">{{'settings.subscription.history.no_title'|translate}}</h3>
+                        <p class="descr">{{'settings.subscription.history.no_descr'|translate}}</p>
+                    </div>
+                </div>
+                <div class="col-md-8" *ngIf="isInitialLoaded && subscriptionPayments?.length > 0">
+                    <table class="table table-payments-subscription mb0 table-no-border">
+                        <tr *ngFor="let payment of subscriptionPayments">
+                            <td class="icon">
+                                <span *ngIf="payment.payment_type == 'sms'" class="sl sl-icon-envelope-open"></span>
+                                <span *ngIf="payment.payment_type == 'storage'" class="sl sl-icon-folder-alt"></span>
+                                <span *ngIf="payment.payment_type == 'subscription'" class="sl sl-icon-reload"></span>
+                            </td>
+                            <td class="descr">
+                                <span class="td-payment-type">
+                                    {{'settings.subscription.categories.'+payment.payment_type|translate}}
+                                </span>
+                                <small class="text-muted">
+                                    {{payment.createdAt|datex:'full2'}}
+                                </small>
+                            </td>
+                            <td class="amt text-right">
+                                {{payment.amount|myCurrency:subscriptionCurrencyCode}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-8" *ngIf="!isInitialLoaded">
+                <table class="table table-subscription-stats mb0 table-no-border">
+                    <tr *ngFor="let i of [1,2,3,4]">
+                        <td style="width:80%" class="subs-service">
+                            <div class="animated-background text"></div>
+                            <div class="animated-background text-sm"></div>
+                        </td>
+                        <td></td>
+                    </tr> 
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<nav class="navbar navbar-title">
+    <div class="container-fluid">
+        <span class="navbar-brand" href="#">
+            {{'settings.subscription.history.title'|translate}}
+        </span>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" *ngIf="isInitialLoaded && subscriptionPayments?.length == 0">
+            <div class="fullpage-message">
+                <span class="sl sl-icon-wallet"></span>
+                <h3 class="title">{{'settings.subscription.history.no_title'|translate}}</h3>
+                <p class="descr">{{'settings.subscription.history.no_descr'|translate}}</p>
+            </div>
+        </div>
+        <div class="col-md-8" *ngIf="isInitialLoaded && subscriptionPayments?.length > 0">
+            <table class="table table-payments-subscription mb0 table-no-border">
+                <tr *ngFor="let payment of subscriptionPayments">
+                    <td class="icon">
+                        <span *ngIf="payment.payment_type == 'sms'" class="sl sl-icon-envelope-open"></span>
+                        <span *ngIf="payment.payment_type == 'storage'" class="sl sl-icon-folder-alt"></span>
+                        <span *ngIf="payment.payment_type == 'subscription'" class="sl sl-icon-reload"></span>
+                    </td>
+                    <td class="descr">
+                        <span class="td-payment-type">
+                            {{'settings.subscription.categories.'+payment.payment_type|translate}}
+                        </span>
+                        <small class="text-muted">
+                            {{payment.createdAt|datex:'full2'}}
+                        </small>
+                    </td>
+                    <td class="amt text-right">
+                        {{payment.amount|myCurrency:subscriptionCurrencyCode}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-8" *ngIf="!isInitialLoaded">
+             <table class="table table-subscription-stats mb0 table-no-border">
+                <tr *ngFor="let i of [1,2,3,4]">
+                    <td style="width:40%" class="subs-service">
+                        <div class="animated-background text"></div>
+                        <div class="animated-background text-sm"></div>
+                    </td>
+                    <td></td>
+                </tr> 
+            </table>
+        </div>
+    </div>
+</div>
+
+            <!--
+
+<div *ngIf="!isInitialLoaded" class="container">
+     <div class="row form-account form-account-skeleton">
+        <div class="col-md-8 col-md-offset-2 container-light container-full-pad">
+             <legend class="pl15">
+                <div class="animated-background label"></div>
+            </legend>
+            <div class="row">
+                <div *ngFor="let i of [1,2,3]" class="col-md-4 col-subs-fee">
+                    <div style="margin:0 auto;" class="animated-background text"></div>
+                    <div style="margin:5px auto;" class="animated-background text-sm"></div>
+                </div>
+            </div>
+            <table class="table table-subscription-stats mb0">
+                <tr *ngFor="let i of [1,2]">
+                    <td style="width:40%" class="subs-service">
+                        <div class="animated-background text"></div>
+                        <div class="animated-background text-sm"></div>
+                    </td>
+                    <td></td>
+                </tr> 
+            </table>
+        </div>
+    </div>
+    <div class="row form-account form-account-skeleton mt30">
+        <div class="col-md-8 col-md-offset-2 container-light container-full-pad">
+             <legend class="pl15">
+                <div class="animated-background label"></div>
+            </legend>
+            <table class="table table-subscription-stats mb0">
+                <tr *ngFor="let i of [1]">
+                    <td style="width:40%" class="subs-service">
+                        <div class="animated-background text"></div>
+                        <div class="animated-background text-sm"></div>
+                    </td>
+                    <td></td>
+                </tr> 
+            </table>
+        </div>
+     </div>
+</div>
+<div *ngIf="isInitialLoaded" class="container">
+    <div class="row form-account">
+        <div class="col-md-8 col-md-offset-2 container-light container-full-pad">
+         
+            <legend class="bb legend-action">
+                <span class="title">
+                    {{'settings.subscription.title'|translate}}
+                </span>
+                <span class="legend-action-btn">
+                    <a (click)="createModal.show()" *ngIf="organization?.organization_subscription.card_last4">
+                        {{organization?.organization_subscription.card_type|uppercase}}
+                        **{{organization?.organization_subscription.card_last4}}
+                        <span class="ml10 sl sl-icon-note"></span>
+                    </a>
+                     <a *ngIf="!organization?.organization_subscription.card_last4" (click)="createModal.show()">
+                        {{'settings.subscription.create.title'|translate}}
+                    </a>
+                </span>
+            </legend>
+            <div class="row">
+                <div class="col-md-4 col-subs-fee">
+                    <span class="price">{{organization?.organization_subscription.monthly_fee|myCurrency:subscriptionCurrencyCode}}</span>
+                    <span class="title">{{'settings.subscription.price_mo'|translate}}</span>
+                </div>
+                <div class="col-md-4 col-subs-fee">
+                    <span class="price">{{organization?.createdAt|datex:localeFormat.date_short_y}}</span>
+                    <span class="title">{{'settings.subscription.start'|translate}}</span>
+                </div>
+                 <div class="col-md-4 col-subs-fee">
+                    <span class="price">{{organization?.organization_subscription.expire_date|datex:localeFormat.date_short_y}}</span>
+                    <span class="title">{{'settings.subscription.next_pay'|translate}}</span>
+                </div>
+            </div>
+            <table class="table table-subscription-stats mb0">
+                <tr>
+                    <td class="subs-icon">
+                        <span class="sl sl-icon-envelope-open"></span>
+                    </td>
+                    <td class="subs-service">
+                        {{'settings.subscription.sms.title'|translate}}
+                        <div><small class="text-muted">{{'settings.subscription.sms.available'|translate}}</small></div>
+                    </td>
+                    <td class="subs-progress">
+                        {{organization?.organization_limit.sms_count|number}} SMS
+                    </td>
+                    <td *ngIf="organization?.organization_subscription.card_last4" class="subs-action text-right">
+                        <a (click)="addSMS()" class="btn btn-primary btn-sm">{{'settings.subscription.topup'|translate}}</a>
+                    </td>
+                    <td *ngIf="!organization?.organization_subscription.card_last4" class="subs-action text-right">
+                        <a (click)="createModal.show()" class="btn btn-primary btn-sm">{{'settings.subscription.topup'|translate}}</a>
+                    </td>
+                </tr> 
+                <tr>
+                    <td class="subs-icon">
+                        <span class="sl sl-icon-folder-alt"></span>
+                    </td>
+                    <td class="subs-service">
+                        {{'settings.subscription.storage.title'|translate}}
+                        <div><small class="text-muted">
+                            {{'settings.subscription.storage.available'|translate}}</small></div>
+                    </td>
+                    <td class="subs-progress">
+                       {{organization?.organization_limit.storage_size_free|number}}  {{'settings.subscription.storage.mb'|translate}}
+                    </td>
+                    <td *ngIf="organization?.organization_subscription.card_last4" class="subs-action text-right">
+                        <a (click)="addStorage()" class="btn btn-primary btn-sm"> {{'settings.subscription.topup'|translate}}</a>
+                    </td>
+                    <td *ngIf="!organization?.organization_subscription.card_last4" class="subs-action text-right">
+                        <a (click)="createModal.show()" class="btn btn-primary btn-sm">{{'settings.subscription.topup'|translate}}</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row form-account mt30">
+        <div class="col-md-8 col-md-offset-2 container-light mb15">
+            <legend>
+                {{'settings.subscription.history.title'|translate}}
+            </legend>
+            <div class="row">
+                <div class="col-md-12" *ngIf="subscriptionPayments?.length == 0">
+                    <div class="fullpage-message">
+                        <span class="sl sl-icon-wallet"></span>
+                        <h3 class="title">{{'settings.subscription.history.no_title'|translate}}</h3>
+                        <p class="descr">{{'settings.subscription.history.no_descr'|translate}}</p>
+                    </div>
+                </div>
+                <div class="col-md-12 pa0" *ngIf="subscriptionPayments?.length > 0">
+                    <table class="table table-payments-subscription mb0">
+                        <tr *ngFor="let payment of subscriptionPayments">
+                            <td class="icon">
+                                <span *ngIf="payment.payment_type == 'sms'" class="sl sl-icon-envelope-open"></span>
+                                <span *ngIf="payment.payment_type == 'storage'" class="sl sl-icon-folder-alt"></span>
+                                <span *ngIf="payment.payment_type == 'subscription'" class="sl sl-icon-reload"></span>
+                            </td>
+                            <td class="descr">
+                                <span class="td-payment-type">
+                                    {{'settings.subscription.categories.'+payment.payment_type|translate}}
+                                </span>
+                                <small class="text-muted">
+                                    {{payment.createdAt|datex:'full2'}}
+                                </small>
+                            </td>
+                            <td class="amt text-right">
+                                {{payment.amount|myCurrency:subscriptionCurrencyCode}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>    
+            </div>
+        </div>
+    </div>
+</div>-->
+<create-modal (subscriptionChanged)="onSubscriptionChanged($event)" [organization]="organization" #createModal="createModal"></create-modal>

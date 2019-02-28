@@ -1,0 +1,65 @@
+<tutorials [buttons]="{'tutorial':'https://www.youtube.com/watch?v=tp80lM-3EKM', 'chat':true}" component="profileComponent"></tutorials>
+<section class="container-light section-topbar">
+    <nav class="navbar navbar-title navbar-sm">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand" href="#">
+                    <a>{{'patient.title'|translate}}</a> / #{{patient?.internal_number}}
+                </span>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a [routerLink]="['/calendar']"  [queryParams]="{ patientId: patient?.id }">
+                        <span class="sl sl-icon-plus"></span> 
+                        {{'cal.new_appt.title'|translate}}
+                    </a>
+                </li>
+                <li>
+                    <a class="ba0" (click)="print()">
+                        <span class="sl sl-icon-printer"></span>
+                        <span class="text">
+                            {{'patient.print.title'|translate}}
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a class="ba0" (click)="delete()">
+                        <span class="sl sl-icon-trash"></span>
+                        <span class="text">
+                            {{'patient.delete.title'|translate}}
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+<section class="patient-wrapper" [hidden]="patient?.is_archived">
+    <div class="col-xs-4 patient-office">
+        <office></office>
+    </div>
+    <div class="col-xs-8 patient-treatment pl0">
+        <practice></practice>
+    </div>
+    <div class="clearfix"></div>
+</section>
+<section [hidden]="!patient?.is_archived">
+    <div class="container-fluid sidebar-pad">
+        <div class="row p15">
+            <div class="col-md-12">
+                <div class="fullpage-message big">
+                    <span class="sl sl-icon-drawar"></span>
+                    <h3 class="title">{{'patient.archived.title'|translate}}</h3>
+                    <p class="descr">
+                        {{'patient.archived.descr'|translate}}
+                    </p>
+                    <p class="descr mt30">
+                        <button (click)="restore()" class="btn btn-primary btn-sm">
+                            {{'patient.archived.restore'|translate}}
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

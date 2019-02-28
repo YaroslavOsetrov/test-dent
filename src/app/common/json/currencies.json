@@ -1,0 +1,50 @@
+{
+    "uah":{
+        "currency_symbol":" грн.",
+        "is_currency_prefix":false
+    },
+    "vnd":{
+        "currency_symbol":" ₫",
+        "is_currency_prefix":false
+    },
+    "eur":{
+        "currency_symbol":"€",
+        "is_currency_prefix":true
+    },
+    "bdt":{
+        "currency_symbol":"Tk.",
+        "is_currency_prefix":true
+    },
+    "usd":{
+        "currency_symbol":"$",
+        "is_currency_prefix":true
+    },
+    "rub":{
+        "currency_symbol":" руб.",
+        "is_currency_prefix":false
+    },
+    "sgd":{
+        "currency_symbol":"S$",
+        "is_currency_prefix":true
+    },
+    "myr":{
+        "currency_symbol":"RM",
+        "is_currency_prefix":true
+    },
+    "php":{
+        "currency_symbol":"₱",
+        "is_currency_prefix":true
+    },
+    "thb":{
+        "currency_symbol":"฿",
+        "is_currency_prefix":true
+    },
+    "inr":{
+        "currency_symbol":"₹",
+        "is_currency_prefix":true
+    },
+    "idr":{
+        "currency_symbol":"Rp",
+        "is_currency_prefix":true
+    }
+}

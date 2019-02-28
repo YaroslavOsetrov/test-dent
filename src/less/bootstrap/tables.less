@@ -1,0 +1,1043 @@
+//
+// Tables
+// --------------------------------------------------
+
+
+table {
+  background-color: @table-bg;
+}
+caption {
+  padding-top: @table-cell-padding;
+  padding-bottom: @table-cell-padding;
+  color: @text-muted;
+  text-align: left;
+}
+th {
+ // text-transform: uppercase;
+  text-align: left;
+}
+
+
+// Baseline styles
+
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: @line-height-computed;
+  // Cells
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: @table-cell-padding;
+        line-height: @line-height-base;
+        vertical-align: top;
+        border-top: 1px solid @table-border-color;
+      }
+    }
+  }
+  // Bottom align for column headings
+  > thead > tr > th {
+    vertical-align: bottom;
+    font-weight: 600;
+    background: @brand-primary-superlight;
+  }
+  // Remove top border from thead by default
+  > caption + thead,
+  > colgroup + thead,
+  > thead:first-child {
+    > tr:first-child {
+      > th,
+      > td {
+        border-top: 0;
+      }
+    }
+  }
+  // Account for multiple tbody instances
+  > tbody + tbody {
+    border-top: 1px solid @table-border-color;
+  }
+
+  // Nesting
+  .table {
+    background-color: @body-bg;
+  }
+}
+
+.table.table-wide{
+
+  > thead,
+  > tbody,
+  > tfoot{
+    > tr {
+      > th,
+      > td {
+        padding: @table-wide-cell-padding;
+      }
+    }
+  }
+  
+}
+
+// Condensed table w/ half padding
+
+.table-condensed {
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        padding: @table-condensed-cell-padding;
+      }
+    }
+  }
+}
+
+
+// Bordered version
+//
+// Add borders all around the table and between all the columns.
+
+.table-bordered {
+  border: 1px solid @table-border-color;
+  > thead,
+  > tbody,
+  > tfoot {
+    > tr {
+      > th,
+      > td {
+        border: 1px solid @table-border-color;
+      }
+    }
+  }
+  > thead > tr {
+    > th,
+    > td {
+      border-bottom-width: 2px;
+    }
+  }
+}
+
+
+// Zebra-striping
+//
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+
+.table-striped {
+  > tbody > tr:nth-of-type(odd) {
+    background-color: @table-bg-accent;
+  }
+}
+
+
+// Hover effect
+//
+// Placed here since it has to come after the potential zebra striping
+
+.table-hover {
+  > tbody > tr:hover {
+    background-color: @table-bg-hover;
+  }
+}
+.tbody-hover:hover, .tbody-selected{
+  > tr:not(.no-hover){
+    background-color:@table-bg-hover;
+  }
+}
+
+// Table cell sizing
+//
+// Reset default table behavior
+
+table col[class*="col-"] {
+  position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+  float: none;
+  display: table-column;
+}
+table {
+  td,
+  th {
+    &[class*="col-"] {
+      position: static; // Prevent border hiding in Firefox and IE9-11 (see https://github.com/twbs/bootstrap/issues/11623)
+      float: none;
+      display: table-cell;
+    }
+  }
+}
+
+
+// Table backgrounds
+//
+// Exact selectors below required to override `.table-striped` and prevent
+// inheritance to nested tables.
+
+// Generate the contextual variants
+.table-row-variant(active; @table-bg-active);
+.table-row-variant(success; @state-success-bg);
+.table-row-variant(info; @state-info-bg);
+.table-row-variant(warning; @state-warning-bg);
+.table-row-variant(danger; @state-danger-bg);
+
+
+// Responsive tables
+//
+// Wrap your tables in `.table-responsive` and we'll make them mobile friendly
+// by enabling horizontal scrolling. Only applies <768px. Everything above that
+// will display normally.
+
+.table-responsive {
+  overflow-x: auto;
+  min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
+
+  @media screen and (max-width: @screen-xs-max) {
+    width: 100%;
+    margin-bottom: (@line-height-computed * 0.75);
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid @table-border-color;
+
+    // Tighten up spacing
+    > .table {
+      margin-bottom: 0;
+
+      // Ensure the content doesn't wrap
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th,
+          > td {
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    // Special overrides for the bordered tables
+    > .table-bordered {
+      border: 0;
+
+      // Nuke the appropriate borders so that the parent can handle them
+      > thead,
+      > tbody,
+      > tfoot {
+        > tr {
+          > th:first-child,
+          > td:first-child {
+            border-left: 0;
+          }
+          > th:last-child,
+          > td:last-child {
+            border-right: 0;
+          }
+        }
+      }
+
+      // Only nuke the last row's bottom-border in `tbody` and `tfoot` since
+      // chances are there will be only one `tr` in a `thead` and that would
+      // remove the border altogether.
+      > tbody,
+      > tfoot {
+        > tr:last-child {
+          > th,
+          > td {
+            border-bottom: 0;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.table.table-no-first-border{
+  > tbody >tr:first-child > td{
+    border-top: 0;
+  }
+}
+
+.table > tbody > tr > td.action,
+.table > thead > tr > th.action{
+text-align: center;
+width: 32px;
+padding:0;
+vertical-align: middle !important;
+} 
+.table > tbody > tr > td.action{
+
+  cursor: pointer;
+  > a, > div > a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    padding-left:0;
+    padding-right: 0;
+    color: @brand-primary;
+  }
+
+}
+.table > thead > tr > th.action{
+  vertical-align: top;
+}
+.table > tbody > tr > td.action{
+  background: transparent;
+}
+
+.table > tbody > tr td.action:not(.dropdown):hover, .table > tbody > tr td.action.active:not(.dropdown){
+
+  cursor:pointer;
+  color:white;
+  > a{
+    color: white;
+    text-decoration: none;
+  }
+  background: @brand-primary-lighter !important;
+}
+.table > tbody > tr > td.action:hover{
+  cursor: pointer;
+
+  > a, > div > a{
+    color: white;
+     background: @brand-primary-lighter !important;
+  }
+  > a{
+    text-decoration: none;
+  }
+}
+
+.table > tbody > tr > td.action:not(.dropdown).active{
+   background: @brand-primary-lighter !important;
+  color: @brand-primary;
+}
+
+
+table > thead > tr > th, table > tbody > tr > td{
+  font-size: @font-size-base;
+}
+
+table.table-fullpage > thead > tr > th:first-child,
+table.table-fullpage > tbody > tr > td:first-child
+{
+  padding-left: 20px !important;
+}
+table.table-fullpage > thead > tr > th:last-child,
+table.table-fullpage > tbody > tr > td:last-child
+{
+
+  padding-right: 20px !important;
+}
+
+.table-wide > thead > tr > th:first-child,
+.table-wide > thead > tr > th:last-child,
+.table-wide > tbody > tr > td:first-child,
+.table-wide > tbody > tr > td:last-child:not(.action)
+{
+  padding-left: 15px !important;
+}
+.table-wide > tbody > tr > tbody > tr > td:not(.table-action):last-child
+{
+  padding-right: 10px;
+}
+.cell-avatar{
+  width:30px;
+  padding:0 !important;
+  vertical-align: middle !important;
+  img{
+    width:30px;
+    border-radius:30px;
+  }
+  .avatar-bubble{
+    position: absolute;
+    background: @brand-primary-lighter;
+    border-radius: 30px;
+    font-size: 9px;
+    padding: 4px;
+    color: white;
+    margin-top: -32px;
+    margin-left: 16px;
+  }
+}
+.cell-avatar-lg{
+  width:64px;
+  vertical-align: top !important;
+  div{
+      margin-top: 10px;
+      width: 42px;
+      height: 42px;
+      padding-top: 13px;
+      border-radius: 54px;
+  }
+}
+.td-price{
+    width:150px !important;
+    max-width:150px !important;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.td-code{
+  width:120px !important;
+  max-width:120px !important;
+}
+.td-action{
+  width:32px !important;
+  max-width:32px !important;
+}
+
+.table tbody tr.table-success {
+  background:#d0f6dd;
+}
+
+
+.table thead tr th.th-sortable{
+
+  &:hover{
+    cursor: pointer;
+    color:#274abb;
+  }
+
+  .sl{
+    display: inline-block;
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 11px;
+  }
+}
+.td-cut{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+td.action.dropdown div .dropdown-menu{
+  right: -10px;
+}
+tr.active td.action > div > a{
+    background: @brand-primary-lighter;
+    color: white !important;
+}
+.table-midl tbody tr td{
+  vertical-align: middle;
+}
+.table-no-td-pad{
+
+  thead tr th:first-child, tbody tr td:first-child{
+    padding-left: 0 !important;
+  }
+  thead tr th:last-child, tbody tr td:last-child{
+    padding-right: 0 !important;
+  }
+
+}
+.table-no-border tbody tr td{
+  border-top:0;
+}
+
+
+.table-users-min{
+
+  tbody tr {
+    td:first-child{
+      padding-left: 15px !important;
+    }
+    td{
+      padding:20px 0;
+    }
+
+    td.cell-avatar{
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    td.action-toggle{
+      vertical-align: middle;
+      width:30px;
+
+    }
+  }
+  
+
+}
+
+.tbl {
+  display: table-row;
+
+  .col{
+    display: table-cell;
+    vertical-align: top;
+    padding-right: 15px;
+  }
+  .col:last-child{
+    padding-right: 0;
+  }
+  
+}
+.user-row{
+  .cell-avatar{
+    float:left;
+  }
+  .fullname{
+    line-height: 30px;
+    margin-left: 40px;
+  }
+  .cell-info.short{
+    line-height: 30px;
+    padding-left: 10px;
+  }
+}
+.table-middle tr td{
+  vertical-align: middle !important;
+}
+.table-header-action{
+  background: @brand-primary-superlight;
+
+  .caption{
+    font-size: 1.2em;
+    line-height: 47px;
+  }
+}
+.table-procedures-timeline.history{
+  td.descr{
+    width:150px;
+    color:@brand-primary;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  td{
+    vertical-align: middle;
+  }
+  td.text{
+    line-height: 30px;
+    a{
+      color:@gray-light;
+    }
+    .form-control{
+      background:transparent;
+      padding:0;
+    }
+  }
+  tr:hover td.text a{
+    color:@brand-primary;
+    text-decoration: none;
+  }
+}
+.table-procedures-timeline .td-money .input-group{
+    background: #f8f8f8;
+    padding-right: 15px;
+    border-radius: 4px;
+}
+
+.table-notifications{
+
+  tbody section tbody:hover{
+    background: #eeeeee;
+  }
+  tbody section tbody.unread, tbody section tbody.unread:hover{
+    background: @brand-primary-superlight;
+  }
+  tr{
+    cursor:pointer;
+   td.td-icon{
+      font-size: 20px;
+      color:@brand-primary;
+      padding-top:25px !important;
+
+    }
+    td.td-content{
+      line-height: 20px;
+      font-size: 0.9em;
+      width:440px;
+      max-width: 440px;
+      padding-left:0;
+    }
+    
+    td{
+      vertical-align: top !important;
+      padding: 20px 15px;
+
+
+      .details{
+        padding-top: 5px;
+        padding-bottom: 15px;
+      }
+      .td-caption{
+        font-size: 0.7em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+
+        .label{
+          position: relative;
+        }
+      }
+    }
+  }
+  
+}
+.table-procedures-timeline tbody tr.procedure td{
+  padding:10px 15px !important;
+}
+.table-procedures-timeline, .table-price, .table-custom-fields{
+
+  tr.procedure:first-child{
+    td{
+      border:0 !important;
+    }
+  }
+
+    tr{
+      td.td-count-input-detail{
+        width:170px;
+        vertical-align: middle;
+      }
+      td.td-count-input{
+        width: 100px;
+        vertical-align: middle;
+
+        .form-control{
+          height:45px;
+        }
+        .input-group{
+          input{
+            width:55px;
+            padding-right: 0;
+            margin-right: -1px;
+          }
+          .input-group-addon{
+            font-size: 11px;
+            &.button:hover{
+              background: @brand-primary-lighter;
+              color: white;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      td.td-check{
+        vertical-align: middle;
+        .checkbox-btn{
+          height: 20px;
+        }
+      }
+    }
+    tr.appt-info{
+      background:@container-wrapper;
+       td{
+        padding-top: 20px;
+        padding-bottom: 15px;
+      .date{
+        color: @brand-primary;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+      .user{
+        color: @gray-light;
+      }
+      .loader-wrap{
+        margin-left: 50px;
+        margin-top: -20px;
+      }
+       }
+       td.td-money:not(.editable){
+         
+        vertical-align: middle;
+        font-size: 20px;
+        text-align: right;
+        color: #274abb;
+        .input-group-addon{
+          font-weight: 400;
+        }
+       }
+    }
+    tr.procedures-summary:not(:first-child) td{
+      border-top:0;
+    }
+    tr.procedure-summary:first-child{
+      border-top:1px;
+    }
+    tr.procedures-summary{
+
+      &:hover{
+        background-color: transparent;
+      }
+      td{
+        vertical-align: middle;
+        padding:15px !important;
+        height:62px;
+      }
+
+      .form-control, .input-group-addon{
+        height:32px;
+      }
+      .input-group-addon{
+        padding:0;
+      }
+      
+      td.td-sum{
+        font-size: 1em;
+        font-weight: 600;
+      }
+      td.td-money{
+        padding-right: 15px;
+        font-size: 1em;
+        font-weight: 600;
+        text-align: right;
+        color: @brand-primary;
+      }
+    }
+    tr.procedure-add, th.procedure-add{
+      a{
+        display: block;
+        width: 50px;
+        height: 50px;
+        background: @brand-primary-lighter;
+        border-radius: 50px;
+        position: absolute;
+        left: -25px;
+        margin-top: -65px;
+        padding: 14px;
+        font-size: 22px;
+        color: white;
+        text-decoration: none;
+        box-shadow: 1px 1px 12px -3px black;
+
+        &:hover{
+          background:@brand-primary;
+        }
+      }
+    }
+    th.procedure-add{
+      a{
+        z-index: 111;
+        right: 15px;
+        left: inherit;
+        margin-top: -5px;
+      }
+    }
+    tr.procedure.min{
+      td{
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+      }
+    }
+    tr.procedure{
+      td{
+        padding:10px 15px;
+        vertical-align: middle;
+      }
+      .td-descr{
+        .form-control{
+          padding-left: 0;
+          background: transparent;
+          font-size: 15px;
+          font-weight: 400;
+          color:@gray-dark;
+        }
+      }
+      td.td-money.editable{
+        .input-group{
+          padding-right:0;
+          input{
+            width:100%;
+            padding-right: 15px !important;
+          }
+          .input-group-addon{
+            padding: 0px 15px !important;
+            background: #e4e4e4 !important;
+          }
+        }
+        
+      }
+      td:last-child{
+        padding-right: 15px;
+      }
+      .td-money{
+        font-weight: 600;
+        text-align: right;
+        color: @gray;
+        vertical-align: middle;
+        width:185px;
+        .td-caption{
+          display: block;
+          font-size: 10px;
+          padding-bottom: 5px;
+          max-width: 100%;
+        }
+      }
+      .td-caption{
+        display: inline-block;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        font-weight: 600;
+        max-width: 90px;
+        line-height: 10px;
+        padding-top: 10px;
+        .tp{
+          font-size: 23px;
+        }
+      }
+    }
+}
+tr.tr-special{
+  background:@brand-primary-superlight;
+}
+.table-subscription-stats{
+  tr {
+    td{
+      padding: 20px 0 !important;
+      vertical-align: middle !important;
+    }
+    td.subs-icon{
+      width: 65px;
+      vertical-align: middle;
+      color:@brand-primary;
+      font-size: 25px;
+    }
+    td.subs-service{
+      width: 330px;
+    }
+    td.subs-progress{
+      font-weight: 600;
+      color:@gray-light;
+      width: 180px;
+      div{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+td.td-status, td.status{
+  vertical-align: middle !important;
+  width:20px;
+}
+
+.table-payments-subscription{
+  tr {
+    td:first-child{
+      padding-left:15px;
+    }
+    td:last-child{
+      padding-right:15px;
+    }
+    td.icon{
+      width: 30px;
+      vertical-align: middle;
+      color: @brand-primary;
+      font-size:25px;
+    }
+    td.descr{
+      padding: 20px 10px;
+      .td-payment-type{
+        display: block;
+      }
+    }
+    td.amt{
+      vertical-align:middle;
+      color:@gray-light;
+      font-size: 1.1em;
+    }
+  }
+}
+
+.table-payments tr{
+
+  th, td{
+    &:first-child{
+      padding-left: 15px;
+    }
+    &:last-child{
+      padding-right: 15px;
+    }
+  }
+
+  td.payment-date{
+    width: 150px;
+    max-width: 150px;
+  }
+  td{
+    vertical-align: middle !important;
+    .td-caption{
+      display: block;
+      letter-spacing: 1px;
+      font-size: 0.9em;
+      color: #777;
+    }
+  }
+}
+.table-tags {
+  tbody tr th, tbody tr td{
+    vertical-align: middle !important;
+  }
+  tr th{
+      width:100px;
+      font-size: 0.7em;
+  }
+}
+table.enlarge{
+  tbody{
+    tr:hover{
+    background-color: #e7f3fc;
+    -webkit-transform: scale(1.01);
+    -moz-transform: scale(1.01);
+    -ms-transform: scale(1.01);
+    -o-transform: scale(1.01);
+    transform: scale(1.01);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=1.01, M12=0, M21=0, M22=1.01, SizingMethod='auto expand')";
+    box-shadow: 0px 0px 11px -1px #8b8b8b;
+    cursor: pointer;
+  }
+  }
+}
+.table-timetables{
+  thead tr th{
+    width:20%;
+    .arrow{
+      position: absolute;
+      font-size: 25px;
+      background: @brand-primary;
+      border-radius: 30px;
+      color: white;
+      padding: 10px;
+      z-index:111;
+
+      &:hover{
+        cursor: pointer;
+        background:@brand-primary-lighter;
+      }
+
+      &.arrow-left{
+        left: -20px;
+      }
+      &.arrow-right{
+        right: -20px;
+      }
+      
+    }
+  }
+}
+.table-invoices{
+
+  tbody tr{
+    td{
+      vertical-align: middle !important;
+    }
+    td.icon{
+      width:45px;
+      span{
+        font-size: 20px;
+        line-height: 39px;
+      }
+    }
+  }
+}
+.table-tasks{
+  tbody tr td {
+    vertical-align: middle !important;
+  }
+  td.date{
+    width:60px;
+    color:@brand-primary;
+    span{
+      display: block;
+      text-align: center;
+      &.day{
+        font-size: 17px;
+      }
+      &.month{
+        font-size:11px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.notes-list{
+  width:100%;
+
+  tr td
+  {
+    .content-collapsed{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      max-width: 400px;
+    }
+
+    .caption{
+      position: relative;
+      &:after{
+        content:' ';
+        display: block;
+        clear: both;
+      }
+
+      .user{
+        padding-top: 15px;
+        float: left;
+      }
+
+      .buttons{
+        float: right;
+        position: absolute;
+        right:-10px;
+        bottom:-21px;
+        a{
+          display: block;
+          width: 48px;
+          height: 48px;
+          color:@brand-primary;
+          text-align: center;
+          padding-top: 14px;
+          &:hover{
+            text-decoration: none;
+            background: @brand-primary;
+            color:white;
+          }
+        }
+      }
+    }
+  }
+
+  tr td.star{
+    &:hover{
+      color:@brand-warning;
+    }
+  }
+}
+
+.table-custom-fields{
+  tr:not(.procedure-add) td{
+    padding:20px 15px !important;
+    padding-bottom: 0 !important;
+  }
+  tr.procedure-add td a{
+    margin-top: -25px;
+  }
+  tr td{
+    
+    .td-caption{
+        font-size: 0.7em;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    .dropdown-toggle{
+      border-bottom: 1px dashed @brand-primary;
+      padding-bottom: 5px;
+      line-height: 58px;
+      text-decoration: none;
+    }
+    input{
+      padding:0;
+      background: transparent;
+    }
+  }
+}

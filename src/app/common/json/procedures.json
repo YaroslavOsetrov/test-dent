@@ -1,0 +1,46 @@
+{"items":[
+    {
+        "icon":"search",
+        "translate_code":"price.proc.diag"
+    },
+    {
+        "icon":"indicate",
+        "translate_code":"price.proc.resto",
+        "code":"resto"
+    },
+    {
+        "icon":"double",
+        "translate_code":"price.proc.rct",
+        "code":"rct"
+    },
+    {
+        "icon":"wrap",
+        "translate_code":"price.proc.hyg",
+        "code":"hyg"
+    },
+    {
+        "icon":"clean",
+        "translate_code":"price.proc.white",
+        "code":"ven"
+    },
+    {
+        "icon":"crown",
+        "translate_code":"price.proc.proth",
+        "code":"cr"
+    },
+    {
+        "icon":"implant",
+        "translate_code":"price.proc.implant",
+        "code":"imp"
+    },
+    {
+        "icon":"braces",
+        "translate_code":"price.proc.braces"
+    },
+    {
+        "icon":"extraction",
+        "translate_code":"price.proc.extr",
+        "code":"ext"
+    }
+]
+}

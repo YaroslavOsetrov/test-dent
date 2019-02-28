@@ -1,0 +1,38 @@
+{
+    "calendarComponent":{
+        "showParagraphs":[1,2,3],
+        "buttonTypes":["tutorial", "chat"],
+        "tutorialLink":{
+            "en":"https://www.youtube.com/watch?v=I-Az0l0BgfM",
+            "ru":"https://www.youtube.com/watch?v=LeRMlUpDZeY"
+        },
+        "chatLink":{
+            "en":"https://dentaltap.com/contact",
+            "ru":"https://dentaltap.com/ru/contacts"
+        }
+    },
+    "patientsComponent":{
+        "showParagraphs":[1,2,3],
+        "buttonTypes":["tutorial", "chat"],
+        "tutorialLink":{
+            "en":"https://www.youtube.com/watch?v=VKDUYQY9fZA",
+            "ru":"https://www.youtube.com/watch?v=8Kg7snWwT3Q"
+        },
+        "chatLink":{
+            "en":"https://dentaltap.com/contact",
+            "ru":"https://dentaltap.com/ru/contacts"
+        }
+    },
+    "profileComponent":{
+        "showParagraphs":[1,2,3],
+        "buttonTypes":["tutorial", "chat"],
+        "tutorialLink":{
+            "en":"https://www.youtube.com/watch?v=tp80lM-3EKM",
+            "ru":"https://www.youtube.com/watch?v=JdCuBE7xHNA"
+        },
+        "chatLink":{
+            "en":"https://dentaltap.com/contact",
+            "ru":"https://dentaltap.com/ru/contacts"
+        }
+    }
+}

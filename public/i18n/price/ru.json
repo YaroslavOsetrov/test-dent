@@ -1,0 +1,416 @@
+[
+    {
+        "static_category_id":1,
+        "code":"1(1)",
+        "name":"Консультация и план лечения",
+        "fee":0
+    },
+    {
+        "static_category_id":1,
+        "code":"1(2)",
+        "name":"Периапикальный рентген",
+        "fee":0
+    },
+    {
+        "static_category_id":1,
+        "code":"1(3)",
+        "name":"Прицельный снимок",
+        "fee":0
+    },
+    {
+        "static_category_id":1,
+        "code":"1(4)",
+        "name":"Панорамный снимок",
+        "fee":15
+    },
+    {
+        "static_category_id":1,
+        "code":"1(5)",
+        "name":"Цефалометрический рентген",
+        "fee":15
+    },
+    {
+        "static_category_id":1,
+        "code":"1(6)",
+        "name":"Рентгеновский снимок ConeBeam CT (1 челюсть)",
+        "fee":30
+    },
+    {
+        "static_category_id":1,
+        "code":"1(7)",
+        "name":"Рентгеновский снимок ConeBeam CT (2 челюсти)",
+        "fee":40
+    },
+    {
+        "static_category_id":1,
+        "code":"1(8)",
+        "name":"Анализ крови",
+        "fee":25
+    },
+    {
+        "static_category_id":2,
+        "code":"2(1)",
+        "name":"Реставрация композитом (1 поверхность)",
+        "fee":15
+    },
+    {
+        "static_category_id":2,
+        "code":"2(2)",
+        "name":"Реставрация композитом (2 поверхности)",
+        "fee":30
+    },
+    {
+        "static_category_id":2,
+        "code":"2(3)",
+        "name":"Реставрация композитом (3 поверхности)",
+        "fee":40
+    },
+    {
+        "static_category_id":2,
+        "code":"2(4)",
+        "name":"Реставрация композитом (4_ поверхности)",
+        "fee":50
+    },
+    {
+        "static_category_id":2,
+        "code":"2(5)",
+        "name":"Cosmetic Composite resin restoration",
+        "fee":40
+    },
+    {
+        "static_category_id":2,
+        "code":"2(6)",
+        "name":"Заполнение зубного промежутка",
+        "fee":50
+    },
+    {
+        "static_category_id":2,
+        "code":"2(7)",
+        "name":"Силант",
+        "fee":15
+    },
+    {
+        "static_category_id":2,
+        "code":"2(8)",
+        "name":"Composite veneer",
+        "fee":100
+    },
+    {
+        "static_category_id":2,
+        "code":"2(9)",
+        "name":"Коффердам",
+        "fee":15
+    },
+    {
+        "static_category_id":3,
+        "code":"3(1)",
+        "name":"Лечение корневых каналов (передние)",
+        "fee":100
+    },
+    {
+        "static_category_id":3,
+        "code":"3(2)",
+        "name":"Лечение корневых каналов (премоляры)",
+        "fee":150
+    },
+    {
+        "static_category_id":3,
+        "code":"3(3)",
+        "name":"Лечение корневых каналов (моляры)",
+        "fee":200
+    },
+    {
+        "static_category_id":3,
+        "code":"3(4)",
+        "name":"Перелечивание корневых каналов (передние)",
+        "fee":150
+    },
+    {
+        "static_category_id":3,
+        "code":"3(5)",
+        "name":"Перелечивание корневых каналов (премоляры)",
+        "fee":200
+    },
+    {
+        "static_category_id":3,
+        "code":"3(6)",
+        "name":"Перелечивание корневых каналов (моляры)",
+        "fee":250
+    },
+    {
+        "static_category_id":3,
+        "code":"3(7)",
+        "name":"Direct pulp capping",
+        "fee":50
+    },
+    {
+        "static_category_id":3,
+        "code":"3(8)",
+        "name":"Лечение абсцесса",
+        "fee":50
+    },
+    {
+        "static_category_id":4,
+        "code":"4(1)",
+        "name":"Чистка и полировка (минимум)",
+        "fee":15
+    },
+    {
+        "static_category_id":4,
+        "code":"4(2)",
+        "name":"Чистка и полировка (умеренная)",
+        "fee":20
+    },
+    {
+        "static_category_id":4,
+        "code":"4(3)",
+        "name":"Чистка и полировка (крупная)",
+        "fee":25
+    },
+    {
+        "static_category_id":4,
+        "code":"4(4)",
+        "name":"Чистка и полировка зубов под местной анестезией",
+        "fee":100
+    },
+    {
+        "static_category_id":4,
+        "code":"4(5)",
+        "name":"Лечение пародонтального кармана (без хирургического вмешательства)",
+        "fee":10
+    },
+    {
+        "static_category_id":4,
+        "code":"4(6)",
+        "name":"Operculectomy",
+        "fee":25
+    },
+    {
+        "static_category_id":4,
+        "code":"4(7)",
+        "name":"Хирургия десны",
+        "fee":100
+    },
+    {
+        "static_category_id":4,
+        "code":"4(8)",
+        "name":"Наращивание десны",
+        "fee":300
+    },
+    {
+        "static_category_id":5,
+        "code":"5(1)",
+        "name":"Набор для домашнего отбеливания (Zoom)",
+        "fee":100
+    },
+    {
+        "static_category_id":5,
+        "code":"5(2)",
+        "name":"Лазерное офисное отбеливание с Zoom 2",
+        "fee":250
+    },
+    {
+        "static_category_id":5,
+        "code":"5(3)",
+        "name":"Комбинированный пакет отбеливания",
+        "fee":280
+    },
+    {
+        "static_category_id":5,
+        "code":"5(4)",
+        "name":"Внутреннее отбеливание",
+        "fee":100
+    },
+    {
+        "static_category_id":6,
+        "code":"6(1)",
+        "name":"Удаление коронки",
+        "fee":15
+    },
+    {
+        "static_category_id":6,
+        "code":"6(2)",
+        "name":"Временная коронка (PMMA)",
+        "fee":20
+    },
+    {
+        "static_category_id":6,
+        "code":"6(3)",
+        "name":"Рецементирование коронки",
+        "fee":25
+    },
+    {
+        "static_category_id":6,
+        "code":"6(4)",
+        "name":"Композитный inlay",
+        "fee":100
+    },
+    {
+        "static_category_id":6,
+        "code":"6(5)",
+        "name":"Цельнокерамический inlay (Emax CAD)",
+        "fee":200
+    },
+    {
+        "static_category_id":6,
+        "code":"6(6)",
+        "name":"Композитная вкладка",
+        "fee":100
+    },
+    {
+        "static_category_id":6,
+        "code":"6(7)",
+        "name":"Цельнокерамическая вкладка (Emax CAD)",
+        "fee":350
+    },
+    {
+        "static_category_id":6,
+        "code":"6(8)",
+        "name":"All-porcelain overlay (Emax CAD)",
+        "fee":400
+    },
+    {
+        "static_category_id":6,
+        "code":"6(9)",
+        "name":"Фарфор, сплавленный с титановой коронкой (CAD / CAM)",
+        "fee":350
+    },
+    {
+        "static_category_id":7,
+        "code":"7(1)",
+        "name":"Зубной имплантат Nobel Biocare / SGS Швейцария",
+        "fee":1500
+    },
+    {
+        "static_category_id":7,
+        "code":"7(2)",
+        "name":"Регенерация кости",
+        "fee":600
+    },
+    {
+        "static_category_id":7,
+        "code":"7(3)",
+        "name":"Управляемая мембрана для регенерации кости",
+        "fee":400
+    },
+    {
+        "static_category_id":7,
+        "code":"7(4)",
+        "name":"Синус лифт (Закрытый)",
+        "fee":300
+    },
+    {
+        "static_category_id":7,
+        "code":"7(5)",
+        "name":"Синус лифт (Открытый)",
+        "fee":600
+    },
+    {
+        "static_category_id":7,
+        "code":"7(6)",
+        "name":"Все на 8 (зубной имплантат Nobel Biocare / SGS Швейцария)",
+        "fee":13000
+    },
+    {
+        "static_category_id":7,
+        "code":"7(7)",
+        "name":"All on 6 (Nobel Biocare/SGS Switzerland dental implant)",
+        "fee":10000
+    },
+    {
+        "static_category_id":8,
+        "code":"8(1)",
+        "name":"Металлические брекеты - простой случай: извлечение не требуется",
+        "fee":1500
+    },
+    {
+        "static_category_id":8,
+        "code":"8(2)",
+        "name":"Металлические брекеты - требуется удаление",
+        "fee":1750
+    },
+    {
+        "static_category_id":8,
+        "code":"8(3)",
+        "name":"Металлические брекеты - сложный случай - лечение каналов, нет моляров и т.д.",
+        "fee":2500
+    },
+    {
+        "static_category_id":8,
+        "code":"8(4)",
+        "name":"Керамические брекеты - простой случай: извлечение не требуется",
+        "fee":2000
+    },
+    {
+        "static_category_id":8,
+        "code":"8(5)",
+        "name":"Керамические брекеты - требуется удаление",
+        "fee":2590
+    },
+    {
+        "static_category_id":8,
+        "code":"8(6)",
+        "name":"Керамические брекеты - сложный случай - лечение каналов, нет моляров и т.д.",
+        "fee":2800
+    },
+    {
+        "static_category_id":8,
+        "code":"8(7)",
+        "name":"Invisalign ClinCheck",
+        "fee":250
+    },
+    {
+        "static_category_id":8,
+        "code":"8(8)",
+        "name":"Invisalign",
+        "fee":4500
+    },
+    {
+        "static_category_id":8,
+        "code":"8(9)",
+        "name":"Functional appliance",
+        "fee":300
+    },
+    {
+        "static_category_id":9,
+        "code":"9(1)",
+        "name":"Удаление постоянного зуба",
+        "fee":80
+    },
+    {
+        "static_category_id":9,
+        "code":"9(2)",
+        "name":"Удаление зуба мудрости (верхняя челюсть)",
+        "fee":100
+    },
+    {
+        "static_category_id":9,
+        "code":"9(3)",
+        "name":"Удаление зуба мудрости (нижняя челюсть)",
+        "fee":125
+    },
+    {
+        "static_category_id":9,
+        "code":"9(4)",
+        "name":"Хирургическое удаление зуба",
+        "fee":175
+    },
+    {
+        "static_category_id":9,
+        "code":"9(5)",
+        "name":"Удаление зуба сложное",
+        "fee":500
+    },
+    {
+        "static_category_id":9,
+        "code":"9(6)",
+        "name":"Операция по удлинению коронки",
+        "fee":100
+    },
+    {
+        "static_category_id":9,
+        "code":"9(7)",
+        "name":"Хирургия десны",
+        "fee":150
+    }
+]

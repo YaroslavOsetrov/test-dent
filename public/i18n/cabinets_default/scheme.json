@@ -1,0 +1,12 @@
+{
+  "type": "array",
+  "properties": {
+    "items": {
+        "type": "string",
+        "maxLength": 25,
+        "minLength": 1
+    },
+    "minItems":1,
+    "maxItems":8
+  }
+}

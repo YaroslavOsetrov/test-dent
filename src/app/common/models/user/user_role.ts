@@ -1,0 +1,20 @@
+export class UserRoleModel{
+    user_id?:any;
+    role_id?:any;
+    organization_id?:any;
+    view_analytics?:any;
+    edit_price?:any;
+    edit_appt?:any;
+    view_patient?:any;
+    edit_payment?:any;
+    is_doctor?:any;
+    add_task?:any;
+    appointments?:any;
+    access_subscription?:any;
+    access_collaboration?:any;
+    access_templates?:any;
+    share_patient?:any;
+    edit_patient?:any;
+    delete_patient?:any;
+    create_patient?:any;
+}

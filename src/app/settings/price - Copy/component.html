@@ -1,0 +1,133 @@
+<div class="container-fluid settings-layout">
+    <div class="row row-no-padding">
+        <div class="col-md-10 col-md-offset-1 settings-container">
+            <div class="row row-title">
+                <div class="col-md-4 pl0">
+                    <legend class="ba0">
+                        {{'price.title'|translate}}
+                    </legend>
+                </div>
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="input-group input-group-underline">
+                        <div class="input-group-addon pr0 pl0">
+                            <i class="sl sl-icon-magnifier"></i>
+                        </div>
+                        <input (keyup)="0" #search type="text" class="form-control nobg" placeholder="{{'price.find'|translate}}">
+                    </div>
+                </div>
+            </div>
+            <table class="table table-fullwidth table-price-icons mb0">
+                <tr>
+                    <td (click)="select_category(i)" [ngClass]="{'active':selected_cat_index==i}" *ngFor="let item of procedure_cat; let i = index">
+                        <i class="tp tp-icon-{{item.icon}}"></i> 
+                        <span>{{item.translate_code|translate}}</span>
+                    </td>
+                </tr>
+            </table>
+            <table class="table-price table table-wide table-hover table-no-first-border mb0">
+                <thead>
+                    <tr>
+                        <th class="td-code">{{'price.procedure.code'|translate}}</th>
+                        <th>{{'price.procedure.name'|translate}}</th>
+                        <th class="td-price">
+                            {{'price.procedure.fee'|translate}}
+                        </th>
+                        <th *ngIf="userRole.edit_price" class="td-action procedure-add">
+                            <a (click)="add_procedure()">
+                                <span class="sl sl-icon-plus"></span>
+                            </a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of added_procedures; let i = index" class="active">
+                        <td class="td-code">
+                            <input (keypress)="procedure_handler($event, i)" required class="form-control form-control-td" 
+                                (ngModelChange)="item.code = $event; save_new_procedure(i, item)"
+                                [ngModel]="item.code"/>
+                        </td>
+                        <td>
+                            <input (keypress)="procedure_handler($event, i)" required class="form-control form-control-td" 
+                                (ngModelChange)="item.name = $event; save_new_procedure(i, item)"
+                                [ngModel]="item.name"/>
+                        </td>
+                        <td class="td-price">
+                            <div class="input-group">
+                                <input (keypress)="procedure_handler($event, i)" required pattern="[0-9.]+" class="form-control form-control-td" 
+                                    (ngModelChange)="item.price[selected_fee_index] = $event; save_new_procedure(i, item)"
+                                    [ngModel]="item.price[selected_fee_index]"/>
+                                <div class="input-group-addon input-group-addon-td input-group-addon-sm">
+                                    {{0|myCurrency:APPSETTINGS.currency_code:true}}
+                                </div>
+                            </div> 
+                        </td>
+                        <!--<td tooltip="{{'common.form.save'|translate}}" placement="left" class="action">
+                            <div class="dropdown">
+                                <a class="link link-light link-primary">
+                                    <i class="sl sl-icon-arrow-right"></i>
+                                </a>
+                            </div>
+                        </td>-->
+                        <td class="action" (click)="delete_new_procedure(i)">
+                            <a class="link link-light link-primary">
+                                <i class="sl sl-icon-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+                <tbody *ngFor="let item of selected_services | procedureSearch:search.value; let i = index;">
+                    <tr class="pointer" (click)="toggle_edit_mode(item.code)" [hidden]="is_editable(item.code)">
+                        <td title="{{'common.click_to_ed'|translate}}" class="td-code">{{item.code}}</td>
+                        <td title="{{'common.click_to_ed'|translate}}">{{item.name}}</td>
+                        <td title="{{'common.click_to_ed'|translate}}" class="td-price">{{item.price[selected_fee_index]|myCurrency:APPSETTINGS.currency_code}}</td>
+                        <td (click)="delete_procedure(i); $event.stopPropagation()" tooltip="{{'common.form.del'|translate}}" placement="left" class="action">
+                            <a class="link link-light link-primary">
+                                <i class="sl sl-icon-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr class="active" [hidden]="!is_editable(item.code)">
+                        <td class="td-code">
+                            <input (input)="start_editing(item.code)" (keypress)="procedure_handler($event, i, item.code)" required class="form-control form-control-td"
+                                (ngModelChange)="change_procedure_code(i, $event); toggle_edit_mode(item.code)"
+                                [ngModel]="item.code"/>
+                        </td>
+                        <td>
+                            <input (input)="start_editing(item.code)" (keypress)="procedure_handler($event, i, item.code)" required class="form-control form-control-td" 
+                                (ngModelChange)="item.name = $event; toggle_edit_mode(item.code)"
+                                [ngModel]="item.name"/>
+                        </td>
+                        <td class="td-price">
+                            <div class="input-group">
+                                <input (input)="start_editing(item.code)" (keypress)="procedure_handler($event, i, item.code)" required pattern="[0-9.]+" class="form-control form-control-td" 
+                                    (ngModelChange)="item.price[selected_fee_index] = $event; toggle_edit_mode(item.code)"
+                                    [ngModel]="item.price[selected_fee_index]"/>
+                                <div class="input-group-addon input-group-addon-td  input-group-addon-sm">
+                                    {{0|myCurrency:APPSETTINGS.currency_code:true}}
+                                </div>
+                            </div>
+                            
+                        </td>
+                        <td (click)="delete_procedure(i); $event.stopPropagation()" tooltip="{{'common.form.del'|translate}}" placement="left" class="action">
+                            <a class="link link-light link-primary">
+                                <i class="sl sl-icon-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div *ngIf="!isLoaded">
+                <div class="loader-hor-wrapper loader-page-table">
+                    <div class="loader loader-center"></div>
+                </div>
+            </div>
+            <div *ngIf="selected_services.length == 0 && isLoaded && added_procedures.length == 0">
+                <div style="background:white;" class="fullpage-message med250">
+                    <span class="sl sl-icon-list"></span>
+                    <h3 class="title">{{'price.no_proc.title'|translate}}</h3>
+                    <p class="descr">{{'price.no_proc.descr'|translate}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

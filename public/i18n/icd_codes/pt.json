@@ -1,0 +1,639 @@
+[
+    {
+        "code":"K00",
+        "title":"Disorders of tooth development and eruption",
+        "codes":[
+            {
+                "code":"K00.0",
+                "title":"Anodontia",
+                "explain":"Congenitally missing teeth - complete or partial"
+            },
+            {
+                "code":"K00.1",
+                "title":"Supernumerary teeth",
+                "explain":"Mesiodens"
+            },
+            {
+                "code":"K00.2",
+                "title":"Abnormalities of tooth size and form",
+                "explain":"Macr/micro-dontia, dens in dente, cocrescence,fusion, gemination, peg"
+            },
+            {
+                "code":"K00.3",
+                "title":"Mottled teeth",
+                "explain":"Fluorosis"
+            },
+            {
+                "code":"K00.4",
+                "title":"Disturbances in tooth formation",
+                "explain":"Enamel hypoplasia, dilaceration, Turner"
+            },
+            {
+                "code":"K00.5",
+                "title":"Hereditary disturbances in tooth structure, not elsewhere classified",
+                "explain":"Amylo/dentino-genisis imperfecta"
+            },
+            {
+                "code":"K00.6",
+                "title":"Disturbances in tooth eruption",
+                "explain":"Natal/neonatal teeth, retained deciduous tooth, premature, late"
+            },
+            {
+                "code":"K00.7",
+                "title":"Teething syndrome"
+            },
+            {
+                "code":"K00.8",
+                "title":"Other disorders of tooth development",
+                "explain":"Colour changes due to blood incompatability, biliary, porphyria, tetyracy"
+            },
+            {
+                "code":"K00.9",
+                "title":"Disorders of tooth development, unspecified"
+            }
+            
+        ]
+    },
+    {
+        "code":"K01",
+        "title":"Embedded and impacted teeth",
+        "codes":[
+            {
+                "code":"K01.0",
+                "title":"Embedded teeth",
+                "explain":"Distinguish from impacted tooth"
+            },
+            {
+                "code":"K01.1",
+                "title":"Impacted teeth",
+                "explain":"In contact with another tooth"
+            }
+        ]
+    },
+    {
+        "code":"K02",
+        "title":"Dental caries",
+        "codes":[
+            {
+                "code":"K02.0",
+                "title":"Caries limited to enamel",
+                "explain":"Restoration, amalgam, composite, resin"
+            },
+            {
+                "code":"K02.1",
+                "title":"Caries of dentine",
+                "explain":"Restoration, amalgam, composite, resin"
+            },
+            {
+                "code":"K02.2",
+                "title":"Caries of cementum",
+                "explain":"Restoration, amalgam, composite, resin, crown"
+            },
+            {
+                "code":"K02.3",
+                "title":"Arrested dental caries",
+                "explain":"Restoration, amalgam, composite, resin, crown"
+            },
+            {
+                "code":"K02.4",
+                "title":"Odontoclasia",
+                "explain":"Infantile meladontia"
+            },
+            {
+                "code":"K02.8",
+                "title":"Other dental caries"
+            },
+            {
+                "code":"K02.9",
+                "title":"Dental caries, unspecified"
+            }
+        ]
+    },
+    {
+        "code":"K03",
+        "title":"Other diseases of hard tissues of teeth",
+        "codes":[
+            {
+                "code":"K03.0",
+                "title":"Excessive attrition of teeth"
+            },
+            {
+                "code":"K03.1",
+                "title":"Abrasion of teeth"
+            },
+            {
+                "code":"K03.2",
+                "title":"Erosion of teeth",
+                "explain":"Vomiting, anorexia, bulhemia, acid, diet"
+            },
+            {
+                "code":"K03.3",
+                "title":"Pathological resorption of teeth",
+                "explain":"Pink spot"
+            },
+            {
+                "code":"K03.4",
+                "title":"Hypercementosis"
+            },
+            {
+                "code":"K03.5",
+                "title":"Ankylosis of teeth",
+                "explain":"Pink spot"
+            },
+            {
+                "code":"K03.6",
+                "title":"Deposits [accretions] on teeth ",
+                "explain":"Pigmentation, tobacco, betel, plaque, calculus, scaling and polishing"
+            },
+            {
+                "code":"K03.7",
+                "title":"Posteruptive colour change of dental hard tissues ",
+                "explain":"Metal, pulpal bleeding, betel, tobacco"
+            },
+            {
+                "code":"K03.8",
+                "title":"Other specified diseases of hard tissue of teeth",
+                "explain":"Sensitive dentine"
+            },
+            {
+                "code":"K03.9",
+                "title":"Diseases of hard tissue or teeth, unspecified",
+                "explain":""
+            }
+        ]
+    },
+    {
+        "code":"K04",
+        "title":"Diseases of the pulp and periapical tissues",
+        "codes":[
+            {
+                "code":"K04.0",
+                "title":"Pulpitis",
+                "explain":"Pulp cap, root canal treatment,sedative dressing, endodontic,obturate"
+            },
+            {
+                "code":"K04.1",
+                "title":"Necrosis of pulp",
+                "explain":"Gangrene, root canal treatment,sedative dressing, endodontic,obturate"
+            },
+            {
+                "code":"K04.2",
+                "title":"Pulp degeneration",
+                "explain":"Pulp stones, sclerosis"
+            },
+            {
+                "code":"K04.3",
+                "title":"Abnormal hard tissue formation in pulp",
+                "explain":"2ndary dentine - excludes pulp stones(K04.2)"
+            },
+            {
+                "code":"K04.4",
+                "title":"Acute apical periodontitis of pulpal origin",
+                "explain":"Root canal treatment,endodontic,obturate, abcess"
+            },
+            {
+                "code":"K04.5",
+                "title":"Chronic apical periodontitis",
+                "explain":"Granuloma, root canal treatment,endodontic,obturate,abcess"
+            },
+            {
+                "code":"K04.6",
+                "title":"Periapical abscess with sinus",
+                "explain":"Root canal treatment,endodontic,obturate,abcess"
+            },
+            {
+                "code":"K04.7",
+                "title":"Periapical abscess without sinus",
+                "explain":"Root canal treatment,endodontic,obturate,abcess"
+            },
+            {
+                "code":"K04.8",
+                "title":"Radicular cyst",
+                "explain":"Apical cyst, enucleate,apicectomy, apicoectomy"
+            },
+            {
+                "code":"K04.9",
+                "title":"Other and unspecified diseases of the pulp and periapical tissues"
+            }
+        ]
+    },
+    {
+        "code":"K05",
+        "title":"Gingivitis and periodontal diseases",
+        "codes":[
+            {
+                "code":"K05.0",
+                "title":"Acute gingivitis",
+                "explain":"Gingivitis, bleeding gums, scaling"
+            },
+            {
+                "code":"K05.1",
+                "title":"Chronic gingivitis",
+                "explain":"Gingivitis, bleeding gums, scaling, ulcerative - excludes Vincent's (A69.10)"
+            },
+            {
+                "code":"K05.2",
+                "title":"Acute Periodontitis",
+                "explain":"Gingivitis, bleeding gums, scaling "
+            },
+            {
+                "code":"K05.3",
+                "title":"Chronic Periodontitis",
+                "explain":"Gingivitis, chronic pericoronitis, bleeding gums, scaling"
+            },
+            {
+                "code":"K05.4",
+                "title":"Periodontosis",
+                "explain":"Juvenile,gingivitis, bleeding gums, scaling, curettage"
+            },
+            {
+                "code":"K05.5",
+                "title":"Other periodontal disease",
+                "explain":"Gingivitis, bleeding gums, scaling"
+            },
+            {
+                "code":"K05.6",
+                "title":"Periodontal disease, unspecified"
+            }
+        ]
+    },
+    {
+        "code":"K06",
+        "title":"Other disorders of the gingiva and edentulous alveolar ridges",
+        "codes":[
+            {
+                "code":"K06.0",
+                "title":"Gingival recession",
+                "explain":"Gingiva, recession"
+            },
+             {
+                "code":"K06.1",
+                "title":"Gingival enlargement",
+                "explain":"Fibromatosis"
+            },
+             {
+                "code":"K06.2",
+                "title":"Gingiva and edentulous alveolar ridge lesions associated with trauma",
+                "explain":"Denture hyperplasia occlusion, toothbrushing"
+            },
+             {
+                "code":"K06.8",
+                "title":"Other specified disorders of the gingiva and edentulous alveolar ridge",
+                "explain":"Gingival cyst, epulis, pyogenic granuloma"
+            },
+             {
+                "code":"K06.9",
+                "title":"Disorder of the gingiva and edentulous alveolar ridge, unspecified"
+            }
+        ]
+    },
+    {
+        "code":"K07",
+        "title":"Dento-facial anomalies including malocclusion",
+        "codes":[
+            {
+                "code":"K07.0",
+                "title":"Major anomalies of jaw size",
+                "explain":"Gingiva, recession"
+            },
+            {
+                "code":"K07.1",
+                "title":"Anomalies of jaw-cranial base relationship",
+                "explain":"Asymetry, pro/retrognathic, Cl 2, Cl 3, osteotomy, orthognathic, ortho"
+            },
+            {
+                "code":"K07.2",
+                "title":"Anomaliies of dental arch relationship",
+                "explain":"Overjet, overbite, crossbite,midline deviation, orthodontic, banding"
+            },
+            {
+                "code":"K07.3",
+                "title":"Anomalies of tooth position",
+                "explain":"Crowding, rotation, distema, transposition"
+            },
+            {
+                "code":"K07.4",
+                "title":"Malocclusion, unspecified"
+            },
+            {
+                "code":"K07.5",
+                "title":"Dento-facial functional abnormalities",
+                "explain":"Mouth breathing, abnormal swallowing, habits"
+            },
+            {
+                "code":"K07.6",
+                "title":"Temporo-mandibular joint disorders",
+                "explain":"Dislocation, TMJ, click, pain"
+            },
+            {
+                "code":"K07.8",
+                "title":"Other dento-facial anomalies"
+            },
+            {
+                "code":"K07.9",
+                "title":"Dento-facial anomaly, Unspecified"
+            }
+        ]
+    },
+    {
+        "code":"K08",
+        "title":"Other disorders of the teeth and supporting structures",
+        "codes":[
+            {
+                "code":"K08.0",
+                "title":"Exfoliation of teeth due to systemic disorders",
+                "explain":"Hypophosphatasia, scurvy"
+            },
+            {
+                "code":"K08.1",
+                "title":"Loss of teeth due to extraction, accident or local periodontal disease",
+                "explain":"Denture, bridge, implant, space maintainer"
+            },
+            {
+                "code":"K08.2",
+                "title":"Atrophy of edentulous alveolar ridge",
+                "explain":"Gingival mucosal graft"
+            },
+            {
+                "code":"K08.3",
+                "title":"Retained dental root",
+                "explain":"Root rest"
+            },
+            {
+                "code":"K08.8",
+                "title":"Other specified disorders of teeth and supporting structures ",
+                "explain":"Toothache NOS"
+            },
+            {
+                "code":"K08.9",
+                "title":"Disorders of teeth and supporting structures, unspecified"
+            }
+        ]
+    },
+    {
+        "code":"K09",
+        "title":"Cysts of oral origin, not elsewhere classified",
+        "codes":[
+            {
+                "code":"K09.0",
+                "title":"Developmental odontogenic cysts",
+                "explain":"cyst, eruption, gingival, Kerato, dentigerous,lateral periodontal"
+            },
+            {
+                "code":"K09.1",
+                "title":"Developmental (non-odontogenic) cysts of oral region",
+                "explain":"Nasopalatine cyst"
+            },
+            {
+                "code":"K09.2",
+                "title":"Other cysts of jaws",
+                "explain":"Nasopalatine cyst"
+            },
+            {
+                "code":"K09.8",
+                "title":"Other cysts of oral region, not elsewhere classified",
+                "explain":"Dermoid cyst"
+            },
+            {
+                "code":"K09.9",
+                "title":"Cysts of oral region, unspecified"
+            }
+        ]
+    },
+    {
+        "code":"K10",
+        "title":"Other diseases of jaws",
+        "codes":[
+             {
+                "code":"K10.0",
+                "title":"Developmental disorders of jaws",
+                "explain":"Tori"
+            },
+             {
+                "code":"K10.1",
+                "title":"Giant cell granuloma, central",
+                "explain":""
+            },
+             {
+                "code":"K10.2",
+                "title":"Inflammatory conditions of jaws"
+            },
+             {
+                "code":"K10.3",
+                "title":"Inflammatory conditions of jaws",
+                "explain":"Osteomyelitis, sequestra"
+            },
+             {
+                "code":"K10.8",
+                "title":"Other specified diseases of jaws",
+                "explain":"Dry socket"
+            },
+            {
+                "code":"K10.9",
+                "title":"Disease of jaws, unspecified"
+            }
+        ]
+    },
+    {
+        "code":"K11",
+        "title":"Diseases of the salivary glands",
+        "codes":[
+            {
+                "code":"K11.0",
+                "title":"Atrophy of salivary gland"
+            },
+            {
+                "code":"K11.1",
+                "title":"Hypertrophy of salivary gland"
+            },
+            {
+                "code":"K11.2",
+                "title":"Sialoadenitis"
+            },
+            {
+                "code":"K11.3",
+                "title":"Abscess of salivary gland"
+            },
+            {
+                "code":"K11.0",
+                "title":"Atrophy of salivary gland"
+            },
+            {
+                "code":"K11.4",
+                "title":"Fistula of salivary gland"
+            },
+            {
+                "code":"K11.5",
+                "title":"Sialolithiasis",
+                "explain":"Salivary calculus, stone"
+            },
+            {
+                "code":"K11.6",
+                "title":"Mucocoele of salivary gland"
+            },
+            {
+                "code":"K11.7",
+                "title":"Disturbances of salivary secretion",
+                "explain":"Xerostoma, dry mouth"
+            },
+            {
+                "code":"K11.8",
+                "title":"Other diseases of salivary glands",
+                "explain":"Miculicz'"
+            },
+            {
+                "code":"K11.9",
+                "title":"Disease of salivary gland, unspecified"
+            }
+        ]
+    },
+    {
+        "code":"K12",
+        "title":"Stomatitis and related lesions",
+        "codes":[
+            {
+                "code":"K12.0",
+                "title":"Recurrent oral aphthae"
+            },
+             {
+                "code":"K12.1",
+                "title":"Other forms of stomatitis"
+            },
+             {
+                "code":"K12.2",
+                "title":"Cellulitis and abscess of mouth. Excludes K04.6-K04.7 and K02.5"
+            }
+        ]
+    },
+    {
+        "code":"K13",
+        "title":"Other diseases of the lip and oral mucosa",
+        "codes":[
+            {
+                "code":"K13.0",
+                "title":"Diseases of lips",
+                "explain":"Angular chelitis"
+            },
+            {
+                "code":"K13.1",
+                "title":"Cheek and lip biting"
+            },
+            {
+                "code":"K13.2",
+                "title":"Leukoplakia and other disturbances of the oral epithelium including tongue"
+            },
+            {
+                "code":"K13.3",
+                "title":"Hairy Leukoplakia"
+            },
+            {
+                "code":"K13.4",
+                "title":"Granuloma and granuloma-like lesions of oral mucosa "
+            },
+            {
+                "code":"K13.5",
+                "title":"Oral submucous fibrosis"
+            },
+            {
+                "code":"K13.6",
+                "title":"Irritative hyperplasia of oral mucosa"
+            },
+            {
+                "code":"K13.7",
+                "title":"Other and unspecified lesions of oral mucosa"
+            }
+        ]
+    },
+    {
+        "code":"K14",
+        "title":"Diseases of the tongue ",
+        "codes":[
+            {
+                "code":"K14.0",
+                "title":"Glossitis",
+                "explain":"Ulcer, abscess"
+            },
+            {
+                "code":"K14.1",
+                "title":"Geographic Tongue"
+            },
+            {
+                "code":"K14.2",
+                "title":"Median Rhomboid Glossitis"
+            },
+            {
+                "code":"K14.3",
+                "title":"Hypertrophy of papillae",
+                "explain":"Black hairy tongue"
+            },
+            {
+                "code":"K14.4",
+                "title":"Atrophy of papillae"
+            },
+            {
+                "code":"K14.5",
+                "title":"Plicated tongue",
+                "explain":"Scrotal, fissured tongue"
+            },
+            {
+                "code":"K14.6",
+                "title":"Glossodynia"
+            },
+            {
+                "code":"K14.8",
+                "title":"Other diseases of the tongue"
+            },
+            {
+                "code":"K14.9",
+                "title":"Disease of the tongue, unspecified"
+            }
+        ]
+    },
+    {
+        "code":"Z",
+        "title":"Z codes",
+        "codes":[
+            {
+                "code":"Z01.2",
+                "title":"Dental examination",
+                "explain":"Replace amalgams with composites in absence of clinical need; teeth whitening etc"
+            },
+            {
+                "code":"Z41.8",
+                "title":"Other procedures for purposes other than remedying health state",
+                "explain":"FLUORIDE Rx, FISSURE SEALANT, MOUTH GUARD, PROPHYLACT"
+            },
+            {
+                "code":"Z29.8",
+                "title":"Other specified prophylactic procedures",
+                "explain":"All prosthetic laboratory procedures , Facing replacement"
+            },
+            {
+                "code":"Z46.3",
+                "title":"Fitting and adjusting of dental prosthetic device ",
+                "explain":"Denture repair or adjustment"
+            },
+            {
+                "code":"Z46.4",
+                "title":"Fitting and adjusting of dental orthodontic device",
+                "explain":"All orthodontic laboratory procedures"
+            },
+            {
+                "code":"Z48.0",
+                "title":"Attention to surgical dressings or sutures",
+                "explain":"Removal of sutures when original surgery not done by person removing"
+            },
+            {
+                "code":"Z45.8",
+                "title":"Adjustment and management of other implanted devices",
+                "explain":"Replacement of implant or implant-supported components, implant mainteanance"
+            },
+            {
+                "code":"Z53.2",
+                "title":"Procedure not carried out because of patient's decision for other and unspecified reasons",
+                "explain":"Failed or cancelled appouintment"
+            }
+        ]
+
+    }
+]

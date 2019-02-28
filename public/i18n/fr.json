@@ -1,0 +1,1373 @@
+{
+  "ch": {
+    "diag": {
+      "main": "Diagnostic",
+      "input": "Code de diagnostic, nom ou description...",
+      "c": "Caries",
+      "pt": "Parodontite",
+      "ws": "Wedge-shaped def.",
+      "z": "Odontolith",
+      "gv": "Gingivitis",
+      "lp": "Parodontosis",
+      "ht": "Hard tissues def.",
+      "op": "Orthodontics pat."
+    },
+    "proc": {
+      "blank": "Uncharted",
+      "miss": "Missing",
+      "xray": "X-ray",
+      "intact": "Intact",
+      "other": "Other",
+      "watch": "Observation",
+      "resto": "Restoration",
+      "rct": "Root canal",
+      "rctpc": "Root canal",
+      "rctpc2": "Post & Core",
+      "seal": "Silant",
+      "ven": "Veneer",
+      "cr": "Crown",
+      "hyg": "Cleaning",
+      "whit": "Whitening",
+      "retainer": "Crown",
+      "retainer2": "Bridge",
+      "imp": "Implant",
+      "cr34": "Crown 3/4",
+      "ext": "Extraction",
+      "res": "Resection",
+      "sin": "Sinus lift",
+      "resto_code": {
+        "mesial": "Medial",
+        "oclusial": "Oclusial",
+        "distal": "Distal",
+        "lingual": "Lingual",
+        "buccal": "Buccal"
+      }
+    },
+    "proc_cat": {
+      "surg": "Chirurgie",
+      "orthop": "Orthopédie",
+      "ther": "Thérapie",
+      "common": "commun",
+      "resto": "Restauration"
+    }
+  },
+  "common": {
+    "menu": {
+      "home": "page d'accueil",
+      "prod": "Produit",
+      "price": "Prix",
+      "abt": "À propos de nous",
+      "contact": "Contacts",
+      "partn": "Partenaires",
+      "login": "S'identifier",
+      "signup": "S'inscrire"
+    },
+    "time": "Temps",
+    "min": "minutes",
+    "t_at": "à",
+    "init_load": {
+      "title": "Initialisation ...",
+      "descr": "Installation du programme, veuillez patienter ..."
+    },
+    "time_pick": "Sélectionnez un intervalle",
+    "date_range": {
+      "t": "Aujourd'hui",
+      "w": "Semaine",
+      "m": "Mois"
+    },
+    "weekday": {
+      "mo": "Lundi",
+      "sa": "Samedi",
+      "su": "Dimanche"
+    },
+    "proc_stat": {
+      "tp": "Prévu",
+      "c": "Complété",
+      "e": "Existant"
+    },
+    "click_to_ed": "Cliquez pour éditer",
+    "form": {
+      "err": "Erreur",
+      "copy": "Copie",
+      "open": "Ouvrir",
+      "complete": "Compléter",
+      "changed": "Vous avez changé certaines propriétés",
+      "del": "Supprimer",
+      "search": "Chercher...",
+      "save": "Sauvegarder",
+      "add": "Ajouter",
+      "conf": "Confirmer",
+      "disc": "Jeter",
+      "canc": "Annuler",
+      "close": "Fermer",
+      "create": "Créer"
+    },
+    "appt": "Rendez-vous",
+    "sel": "Sélectionner",
+    "sel_file": "Sélectionner le dossier",
+    "treatment_book": {
+      "complaints": "Plaintes",
+      "investigations": "Anamnèse",
+      "observations": "Observations",
+      "diagnoses": "Diagnostics",
+      "treatments": "Traitements",
+      "ph": "Ajouter des notes...",
+      "recommendations": "Recommandations"
+    },
+    "errors": {
+      "form": {
+        "PHONE_START": "Commencez avec le code de votre pays, par exemple +65...",
+        "PHONE_ALL": "Remplissez complètement",
+        "CARD": "Numéro de carte incorrect",
+        "NUMERIC": "Numéro incorrect",
+        "DATE": "Date invalide",
+        "REQUIRED": "champs requis",
+        "EMAIL": "Adresse Email incorrecte",
+        "NAME": "Nom incorrect",
+        "PASSWORD": "Il doit y avoir au moins 6 caractères",
+        "EQUAL": "Les champs doivent être égaux"
+      },
+      "FILE_NOT_FOUND": "Fichier non trouvé",
+      "BIG_FILE_SIZE": "Trop grande taille de fichier",
+      "INVITATION_NOT_FOUND": "Invitation introuvable",
+      "ALREADY_CONFIRMED": "Utilisateur déjà enregistré",
+      "INVALID_TOKEN": "Clé incorrecte",
+      "USER_NOT_BELONGS": "Organisation non trouvée",
+      "INCORRECT_PASSWORD": "Mot de passe non valide",
+      "RECOVERY_NOT_FOUND": "Demande de récupération de mot de passe introuvable",
+      "INVALID_INVITATION": "Impossible d'ajouter une invitation",
+      "ALREADY_INVITED": "Invitation déjà confirmée",
+      "NO_ACCESS": "L'accès est restreint",
+      "EXCEEDED_USERS_COUNT": "Impossible d'ajouter plus d'utilisateurs",
+      "NO_NEED_RENEW": "L'abonnement est actif",
+      "ALREADY_SUBSCRIBED": "L'abonnement a déjà été créé",
+      "UNABLE_TO_UPDATE": "Erreur de mise à jour",
+      "UNABLE_TO_DESTROY": "Erreur de désinstallation",
+      "PATIENT_NOT_FOUND": "Patient non trouvé",
+      "PATIENT_ID_NOT_VALID": "L'identité du patient n'est pas valide",
+      "BAD_REQUEST": "Demande échoué",
+      "INVALID_DATA": "Données incorrectes",
+      "APPT_NOT_FOUND": "Visite non trouvée",
+      "INVALID_INVOICE": "Impossible de créer une facture",
+      "INVALID_PAYMENTS_DATA": "Impossible d'effectuer le paiement",
+      "ALREADY_PAID": "Le compte a déjà été payé",
+      "INVALID_PLAN_DATA": "Format de données incorrect",
+      "INVALID_PROCEDURE_DATA": "Format de procédure incorrect",
+      "REACH_PATIENTS_LIMIT": "Le nombre de patients a dépassé la limite",
+      "UNABLE_TO_SORT": "Erreur de tri",
+      "UNDEFINED_PROVIDER": "Le docteur n'a pas été trouvé",
+      "USER_INVALID_CONFIRMATION_CODE": "Code de vérification invalide"
+    }
+  },
+  "widget": {
+    "next": "Suivant",
+    "confirm": "Confirmer mon rendez-vous",
+    "title": "Prendre rendez-vous",
+    "descr": "Vous avez des questions? Veuillez nous appeler au",
+    "st0": {
+      "title": "Première fois en clinique?",
+      "descr": "Cliquez sur oui si vous souhaitez planifier votre premier rendez-vous dans notre clinique. Cliquez sur non si vous avez déjà visité notre clinique ou si vous savez avec quel dentiste vous souhaitez prendre rendez-vous.",
+      "y": "Oui",
+      "n": "Non"
+    },
+    "st1": {
+      "title": "Dentiste",
+      "descr": "Sélectionnez un dentiste",
+      "bot": "Vous ne savez pas quel dentiste choisir? Veuillez nous appeler au"
+    },
+    "st2": {
+      "title": "Sélectionnez une procédure",
+      "bot": "Vous ne savez pas quelle procédure choisir? Veuillez nous appeler au"
+    },
+    "st3": {
+      "title": "Plage horaire",
+      "descr": "Sélectionnez une plage horaire",
+      "bot": "Ces plages horaires ne correspondent-elles pas à votre emploi du temps? Veuillez nous appeler au",
+      "urgent": {
+        "title": "Rendez-vous urgent",
+        "descr": "Prendre rendez-vous à la date la plus proche?"
+      },
+      "empty": {
+        "title": "Pas de plages horaires disponibles",
+        "descr": "Ce fournisseur n'a pas de plages horaires ouverts pour cette période. Pour prendre rendez-vous, veuillez nous appeler au"
+      }
+    },
+    "st4": {
+      "title": "Contacts",
+      "descr": "Vos détails"
+    },
+    "st5": {
+      "title": "Confirmé!",
+      "descr": "Votre rendez-vous à la clinique {{clinic}} était programmé le {{date}} à {{heure}}. La clinique peut vous appeler pour vous demander plus d'information concernant vos rendez-vous.",
+      "btn": "Enregistrer les détails"
+    }
+  },
+  "logs": {
+    "appt_widget": {
+      "t1": "avec le numéro de téléphone",
+      "t2": "a demandé un rendez-vous sur le site.",
+      "pt_search": "Rechercher un patient avec le numéro de téléphone\n",
+      "pt_search_db": "dans la base de données",
+      "pt_ph": "Patient avec le téléphone",
+      "found": "a été trouvé dans la base de données. Utilisera ce profil.",
+      "not_found": "n'a pas été trouvé. Va créer un nouveau profil."
+    }
+  },
+  "organization": {
+    "name": {
+      "title": "prénom",
+      "descr": "Nom de la clinique"
+    },
+    "unconfirmed": {
+      "title": "Votre email",
+      "title2": "n'est pas confirmé. Veuillez vérifier votre boîte de réception ou cliquez sur le bouton pour envoyer une nouvelle confirmation",
+      "submit": "Envoyer une confirmation"
+    },
+    "tax": {
+      "title": "Taxe",
+      "descr": "Taxe par défaut",
+      "ph": "Taux d'imposition, %",
+      "explain": "Cette taxe sera ajoutée automatiquement à chaque facture"
+    },
+    "phone": {
+      "title": "Téléphone",
+      "descr": "Numéro du contact"
+    },
+    "address": {
+      "title": "Adresse",
+      "descr": "Adresse de la clinique"
+    },
+    "url": {
+      "title": "URL",
+      "descr": "Site internet de la clinique"
+    },
+    "email": {
+      "title": "Email",
+      "descr": "Email du contact"
+    },
+    "currency": {
+      "title": "Devise",
+      "descr": "Monnaie de l'application",
+      "explain": "Cette monnaie sera utilisée dans les listes de prix et les factures"
+    },
+    "timezone": {
+      "title": "Fuseau horaire",
+      "descr": "Votre fuseau horaire",
+      "explain": "S'il vous plaît, définissez votre fuseau horaire avec soin. Nous enverrons des notifications à vos clients en fonction de votre fuseau horaire."
+    }
+  },
+  "tags": {
+    "patient": {
+      "name": "Nom complet",
+      "phone": "Téléphone",
+      "birthday": "Anniversaire",
+      "address": "Adresse",
+      "code": "Antécédents médicaux #",
+      "email": "Email",
+      "doc": {
+        "no": "Numéro de document",
+        "iss": "Date d'émission du document",
+        "exp": "Date d'expiration du document",
+        "auth": "Autorité du document"
+      }
+    },
+    "clinic": {
+      "name": "Prénom",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "url": "Site Internet",
+      "email": "Email"
+    },
+    "other": {
+      "today": {
+        "date": "Date actuelle",
+        "time": "Heure actuelle"
+      },
+      "proc_ct": "procédures",
+      "procedures": "procédures"
+    }
+  },
+  "settings": {
+    "title": "Paramètres",
+    "menu": {
+      "exit": "Sortie",
+      "acc": "Compte",
+      "sub": "Abonnement",
+      "collab": "Collaboration",
+      "tpl": "Les notifications",
+      "docs": "Documents",
+      "org": "Clinique",
+      "price": "Liste de prix",
+      "disc": "Les remises"
+    },
+    "organization": {
+      "title": "Clinique",
+      "descr": "Votre profil de clinique dentaire",
+      "widget": {
+        "title": "Reservation en ligne",
+        "descr": "",
+        "link_descr": "Lien intégré pour le formulaire de réservation de rendez-vous",
+        "enable": {
+          "title": "Activer le widget?",
+          "descr": "Laissez vos patients planifier des rendez-vous en ligne"
+        },
+        "success_text": {
+          "title": "Message de réussite",
+          "descr": "Ce message sera affiché après la demande de rendez-vous de réussite",
+          "ph": "Entrez le message..."
+        }
+      }
+    },
+    "account": {
+      "title": "Compte",
+      "descr": "Votre profil de compte de base",
+      "change_pass": {
+        "title": "Changer le mot de passe",
+        "descr": "Entrez votre mot de passe actuel et créez-en un nouveau si vous souhaitez le modifier.",
+        "ex": {
+          "title": "Mot de passe",
+          "descr": "Mot de passe actuel"
+        },
+        "new": {
+          "title": "Nouveau mot de passe",
+          "descr": "Votre nouveau mot de passe"
+        },
+        "new2": {
+          "title": "Confirmez le mot de passe",
+          "descr": "Répéter le mot de passe"
+        }
+      }
+    },
+    "collaboration": {
+      "title": "Collaboration",
+      "invited": "Invité",
+      "unable": "Il n'est pas possible d'inviter de nouveaux collègues. Modifiez l'abonnement pour ajouter de nouveaux comptes.",
+      "status": {
+        "act": "actif",
+        "pend": "Attendre"
+      },
+      "invite": {
+        "new": "Nouvel utilisateur",
+        "title": "Inviter un nouvel utilisateur",
+        "submit": "Inviter un utilisateur",
+        "email_explain": "Nous enverrons une invitation à cette adresse email",
+        "descr": "Invitez d'autres collègues de votre clinique à travailler ensemble."
+      },
+      "details": "Détails",
+      "delete": "Supprimer l'utilisateur",
+      "profile": {
+        "custom": "Profil personnalisé",
+        "admin": "Administrateur",
+        "dentist": "Dentiste",
+        "frontDesk": "Bureau d'accueil"
+      },
+      "access": {
+        "title": "Accès",
+        "title2": "Contrôle d'accès",
+        "close": {
+          "title": "Supprimer l'utilisateur?",
+          "descr": "Cet utilisateur sera supprimé de l'organisation"
+        },
+        "rules": {
+          "is_doctor": "Autorisations du dentiste",
+          "is_doctor.descr": "Autoriser la planification des patients avec cet utilisateur",
+          "view_analytics": "Voir les analyses",
+          "view_analytics.descr": "Permettre de voir les analyses et les rapports de toutes les cliniques",
+          "view_patient": "Voir les patients",
+          "view_patient.descr": "Permetter d'afficher et de modifier tous les dossiers de patients",
+          "edit_appt": "Prendre un rendez-vous",
+          "edit_appt.descr": "Autoriser à planifier et à modifier les rendez-vous",
+          "edit_payment": "Accepter les paiements",
+          "edit_payment.descr": "Permettre d'accepter et de modifier les paiements des patients",
+          "edit_price": "Modifier le prix",
+          "edit_price.descr": "Permettre de modifier la liste de prix",
+          "add_task": "Attribution de tâches",
+          "add_task.descr": "Permettre d'assigner des tâches avec d'autres utilisateurs et de les modifier",
+          "access_subscription": "Abonnement",
+          "access_subscription.descr": "Autoriser l'accès à l'abonnement à la clinique",
+          "access_collaboration": "Collaboration",
+          "access_collaboration.descr": "Permettre de gérer et d'inviter d'autres personnes à collaborer",
+          "access_templates": "Modèles",
+          "access_templates.descr": "Permettre de modifier les notifications SMS et les modèles de document",
+          "share_patient": "Partage de patients",
+          "share_patient.descr": "Permettre de partager les dossiers des patients avec un autre dentiste",
+          "edit_patient": "Editer les patients",
+          "edit_patient.descr": "Permettre de modifier les informations du patient",
+          "delete_patient": "Supprimer des patients",
+          "online_access": "Accès en ligne",
+          "online_access.descr": "Activer l'accès en ligne à cet utilisateur",
+          "online_access.explain": "Vos coûts d'abonnement augmenteront en fonction de votre forfait",
+          "delete_patient.descr": "Permettre de supprimer les profils de patients existants",
+          "create_patient": "Créer un patient",
+          "create_patient.descr": "Permettre de créer de nouveaux patients"
+        }
+      }
+    },
+    "subscription": {
+      "topup": "Topup",
+      "title": "Abonnement",
+      "descr": "Les détails de votre abonnement",
+      "unable": {
+        "title": "Nous n'avons pas pu renouveler votre abonnement avec votre carte de paiement. Assurez-vous que votre carte est valide et cliquez sur le bouton de recharge.",
+        "button": "Recharge"
+      },
+      "free": "Vous pouvez utiliser DentalTap sans carte de crédit jusqu'à atteindre les limites de votre plan freemium. Mais si vous souhaitez contribuer et nous aider à être plus performants, vous pouvez joindre une carte de crédit maintenant et la souscription débutera dans les deux prochaines semaines.",
+      "save": "Mettre à jour les détails",
+      "price_mo": "Coût par mois",
+      "start": "Début de l'abonnement",
+      "next_pay": "Prochain paiement",
+      "sms": {
+        "title": "SMS",
+        "available": "Vous pouvez envoyer {{smsSize}} SMS. Pour recharger, cliquez sur le bouton ci-dessous.",
+        "confirm": {
+          "title": "Recharger SMS?",
+          "descr": "Nous ajouterons {{numéro}} SMS sur votre compte et débiterons votre carte de {{amt}}."
+        },
+        "no_card": "Pour envoyer des notifications par SMS à vos clients, veuillez joindre votre carte de paiement."
+      },
+      "categories": {
+        "sms": "SMS",
+        "storage": "Espace",
+        "subscription": "Abonnement"
+      },
+      "storage": {
+        "mb": "MB",
+        "title": "Espace ",
+        "available": "Vous avez {{storageSize}} Mo disponible pour les fichiers patient. Pour étendre le stockage, cliquez sur le bouton ci-dessous.",
+        "confirm": {
+          "title": "Étendre votre espace de stockage?",
+          "descr": "Nous ajouterons {{numéro}} Mo de stockage sur votre compte et augmenterons vos coûts d'abonnement mensuel de {{amt}}."
+        }
+      },
+      "history": {
+        "title": "Historique des paiements",
+        "descr": "Tous vos paiements par carte de crédit seront affichés ici",
+        "no_title": "Aucun paiement",
+        "no_descr": "Vous n'avez pas encore effectué de paiement"
+      },
+      "create": {
+        "title": "Joindre une carte",
+        "descr": "Pour déverrouiller la version complète du produit et utiliser des services supplémentaires tels que SMS et stockage, vous devez vous abonner en ajoutant votre carte de paiement."
+      },
+      "edit": {
+        "title": "Modifier la carte de paiement",
+        "descr": "Pour mettre à jour les données de la carte de paiement, utilisez le formulaire ci-dessous: Laissez ce formulaire vierge pour enregistrer la carte actuelle.",
+        "descr_add": "Spécifiez le nombre de comptes supplémentaires pour votre clinique",
+        "monthly_fee": ""
+      },
+      "card": {
+        "no": "Numéro de carte",
+        "expired": "date d'expiration",
+        "cvv": "CVV ",
+        "enc": "Les informations de votre carte de crédit sont cryptées",
+        "start": "Votre abonnement commence lorsque vous cliquez sur \\ \"Démarrer l'abonnement \" ci-dessous. Nous effectuons la première charge après 2 semaines depuis le début de la souscription. Si vous annulez votre abonnement au cours du premier mois, nous vous rembourserons le montant total. Si vous n'annulez pas après 30 jours, votre carte sera débitée conformément à votre plan. Vous pouvez annuler votre abonnement à tout moment en nous envoyant simplement un email à info@dentaltap.com",
+        "edit": "Toto",
+        "owner": "Propriétaire",
+        "owner_title": "Nom du propriétaire"
+      }
+    },
+    "templates": {
+      "notes": {
+        "tags": {
+          "title": "exemple",
+          "descr": "Le nom du patient, la date et l'heure seront remplacés par les données réelles du patient lors de l'envoi de SMS. Ce paramètre est juste un exemple."
+        },
+        "sms_length": {
+          "title": "Taille du SMS",
+          "descr": "Nous vous recommandons de garder vos notifications courtes car la longueur du SMS est de 160 caractères. Si votre message compte plus de 160 caractères, il sera divisé en morceaux et vous aurez des frais supplémentaires."
+        }
+      },
+      "mess": {
+        "title": "Les notifications",
+        "descr": "Configurer des modèles de notification pour vos clients",
+        "fullname": "John Parker",
+        "date": "24 Octobre",
+        "time": "10:30am",
+        "create_appt": {
+          "title": "Création de rendez-vous",
+          "descr": "Message lors de la planification d'un nouveau rendez-vous pour le patient"
+        },
+        "confirm_appt": {
+          "title": "Confirmation de rendez-vous",
+          "descr": "Message la veille du rendez-vous, sera envoyé à 13 heures"
+        },
+        "edit_appt": {
+          "title": "Changement de rendez-vous",
+          "descr": "Message après modification de la date / heure du rendez-vous"
+        },
+        "upcoming_birthday": {
+          "title": "Anniversaire à venir",
+          "descr": "Message au patient pour son anniversaire"
+        },
+        "cancel_appt": {
+          "title": "Annulation de rendez-vous",
+          "descr": "Message après l'annulation d'un rendez-vous"
+        }
+      }
+    }
+  },
+  "patient": {
+    "title": "Les patients",
+    "create": "Créer",
+    "search": "Recherche de patients ...",
+    "cat": {
+      "active": "Tous les patients",
+      "shared": "Collaboration",
+      "primary": "Principal",
+      "debts": "Dette",
+      "archived": "Archivés"
+    },
+    "have_debts": "Ce patient a des dettes pour de",
+    "limit": {
+      "title": "Version de démonstration",
+      "btn": "Activer maintenant",
+      "quest": "Vous avez des questions?",
+      "title2": {
+        "p1": "Vous avez créé",
+        "p2": "de",
+        "p3": "dossiers des patients. Activez votre abonnement pour ajouter un nombre illimité d'enregistrements."
+      }
+    },
+    "edit": {
+      "title": "Editer le profil"
+    },
+    "detail": {
+      "title": "Vue d'ensemble",
+      "descr": "Profil ouvert"
+    },
+    "print": {
+      "title": "Impression",
+      "descr": "Préparation de l'historique d'impression ... veuillez patienter ..."
+    },
+    "note": {
+      "title": "Notes",
+      "title2": "Note",
+      "submit": "Ajouter une note",
+      "highlight": "Important",
+      "ph": "Ajouter votre note...",
+      "empty": {
+        "title": "Sans commentaires",
+        "descr": "Ajouter des commentaires importants à ce patient"
+      },
+      "edit_tpl": "Modifier les modèles",
+      "add_notes": "Ajouter des notes"
+    },
+    "last_appt": {
+      "title": "Dernier rendez-vous"
+    },
+    "balance": {
+      "title": "Équilibre",
+      "descr": "Déposé"
+    },
+    "doc": {
+      "ready": {
+        "title": "Votre document est prêt!",
+        "descr": "Votre document est prêt, cliquez sur le bouton ci-dessous pour le télécharger.",
+        "btn": "télécharger"
+      },
+      "number": {
+        "title": "Document",
+        "descr": "Numéro de document"
+      },
+      "issued": {
+        "title": "Date de délivrance",
+        "descr": ""
+      },
+      "expired": {
+        "title": "Date d'expiration"
+      },
+      "authority": {
+        "title": "délivré",
+        "descr": "Nom de l'autorité",
+        "descr2": "Nom de l'autorité"
+      },
+      "delete": {
+        "title": "Supprimer le document?",
+        "descr": "Ce modèle de document sera supprimé"
+      }
+    },
+    "reference": {
+      "title": "La source",
+      "descr": "Référé de"
+    },
+    "card": {
+      "title": "Patient",
+      "title2": "Numéro interne"
+    },
+    "not_found": {
+      "title": "Aucun patient trouvé",
+      "descr": "Cliquez sur le bouton dans l'en-tête de la page pour ajouter un nouveau patient.",
+      "descr2": "Patients en fonction de vos critères non trouvés"
+    },
+    "new": {
+      "submit": "Créer un patient",
+      "title": "Nouveau patient",
+      "dont_close": {
+        "title": "Ne pas fermer",
+        "descr": "Ajouter le prochain patient après"
+      },
+      "shared": {
+        "title": "Partager",
+        "descr": "Autoriser l'accès à tous les utilisateurs"
+      }
+    },
+    "share": {
+      "title": "Partager"
+    },
+    "delete": {
+      "title": "Effacer"
+    },
+    "archived": {
+      "title": "Profil archivé",
+      "descr": "Ce patient a été archivé. Cliquez ci-dessous pour restaurer les données de tous les patients.",
+      "restore": "Restaurer le profil",
+      "confirm": {
+        "title": "Archiver le patient?",
+        "descr": "Ce patient sera marqué comme archivé"
+      }
+    },
+    "log": {
+      "all": "Historique",
+      "upcoming": "Prochain",
+      "no_rec": {
+        "title": "Pas d'enregistrements",
+        "descr": "Ajouter des enregistrements au patient"
+      },
+      "task_add": "a assigné une nouvelle tâche",
+      "task_complete": "a terminé une tâche",
+      "appt_add": "a pris rendez-vous",
+      "appt_complete": "a complété un rendez-vous",
+      "appt_edit": "a édité un rendez-vous",
+      "patient_add": "a créé un profil",
+      "invoice_add": "a ajouté une facture",
+      "note_add": "a créé une note",
+      "doc_add": "a créé un document",
+      "invoice_payment_add": "a ajouté un paiement"
+    },
+    "profile": {
+      "title": "Profil",
+      "title2": "Profil du patient",
+      "treat": {
+        "title": "Traitement",
+        "not_found": "Pas de plan",
+        "add": "Créer un plan"
+      },
+      "templates": {
+        "edit": "Modifier les modèles",
+        "add_sec": "Ajouter une section",
+        "add_tpl": "Ajouter un modèle"
+      },
+      "task": {
+        "title": "Les tâches",
+        "title2": "Tâche",
+        "not_found": "Pas de tâches",
+        "add": "Créer une tâche"
+      },
+      "bill": {
+        "title": "Factures",
+        "not_found": "Aucune facture",
+        "add": "Créer une facture"
+      },
+      "appt": {
+        "title": "Rendez-vous",
+        "not_found": "Pas de rendez-vous",
+        "add": "Créer un rendez-vous"
+      },
+      "tabs": {
+        "general": {
+          "title": "Général",
+          "custom_fields": {
+            "title": "Ajouter le champ",
+            "set": "Personnaliser",
+            "type": {
+              "title": "Type",
+              "date": "Date",
+              "phone": "Téléphone",
+              "address": "Adresse",
+              "text": "Texte"
+            },
+            "name": {
+              "title": "Nom",
+              "ph": "Champ du nom"
+            },
+            "empty": {
+              "title": "Les champs personnalisés",
+              "descr": "Ici, vous pouvez joindre des données supplémentaires au profil du patient, par exemple le numéro de passeport."
+            }
+          }
+        },
+        "medical": {
+          "title": "Médical",
+          "add": "Ajouter et cliquez sur Entré pour soumettre",
+          "allergies": "Les allergies",
+          "medications": "Les médicaments",
+          "urgent": "Urgent",
+          "past_ill": "Maladies passées",
+          "current_ill": "Maladies actuelles"
+        },
+        "tasks": {
+          "title": "Les tâches",
+          "new": "Nouvelles tâches"
+        }
+      }
+    },
+    "charting": {
+      "title": "Traitement",
+      "sel_plan": "Sélectionnez un plan",
+      "sel_proc": "Procédure",
+      "sel_diag": "Diagnostic",
+      "sel_diag.add": "Ajouter un diagnostic",
+      "sel_diag.bot1": "Ce code ICD-10 sera ajouté aux dents sélectionnées ou",
+      "sel_diag.bot2": "diagnostic non établi",
+      "sel_proc.add": "Ajouter une procédure",
+      "sel_proc.bot1": "Cette procédure sera ajoutée aux dents sélectionnées ou",
+      "sel_proc.bot2": "procéduresnon établie",
+      "sel_title": "Sélectionnez les dents pour ajouter une nouvelle procédure ou un nouveau diagnostic",
+      "sel_area": {
+        "top": "Basculer vers le haut",
+        "bot": "Basculer vers le bas"
+      },
+      "appts": {
+        "not_found": {
+          "title": "Aucun rendez-vous",
+          "descr": "Rendez-vous pour ce patient non trouvé"
+        }
+      },
+      "print": {
+        "title": "",
+        "descr": ""
+      },
+      "plan": {
+        "add": "Nouveau plan",
+        "def": "Rendez-vous",
+        "sel": "État du plan",
+        "conf": {
+          "title": "Confirmer le plan",
+          "title2": "Plan confirmé",
+          "descr": "Sélectionnez cet état si le plan de traitement a été approuvé par le patient.",
+          "descr2": "Les procédures de ce plan seront disponibles dans le plan principal"
+        },
+        "cancel": {
+          "title": "Rejeter",
+          "descr": "Sélectionnez cet état si le patient a rejeté ce plan de traitement."
+        },
+        "delete": {
+          "title": "Supprimer le plan?",
+          "descr": "Ce plan sera supprimé, mais toutes les procédures facturées restent"
+        },
+        "new": {
+          "title": "Nouveau plan",
+          "descr": "Entrez le nouveau nom du plan"
+        }
+      },
+      "kid_teeth": "Dents d'enfant",
+      "tab": {
+        "procedures": "Procédures",
+        "book": "Notes",
+        "no_appt": "Pas de Rendez-vous"
+      },
+      "procedures": {
+        "selected": "Procédures sélectionnées",
+        "inv": "Créer une facture",
+        "compl": "Completer",
+        "move": "Bouger",
+        "add_appt": "Ajouter au rendez-vous",
+        "del": "Effacer",
+        "not_found": {
+          "title": "Aucune procédure",
+          "descr": "Sélectionnez d'abord les dents pour ajouter de nouvelles procédures"
+        },
+        "unass": {
+          "title": "Aucun rendez-vous",
+          "descr": "Déplacer ces procédures vers les rendez-vous"
+        }
+      }
+    },
+    "billing": {
+      "title": "Facturation",
+      "inv": "Facture",
+      "not_found": {
+        "title": "Aucune facture trouvée",
+        "descr": "Vous n'avez pas encore créé de factures pour ce patient"
+      },
+      "print": {
+        "title": "Imprimer la facture",
+        "descr": "Préparation de l'impression de la facture... veuillez patienter ..."
+      },
+      "tab": {
+        "det": "Détails",
+        "paym": "Paiements",
+        "del": "Effacer",
+        "print": "imprimer"
+      },
+      "status": {
+        "pend": "En attente",
+        "paid": "Payé",
+        "unpaid": "Expiré"
+      },
+      "pay_t": {
+        "balance": "Compte de dépôt",
+        "cash": "En espèces",
+        "card": "Carte de crédit",
+        "other": "Autre"
+      },
+      "delete": {
+        "title": "Supprimer la facture?",
+        "descr": "Cette facture sera supprimée mais les procédures du dossier dentaire seront enregistrées."
+      },
+      "no_access": "Vous n'avez pas les autorisations pour charger cette facture",
+      "create": "Créer une facture",
+      "add_proc": "Ajouter une procédure",
+      "total_sum": "Montant total",
+      "note": "Remarque",
+      "tax": "Taxe",
+      "tax_descr": "Ajouter la taxe à cette facture",
+      "tax_after": "Après taxe",
+      "disc_after": "Après remise",
+      "disc": "Remise",
+      "disc_descr": "Ajouter une remise à cette facture",
+      "paid": "Payé",
+      "remained": "Reste",
+      "to_pay": "A payer",
+      "new": {
+        "title": "Nouvelle facture"
+      },
+      "no": {
+        "title": "Numéro de facture"
+      },
+      "sum": {
+        "title": "Montant",
+        "descr": "Montant du paiement"
+      },
+      "type": {
+        "title": "Type",
+        "descr": "Type de paiement"
+      },
+      "pay": "Payer",
+      "unass": {
+        "title": "Procédures non facturées"
+      },
+      "topup": {
+        "title": "Régler le solde",
+        "title2": "Historique",
+        "btn": {
+          "a": "Retirer",
+          "b": "Recharger"
+        }
+      },
+      "cat": {
+        "all": "Toutes les factures",
+        "disc": "Remises",
+        "debt": "Dettes",
+        "tax": "Taxes"
+      },
+      "tot_due": "Dettes",
+      "due_date": "Date d'échéance",
+      "create_date": "Dates créées"
+    },
+    "files": {
+      "document": {
+        "single": "Document",
+        "select": {
+          "title": "Sélectionnez un modèle",
+          "title2": "Modèle"
+        },
+        "no_tpl": {
+          "title": "Aucun modèle",
+          "descr": "Cliquez sur le bouton du bas pour ajouter un nouveau modèle"
+        },
+        "edit": {
+          "title": "Editer le document",
+          "confirm": "Enregistrer le document"
+        },
+        "send": {
+          "title": "Envoyer à email",
+          "descr": "Envoyer la copie à l'adresse électronique du patient"
+        },
+        "submit": "Générer document",
+        "create": {
+          "title": "Nouveau document",
+          "name": {
+            "title": "Titre du document",
+            "ph": "Ce titre sera affiché lors de l'impression du document ..."
+          },
+          "preview": "Aperçu",
+          "confirm": "Créer document",
+          "tags": {
+            "title": "Balises ",
+            "descr": "Placez ces balises dans le modèle de document. Ces balises seront automatiquement remplacées par des valeurs lors de la génération du document.",
+            "pt": "Patient",
+            "cl": "Clinique",
+            "ot": "Autre"
+          }
+        }
+      },
+      "title": "Stockage",
+      "generate": "Créer un document",
+      "upload": "Upload",
+      "not_found": {
+        "title": "Aucun fichier trouvé",
+        "descr": "Cliquez sur le bouton Upload pour ajouter un nouveau fichier à ce patient.\n"
+      },
+      "selected": "Fichiers sélectionnés",
+      "search": "Recherche par fichiers ...",
+      "types": {
+        "all": "Tous les fichiers",
+        "img": "Images",
+        "doc": "Documents",
+        "3d": "Images 3D"
+      },
+      "ren": "Renommer",
+      "dl": "Télécharger",
+      "del": "Effacer"
+    }
+  },
+  "price": {
+    "title": "Prix",
+    "descr": "Votre liste de prix de clinique",
+    "procedure": {
+      "code": "Code",
+      "name": "Nom de la procédure",
+      "fee": "Prix",
+      "qty": "Quantité"
+    },
+    "find": "Recherche de procédure  ...",
+    "new": "Ajouter une procédure",
+    "no_proc": {
+      "title": "Aucune procédure",
+      "descr": "Les procédures pour cette catégorie n'ont pas encore été créées"
+    },
+    "proc": {
+      "diag": "Diagnostic",
+      "resto": "Restauration",
+      "rct": "Canal radiculaire",
+      "hyg": "Hygiène",
+      "white": "Blanchiment",
+      "proth": "Prothèses",
+      "implant": "Implant",
+      "braces": "Orthodontie",
+      "extr": "Chirurgie"
+    }
+  },
+  "signup": {
+    "title": "",
+    "submit": "Créer un compte"
+  },
+  "register": {
+    "title": "Commencez gratuitement",
+    "descr": "Nous vous aiderons à gagner du temps sur vos tâches quotidiennes et à réduire le nombre de défections des patients.",
+    "title2": "C'est presque prêt!",
+    "descr2": "Nous avons juste besoin de certaines de vos coordonnées pour terminer l'enregistrement. Nous utiliserons vos données de contact à des fins d'assistance.",
+    "code": {
+      "title": "Code de confirmation",
+      "descr": "Code à 6 chiffres de l'email"
+    },
+    "submit": "S'inscrire",
+    "email": {
+      "descr": "Nous vous enverrons un message de confirmation"
+    },
+    "serv": {
+      "1": {
+        "title": "Rationaliser le flux de travail",
+        "descr": "Nous vous aiderons dans toutes les tâches quotidiennes telles que la planification, la planification du traitement, la facturation et la création de rapports"
+      },
+      "2": {
+        "title": "Obtenez plus de patients",
+        "descr": "Nous vous aiderons à obtenir plus de patients avec le portail de réservation de rendez-vous et les présentations de traitements."
+      },
+      "3": {
+        "title": "Importez vos données",
+        "descr": "Nous allons importer gratuitement toutes les données de votre logiciel actuel ou vous aider à numériser des dossiers médicaux."
+      },
+      "4": {
+        "title": "Communauté mondiale",
+        "descr": "Rejoignez-nous et faites partie de notre communauté dentaire dans plus de 20 pays d'Europe, d'Asie et d'Amérique latine."
+      }
+    },
+    "alr_acc": "Vous avez déjà un compte?",
+    "alr_acc.go": "S'identifier",
+    "complete": "Commencer",
+    "no_letter": "Si vous n'avez pas reçu la lettre, écrivez-nous à info@dentaltap.com pour compléter l'enregistrement."
+  },
+  "login": {
+    "title": "Connexion au compte",
+    "descr": "Entrez vos coordonnées pour vous connecter",
+    "submit": "S'identifier",
+    "new_acc": "Enregistrement du Compte",
+    "email": {
+      "title": "Email",
+      "descr": "Votre email, fourni lors de l'inscription"
+    },
+    "serv": {
+      "1": {
+        "title": "Tutoriels vidéos",
+        "descr": "Démarrez plus vite et parcourez toutes les fonctionnalités principales avec nos tutoriels vidéo d'une minute.",
+        "btn": "Regarder les tutoriels"
+      },
+      "2": {
+        "title": "Des questions?",
+        "descr": "Faites-nous savoir si vous avez des questions avec l'application ou des problèmes tout en travaillant avec sur compte.",
+        "btn": "Contactez nous"
+      }
+    },
+    "confirm": {
+      "title": "Confirmation envoyée",
+      "descr": "Nous vous avons envoyé un message de confirmation, veuillez vérifier votre boîte aux lettres"
+    },
+    "invite": {
+      "title": "Confirmer l'invitation",
+      "confirm": "Confirmer l'invitation",
+      "descr": "L'utilisateur vous a invité à travailler ensemble. Pour continuer, remplissez le formulaire ci-dessous"
+    },
+    "confirmed": {
+      "title": "Email confirmé",
+      "descr": "Votre adresse email a été confirmée"
+    },
+    "pass": {
+      "title": "Mot de passe",
+      "descr": "Votre mot de passe, de 6 à 16 caractères",
+      "recovery": "Mot de passe oublié?"
+    },
+    "organization": {
+      "title": "Sélectionnez une organisation",
+      "noname": "Sans titre",
+      "your": "Votre organisation"
+    },
+    "recovery": {
+      "title": "Récupération de mot de passe",
+      "submit": "Récupérer mot de passe",
+      "descr": "Nous enverrons un lien pour la récupération du mot de passe à l'adresse électronique spécifiée.",
+      "new_password": {
+        "title": "Nouveau mot de passe",
+        "descr": "Entrez votre nouveau mot de passe"
+      },
+      "confirmed": {
+        "title": "Mot de passe changé",
+        "descr": "Vous pouvez maintenant vous connecter avec votre nouveau mot de passe"
+      },
+      "requested": {
+        "title": "Demande envoyée",
+        "descr": "Nous avons envoyé des instructions sur votre email pour récupérer le mot de passe"
+      },
+      "check": {
+        "title": "Vérification de l'application"
+      }
+    }
+  },
+  "user": {
+    "title": "Patient",
+    "email": {
+      "title": "Email",
+      "descr": "Adresse email"
+    },
+    "photo": {
+      "title": "Photo",
+      "descr": "Uploader une photo"
+    },
+    "fulln": {
+      "title": "Nom",
+      "descr": "Nom complet",
+      "ph": "Entrez le nom ..."
+    },
+    "dob": {
+      "title": "Anniversaire"
+    },
+    "lang": {
+      "title": "La langue",
+      "descr": "Langue de l'interface"
+    },
+    "address": {
+      "title": "Addresse",
+      "ph": "Entrer l'addresse...",
+      "descr": "Adresse de résidence",
+      "explain": "Nous utiliserons cette adresse pour envoyer des factures imprimées et d’autres documents liés à votre compte."
+    },
+    "pt_fulln": {
+      "title": "Patient",
+      "descr": "Nom complet",
+      "descr2": "Nom et téléphone"
+    },
+    "pass": {
+      "title": "Mot de passe",
+      "descr": "Mot de passe de 6 à 16 caractères",
+      "descr2": "Répéter le mot de passe"
+    },
+    "phone": {
+      "title": "Téléphone",
+      "descr": "Numéro du contact",
+      "ph": "Entrez le téléphone ...",
+      "descr2": "Téléphone supplémentaire",
+      "explain": "Nous utiliserons ce numéro de téléphone uniquement à des fins d'assistance et nous ne partagerons votre numéro de téléphone avec personne."
+    }
+  },
+  "task": {
+    "not_found": {
+      "title": "Pas de tâches",
+      "descr": "Aucune tâche pour cette période trouvée"
+    },
+    "new": "Nouvelle tâche",
+    "title": "Tâches",
+    "submit": "Ajouter une tâche",
+    "empty_note": "Tâche vide",
+    "section": {
+      "due": "En retard",
+      "upcoming": "Prochain",
+      "archived": "Archivé"
+    },
+    "name": {
+      "title": "Titre",
+      "descr": "Titre de la tâche",
+      "ph": "Entrez le titre de la tâche..."
+    },
+    "type": {
+      "title": "Balise",
+      "descr": "Balise de tâche",
+      "ph": "Entrer la balise..."
+    },
+    "note": {
+      "title": "Détails",
+      "descr": "Note détaillée",
+      "ph": "Écrire une note ..."
+    },
+    "user": {
+      "title": "Affecter à",
+      "descr": "Utilisateur assigné"
+    },
+    "date": {
+      "title": "Date",
+      "descr": "Date de la tâche"
+    },
+    "result": {
+      "title": "Résultat",
+      "descr": "Résultat de la tâche",
+      "ph": "Notes de résultat..."
+    },
+    "complete": "Compléter",
+    "delete": "Effacer",
+    "delete_conf": {
+      "title": "Supprimer la tâche?",
+      "descr": "Cette tâche sera supprimée"
+    },
+    "save": "Enregistrer la tâche",
+    "search": "Recherche par patient, balise ou description de tâche...",
+    "selected": "Tâches sélectionnées",
+    "create": {
+      "title": "Créer une tâche"
+    },
+    "detail": {
+      "title": "Détails"
+    }
+  },
+  "invoice": {
+    "from": "de",
+    "not_found": {
+      "title": "Aucune facture",
+      "unpaid_descr": "Vous n'avez pas de factures impayées pour cette période"
+    },
+    "unpayed": {
+      "title": ""
+    }
+  },
+  "provider": {
+    "title": "Fournisseur",
+    "descr": "Sélectionnez un fournisseur",
+    "descr2": "Fournisseur sélectionné"
+  },
+  "cal": {
+    "title": "Calendrier",
+    "today": "Aujourd'hui",
+    "section": {
+      "title": "Section",
+      "descr": "Section sélectionnée"
+    },
+    "clinic": {
+      "def": "Ma clinique",
+      "add": {
+        "title": "Ajouter une clinique",
+        "descr": "Entrez le nom de la clinique"
+      }
+    },
+    "del_section": {
+      "title": "Supprimer la section?",
+      "descr": "Après cela, les visites appartenant à cette section peuvent ne pas être visibles sur le calendrier."
+    },
+    "cabinet": {
+      "all": "Toutes les sections",
+      "add": {
+        "title": "Ajouter une section",
+        "descr": "Entrez le nom de la section"
+      }
+    },
+    "fd": {
+      "tasks": "Les tâches",
+      "invoices": "Factures"
+    },
+    "tab": {
+      "appt": "Rendez-vous",
+      "task": "Tâche",
+      "note": "Note"
+    },
+    "workhours": {
+      "title": "Heures de travail",
+      "title2": "Modifier les heures de travail des fournisseurs",
+      "delete": {
+        "title": "Supprimer la plage horaire?",
+        "descr": "Cet intervalle de temps sera supprimé"
+      },
+      "button": "Modifier les heures de travail",
+      "descr": "Cliquez sur le bouton gauche pour quitter le mode édition et enregistrer les heures de travail.",
+      "wrong": {
+        "title": "Notez s'il vous plaît!",
+        "descr": "Ce créneau horaire a été attribué à un autre dentiste."
+      }
+    },
+    "withoutpt": {
+      "title": "Sans patient",
+      "title2": "Rendez-vous vide",
+      "descr": "Ajoutez une note simple dans le calendrier"
+    },
+    "no_access": {
+      "title": "Accès refusé",
+      "descr": "Vous ne pouvez pas créer de nouveaux rendez-vous"
+    },
+    "no_invoice": {
+      "descr": "Vous n'avez pas créé de facture pour ce rendez-vous. Pour en créer un nouveau, cliquez sur le bouton droit.",
+      "btn": "Créer une facture"
+    },
+    "not_sel_appt": "Non séléctionné",
+    "cancel": "Annuler rendez-vous",
+    "save": "Sauvegarder",
+    "status": {
+      "title": "Statut",
+      "descr": "Statut du rendez-vous",
+      "conf": "Confirmé",
+      "sched": "Planifié",
+      "del": "Supprimé",
+      "compl": "Complété"
+    },
+    "delete": {
+      "title": "Annuler rendez-vous?",
+      "descr": "Ce rendez-vous sera annulé et supprimé du calendrier"
+    },
+    "invoices": {
+      "title": "Factures",
+      "descr": "Factures rendez-vous"
+    },
+    "new_appt": {
+      "title": "Nouveau rendez-vous",
+      "confirm": "Créer un rendez-vous"
+    },
+    "note": {
+      "title": "Note",
+      "descr": "Note de rendez-vous",
+      "ph": "Écrire une note..."
+    },
+    "notify_create": {
+      "title": "Notifier lors de la création",
+      "descr": "Nous enverrons une notification au patient dans les 20 prochaines minutes"
+    },
+    "notify_before": {
+      "title": "Notifier avant rendez-vous",
+      "descr": "Notifier le patient la veille du rendez-vous"
+    },
+    "date_time": {
+      "title": "Jour",
+      "descr": "Jour et heure",
+      "from": "De",
+      "to": "à"
+    },
+    "settings": {
+      "title": "Paramètres",
+      "title2": "Plus",
+      "save": "Enregistrer les paramètres",
+      "workhours": {
+        "title": "Heures de fonctionnement",
+        "descr": "Cet intervalle sera disponible pour la planification"
+      },
+      "dur": {
+        "title": "Échelle",
+        "descr": "Intervalle entre les cellules"
+      },
+      "week_start": {
+        "title": "Premier jour de la semaine",
+        "descr": "Le jour de la semaine qui sera affiché en premier"
+      },
+      "sections": {
+        "title": "Sections",
+        "ph": "Entrez le nom de la section...",
+        "descr": "Plusieurs visites en même temps"
+      }
+    }
+  },
+  "analyt": {
+    "title": "Analytique",
+    "all_org": "Tous les fournisseurs",
+    "dl_report": "Télécharger le rapport",
+    "list": "Liste",
+    "appt_period": {
+      "title": "Rendez-vous pour la période",
+      "title_axis": "Rendez-vous",
+      "label": {
+        "total": "Total",
+        "compl": "Réussi",
+        "conf": "Confirmé",
+        "cancel": "Annulé"
+      }
+    },
+    "init_appt": {
+      "title": "Rendez-vous initiaux",
+      "label": {
+        "total": "Tous",
+        "cancel": "Annulé",
+        "rate": "Abandons"
+      }
+    },
+    "paym_period": {
+      "title": "Paiements",
+      "label": {
+        "inc": "Paiements",
+        "disc": "Des remises",
+        "debt": "Dettes",
+        "tax": "Taxes"
+      }
+    },
+    "inv_period": {
+      "title": "Factures"
+    },
+    "tasks_period": {
+      "title": "Tâches pour la période"
+    },
+    "paym_type": {
+      "title": "Type de paiement"
+    },
+    "proc_type": {
+      "title": "Procédures facturées"
+    },
+    "doc_workhours": {
+      "title": "Heures de travail",
+      "label": {
+        "total": "Total, h",
+        "appts": "Appts, h",
+        "load": "Occupancy "
+      }
+    },
+    "new_patients": {
+      "title": "Nouveaux patients",
+      "axis": "Patients"
+    },
+    "age": {
+      "title": "Âge des patients",
+      "label": {
+        "under18": "0-18 yo",
+        "under24": "18-24 yo",
+        "under35": "24-35 yo",
+        "under46": "35-46 yo",
+        "under60": "46-60 yo",
+        "above60": "60+ yo"
+      }
+    },
+    "source": {
+      "title": "Source de patients"
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<div class="panel">
+    <div class="panel-heading">
+        {{'settings.inventory.title_add'|translate}}
+
+        <a class="pull-right" href="/settings/services" target="_blank">
+            <span class="sl sl-icon-arrow-right-circle"></span> {{'settings.inventory.manage'|translate}}
+        </a>
+    </div>
+    <div class="panel-body">
+<table class="table table-fullwidth table-wide table-price-sub mb0">
+    <tbody *ngIf="!isLoaded">
+        <tr *ngFor="let i of procedure.inventory">
+             <td>
+                <div class="loader">
+                    <div class="animated-background text"></div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="isLoaded">
+         <tr>
+            <td colspan="3" class="name-input special action-btn">
+                <inventory-select (inventorySelected)="onInventorySelected($event)"></inventory-select>
+            </td>
+        </tr>
+        <tr *ngFor="let item of procedure.inventory; let i = index">
+            <td class="name">
+                <strong>{{inventory[item.inventory_id].code}}</strong> {{inventory[item.inventory_id].name}}
+                <div *ngIf="appt.office_id">
+                    <small class="text-success" *ngIf="inventory[item.inventory_id].officesObj[appt.office_id]">
+                        {{inventory[item.inventory_id]?.count_one}}/{{inventory[item.inventory_id].officesObj[appt.office_id].count}} {{inventory[item.inventory_id]?.unit}}
+                    </small>
+                    <small class="text-danger" *ngIf="!inventory[item.inventory_id].officesObj[appt.office_id]">0</small>
+                </div>
+            </td>
+            <td class="count">
+                <input (input)="onInventoryChanged()" [(ngModel)]="item.qty" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control"/>
+            </td>
+            <td class="action-btn">
+                <button (click)="deleteInventory(i)" class="btn btn-sm btn-primary"><span class="sl sl-icon-trash"></span></button>
+            </td>
+        </tr>
+       
+    </tbody>
+</table>
+    </div>
+</div>

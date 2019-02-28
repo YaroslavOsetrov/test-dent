@@ -1,0 +1,73 @@
+<div bsModal #appointmentModal="bs-modal" class="modal zoom">
+    <div class="modal-custom modal-dialog modal-lg">
+        <div class="modal-content modal-primary out-close modal-custom2">
+            <button (click)="appointmentModal.hide()" type="button" class="close">
+                <span>×</span>
+            </button>
+            <div class="modal-header modal-header-light">
+                {{'analyt.appt_period.title'|translate}}
+                <div class="mt15" *ngIf="interval?.start && interval?.end">
+                    <a [bsConfig]="{showWeekNumbers:false, containerClass:'l10modal'}" (bsValueChange)="onIntervalChanged($event)" #drp="bsDaterangepicker" bsDaterangepicker class="btn btn-sm pl0">
+                        <span class="sl sl-icon-arrow-down-circle"></span>  {{interval.start|datex:'short'}} {{interval.start|datex:'YYYY'}} - {{interval.end|datex:'short'}} {{interval.end|datex:'YYYY'}}
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body" *ngIf="!isLoaded">
+                <div class="py25" *ngFor="let i of [1,2,3,4,5,6]">
+                    <div class="animated-background text"></div>
+                    <div class="animated-background text-sm"></div>
+                </div>
+            </div>
+            <div class="modal-body modal-body-table pa0" *ngIf="isLoaded">
+                <table class="container-light table-responsive table-wide table table-wide table-hover table-no-first-border mb0">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                {{'user.fulln.descr'|translate}}
+                            </th>
+                            <th style="width:200px">
+                                {{'cal.date_time.title'|translate}}
+                            </th>
+                            <th style="width:200px">
+                                {{'cal.status.title'|translate}}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr [hidden]="appointment.patient_id == null" *ngFor="let appointment of appointments">
+                            <td class="cell-avatar"><div class="avatar-letters">{{appointment.fullname|nameLetters}}</div></td>
+                            <td class="td-cut">
+                                <a class="no-decor" target="_blank" [routerLink]="['/patients/' + appointment.patient_id]">
+                                    {{appointment.fullname}}
+                                    <small class="caption">
+                                        {{usersObj[appointment.provider_id]?.fullname}}
+                                    </small>
+                                </a>
+                            </td>
+                            <td class="align-middle">
+                                {{appointment.date_day|datex:'short2'}}
+                            </td>
+                            <td class="align-middle">
+                                <span class="text-success" *ngIf="appointment.is_completed">{{'cal.status.compl'|translate}}</span> 
+                                <span class="text-danger" *ngIf="appointment.is_deleted">{{'cal.status.del'|translate}}</span> 
+                                <span *ngIf="!appointment.is_confirmed&&!appointment.is_completed&&!appointment.is_deleted">{{'cal.status.sched'|translate}}</span> 
+                                <span class="text-info" *ngIf="appointment.is_confirmed&&!appointment.is_completed">{{'cal.status.conf'|translate}}</span> 
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-body" *ngIf="isLoaded && appointments.length == 0">
+                <div class="fullpage-message">
+                    <span class="sl sl-icon-calendar"></span>
+                    <h3 class="title">
+                        No appointments
+                    </h3>
+                    <p class="text-muted">
+                        You don't have appointments for this period
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

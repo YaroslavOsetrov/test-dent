@@ -1,0 +1,28 @@
+{
+    "subtitle":"Get the most of DentalTap",
+    "title":"3 USEFUL CASES",
+    "subject":"DentalTap - 3 useful cases",
+    "button":"My Dashboard",
+    "descr":"In this email you'll know about the 3 useful features to streamline your dental workflow",
+
+    "docs.title":"Documents",
+    "docs.descr":"Patient consent agreements and other forms in couple clicks. Setup your own document templates and use predefined tags to generate documents automatically based on patients data",
+    "docs.button":"Read more",
+
+    "invoice.title":"Quick invoicing",
+    "invoice.descr":"Create and manage patient invoices right from the scheduler. No need to chart a treatment before. Our customers saving 40% of the time on invoicing with DentalTap",
+    "invoice.button":"Read more",
+
+    "notes.title":"Patient notes",
+    "notes.descr":"Use notes to keep everything important to that patient - allergies, past treatments, last call results and anything else. SUitable for any kind of notes",
+    "notes.button":"Read more",
+
+    "data.title":"Data insights",
+    "data.descr":"Learn from data of your patients. Sort patients list by last appointment, debts and upcoming birthdays. Structurized and automatic formatted phone numbers and addresses",
+    "data.button":"Read more",
+
+    "more.title":"Want to know more?",
+    "more.descr":"Would you like to schedule a phone call within next couple days with us to know more? We will answer all your questions and offer the best price for your clinic!",
+    "more.button":"Contact us"  
+
+}

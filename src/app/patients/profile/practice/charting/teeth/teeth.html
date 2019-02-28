@@ -1,0 +1,230 @@
+
+<svg width="100" height="1" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="ToothBackground"  gradientTransform="rotate(90)">
+            <stop offset="0%" stop-color="#e3f3ef" />
+            <stop offset="30%" stop-color="#ffffff" />
+            <stop offset="70%" stop-color="#ffffff" />
+            <stop offset="100%" stop-color="#e3f3ef" />
+        </linearGradient>
+        <pattern id="diagonalHatch_tp" width="2" height="2" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="0" y2="10" style="stroke:#fa424a; stroke-width:1" />
+        </pattern>
+        <pattern id="diagonalHatch_c" width="2" height="2" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="0" y2="10" style="stroke:#16b4fc; stroke-width:1" />
+        </pattern>
+        <pattern id="diagonalHatch_e" width="2" height="2" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="0" y2="10" style="stroke:#5dca73; stroke-width:1" />
+        </pattern>
+
+    </defs>
+
+</svg>
+
+<div class="diagnosis-list p15 text-danger">
+    <p style="margin:0; font-size:0.85em;" *ngFor="let item of diagnoses">
+        <span>#{{item.toothId}} - </span>
+        <span>{{codesObj[item.diagnosis]}}</span>
+    </p>
+</div>
+<div class="text-right pr15">
+     <a [hidden]="selectedTeeth.length == 0" (click)="clear()" class="pr15">
+        {{'ch.proc.intact'|translate}} →
+    </a>
+    <a [hidden]="selectedTeeth.length == 0" (click)="miss()" class="pr15">
+        {{'ch.proc.miss'|translate}} →
+    </a>
+</div>
+<div [ngStyle]="{'-ms-transform': scProc, '-moz-transform':scProc, '-o-transform':scProc, 'transform':scProc, '-webkit-transform':scProc}"
+     class="teeth-wrapper" [hidden]="!isChild">
+    <div class="teeth-top" style="width:500px; margin:0 auto;">
+        <div class="gum-top">
+            <img style="width:487px;" src="/public/teeth/gum-top-primary.svg">
+        </div>
+        <div class="left">
+            <tooth [ngClass]="{'tooth-selected':isSelected(i)}" (click)="selectTooth(i)" *ngFor="let i of [55,54,53,52,51]" 
+                [toothId]="i"
+                [uniNotation]="uniNotation"
+                [veneer]="chartedTreatment[i]?.ven"
+                [crown]="chartedTreatment[i]?.cr"
+                [diagnosis]="chartedTreatment[i]?.diagnosis"
+                [crownStatus]="chartedTreatment[i]?.crStatus"
+                [crown34]="chartedTreatment[i]?.cr34"
+                [rootcanal]="chartedTreatment[i]?.rct"
+                [resto]="chartedTreatment[i]?.resto"
+                [postcore]="chartedTreatment[i]?.rctpc"
+                [sealant]="chartedTreatment[i]?.seal"
+                [implant]="chartedTreatment[i]?.imp"
+                [extraction]="chartedTreatment[i]?.ext"
+                [pontic]="chartedTreatment[i]?.pontic"
+                [retainer]="chartedTreatment[i]?.retainer"
+                [end]="chartedTreatment[i]?.end"
+                [missing]="chartedTreatment[i]?.miss"
+                [surface]='chartedTreatment[i]?.surface'></tooth>
+        </div>
+        <div class="right">
+            <tooth [ngClass]="{'tooth-selected':isSelected(i)}" (click)="selectTooth(i)" *ngFor="let i of [61,62,63,64,65]"
+                [toothId]="i"
+                [uniNotation]="uniNotation"
+                [veneer]="chartedTreatment[i]?.ven"
+                [crown]="chartedTreatment[i]?.cr"
+                [diagnosis]="chartedTreatment[i]?.diagnosis"
+                [crownStatus]="chartedTreatment[i]?.crStatus"
+                [crown34]="chartedTreatment[i]?.cr34"
+                [resto]="chartedTreatment[i]?.resto"
+                [rootcanal]="chartedTreatment[i]?.rct"
+                [postcore]="chartedTreatment[i]?.rctpc"
+                [sealant]="chartedTreatment[i]?.seal"
+                [implant]="chartedTreatment[i]?.imp"
+                [extraction]="chartedTreatment[i]?.ext"
+                [pontic]="chartedTreatment[i]?.pontic"
+                [retainer]="chartedTreatment[i]?.retainer"
+                [end]="chartedTreatment[i]?.end"
+                [missing]="chartedTreatment[i]?.miss"
+                [surface]='chartedTreatment[i]?.surface'></tooth>
+        </div>
+    </div>
+    <div class="teeth-bottom" style="width:500px; margin:0 auto;">
+        <div class="gum-bottom">
+            <img src="/public/teeth/gum-bottom-primary.svg" style="width:491px;">
+        </div>
+        <div class="left">
+            <tooth [ngClass]="{'tooth-selected':isSelected(i)}" (click)="selectTooth(i)" *ngFor="let i of [85,84,83,82,81]" 
+                [toothId]="i"
+                [uniNotation]="uniNotation"
+                [veneer]="chartedTreatment[i]?.ven"
+                [crown]="chartedTreatment[i]?.cr"
+                [diagnosis]="chartedTreatment[i]?.diagnosis"
+                [crownStatus]="chartedTreatment[i]?.crStatus"
+                [crown34]="chartedTreatment[i]?.cr34"
+                [resto]="chartedTreatment[i]?.resto"
+                [rootcanal]="chartedTreatment[i]?.rct"
+                [postcore]="chartedTreatment[i]?.rctpc"
+                [sealant]="chartedTreatment[i]?.seal"
+                [implant]="chartedTreatment[i]?.imp"
+                [extraction]="chartedTreatment[i]?.ext"
+                [pontic]="chartedTreatment[i]?.pontic"
+                [retainer]="chartedTreatment[i]?.retainer"
+                [end]="chartedTreatment[i]?.end"
+                [missing]="chartedTreatment[i]?.miss"
+                [surface]='chartedTreatment[i]?.surface'></tooth>
+        </div>
+        <div class="right">
+            <tooth [ngClass]="{'tooth-selected':isSelected(i)}" (click)="selectTooth(i)" *ngFor="let i of [71,72,73,74,75]" 
+                [toothId]="i"
+                [uniNotation]="uniNotation"
+                [veneer]="chartedTreatment[i]?.ven"
+                [crown]="chartedTreatment[i]?.cr"
+                [diagnosis]="chartedTreatment[i]?.diagnosis"
+                [crownStatus]="chartedTreatment[i]?.crStatus"
+                [crown34]="chartedTreatment[i]?.cr34"
+                [resto]="chartedTreatment[i]?.resto"
+                [rootcanal]="chartedTreatment[i]?.rct"
+                [postcore]="chartedTreatment[i]?.rctpc"
+                [sealant]="chartedTreatment[i]?.seal"
+                [implant]="chartedTreatment[i]?.imp"
+                [extraction]="chartedTreatment[i]?.ext"
+                [pontic]="chartedTreatment[i]?.pontic"
+                [retainer]="chartedTreatment[i]?.retainer"
+                [end]="chartedTreatment[i]?.end"
+                [missing]="chartedTreatment[i]?.miss"
+                [surface]='chartedTreatment[i]?.surface'></tooth>
+        </div>
+    </div>
+</div>
+<div [ngStyle]="{'-ms-transform': scProc, '-moz-transform':scProc, '-o-transform':scProc, 'transform':scProc, '-webkit-transform':scProc}" class="teeth-wrapper teeth-resizeable" [hidden]="isChild">
+    <div class="teeth-top">
+        <div class="gum-top">
+            <img src="/public/teeth/gum-top.svg">
+        </div>
+        <div class="left">
+            <tooth [ngClass]="{'tooth-selected':isSelected(i)}" (click)="selectTooth(i)" *ngFor="let i of [18,17,16,15,14,13,12,11]" [toothId]="i"
+                   [uniNotation]="uniNotation"
+                   [veneer]="chartedTreatment[i]?.ven"
+                   [crown]="chartedTreatment[i]?.cr"
+                   [diagnosis]="chartedTreatment[i]?.diagnosis"
+                   [crownStatus]="chartedTreatment[i]?.crStatus"
+                   [crown34]="chartedTreatment[i]?.cr34"
+                   [resto]="chartedTreatment[i]?.resto"
+                   [rootcanal]="chartedTreatment[i]?.rct"
+                   [postcore]="chartedTreatment[i]?.rctpc"
+                   [sealant]="chartedTreatment[i]?.seal"
+                   [implant]="chartedTreatment[i]?.imp"
+                   [extraction]="chartedTreatment[i]?.ext"
+                   [pontic]="chartedTreatment[i]?.pontic"
+                   [retainer]="chartedTreatment[i]?.retainer"
+                   [end]="chartedTreatment[i]?.end"
+                   [missing]="chartedTreatment[i]?.miss"
+                   [surface]='chartedTreatment[i]?.surface'></tooth>
+        </div>
+        <div class="right">
+            <tooth [ngClass]="{'tooth-selected':isSelected(i)}" (click)="selectTooth(i)" *ngFor="let i of [21,22,23,24,25,26,27,28]" [toothId]="i"
+                   [uniNotation]="uniNotation"
+                   [veneer]="chartedTreatment[i]?.ven"
+                   [crown]="chartedTreatment[i]?.cr"
+                   [diagnosis]="chartedTreatment[i]?.diagnosis"
+                   [crownStatus]="chartedTreatment[i]?.crStatus"
+                   [crown34]="chartedTreatment[i]?.cr34"
+                   [resto]="chartedTreatment[i]?.resto"
+                   [rootcanal]="chartedTreatment[i]?.rct"
+                   [postcore]="chartedTreatment[i]?.rctpc"
+                   [sealant]="chartedTreatment[i]?.seal"
+                   [implant]="chartedTreatment[i]?.imp"
+                   [extraction]="chartedTreatment[i]?.ext"
+                   [pontic]="chartedTreatment[i]?.pontic"
+                   [retainer]="chartedTreatment[i]?.retainer"
+                   [end]="chartedTreatment[i]?.end"
+                   [missing]="chartedTreatment[i]?.miss"
+                   [surface]='chartedTreatment[i]?.surface'></tooth>
+        </div>
+    </div>
+    <div class="teeth-bottom">
+        <div class="gum-bottom">
+            <img src="/public/teeth/gum-bottom.svg">
+        </div>
+        <div class="left">
+            <tooth [ngClass]="{'tooth-selected':isSelected(i)}" (click)="selectTooth(i)" *ngFor="let i of [48,47,46,45,44,43,42,41]" [toothId]="i"
+                   [uniNotation]="uniNotation"
+                   [veneer]="chartedTreatment[i]?.ven"
+                   [crown]="chartedTreatment[i]?.cr"
+                   [diagnosis]="chartedTreatment[i]?.diagnosis"
+                   [crownStatus]="chartedTreatment[i]?.crStatus"
+                   [crown34]="chartedTreatment[i]?.cr34"
+                   [resto]="chartedTreatment[i]?.resto"
+                   [rootcanal]="chartedTreatment[i]?.rct"
+                   [postcore]="chartedTreatment[i]?.rctpc"
+                   [sealant]="chartedTreatment[i]?.seal"
+                   [implant]="chartedTreatment[i]?.imp"
+                   [extraction]="chartedTreatment[i]?.ext"
+                   [pontic]="chartedTreatment[i]?.pontic"
+                   [retainer]="chartedTreatment[i]?.retainer"
+                   [end]="chartedTreatment[i]?.end"
+                   [missing]="chartedTreatment[i]?.miss"
+                   [surface]='chartedTreatment[i]?.surface'></tooth>
+        </div>
+        <div class="right">
+            <tooth [ngClass]="{'tooth-selected':isSelected(i)}" (click)="selectTooth(i)" *ngFor="let i of [31,32,33,34,35,36,37,38]" [toothId]="i"
+                   [uniNotation]="uniNotation"
+                   [veneer]="chartedTreatment[i]?.ven"
+                   [crown]="chartedTreatment[i]?.cr"
+                   [diagnosis]="chartedTreatment[i]?.diagnosis"
+                   [crownStatus]="chartedTreatment[i]?.crStatus"
+                   [crown34]="chartedTreatment[i]?.cr34"
+                   [resto]="chartedTreatment[i]?.resto"
+                   [rootcanal]="chartedTreatment[i]?.rct"
+                   [postcore]="chartedTreatment[i]?.rctpc"
+                   [sealant]="chartedTreatment[i]?.seal"
+                   [implant]="chartedTreatment[i]?.imp"
+                   [extraction]="chartedTreatment[i]?.ext"
+                   [pontic]="chartedTreatment[i]?.pontic"
+                   [retainer]="chartedTreatment[i]?.retainer"
+                   [end]="chartedTreatment[i]?.end"
+                   [missing]="chartedTreatment[i]?.miss"
+                   [surface]='chartedTreatment[i]?.surface'></tooth>
+        </div>
+    </div>
+</div>
+ <a class="p15" (click)="uniNotationSwitch()">
+        <span *ngIf="!uniNotation">1-8</span>
+        <span *ngIf="uniNotation">18-11</span> →
+    </a>

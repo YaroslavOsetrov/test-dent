@@ -1,0 +1,52 @@
+<ul class="nav navbar-nav">
+	<li class="special">
+		<a href="https://dentaltap.com" target="_blank"  class="navbar-brand">
+			<img src="/public/logo-bw.png"/>
+		</a>
+	</li>
+	<li class="">
+		<a [routerLinkActive]="['active']" [routerLink]="['/calendar']">
+			<i class="sl sl-icon-calendar"></i>
+			{{'cal.title'|translate}}
+		</a>
+	</li>
+	<li class="">
+		<a [routerLinkActive]="['active']" [routerLink]="['/patients']">
+			<i class="sl sl-icon-people"></i>
+			{{'patient.title'|translate}}
+		</a>
+	</li>
+	<li class="">
+		<a [routerLinkActive]="['active']" [routerLink]="['/analytics']">
+			<i class="sl sl-icon-chart"></i>
+			{{'analyt.title'|translate}}
+		</a>
+	</li>
+	<li class="">
+		<a  [routerLinkActive]="['active']" [routerLink]="['/settings']" href="#">
+			<i class="sl sl-icon-settings"></i>
+			{{'settings.title'|translate}}
+		</a>
+	</li>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+	<li class="patient-select">
+		<patient-select [isExisting]="false" (patientSelected)="onPatientSelected($event)"></patient-select>
+	</li>
+	<li class="language-switcher">
+		 <language-dropdown [hideLabel]="true" [keepPage]="false"></language-dropdown>
+	</li>
+	<li dropdown class="account">
+		<a dropdownToggle class="dropdown-toggle navbar-brand">
+			<div *ngIf="!account?.photo" class="cell-avatar">
+				<div class="avatar-letters">{{account?.fullname|nameLetters}}</div>
+			</div>
+			<img *ngIf="account?.photo" src="{{environmentConfig.storageUrl + account?.photo}}" class="profile-image img-circle" /> 
+		</a>
+		<ul *dropdownMenu class="dropdown-menu">
+			<li><a [routerLink]="['/settings/account']">{{'settings.menu.acc'|translate}}</a></li>
+			<li class="dropdown-divider"></li>
+			<li (click)="exit()"><a>{{'settings.menu.exit'|translate}}</a></li>
+		</ul>	
+	</li>
+</ul>

@@ -1,0 +1,31 @@
+<div class="input-group input-group-search p15">
+    <div class="input-group-addon pr0 pl0">
+        <i class="sl sl-icon-magnifier"></i>
+    </div>
+    <input class="form-control nobg" type="text" placeholder="{{'ch.diag.input'|translate}}">
+</div>
+<div style="height:300px; overflow-y:scroll">
+<table class="table-diagnosis-modal mb0 full-width">
+    <tbody *ngFor="let section of codes">
+        <tr (click)="expanded[section.code] = !expanded[section.code]">
+            <td style="width:30px" class="td-icon p15">
+                <span *ngIf="!expanded[section.code]" class="sl sl-icon-plus"></span>
+                <span *ngIf="expanded[section.code]" class="sl sl-icon-minus"></span>
+            </td>
+            <td>
+                <strong>{{section.code}}</strong> {{section.title}}
+            </td>
+        </tr>
+        <tr (click)="selectDiagnosis(diagnosis)" [hidden]="!expanded[section.code]" *ngFor="let diagnosis of section.codes">
+            <td class="p15"></td>
+            <td>
+                <strong>{{diagnosis.code}}</strong> {{diagnosis.title}}
+                <span class="td-caption">
+                    {{diagnosis.explain}}
+                </span>
+            </td>
+        </tr>
+    
+    </tbody>
+</table>
+</div>

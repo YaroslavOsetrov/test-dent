@@ -1,0 +1,75 @@
+ <div class="modal-body  patient-treatment pa0">
+    <div class="panel panel-custom panel-default">
+        <div class="panel-inside">
+            <div class="form-group-message mb0">
+                <div class="alert alert-default ba0 br0 mb0">
+                    {{'cal.withoutpt.title'|translate}}
+                    <div class="input-switch input-switch-1">
+                        <input  [(ngModel)]="noPatient" class="input" id="noPatient" type="checkbox">
+                        <label class="switch" for="noPatient"></label>
+                    </div>                         
+                </div>
+            </div>
+            <form [formGroup]="newAppointment" (ngSubmit)="(noPatient) ? submitNote() : submit()">
+                <div class="panel-content pa0">
+                    <div class="container-form-min appt-details-form">
+                        <div [hidden]="noPatient" *ngIf="doctorsCount > 1" class="form-group">
+                            <div class="section-label">
+                                <label>
+                                    {{'provider.title'|translate}}
+                                </label>
+                            </div>
+                            <div class="section-input">
+                                <section [autoClose]="false" [isOpen]="isOpen" class="dropdown-modal selection-container" dropdown>
+                                    <a (click)="isOpen = !isOpen" dropdownToggle class="selection-item">
+                                        <span class="sl sl-icon-arrow-down-circle"></span>
+                                        {{appt?.provider.fullname}}
+                                    </a>
+                                    <div *dropdownMenu class="dropdown-md-box dropdown-menu dropdown-menu-left userlist-wrapper">
+                                        <users-list [onlyProviders]="true" [allButton]="false" (userSelected)="isOpen = false; onProviderSelected($event);"></users-list>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div [hidden]="noPatient" class="form-group">
+                            <div class="section-label">
+                                <label>
+                                    {{'user.pt_fulln.title'|translate}} <sup>*</sup>
+                                </label>
+                            </div>
+                            <div class="section-input">
+                                <patient-select #patientSelect [defaultPatient]="defaultPatient" [isExisting]="false" formControlName="fullname" (patientSelected)="onPatientSelected($event)"></patient-select>
+                            </div>
+                        </div>
+                        <div [hidden]="noPatient" class="form-group">
+                            <div class="section-label">
+                                <label>
+                                    {{'user.phone.title'|translate}} <sup>*</sup>
+                                </label>
+                            </div>
+                            <div class="section-input">
+                                <input placeholder="+" formControlName="phone" required phoneLookup name="phone" class="form-control" />
+                            </div>
+                        </div>
+                        <div class="form-group ba0">
+                            <div class="section-label">
+                                <label>{{'cal.note.title'|translate}}</label>
+                            </div>
+                            <div class="section-input">
+                                <input maxlength="100" placeholder="{{'cal.note.ph'|translate}}" formControlName="note" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-inline-form">
+                    
+                    
+                    
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> 
+<div class="modal-footer ba0">
+    <button (click)="noPatient? submitNote() : submit() " [ladda]="isSubmitted" type="submit" class="btn btn-primary pull-left">{{'common.form.create'|translate}}</button>
+</div>

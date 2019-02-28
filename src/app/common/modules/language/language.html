@@ -1,0 +1,11 @@
+<div dropdown class="dropdown p15 pull-right">
+    <a dropdownToggle class="dropdown-lang">
+        <img src="/public/flags/{{currentLang.value}}.png"/> 
+        <span [hidden]="hideLabel"> {{currentLang.text}}</span>
+    </a>
+    <ul *dropdownMenu class="dropdown-menu dropdown-menu-right mr15 dropdown-languages">
+        <li (click)="changeLang(language)" *ngFor="let language of languages">
+            <a><img src="/public/flags/{{language.value}}.png"/> {{language.text}}</a>
+        </li>
+    </ul>
+</div>

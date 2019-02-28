@@ -1,0 +1,57 @@
+ <div class="tooth-wrap tooth-<toothType>-<leftRight>-<toothIndex>">
+    <div class="tooth tooth-<topBottom>-<toothIndexLast> tooth-<toothType>" style="opacity: 1;">
+        
+
+        <bridgePontic>
+            <div class="bridge-pontic">
+                <div style="background:<crownStatus>"></div>
+                <div style="background:<crownStatus>"></div>
+            </div>
+            <div class="bridge-pontic surface">
+                <div style="background:<crownStatus>"></div>
+                <div style="background:<crownStatus>"></div>
+            </div>
+        </bridgePontic>
+        <bridgeRetainer>
+            <div class="bridge-retainer">
+                <div style="background:<crownStatus>"></div>
+                <div style="background:<crownStatus>"></div>
+            </div>
+            <div class="bridge-pontic surface">
+                <div style="background:<crownStatus>"></div>
+                <div style="background:<crownStatus>"></div>
+            </div>
+        </bridgeRetainer>
+        <rootCanal>
+            <svg class="tooth-root-canal">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://new.dentaltap.com/public/teeth/teeth.svg#<rootCanalPreffix>root-canal" x="0" y="0" 
+                    fill="<rootCanalStatus>" stroke="<rootCanalStatus>" stroke-width="0.5">
+                </use>
+            </svg>
+        </rootCanal>
+
+        <svg class="tooth-surface">
+            <use class="tooth-surface-main" 
+                stroke="#a7a9ac" 
+                stroke-alignment="inner" 
+                stroke-width="0.3" x="0" y="0" 
+                xmlns:xlink="http://www.w3.org/1999/xlink" 
+                xlink:href="https://new.dentaltap.com/public/teeth/teeth.svg#<topBottom><toothIndexLast>-surface" 
+                fill="grey">
+            </use>                
+        </svg>
+        <svg class="tooth-crown">
+            <use class="tooth-crown-main" stroke="#a7a9ac" stroke-alignment="inner" stroke-width="0.3" x="0" y="0" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://new.dentaltap.com/public/teeth/teeth.svg#<topBottom><toothIndexLast>-crown" fill="grey"></use>
+        </svg>
+        <svg class="tooth-root" ng-reflect-ng-style="[object Object]">
+            <use fill="#f2ecbe" stroke="#a7a9ac" stroke-alignment="inner" stroke-width="0.3" xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="https://new.dentaltap.com/public/teeth/teeth.svg#<topBottom><toothIndexLast>-root"></use>
+        </svg>
+        <div class="tooth-number">
+            <div class="hint-circle">
+                <span>
+                    <toothIndex>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

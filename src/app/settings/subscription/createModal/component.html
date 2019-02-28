@@ -1,0 +1,75 @@
+<div bsModal #createModal="bs-modal" class="modal center zoom">
+    <div class="modal-dialog-custom modal-dialog modal-mds">
+        <div class="modal-content modal-card out-close">
+            <button (click)="createModal.hide()" class="close" type="button">
+                <span>×</span>
+            </button>
+            <div class="modal-header modal-header-form">
+                <div class="row" style="margin-bottom:30px">
+                    <div class="col-md-6">
+                        <div class="form-group form-group-transparent">
+                            <label for="pwd">{{'settings.subscription.card.no'|translate}}</label>
+                            <input 
+                                    style="width:100%"
+                                    (input)="detectCardType($event.target.value)" 
+                                    [(ngModel)]="subscription.card.number"
+                                    mask="0000-0000-0000-0000" 
+                                    placeholder="XXXX-XXXX-XXXX-XXXX" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-icons">
+                            <img *ngFor="let item of ['visa', 'mastercard', 'jcb', 'discover', 'diners']" [ngClass]="{'el-disabled':subscription.card.type != item}" src="/public/icons/{{item}}.png"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-transparent">
+                                    <label>{{'settings.subscription.card.expired'|translate}}</label>
+                                    <input [(ngModel)]="subscription.card.expire" mask="00/00" placeholder="MM/YY" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-transparent">
+                                    <label for="pwd">{{'settings.subscription.card.cvv'|translate}}</label>
+                                    <input [(ngModel)]="subscription.card.cvv" maxlength="3" placeholder="•••" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-group-transparent">
+                            <label for="pwd">{{'settings.subscription.card.owner'|translate}}</label>
+                            <input [(ngModel)]="subscription.card.owner" placeholder="{{'settings.subscription.card.owner_title'|translate}}" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="security-cred">
+                <img src="/public/icons/visa-sec.png"/>
+                <img src="/public/icons/mc-sec.png"/>
+                <img src="/public/icons/pci.png"/>
+                <img src="/public/icons/norton.png"/>
+                <p>
+                    <span class="sl sl-icon-lock"></span> {{'settings.subscription.card.enc'|translate}}
+                </p>
+            </div>
+            <div class="modal-body">
+                <p class="text-muted mb0" *ngIf="!organization?.stripe_id">{{'settings.subscription.card.start'|translate}}</p>
+                <p class="text-muted mb0" *ngIf="organization?.stripe_id">{{'settings.subscription.card.edit'|translate}}</p>
+            </div>
+            <div class="modal-footer ba0">
+                <button [ladda]="isLoading" *ngIf="!organization?.stripe_id" (click)="onSubmit()" class="btn btn-primary">
+                    <span class="sl sl-icon-lock"></span> {{'settings.subscription.create.title'|translate}}
+                </button>
+                <button [ladda]="isLoading" *ngIf="organization?.stripe_id" (click)="onSubmit()" class="btn btn-primary">
+                    <span class="sl sl-icon-lock"></span> {{'settings.subscription.save'|translate}}
+                </button>
+                
+            </div>
+        </div>
+    </div>
+</div>

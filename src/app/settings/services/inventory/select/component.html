@@ -1,0 +1,36 @@
+<div class="input-dropdown-wrapper" style="position:relative">
+        <ng-template #customItemTemplate let-model="item" let-index="index">
+            {{model.name}}
+        </ng-template>
+        <div class="">
+             <input 
+             
+            [(ngModel)]="asyncSelected"
+            #asyncSel="ngModel"
+            [typeahead]="dataSource"
+            [typeaheadItemTemplate]="customItemTemplate"
+            (typeaheadLoading)="changeTypeaheadLoading($event)"
+            (typeaheadNoResults)="changeTypeaheadNoResults($event)"
+            (typeaheadOnSelect)="typeaheadOnSelect($event)"
+            typeaheadOptionField="name"
+            (input)="onInput($event)"
+            typeaheadOptionsLimit="4"
+            [typeaheadWaitMs]="500"
+            [typeaheadMinLength]="2"
+            typeaheadOptionField="name"
+            placeholder="{{'settings.inventory.search'|translate}}"
+            class="form-control">
+            <span *ngIf="typeaheadLoading" style="    position: absolute;
+    top: 7px;
+    background: white;
+    right: 0;" class="input-group-addon">
+                <div class="loader-hor-wrapper">
+                    <div class="loader loader-sm" style="position: absolute; margin-top: -16px;"></div>
+                </div>
+                <span style="visibility: hidden;" class="sl sl-icon-tag"></span>
+            </span> 
+        </div>
+        <div class="validation-message">
+        <small *ngIf="asyncSel.errors && asyncSel.touched" style="position:absolute;" class="text-danger">{{'Errors.Required'|translate}}</small>
+        </div>
+       </div>

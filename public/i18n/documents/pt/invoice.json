@@ -1,0 +1,21 @@
+{
+    "title":"Invoice #",
+
+    "creat":"Created:",
+    "exp":"Expired:",
+    "stat":"Status:",
+
+    "st.pend":"Pending",
+    "st.paid":"Paid",
+    "st.exp":"Expired",
+
+    "pt":"Patient",
+    "org":"Organization",
+    "proc":"Procedures",
+
+    "sum.tot":"Total",
+    "sum.tax":"Tax",
+    "sum.disc":"Discount",
+    "sum.paid":"Paid",
+    "sum.rem":"Remained"
+}

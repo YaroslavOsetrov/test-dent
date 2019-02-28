@@ -1,0 +1,90 @@
+<div bsModal #detailTaskModal="bs-modal" class="modal right">
+    <div class="modal-dialog modal-mdss">
+        <div class="modal-content modal-custom">
+            <div *ngIf="task?.patient" class="modal-header modal-header-light">
+                {{task?.patient?.patient_user.fullname}}
+                <div class="mt15">
+                    <a [routerLink]="['/patients/' + task.patient_id]" class="btn btn-sm pl0">
+                        <span class="sl sl-icon-arrow-right-circle"></span> {{'patient.detail.link'|translate}}
+                    </a>&nbsp;
+                    <a (click)="detailTaskModal.hide()" [routerLink]="['/calendar']"  [queryParams]="{ patientId: task.patient_id }" class="btn btn-sm">
+                        <span class="sl sl-icon-arrow-right-circle"></span> {{'cal.new_appt.title'|translate}}
+                    </a>
+                </div>
+            </div>
+            <div *ngIf="!task?.patient">
+                {{taskDefault?.title}}
+            </div>
+
+            <div class="modal-body pa0">
+                <div class="container-form-min">
+                     <div class="form-group-message mb0">
+                        <div class="alert alert-default ba0 br0 mb0" style="background:#dedede; padding-top:35px">
+                            {{'task.complete'|translate}}
+                            <div class="input-switch input-switch-1">
+                                <input [(ngModel)]="task.is_completed" class="input" id="complete" type="checkbox">
+                                <label class="switch" for="complete"></label>
+                            </div>                   
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <div class="section-label">
+                            <label>{{'task.name.title'|translate}} <sup>*</sup></label>
+                        </div>
+                        <div class="section-input">
+                            <input [(ngModel)]="task.title" class="form-control" placeholder="{{'task.name.ph'|translate}}"/>
+                        </div>
+                    </div><!--
+                    <div class="form-group" *ngIf="showPatient">
+                        <div class="section-label">
+                            <label>{{'user.pt_fulln.title'|translate}}</label>
+                        </div>
+                        <div class="section-input">
+                            <input 
+                                [(ngModel)]="task?.patient?.patient_user.fullname"
+                                readonly
+                                class="form-control"/>
+                        </div>
+                    </div>-->
+                    <div class="form-group">
+                        <div class="section-label">
+                            <label>{{'task.date.title'|translate}}</label>
+                        </div>
+                        <div class="section-input">
+                            <input 
+                                [(ngModel)]="task.date"
+                                [mask]="localeFormat.date_input_mask"
+                                placeholder="{{localeFormat.date_input_mask_ph}}"
+                                class="form-control"/>
+                        </div>
+                    </div>
+                    <div class="form-group" *ngIf="!hideUser">
+                        <div class="section-label">
+                            <label>{{'task.user.title'|translate}} <sup>*</sup></label>
+                        </div>
+                        <div class="section-input">
+                            <section class="dropdown-modal selection-container" dropdown>
+                                <a dropdownToggle class="selection-item"><span class="sl sl-icon-arrow-down-circle"></span> {{task.provider.fullname}}</a>
+                                <div *dropdownMenu class="dropdown-md-box dropdown-menu dropdown-menu-left userlist-wrapper">
+                                        <users-list [onlyProviders]="false" (userSelected)="switchProvider($event)"></users-list>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="form-group ba0">
+                        <div class="section-label">
+                            <label>{{'task.note.title'|translate}}</label>
+                        </div>
+                        <div class="section-input">
+                            <textarea autoresize #textareaElement [(ngModel)]="task.note" class="form-control" placeholder="{{'task.note.ph'|translate}}"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer ba0 modal-footer-links left">
+                <button (click)="save()" [ladda]="isSaving" class="btn btn-primary pull-left">{{'common.form.save'|translate}}</button>
+                <a (click)="delete()"><i class="sl sl-icon-trash"></i> {{'common.form.del'|translate}}</a>
+            </div>
+        </div>
+    </div>
+</div>

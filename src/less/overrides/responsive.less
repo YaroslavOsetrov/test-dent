@@ -1,0 +1,82 @@
+
+@media (max-width: @screen-xs-max) {
+    .main-wrapper{
+      //  display: none;
+    }
+}
+
+//Header
+
+//Mobile & tablet
+@media (max-width: @screen-md-min)  {
+
+    body{
+        overflow-x:auto !important;
+    }
+
+    .navbar.navbar-default{
+        
+        
+        padding:0 15px;
+        height: 70px;
+        .nav{
+            margin: 0;
+        }
+        .navbar-nav:not(.navbar-right){
+            float: left;
+            width: 60%;
+        }
+        .navbar-nav.navbar-right{
+            float: right;
+            .language-switcher{
+                display: none;
+            }
+        }
+        .nav .account a .cell-avatar .avatar-letters{
+            margin:0;
+        }
+        .navbar-nav {
+            .special{
+                display:none;
+            }
+            .patient-select{
+                right: 35px;
+            }
+
+            > li > a{
+                i{
+                    display: block;
+                    text-align: center;
+                    font-size:15px;
+                }
+                float: left;
+                font-size: 10px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 17px 10px;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width:@screen-xs-max) {
+    .navbar.navbar-default{
+        .navbar-nav{
+            .special{
+                display:none;
+            }
+            .account{
+                display: none;
+            }
+            .patient-select{
+                display: none;
+            }
+            &:not(.navbar-right){
+                float:none;
+                min-width: 375px;
+            }
+        }        
+    }
+ }

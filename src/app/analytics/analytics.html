@@ -1,0 +1,94 @@
+<section class="container-light section-topbar">
+    <nav class="navbar navbar-title navbar-sm">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand" href="#">
+                    {{'analyt.title'|translate}}
+                </span>
+               <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a (click)="drp.toggle()">
+                            <span class="sl sl-icon-arrow-down-circle"></span>
+                            {{interval.start|datex:'short'}} {{interval.start|datex:'YYYY'}} - {{interval.end|datex:'short'}} {{interval.end|datex:'YYYY'}}
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li>
+                        <input [bsConfig]="{showWeekNumbers:false, containerClass:'l10'}" (bsValueChange)="onIntervalChanged($event)" style="visibility: hidden;height:60px;width:1px;padding:0;" class="form-control" #drp="bsDaterangepicker" bsDaterangepicker [(ngModel)]="datepickerInterval">
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav" *ngIf="userRole.view_analytics">
+                    <li dropdown>
+                        <a dropdownToggle class="dropdown-toggle">
+                            <span class="sl sl-icon-arrow-down-circle"></span>
+                            <span *ngIf="selectedUser.id == null">
+                                {{'analyt.all_org'|translate}}
+                            </span>
+                            <span *ngIf="selectedUser.id != null">
+                                <span *ngIf="selectedUser.fullname != 'fullname'">
+                                    {{selectedUser.fullname}}
+                                </span>
+                                <span *ngIf="selectedUser.fullname == 'fullname'">
+                                    {{selectedUser.email}}
+                                </span>
+                            </span>
+                        </a>
+                        <div dropdown class="dropdown-md-box dropdown-menu dropdown-menu-left userlist-wrapper">
+                            <users-list [allButton]="true" [onlyProviders]="true" (userSelected)="changeUser($event)"></users-list>
+                       
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+<div class="container">
+    <div class="pt15 row">
+        <div class="col-md-12 pa0">
+            <div class="row">
+                <div class="col-md-12">
+                    <payment-chart [interval]="interval" [userId]="userId"></payment-chart>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <invoices-chart [interval]="interval" [userId]="userId"></invoices-chart>
+                </div>
+                <div class="col-md-4">
+                    <paymentTypes-chart [interval]="interval" [userId]="userId"></paymentTypes-chart>
+                </div>
+                 <div class="col-md-4">
+                    <procedureTypes-chart [interval]="interval" [userId]="userId"></procedureTypes-chart>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <appointment-chart [interval]="interval" [userId]="userId"></appointment-chart>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <workhour-chart [interval]="interval" [userId]="userId"></workhour-chart>
+                </div>
+                 <div class="col-md-6">
+                    <initialAppointment-chart [interval]="interval" [userId]="userId"></initialAppointment-chart>
+                </div>
+            </div>
+             <div class="row">
+                <div class="col-md-12">
+                    <patient-chart [interval]="interval" [userId]="userId"></patient-chart>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <patientAge-chart [interval]="interval" [userId]="userId"></patientAge-chart>
+                </div>
+                <div class="col-md-5">
+                    <patientSource-chart [interval]="interval" [userId]="userId"></patientSource-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

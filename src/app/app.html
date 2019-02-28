@@ -1,0 +1,68 @@
+<!--<div [hidden]="!isAuth" *ngIf="account && !account.is_email_confirmed && isConfirmShow && isCompleteInitial" class="alert alert-danger br0 text-center">
+    {{'organization.unconfirmed.title'|translate}} <strong>{{account.email}}</strong> {{'organization.unconfirmed.title2'|translate}}
+    <button (click)="sendConfirmation()" class="btn btn-danger btn-sm">{{'organization.unconfirmed.submit'|translate}}</button>
+</div>
+-->
+
+
+
+<!--
+<div [ngClass]="{'main-wrapper':isAuth==true  && isCompleteInitial}">
+    <section [ngClass]="{'section-content':isAuth && isCompleteInitial}">
+        <div *ngIf="isCompleteInitial && isAuth" class="section-navbar navbar-default navbar br0">
+        <header-view></header-view>
+        </div>
+        <div class="auth-box-w wider auth-box-load" *ngIf="!isCompleteInitial && isAuth">
+            <div class="loader-hor-wrapper loader-page-table">
+                <div class="loader loader-center"></div>
+            </div>
+            <p class="title">
+                {{'common.init_load.title'|translate}}
+            </p>
+            <p class="descr">
+                {{'common.init_load.descr'|translate}}
+            </p>
+        </div>
+        <div>
+            <router-outlet></router-outlet>
+        </div>        
+    </section>
+</div>
+
+
+
+-->
+
+<div [hidden]="index > 0" *ngFor="let call of calls; let i = index" class="floated-controls-wrapper" style="width:330px; height:120px; top:100px; left:auto; right:15px; z-index:900;">
+    <div class="floated-notification">
+        <div style="line-height:25px; padding:15px;">
+            <span class="sl sl-icon-call-in"></span> {{call.patient_data.fullname}}
+            <p>
+                {{call.patient_data.phone_number}}
+            </p>
+            <a href="/patients/{{call.patient_id}}" target="_blank" class="btn btn-primary btn-sm">{{'common.form.open'|translate}}</a> <a (click)="calls.splice(i, 1)" class="btn btn-default btn-sm">{{'common.form.close'|translate}}</a>
+        </div>
+    </div>
+</div>
+<div [ngClass]="{'main-wrapper':config.isAuthorized  && config.isBootCompleted}">
+    <section [ngClass]="{'section-content':config.isAuthorized && config.isBootCompleted}">
+        <div *ngIf="config.isBootCompleted && config.isAuthorized" class="section-navbar navbar-default navbar br0">
+            <header-view></header-view>
+        </div>
+        <div class="auth-box-w wider auth-box-load" *ngIf="!config.isBootCompleted && config.isAuthorized">
+            <div class="loader-hor-wrapper loader-page-table">
+                <div class="loader loader-center"></div>
+            </div>
+            <p class="title">
+                {{'common.init_load.title'|translate}}
+            </p>
+            <p class="descr">
+                {{'common.init_load.descr'|translate}}
+            </p>
+            
+        </div>
+        <router-outlet></router-outlet>    
+    </section>
+    <div style="clear:both"></div>
+</div>
+<boot (bootCompleted)="onBootCompleted()"></boot>

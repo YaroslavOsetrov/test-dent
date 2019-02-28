@@ -1,0 +1,30 @@
+
+<div class="section-topstats" [hidden]="!expanded">
+    <h5 class="title">{{'cal.today'|translate}}, {{today|datex:'full2'}}</h5>
+    <div class="row">
+        <div class="col-md-2 stats-item">
+            <span class="number">{{stats.paid_amt|myCurrency}}</span>
+            <span class="label">{{'analyt.paym_period.label.inc'|translate}}</span>
+        </div>
+        <div class="col-md-2 stats-item">
+            <span class="number">{{stats.total_appts}}</span>
+            <span class="label">{{'analyt.appt_period.label.total'|translate}}</span>
+        </div>
+        <div class="col-md-2 stats-item">
+            <span class="number">{{stats.cancelled_appts}}</span>
+            <span class="label">{{'analyt.appt_period.label.cancel'|translate}}</span>
+        </div>
+        <div class="col-md-2 stats-item">
+            <span class="number">{{stats.new_patients}}</span>
+            <span class="label">{{'analyt.new_patients.title'|translate}}</span>
+        </div>
+       
+    </div>
+    <div class="row mt15">
+        <div class="col-sm-12">
+            <a (click)="print()" class="link"><span class="sl sl-icon-printer"></span>
+                {{'cal.print'|translate}}
+            </a>
+        </div>
+    </div>
+</div>

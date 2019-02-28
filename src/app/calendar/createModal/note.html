@@ -1,0 +1,18 @@
+ <form [formGroup]="newAppointment" (ngSubmit)="submit()">
+    <div class="modal-body modal-appointment pa0">
+        <div class="container-inline-form">
+            <div class="form-group form-group-inline mb0 ba0">
+                <div class="section-label">
+                    <label>{{'cal.note.title'|translate}} <sup>*</sup></label>
+                </div>
+                <div>
+                    <textarea rows="7" autoresize placeholder="{{'cal.note.ph'|translate}}" formControlName="note" class="form-control nobg pl0 pr0"></textarea>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button [ladda]="isSubmitted" type="submit" class="btn btn-primary">{{'cal.new_appt.confirm'|translate}}</button>
+    </div>
+ </form>

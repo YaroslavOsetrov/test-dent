@@ -1,0 +1,14 @@
+<ul class="nav navbar-nav">
+    <li>
+        <a (click)="addDocumentModal.show()"><span class="sl sl-icon-plus"></span> {{'patient.files.document.create.title'|translate}}</a>
+    </li>
+</ul>
+<div class="document-list">
+    <div (click)="addDocumentModal.show(item)" class="document-item" *ngFor="let item of documents">
+        <div class="title">
+            {{item.title}}
+        </div>
+        <a class="generate-icon"><span class="sl sl-icon-arrow-right-circle"></span></a>
+    </div>
+</div>
+<addDocument-modal (documentAdded)="onDocumentAdded($event)" #addDocumentModal></addDocument-modal>

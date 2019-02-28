@@ -1,0 +1,200 @@
+<div bsModal #editModal="bs-modal" [ngClass]="{'modal':!hidePrimaryModal, 'el-disabled':overlayedModal}" class="right">
+    <div class="modal-dialog modal-mdss modal-appointment" [ngClass]="{'expanded':isExpanded}">
+        <div class="modal-content modal-custom" *ngIf="appointment?.widget">
+            <widget 
+                (onDeleted)="onAppointmentDeleted.emit($event); close()"
+                (onSaved)="onAppointmentEdited.emit($event); close()" 
+                [appointment]="appointment"></widget>
+        </div>
+        <div class="modal-content modal-custom" *ngIf="!appointment?.patient && !appointment?.widget">
+            <note 
+                (onDeleted)="onAppointmentDeleted.emit($event); close()"
+                (onSaved)="onAppointmentEdited.emit($event); close()" [appointment]="appointment"></note>
+        </div>
+        <div class="modal-content modal-custom" *ngIf="appointment?.patient">
+
+            <div class="modal-header modal-header-light">
+               <!-- <button (click)="editModal.hide()" class="close" type="button">
+                    <span>×</span>
+                </button>-->
+                {{appointment?.patient.patient_user.fullname}}
+                <span *ngIf="appointment?.patient.patient_user.birthday">,
+                    {{appointment?.patient.patient_user.birthday|datex:'full'}}
+                </span>
+                
+               <!-- <a target="_blank" class="btn btn-primary btn-sm"><span class="sl sl-icon-link"></span></a>
+                <div>
+                    <small></small>
+                </div>-->
+                <div class="mt15">
+                    <a target="_blank" href="/patients/{{appointment?.patient.id}}" class="btn btn-sm pl0">
+                        <span class="sl sl-icon-arrow-right-circle"></span> {{'patient.detail.link'|translate}}
+                    </a>
+                    <invoices-table #invoicesTable (paymentAdded)="paymentAdded.emit($event)" (invoiceAdded)="onInvoiceAdded($event)"  (openCreateInvoice)="createInvoiceModal.show(null, appointment)" (openInvoice)="detailInvoiceModal.show($event, appointment.patient_id)" [appointment]="appointment"></invoices-table>
+                </div>
+            </div>
+            <div class="modal-body patient-treatment pa0" *ngIf="appointment?.patient">
+                <div class="panel panel-custom panel-default">
+                    <div class="panel-inside">
+                        <tabset #staticTabs type="pills">
+                            
+                            <tab [active]="setDefaultTab" (select)="isExpanded = false" heading="{{'common.appt'|translate}}">
+                                <div class="panel-content">
+                                    <div class="container-form-min appt-details-form">
+                                        <div class="form-group form-group-status-btn">
+                                             <div class="btn-group btn-group-justified" role="group" aria-label="Basic example">
+                                                <a (click)="changeStatus(item.db_code)" [ngClass]="{'el-disabled':appointment.is_noshow && item.db_code != 'is_noshow', 'active':appointment[item.db_code]}" *ngFor="let item of apptStatus" class="btn btn-secondary text-{{item.class_code}} {{item.class_code}}">
+                                                    <span class="sl sl-icon-{{item.icon_code}}"></span>
+                                                    {{'cal.status.' + item.translate_code |translate}}
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ba0" *ngIf="appointment?.patient.patient_notes_office.length > 0">
+                                            <div class="note-chat-container">
+                                                <div class="note" *ngFor="let note of appointment?.patient.patient_notes_office">
+                                                    <div class="content pa0">
+                                                        {{note.note}}
+                                                    </div>
+                                                    <div class="user text-muted pa0"> {{users[note.create_user_id].fullname}}, {{note.createdAt|datex:'full'}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="section-label">
+                                                <label for="email">
+                                                    {{'provider.title'|translate}}
+                                                </label>
+                                            </div>
+                                            <div class="section-input">
+                                                <section [autoClose]="false" [isOpen]="isOpen" class="dropdown-modal selection-container" dropdown>
+                                                    <a (click)="isOpen = !isOpen" dropdownToggle class="selection-item">
+                                                        <span class="sl sl-icon-arrow-down-circle"></span>
+                                                        {{appointment?.provider.fullname}}
+                                                    </a>
+                                                    <div *dropdownMenu class="dropdown-md-box dropdown-menu dropdown-menu-left userlist-wrapper">
+                                                        <users-list [onlyProviders]="true" (userSelected)="isOpen = false; onProviderSelected($event);"></users-list>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="section-label">
+                                                <label for="email">
+                                                    {{'user.phone.title'|translate}}
+                                                </label>
+                                            </div>
+                                            <div class="section-input">
+                                                <p>
+                                                    {{appointment?.patient.patient_user.phone}}
+                                                </p>
+                                            </div>
+                                        </div><!--
+                                        <div class="form-group">
+                                            <div class="section-label">
+                                                <label for="email">
+                                                    {{'cal.status.title'|translate}}
+                                                </label>
+                                            </div>
+                                            <div class="section-input">
+                                                <section class="dropdown-modal selection-container" dropdown>
+                                                    <a dropdownToggle class="selection-item">
+                                                        <span class="sl sl-icon-arrow-down-circle"></span> 
+                                                        <span *ngIf="appointment?.is_completed"> {{'cal.status.compl'|translate}}</span>
+                                                        <span *ngIf="!appointment?.is_completed&&appointment?.is_confirmed"> {{'cal.status.conf'|translate}}</span>
+                                                        <span *ngIf="!appointment?.is_completed&&!appointment?.is_confirmed"> {{'cal.status.sched'|translate}}</span>
+                                                    </a>
+                                                    <ul *dropdownMenu class="dropdown-menu dropdown-menu-left">
+                                                        <li>
+                                                            <a (click)="changeStatus(false,false)">{{'cal.status.sched'|translate}}</a>
+                                                        </li>
+                                                        <li>
+                                                            <a (click)="changeStatus(true,false)">{{'cal.status.conf'|translate}}</a>
+                                                        </li>
+                                                        <li>
+                                                            <a (click)="changeStatus(true,true)">{{'cal.status.compl'|translate}}</a>
+                                                        </li>
+                                                    </ul>
+                                                </section>
+                                            </div>
+                                        </div>-->
+                                        <div class="form-group">
+                                            <div class="section-label">
+                                                <label for="email">
+                                                    {{'common.time'|translate}}
+                                                </label>
+                                            </div>
+                                            <div class="section-input">
+                                                <p>{{appointment?.date|datex:'full'}}, {{'cal.date_time.from'|translate}}
+                                                    <span *ngIf="appointment?.start">
+                                                        {{appointment?.start.format(localeFormat.time_mom)}} {{'cal.date_time.to'|translate}} {{appointment?.end.format(localeFormat.time_mom)}}
+                                                    </span>    
+                                                    <span *ngIf="!appointment?.start">
+                                                        {{appointment?.start_time|datex:localeFormat.time_mom}} {{'cal.date_time.to'|translate}} {{appointment?.end_time|datex:localeFormat.time_mom}}
+                                                    </span>    
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ba0">
+                                            <div class="section-label">
+                                                <label for="email">
+                                                    {{'cal.note.title'|translate}}
+                                                </label>
+                                            </div>
+                                            <div class="section-input">
+                                                <input maxlength="100" placeholder="{{'cal.note.ph'|translate}}" [(ngModel)]="appointmentDef.note" class="form-control" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tab>
+                            <tab 
+                                (select)="isExpanded = true; loadedTabs.charting = true; (charting)?charting.initialize(appointment?.patient.dental_chart):''" 
+                                heading="{{'patient.charting.title'|translate}}">
+                                <section *ngIf="loadedTabs.charting">
+                                    <charting #charting [patient]="appointment?.patient" (defaultChartLoaded)="defaultDentalChart = $event"></charting>
+                                </section>
+                            </tab>
+                            <tab 
+                                (select)="isExpanded = true; loadedTabs.notes = true" 
+                                heading="{{'patient.charting.prog'|translate}}">
+                                <section *ngIf="loadedTabs.notes">
+                                    <notes [patient]="appointment?.patient" [apptModal]="true"></notes>
+                                </section>
+                            </tab>
+                            <tab 
+                                (select)="isExpanded = true; loadedTabs.billing = true">
+                                <ng-template tabHeading>
+                                    {{'patient.billing.title'|translate}}
+                                    <label *ngIf="appointment?.patient.total_debts > 0" class="sm"></label>
+                                </ng-template>
+                                <section *ngIf="loadedTabs.billing">
+                                    <billing [patient]="appointment?.patient"></billing>
+                                </section>
+                            </tab>
+                            <tab (select)="isExpanded = true; loadedTabs.storage = true" heading="{{'patient.files.title'|translate}}">
+                                <section *ngIf="loadedTabs.storage">
+                                    <storage [patient]="appointment?.patient"></storage>
+                                </section>
+                            </tab>
+                        </tabset>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!isExpanded" class="modal-footer ba0 modal-footer-links left">
+                <button [ladda]="isLoaded" (click)="save()" type="submit" class="btn btn-primary pull-left">{{'common.form.save'|translate}}</button>&nbsp;
+                <a (click)="cancel()"><span class="sl sl-icon-trash"></span> {{'common.form.del'|translate}}</a>
+            </div>
+        </div>
+    </div>
+</div>
+<createInvoice-modal 
+    (invoiceCreated)="invoicesTable.onInvoiceCreated($event)"
+    #createInvoiceModal="createInvoiceModal"></createInvoice-modal>
+
+<detailInvoice-modal 
+    (onShow)="overlayedModal = true"
+    (onHide)="overlayedModal = false"
+    (paymentAdded)="invoicesTable.onPaymentAdded($event)"
+    (invoiceDeleted)="invoiceDeleted.emit($event); invoicesTable.onInvoiceDeleted($event)"
+    (paymentDeleted)="invoicesTable.onPaymentDeleted($event)"
+    #detailInvoiceModal="detailInvoiceModal"></detailInvoice-modal>

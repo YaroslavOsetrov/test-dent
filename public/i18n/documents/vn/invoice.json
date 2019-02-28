@@ -1,0 +1,15 @@
+{
+    "title":"Invoice #",
+
+    "creat":"Created:",
+    "exp":"Expired:",
+    "stat":"Status:",
+
+    "st.pend":"Pending",
+    "st.paid":"Paid",
+    "st.exp":"Expired",
+
+    "pt":"Patient",
+    "org":"Organization",
+    "proc":"Procedures"
+}

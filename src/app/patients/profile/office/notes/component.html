@@ -1,0 +1,17 @@
+<div class="note-chat-container">
+    <div class="note-add">
+        <textarea [(ngModel)]="newNote" placeholder="{{'patient.note.ph'|translate}}" autoresize class="form-control"></textarea>
+        <button [ladda]="isSaving" (click)="addNote()" class="submit">
+            {{'patient.note.submit'|translate}} <span class="sl sl-icon-arrow-right-circle"></span></button>
+    </div>
+    <div *ngFor="let note of notes; let i = index" class="note" [ngClass]="{'bg-warning':note.is_urgent}">
+        <div class="content">
+            {{note.note}}
+        </div>
+        <div class="user text-muted">
+            {{usersObj[note.create_user_id].fullname}}, {{note.createdAt|datex:'full'}}
+            <a (click)="deleteNote(i)" class="pull-right link"><span class="sl sl-icon-trash"></span> {{'common.form.del'|translate}}</a>
+            <a (click)="pinNote(i)" class="pull-right link"><span class="sl sl-icon-pin"></span> {{'common.form.pin'|translate}}</a>&nbsp;
+        </div>
+    </div>
+</div>

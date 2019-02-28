@@ -1,0 +1,1651 @@
+{
+    "ch":{
+        "diag":{
+            "main":"Diagnosis",
+            "input":"Diagnosis code, name or description ...",
+            "c":"Caries",
+            "pt":"Periodontitis",
+            "ws":"Wedge-shaped def.",
+            "z":"Odontolith",
+            "gv":"Gingivitis",
+            "lp":"Parodontosis",
+            "ht":"Hard tissues def.",
+            "op":"Orthodontics pat."
+        },
+        "proc":{
+            "miss": "Missing",
+            "xray":"X-ray",
+            "intact": "Normal",
+            "other": "Other",
+            "watch": "Observation",
+            "resto": "Restoration",
+            "rct": "Root canal",
+            "rctpc": "Root canal",
+            "rctpc2":"Post & Core",
+            "seal": "Silant",
+            "ven": "Veneer",
+            "cr": "Crown",
+            "hyg":"Cleaning",
+            "whit":"Whitening",
+            "retainer":"Crown",
+            "retainer2":"Bridge",
+            "imp": "Implant",
+            "cr34": "Crown 3/4",
+            "ext": "Extraction",
+            "res": "Resection",
+            "sin": "Sinus lift",
+            "resto_code": {
+                "mesial": "Medial",
+                "oclusial": "Oclusial",
+                "distal": "Distal",
+                "lingual": "Lingual",
+                "buccal": "Buccal"
+            }
+        },
+        "proc_cat":{
+            "surg": "Surgery",
+            "orthop": "Orthopedics",
+            "ther": "Therapy",
+            "common": "General",
+            "resto":"Restoration"
+        }
+    },
+
+    "common": {
+         "menu":{
+            "home":"Home",
+            "prod":"Product",
+            "price":"Prices",
+            "abt":"About us",
+            "contact":"Contacts",
+            "partn":"Partners",
+            "login":"Login",
+            "signup":"Sign up"
+        },
+        "time": "Time",
+        "min":"minutes",
+        "t_at":"at",
+        "init_load": {
+            "title": "Initialization ...",
+            "descr": "Setting up program, please wait ..."
+        },
+        "time_pick": "Select an interval",
+        "date_range": {
+            "t": "Today",
+            "w": "Week",
+            "m": "Month"
+        },
+        "weekday":{
+            "mo":"Monday",
+            "sa":"Saturday",
+            "su":"Sunday"
+        },
+        "proc_stat": {
+            "tp": "Planned",
+            "c": "Completed",
+            "e": "Existing"
+        },
+        "click_to_ed": "Click to edit",
+        "form": {
+            "tut":"Watch tutorial",
+            "err":"Error",
+            "copy":"Copy",
+            "open":"Open",
+            "complete":"Complete",
+            "changed":"You've changed some of the properties",
+            "del": "Delete",
+            "next":"Next",
+            "prev":"Prev",
+            "finish":"Done!",
+            "del_sel":"Delete selected",
+            "search":"Search...",
+            "save": "Save",
+            "add": "Add",
+            "conf":"Confirm",
+            "disc":"Discard",
+            "canc":"Cancel",
+            "close":"Close",
+            "create":"Create",
+            "pin":"Pin"
+        },
+        "appt": "Appointment",
+        "sel": "Select",
+        "sel_file": "Select file",
+        "treatment_book": {
+            "complaints": "Complaints",
+            "investigations": "Anamnesis",
+            "observations": "Observations",
+            "diagnoses": "Diagnoses",
+            "treatments": "Treatments",
+            "ph":"Add notes...",
+            "recommendations": "Recommendations"
+        },
+        "errors": {
+            "form":{
+                "PHONE_START":"Start with your country code, for example, +65...",
+                "PHONE_ALL":"Fill in completely",
+                "CARD":"Incorrect card number",
+                "NUMERIC":"Incorrect number",
+                "DATE":"Invalid date",
+                "REQUIRED":"Required field",
+                "EMAIL":"Incorrect Email",
+                "NAME":"Invalid name",
+                "PASSWORD":"Should be at least 6 chars",
+                "EQUAL":"Fields should be equal"
+            },
+            "OLD_PW_WRONG":"The current password is wrong",
+            "FILE_NOT_FOUND": "File not found",
+            "BIG_FILE_SIZE": "Too large file size",
+            "INVITATION_NOT_FOUND": "Invitation not found",
+            "ALREADY_CONFIRMED": "User already registered",
+            "INVALID_TOKEN": "Incorrect key",
+            "USER_NOT_BELONGS": "Organization not found",
+            "INCORRECT_PASSWORD": "Not a valid password",
+            "RECOVERY_NOT_FOUND": "Password recovery request not found",
+            "INVALID_INVITATION": "Can not add invitation",
+            "ALREADY_INVITED": "Invitation already confirmed",
+            "NO_ACCESS": "Access is restricted",
+            "EXCEEDED_USERS_COUNT": "Can not add more users",
+            "NO_NEED_RENEW": "Subscription is active",
+            "ALREADY_SUBSCRIBED": "Subscription has already been created",
+            "UNABLE_TO_UPDATE": "Error updating",
+            "UNABLE_TO_DESTROY": "Uninstallation error",
+            "PATIENT_NOT_FOUND": "Patient not found",
+            "PATIENT_ID_NOT_VALID": "Patient ID is not valid",
+            "BAD_REQUEST": "Request failed",
+            "INVALID_DATA": "Incorrect data",
+            "APPT_NOT_FOUND": "Visit not found",
+            "INVALID_INVOICE": "Unable to create invoice",
+            "INVALID_PAYMENTS_DATA": "Unable to complete payment",
+            "ALREADY_PAID": "The account has already been paid",
+            "INVALID_PLAN_DATA": "Incorrect data format",
+            "INVALID_PROCEDURE_DATA": "Incorrect procedure format",
+            "REACH_PATIENTS_LIMIT": "The number of patients exceeded the limit",
+            "UNABLE_TO_SORT": "Sorting error",
+            "UNDEFINED_PROVIDER": "The doctor was not found",
+            "USER_INVALID_CONFIRMATION_CODE": "Invalid verification code"
+        }
+    },
+    "widget":{
+        "next":"Next",
+        "confirm":"Confirm my appointment",
+        "title":"Book an appointment",
+        "descr":"Have a questions? Please call us at",
+        "st0":{
+            "title":"First time in clinic?",
+            "descr":"Click yes if you want to schedule your first appointment in our clinic. Click no if you visited our clinic before or you know to which dentist you want to make an appointment with.",
+            "y":"Yes",
+            "n":"No"
+        },
+        "st1":{
+            "title":"Dentist",
+            "descr":"Select a dentist",
+            "bot":"Don't know which dentist to choose? Please call us at"
+        },
+        "st2":{
+            "title":"Select a procedure",
+            "bot":"Don't know which procedure to choose? Please call us at"
+        },
+        "st3":{
+            "title":"Timeslot",
+            "descr":"Select a timeslot",
+            "bot":"Are this timeslots not fits your schedule? Please call us at",
+            "urgent":{
+                "title":"Urgent appointment",
+                "descr":"Schedule on the nearest date?"
+            },
+            "empty":{
+                "title":"No timeslots available",
+                "descr":"This provider don't have open timeslots for this period. To schedule an appointment please call us at"
+            }
+        },
+        "st4":{
+            "title":"Contacts",
+            "descr":"Your details"
+        },
+        "st5":{
+            "title":"Confirmed!",
+            "descr":"Your appointment in clinic {{clinic}} was scheduled on {{date}} at {{time}} was confirmed. The clinic might call you to ask something regarding your appointments.",
+            "btn":"Save details"
+        }
+    },
+    "logs":{
+        "appt_widget":{
+            "t1":"with the phone number",
+            "t2":"requested an appointment from the website.",
+            "pt_search":"Searching for a patient with the phone",
+            "pt_search_db":"in database",
+            "pt_ph":"Patient with the phone",
+            "found":"was found in database. Will use this profile.",
+            "not_found":"was not found. Will create a new profile."
+        }
+    },
+    "organization":{
+        "name":{
+            "title":"Name",
+            "descr":"Clinic name"
+        },
+        "unconfirmed":{
+            "title":"Your Email",
+            "title2":"is unconfirmed. Please check your inbox or click on button to send confirmation again",
+            "submit":"Send confirmation"
+        },
+        "tax":{
+            "title":"Tax",
+            "descr":"Default tax",
+            "ph":"Tax rate, %",
+            "explain":"This tax will be added automatically to each invoice"
+        },
+        "phone":{
+            "title":"Phone",
+            "descr":"Contact phone"
+        },
+        "address":{
+            "title":"Address",
+            "descr":"Clinic address"
+        },
+        "url":{
+            "title":"URL",
+            "descr":"Clinic website"
+        },
+        "email":{
+            "title":"Email",
+            "descr":"Contact email"
+        },
+        "currency":{
+            "title":"Currency",
+            "descr":"App currency",
+            "explain":"This currency will be used in price lists and invoices"
+        },
+        "timezone":{
+            "title":"Timezone",
+            "descr":"Your timezone",
+            "explain":"Please, set your timezone carefully. We will be sending notifications to your customers according to your timezone"
+        }
+    },
+    "tags":{
+        "patient":{
+            "name":"Full name",
+            "phone":"Phone",
+            "birthday":"Birthday",
+            "address":"Address",
+            "code":"Medical history #",
+            "email":"Email",
+            "doc":{
+                "no":"Document number",
+                "iss":"Document issued date",
+                "exp":"Document expired date",
+                "auth":"Document authority"
+            }
+        },
+        "clinic":{
+            "name":"Name",
+            "phone":"Phone",
+            "address":"Address",
+            "url":"Website",
+            "email":"Email"
+        },
+        "other":{
+            "today":{
+                "date":"Current date",
+                "time":"Current time"
+            },
+            "proc_ct":"procedures",
+            "procedures":"Procedures"
+        }
+
+    },
+    "settings": {
+        "import":"For import/export data send us your request to import@dentaltap.com",
+        "links":{
+            "tutor":"Video tutorials",
+            "base":"Knowlege base"
+        },
+        "title": "Settings",
+        "menu": {
+            "exit":"Exit",
+            "acc": "Account",
+            "sub": "Subscription",
+            "collab":"Collaboration",
+            "tpl": "Notifications",
+            "docs":"Documents",
+            "org":"Clinic",
+            "price":"Price list",
+            "disc":"Discounts",
+            "services":"Procedures"
+        },
+        "services":{
+            "inventory":{
+                "title":"Inventory"
+            }
+        },
+        "inventory":{
+            "title_add":"Add inventory",
+            "manage":"Mange",
+            "search":"Search for inventory..."
+        },
+        "organization":{
+            "title":"Clinic",
+            "descr":"Your dental clinic profile",
+            "widget":{
+                "title":"Online booking",
+                "descr":"",
+                "link_descr":"Embedded link for appointment booking form",
+                "enable":{
+                    "title":"Enable widget?",
+                    "descr":"Let your patients schedule an appointments online"
+                },
+                "success_text":{
+                    "title":"Success message",
+                    "descr":"This message will be desplayed after success appointment request",
+                    "ph":"Enter the message..."
+                }
+            }
+            
+        },
+        "account": {
+            "title": "Account",
+            "descr": "Your basic account profile",
+            "change_pass": {
+                "title": "Change Password",
+                "descr":"Input your current password and create a new one if you would like to change it",
+                "ex": {
+                    "title": "Password",
+                    "descr": "Current password"
+                },
+                "new": {
+                    "title": "New password",
+                    "descr": "Your new password"
+                },
+                "new2": {
+                    "title": "Confirm password",
+                    "descr": "Repeat the password"
+                }
+            }
+        },
+        "collaboration": {
+            "title": "Collaboration",
+            "invited": "Invited",
+            "unable": "It is not possible to invite new colleagues. Edit the subscription to add new accounts. ",
+            "status": {
+                "act": "Active",
+                "pend": "Waiting"
+            },
+            "invite": {
+                "new":"New user",
+                "title":"Invite new user",
+                "submit": "Invite user",
+                "email_explain":"We will send an invitation to this email address",
+                "descr": "Invite other colleagues from your clinic to work together."
+            },
+            "details":"Details",
+            "delete":"Remove user",
+            "profile":{
+                "custom":"Custom profile",
+                "admin":"Administrator",
+                "dentist":"Dentist",
+                "frontDesk":"Front-desk"
+            },
+            "access": {
+                "title": "Access",
+                "title2": "Access control",
+                "close":{
+                    "title":"Remove user?",
+                    "descr":"This user will be removed from organization "
+                },
+                "rules":{
+                    "is_doctor":"This is a dentist",
+                    "is_doctor.descr":"Toggle if this user is a dentist",
+                    "view_analytics":"View analytics",
+                    "view_analytics.descr":"Allow to view analytics and report of all clinic",
+                    "view_patient":"Patients",
+                    "view_patient.descr":"View and modify patients records",
+
+                    "patients":"Patients",
+                    "patients.descr":"View and modify patients records",
+                    "appointments":"Appointments",
+                    "appointments.descr":"Schedule and manage appointments",
+                    "patient_profile":"Profile",
+                    "patient_profile.descr":"View and edit patient personal data",
+                    "patient_billing":"Billing",
+                    "patient_billing.descr":"Manage patient bills, accept payments",
+                    "patient_treatment":"Treatment",
+                    "patient_treatment.descr":"Add/edit treatment plans and procedures",
+                    "settings":"Settings",
+                    "settings.descr":"Access price list, payment info, practice settings",
+
+                    "edit_payment":"Accept payments",
+                    "edit_payment.descr":"Allow to accept and modify payments from patients",
+                    "edit_price":"Edit price",
+                    "edit_price.descr":"Allow to modify price list",
+                    "add_task":"Tasks assigning",
+                    "add_task.descr":"Allow to assign tasks with other users and modify it",
+                    "access_subscription":"Payments",
+                    "access_subscription.descr":"Allow to access to clinic subscription",
+                    "access_collaboration":"Collaboration",
+                    "access_collaboration.descr":"Allow to manage and invite other people to collaborate",
+                    "access_templates":"Templates",
+                    "access_templates.descr":"Allow to modify SMS notifications and document tempaltes",
+                    "share_patient":"Patient sharing",
+                    "share_patient.descr":"Allow to share patient records with another dentists",
+                    "edit_patient":"Edit patients",
+                    "edit_patient.descr":"Allow to modify patient information",
+                    "delete_patient":"Delete patients",
+                    "online_access":"Online access",
+                    "online_access.descr":"Enable online access for this user",
+                    "online_access.explain":"Your subscription costs will increase according to your plan",
+                    "delete_patient.descr":"Allow to delete existing patients profiles",
+                    "create_patient":"Create patient",
+                    "create_patient.descr":"Allow to create new patients"
+                }
+            }
+        },
+        "subscription": {
+            "plan":{
+                "title":"Your plan",
+                "subs":"Subscription",
+                "free":"Freemium"
+            },
+            "use":{
+                "title":"Usage",
+                "descr":"patients"
+            },
+            "topup": "Topup",
+            "title": "Subscription",
+            "descr":"Your subscription details",
+            "unable":{
+                "title":"We were unable to renew subscription using your payment card. Please, make sure that your card is valid and click on the recharge button.",
+                "button":"Recharge"
+            },
+            "move_to":{
+                "descr":"You will be able to add or remove seats after. Monthly subscription fee will change automatically.",
+                "seats":"Seats"
+            },
+            "review":{
+                "descr":"I like the design of DentalTap. Now I can create and present treatment plans for my patients much faster.",
+                "title":"Igal Quiroz Orta",
+                "sub":"DDS"
+            },
+            "save": "Update details",
+            "price_mo": "Cost per month",
+            "start": "Subscription start",
+            "next_pay": "Next payment",
+            "sms": {
+                "title": "SMS messages",
+                "available": "You have {{smsSize}} SMS available to send. To topup, click on the button below.",
+                "confirm":{
+                    "title":"Topup SMS?",
+                    "descr":"We'll add {{number}} SMS into your account and charge your card for {{amt}}"
+                },
+                "no_card":"In order to start sending SMS notifications for your customers please attach your payment card."
+            },
+            "categories":{
+                "sms":"SMS",
+                "storage":"Storage",
+                "subscription":"Subscription"
+            },
+            "users":{
+                "title":"Users",
+                "add":"Add users"
+            },
+            "services":{
+                "title":"What's included:",
+                "1":{
+                    "title":"Unlimited patients",
+                    "descr":"You can add unlimited patients records"
+                },
+                "2":{
+                    "title":"Multiple offices",
+                    "descr":"Keep separated schedules for each of your dental office"
+                },
+                "3":{
+                    "title":"Collaboration",
+                    "descr":"Invite your colleagues to collaborate on treatment planning"
+                },
+                "4":{
+                    "title":"3rd party services",
+                    "descr":"Connect with 3rd party services for SMS, VoIP and others"
+                }
+            },
+            "free":{
+                "title":"What you're missing:",
+                "btn":"Upgrade my plan"
+            },
+            "storage": {
+                "mb": "MB",
+                "title": "Storage",
+                "available": "You have {{storageSize}} MB available for patient files. To extend storage, click on the button below.",
+                "confirm":{
+                    "title":"Extend storage?",
+                    "descr":"We'll add {{number}} mb of storage into your account and increase your monthly subscription costs for {{amt}}"
+                }
+            },
+            "history": {
+                "title": "Payments history",
+                "descr":"All your credit card payments will be displayed here",
+                "no_title":"No payments",
+                "no_descr":"You don't have any payments done yet"
+            },
+            "create": {
+                "title": "Start Subscription"
+            },
+            "edit": {
+                "title": "Edit card",
+                "descr": "To update the payment card data, use the form below: Leave this form blank to save the current card.",
+                "descr_add": "Specify the number of additional accounts for your clinic",
+                "monthly_fee": ""
+            },
+            "card": {
+                "no": "Card number",
+                "expired": "Exp. date",
+                "cvv": "CVV ",
+                "enc":"Your credit card information is encrypted ",
+                "start":"Your subscription begins once you click \"Start Subscription\" below. We perform the first charge after 2 weeks since subscription starts. If you cancel your subscription in your first month we will refund the full amount. If you don't cancel by day 30, your card will be charged according to your plan. You can cancel your subscription at any time just by sending us an email at info@dentaltap.com",
+                "edit":"You already subscribed for DentalTap and added a payment method. If you want to replace it, enter new credit card data and click on the \"Update Details\" button. Send us an email to info@dentaltap.com if you would like to stop your subscription.",
+                "owner": "Owner",
+                "owner_title": "Owner's name"
+            }
+        },
+        "templates": {
+            "notes":{
+                "tags":{
+                    "title":"Tags sample",
+                    "descr":"The patient name, date and time will be replaced with the real patient data when sending SMS. This settings is just an example."
+                },
+                "sms_length":{
+                    "title":"SMS length",
+                    "descr":"We recomend you to keep your notifications short as the SMS length is 160 characters. If your message more than 160 characters it will be splitted into chunks and you will have extra charge."
+                }
+            },
+            "mess": {
+                "title": "Notifications",
+                "descr":"Setup notification templates to your customers",
+                "fullname":"John Parker",
+                "date":"24 October",
+                "time":"10:30am",
+                "create_appt": {
+                    "title": "Appointment creation",
+                    "descr": "Message when scheduling a new appointment for patient"
+                },
+                "confirm_appt": {
+                    "title": "Appointment confirmation",
+                    "descr": "Message on the day before the appointment, will send at 1pm"
+                },
+                "edit_appt": {
+                    "title": "Appointment changing",
+                    "descr": "Message after changing the date / time of appointment"
+                },
+                "upcoming_birthday": {
+                    "title": "Upcoming birthday",
+                    "descr": "Message to patient on his birthday"
+                },
+                "cancel_appt": {
+                    "title": "Appointment cancellation",
+                    "descr": "Message after canceling an appointment"
+                }
+            }
+        }
+    },
+    "patient":{
+        "title": "Patients",
+        "create": "Create",
+        "search": "Patient search ...",
+        "cat": {
+            "active": "All patients",
+            "shared": "Collaboration",
+            "primary": "Primary",
+            "debts": "Debt",
+            "archived": "Archived"
+        },
+        "have_debts":"This patient have debt for",
+        "limit":{
+            "title":"Demo version",
+            "btn":"Activate now",
+            "quest":"Have questions?",
+            "title2":{
+                "p1":"You've created",
+                "p2":"of",
+                "p3":"patients records. Activate your subscription to add unlimited records."
+            }
+        },
+        "empty":{
+            "title":"Create new patient record",
+            "1":"Click on Create button on top to add new patient record",
+            "2":"Search patient by phone number or fullname",
+            "3":"Sort patients by debts, last appointment or upcoming birthday"
+        },
+        "edit":{
+            "title":"Edit profile"
+        },
+        "detail": {
+            "title": "Overview",
+            "descr":"Open profile",
+            "link":"Profile"
+        },
+        "print":{
+            "title":"Print",
+            "descr":"Preparing the printing history... please wait..."
+        },
+        "note":{
+            "title":"Notes",
+            "title2":"Note",
+            "submit":"Add note",
+            "highlight":"Important",
+            "ph":"Add your note...",
+            "empty":{
+                "title":"No comments",
+                "descr":"Add some important comments to this patient"
+            },
+            "edit_tpl":"Edit templates",
+            "add_notes":"Note",
+            "empty2":{
+                "title":"Schedule appointment first",
+                "1":"Click on New Appointment button at the top",
+                "2":"After you will be able keep notes for appointments here",
+                "3":"Click on Edit template to customize - add templates for complaints, recommendations, allergies etc"
+            }
+        },
+        "last_appt": {
+            "title": "Last appt"
+        },
+        "balance": {
+            "title": "Balance",
+            "descr":"Deposited"
+        },
+        "doc": {
+            "ready":{
+                "title":"Your document is ready!",
+                "descr":"You document is ready, click on the button below to download it",
+                "btn":"Download"
+            },
+            "number": {
+                "title": "Document",
+                "descr": "Document number"
+            },
+            "issued": {
+                "title": "Date of issue",
+                "descr": ""
+            },
+            "expired": {
+                "title": "Expire date"
+            },
+            "authority": {
+                "title": "Issued",
+                "descr": "Authority name",
+                "descr2": "Name of authority"
+            },
+            "delete":{
+                "title":"Delete document?",
+                "descr":"This document template will be deleted"
+            }
+        },
+        "reference": {
+            "title": "Source",
+            "descr": "Referred from"
+        },
+        "card": {
+            "title": "Patient",
+            "title2": "Internal number"
+        },
+        "not_found": {
+            "title": "No patients found",
+            "descr": "Click on the button in the page header to add a new patient",
+            "descr2": "Patients based on your criteria not found"
+        },
+        "new": {
+            "submit": "Create a patient",
+            "title": "New patient",
+            "dont_close": {
+                "title": "Do not close",
+                "descr": "Add the next patient after"
+            },
+            "shared": {
+                "title": "Sharing",
+                "descr": "Allow access to all users"
+            }
+        },
+        "share": {
+            "title": "Sharing"
+        },
+        "delete": {
+            "title": "Delete"
+        },
+        "archived": {
+            "title": "Profile archived",
+            "descr": "This patient was archived. Click below to restore all patients' data",
+            "restore": "Restore profile",
+            "confirm":{
+                "title":"Archive patient?",
+                "descr":"This patient will be marked as archived"
+            }
+        },
+        "log":{
+            "all":"History",
+            "upcoming":"Upcoming",
+            "no_rec":{
+                "title":"No records",
+                "descr":"Add some records to patient"
+            },
+            "task_add":"assigned new task",
+            "task_complete":"completed a task",
+            "appt_add":"scheduled an appointment",
+            "appt_complete":"completed an appointment",
+            "appt_edit":"edited an appointment",
+            "patient_add":"created a profile",
+            "invoice_add":"added an invoice",
+            "note_add":"created a note",
+            "doc_add":"created a document",
+            "invoice_payment_add":"added a payment"
+        },
+        "profile": {
+             "title": "Profile",
+             "title2": "Patient profile",
+             "treat": {
+                 "title": "Treatment",
+                 "not_found": "No plans",
+                 "add": "Create a plan"
+             },
+             "templates":{
+                 "edit":"Edit templates",
+                 "add_sec":"Add section",
+                 "add_tpl":"Add template"
+             },
+             "task": {
+                 "title": "Tasks",
+                 "title2":"Task",
+                 "not_found": "No tasks",
+                 "add": "Create a task"
+             },
+             "bill": {
+                 "title": "Invoices",
+                 "not_found": "No invoices",
+                 "add": "Create an invoice"
+             },
+             "appt": {
+                 "title": "Appointments",
+                 "not_found": "No appts",
+                 "add": "Create an appt"
+             },
+            "tabs":{
+                "general":{
+                    "title":"General",
+                    "custom_fields":{
+                        "title":"Add field",
+                        "set":"Customize",
+                        "type":{
+                            "title":"Type",
+                            "date":"Date",
+                            "phone":"Phone",
+                            "address":"Address",
+                            "text":"Text"
+                        },
+                        "name":{
+                            "title":"Name",
+                            "ph":"Field name"
+                        },
+                        "empty":{
+                            "title":"Custom fields",
+                            "descr":"Here you can attach additional data to patients profile, for example passport number"
+                        }
+                    }
+                },
+                "medical":{
+                    "title":"Medical",
+                    "add":"Add and click Enter to submit",
+                    "allergies":"Allergies",
+                    "medications":"Medications",
+                    "urgent":"Urgent",
+                    "past_ill":"Past illnesses",
+                    "current_ill":"Current illnesses"
+                },
+                "tasks":{
+                    "title":"Tasks",
+                    "new":"New task"
+                }
+            }
+         },
+        "charting": {
+            "title": "Treatment",
+            "sel_plan":"Select a plan",
+            "sel_proc":"Procedure",
+            "gen_plan":"Main plan",
+            "sel_diag":"Diagnosis",
+            "sel_diag.add":"Add diagnosis",
+            "sel_diag.bot1":"This ICD-10 code will be added to selected teeth or",
+            "sel_diag.bot2":"unset diagnosis",
+            "sel_proc.add":"Add procedures",
+            "sel_proc.bot1":"This procedure will be added to selected teeth or",
+            "sel_proc.bot2":"unset procedures",
+            "sel_title":"Teeth",
+            "empty":{
+                "title":"Start by adding procedures here",
+                "1":"Click on any tooth, select one or more teeth",
+                "2":"Select a procedure icon on the top of the dental chart",
+                "3":"Choose one or many procedures from your price list",
+                "4":"Done! Click on the save button to confirm"
+            },
+             "proc_tab":{
+                "all":"All procedures",
+                "sel":"Selected"
+            },
+            "delete_proc":{
+                "title":"Confirm?",
+                "descr":"This procedures will be deleted"
+            },
+            "sel_area":{
+                "top":"Toggle top",
+                "bot":"Toggle bottom"
+            },
+            "prog":"Progress",
+            "keep_sep":{
+                "title":"For each tooth",
+                "descr":"Save these procedures for each tooth separately"
+            },
+            "appts":{
+                "not_found":{
+                    "title":"No appointments",
+                    "descr":"Appointments for this patient not founds"
+                }
+            },
+            "print":{
+                "title":"",
+                "descr":""
+            },
+            "plan": {
+                "add": "Add plan",
+                "def": "Appointments",
+                "sel": "Plan status",
+                "conf": {
+                    "title": "Confirm plan",
+                    "title2":"Plan confirmed",
+                    "descr": "Select this status if the treatment plan has been approved by the patient",
+                    "descr2": "The procedures of this plan will be available in the main plan"
+                },
+                "cancel": {
+                    "title": "Reject",
+                    "descr": "Select this status if the patient has rejected this treatment plan"
+                },
+                "delete":{
+                    "title":"Delete plan?",
+                    "descr":"This plan will be deleted, but all the invoiced procedures remains"
+                },
+                "new":{
+                    "title":"New plan",
+                    "descr":"Enter new plan name"
+                },
+                "no": {
+                    "title": "The list is empty",
+                    "descr": "Treatment plans have not yet been created"
+                }
+            },
+            "kid_teeth": "Child teeth",
+            "tab": {
+                "procedures": "Procedures",
+                "book": "Notes",
+                "no_appt": "No appts"
+            },
+            "procedures": {
+                "selected": "Selected procedures",
+                "inv": "Create invoice",
+                "compl": "Complete",
+                "move": "Move",
+                "add_appt": "Add to appointment",
+                "del": "Delete",
+                "not_found": {
+                    "title": "No procedures",
+                    "descr": "Select the teeth first to add new procedures"
+                },
+                "unass": {
+                    "title": "No appointments",
+                    "descr": "Move these procedures to appointments"
+                }
+            }
+            
+        },
+        "billing": {
+            "title": "Billing",
+            "inv": "Invoice",
+            "not_found":{
+                "title":"No invoices found",
+                "descr":"You haven't created invoices for this patient yet"
+            },
+            "print":{
+                "title":"Printout the invoice",
+                "descr":"Preparing the printing invoice... please wait..."
+            },
+            "tab": {
+                "det": "Details",
+                "paym": "Payments",
+                "del": "Delete",
+                "print": "Print"
+            },
+            "status": {
+                "pend": "Waiting",
+                "paid": "Paid",
+                "unpaid": "Expired"
+            },
+            "pay_t":{
+                "balance":"Deposit account",
+                "cash":"Cash",
+                "card":"Card",
+                "other":"Other"
+            },
+            "delete":{
+                "title":"Delete invoice?",
+                "descr":"This invoice will be deleted but the procedures in dental chart will be saved"
+            },
+            "no_access":"You don't have premissions to load this invoice",
+            "create": "Create invoice",
+            "add_proc": "Add procedure",
+            "total_sum": "Total amount",
+            "note": "Note",
+            "tax": "Tax",
+            "tax_descr":"Add tax to this invoice",
+            "tax_after":"After tax",
+            "disc_after":"After discount",
+            "disc": "Discount",
+            "disc_descr":"Add discount to this invoice",
+            "paid": "Paid",
+            "remained": "Remained",
+            "to_pay": "To pay",
+            "new": {
+                "title": "New invoice"
+            },
+            "empty":{
+                "title":"Create new invoice",
+                "1":"Click on Create button",
+                "2":"Add procedures, apply discount and tax if needed",
+                "3":"Use patient internal balance for upcoming appointments"
+            },
+            "no": {
+                "title": "Invoice number"
+            },
+            "sum": {
+                "title": "Amount",
+                "ph":"Payment amount...",
+                "descr": "Payment amount"
+            },
+            "type": {
+                "title": "Type",
+                "descr": "Payment type"
+            },
+            "pay": "Pay",
+            "unass": {
+                "title": "Unbilled procedures"
+            },
+            "topup": {
+                "title": "Set balance",
+                "title2":"History",
+                "btn":{
+                    "a":"Withdraw",
+                    "b":"Topup"
+                }
+            },
+            "cat": {"all": "All invoices", "disc": "Discounts", "debt": "Debts", "tax":"Tax"},
+            "tot_due": "Debt",
+            "due_date": "Due date",
+            "create_date": "Created date"
+        },
+        "files": {
+            "empty":{
+                "title":"Upload patient files",
+                "1":"Any formats - images, documents, 3D X-Rays",
+                "2":"Use upload button on the top to add file",
+                "3":"All generated patient forms will be automatically uploaded here"
+            },
+            "document":{
+                "single":"Document",
+                "select":{
+                    "title":"Select a template",
+                    "title2":"Template"
+                },
+                "no_tpl":{
+                    "title":"No templates",
+                    "descr":"Click on bottom button to add a new template"
+                },
+                "edit":{
+                    "title":"Edit document",
+                    "confirm":"Save document"
+                },
+                "send":{
+                    "title":"Send to email",
+                    "descr":"Send the copy to patient email address"
+                },
+                "submit":"Print document",
+                "create":{
+                    "title":"New document",
+                    "name":{
+                        "title":"Document title",
+                        "ph":"Enter document title..."
+                    },
+                    "preview":"Preview",
+                    "confirm":"Create document",
+                    "tags":{
+                        "title":"Tags",
+                        "descr":"Place this tags into document template, this tags will be automatically replaced with values while generating the document",
+                        "pt":"Patient",
+                        "cl":"Clinic",
+                        "ot":"Other"
+                    }
+                }
+            },
+             "title": "Storage",
+             "generate":"Create document",
+             "upload": "Upload",
+             "not_found":{
+                 "title":"No files found",
+                 "descr":"Click on the Upload button to add new file to this patient"
+             },
+             "selected": "Selected files",
+             "search": "Search by files ...",
+             "types": {
+                 "all": "All files",
+                 "img": "Images",
+                 "doc": "Documents",
+                 "3d": "3d shots"
+             },
+             "ren": "Rename",
+             "dl": "Download",
+             "del": "Delete"
+         }
+    },
+    "inventory":{
+        "item":{
+            "code":"Code",
+            "name":"Name",
+            "count_one":"Min. unit"
+        },
+        "unit":{
+            "pc":"шт.",
+            "ml":"мл."
+        },
+        "proc":{
+            "add":"Refill"
+        }
+    },
+    "price": {
+        "title": "Price",
+        "descr":"Your clinic price list",
+        "procedure": {
+            "code": "Code",
+            "name": "Procedure name",
+            "fee": "Price",
+            "qty":"Qty"
+        },
+        "find": "Searching procedure ...",
+        "new": "Add procedure",
+        "no_proc": {
+            "title": "No procedures",
+            "descr": "Procedures for this category have not been created yet"
+        },
+        "delete":"Delete procedure",
+        "proc": {
+            "diag": "Diagnosis",
+            "resto": "Restoration",
+            "rct": "Root canal",
+            "hyg": "Hygiene",
+            "white": "Whitening",
+            "proth": "Prosthetics",
+            "implant": "Implantation",
+            "braces": "Orthodontics",
+            "extr": "Surgery"
+        }
+    },
+    "signup": {
+        "title": "",
+        "submit": "Create account"
+    },
+
+    "register": {
+        "title": "Get started for free",
+        "descr":"We will help you save time on everyday tasks and reduce patients no-shows.",
+        "title2": "It's almost ready!",
+        "descr2": "We just need some of your details to finish the registration. We will use your contact data for support purposes.",
+        "code": {
+            "title": "Confirmation code",
+            "descr": "6-digit code from email"
+        },
+        "submit": "Sign up",
+        "email": {
+            "descr": "We will send you a confirmation message"
+        },
+        "serv":{
+            "1":{
+                "title":"Streamline workflow",
+                "descr":"We will help you with all daily tasks like scheduling, treatment planning, billing and making reports."
+            },
+            "2":{
+                "title":"Get more patients",
+                "descr":"We will help you get more patients with appointment booking portal and treatments presentations."
+            },
+            "3":{
+                "title":"Import your data",
+                "descr":"We will import all the data from current software absolutely for free or help you digitize medical records."
+            },
+            "4":{
+                "title":"Global community",
+                "descr":"Join us and be a part of our dental community in more than 20 countries in Europe, Asia, Latin America."
+            }
+        },
+        "alr_acc": "Already have an account?",
+        "alr_acc.go": "Log in",
+        "complete": "Get started",
+        "no_letter": "If you did not receive the letter, write to us at info@dentaltap.com to complete the registration."
+    },
+    "login": {
+        "title": "Login to account",
+        "descr": "Enter your details to log in",
+        "submit": "Log in",
+        "new_acc": "Account registration",
+        "email": {
+            "title": "Email",
+            "descr": "Your Email, provided at registration"
+        },
+        "serv":{
+            "1":{
+                "title":"Video tutorials",
+                "descr":"Get started faster and go through all main features with our one minute video tutorials.",
+                "btn":"Watch tutorials"
+            },
+            "2":{
+                "title":"Any questions?",
+                "descr":"Let us know if you have any questions with the app or issues while working with your account.",
+                "btn":"Contact us"
+            }
+        },
+        "confirm":{
+            "title":"Confirmation sent",
+            "descr":"We've sent you a confirmation message, please check your mailbox"
+        },
+        "invite":{
+            "title":"Invitation confirmed",
+            "descr":"Now you can login into this organization using your email and password"
+        },
+        "confirmed":{
+            "title":"Email confirmed",
+            "descr":"Your email address was confirmed"
+        },
+        "pass": {
+            "title": "Password",
+            "descr": "Your password, from 6 to 16 characters",
+            "recovery": "Forgot your password?"
+        },
+
+        "organization": {
+            "title": "Select an organization",
+            "noname": "Untitled",
+            "your": "Your organization"
+        },
+        "invite": {
+            "title": "Confirm the invitation",
+            "confirm": "Confirm the invitation",
+            "descr": "The user invited you to the organization to work together. To continue, fill out the form below"
+        },
+        "recovery": {
+            "title": "Password recovery",
+            "submit": "Recover password",
+            "descr": "We will send a link for password recovery to the specified email",
+            "new_password": {
+                "title": "New password",
+                "descr": "Enter your new password"
+            },
+            "confirmed":{
+                "title":"Password changed",
+                "descr":"You can login with your new password now"
+            },
+            "requested":{
+                "title":"Request sent",
+                "descr":"We've sent an instructions on your Email to recover password"
+            },
+            "check": {
+                "title": "Checking the application"
+            }
+        }
+    },
+
+   "user": {
+        "title": "Patient",
+        "email": {
+            "title": "Email",
+            "descr": "Email address"
+        },
+        "photo": {
+            "title": "Photo",
+            "descr": "Upload a photo"
+        },
+        "fulln": {
+            "title": "Name",
+            "descr": "Full Name",
+            "ph": "Enter the name ..."
+        },
+        "dob": {
+            "title": "Birthday"
+        },
+        "lang": {
+            "title": "Language",
+            "descr": "Interface language"
+        },
+        "address": {
+            "title": "Address",
+            "ph":"Enter address...",
+            "descr": "Address of residence",
+            "explain":"We will be using this address to deliver printed invoices and other documents related to your account."
+        },
+        "pt_fulln": {
+            "title": "Patient",
+            "descr": "Full Name",
+            "descr2":"Name and phone"
+        },
+        "pass": {
+            "title": "Password",
+            "descr": "Password from 6 to 16 characters",
+            "descr2": "Repeat password"
+        },
+        "phone": {
+            "title": "Phone",
+            "descr": "Contact phone",
+            "ph": "Enter phone ...",
+            "descr2": "Additional phone",
+            "explain":"We will be using this phone number only for support purposes and we will not share your phone number with anyone."
+        }
+    },
+    "task": {
+        "not_found": {
+            "title": "No tasks",
+            "descr": "No tasks for this period found"
+        },
+        "new":"New task",
+        "title":"Tasks",
+        "submit":"Add task",
+        "empty_note": "Empty task",
+        "section": {
+            "due": "Overdue",
+            "upcoming": "Upcoming",
+            "archived": "Archived"
+        },
+        "name":{
+            "title":"Title",
+            "descr":"Task title",
+            "ph":"Enter task title..."
+        },
+        "type":{
+            "title":"Tag",
+            "descr":"Task tag",
+            "ph":"Enter tag..."
+        },
+        "note":{
+            "title":"Details",
+            "descr":"Detailed note",
+            "ph":"Write some note ..."
+        },
+        "user":{
+            "title":"Assign to",
+            "descr":"Assigned user"
+        },
+        "date":{
+            "title":"Date",
+            "descr":"Task date"
+        },
+        "result":{
+            "title":"Result",
+            "descr":"Task result",
+            "ph":"Result notes..."
+        },
+        "complete":"Complete this task",
+        "delete":"Delete",
+        "delete_conf":{
+            "title":"Delete task?",
+            "descr":"This task will be deleted"
+        },
+        "save":"Save task",
+        "search":"Search by patient, tag or task description...",
+        "selected": "Selected tasks",
+        "create":{
+            "title":"Create a task"
+        },
+        "detail":{
+            "title":"Details"
+        }
+    },
+    "invoice": {
+        "from": "from",
+        "not_found": {
+            "title": "No invoices",
+            "unpaid_descr": "You don't have unpaid invoices for this period"
+        },
+        "unpayed": {
+            "title": ""
+        }
+    },
+    "provider": {
+        "title": "Provider",
+        "descr": "Select a provider",
+        "descr2": "Selected provider"
+    },
+    "cal": {
+        "title": "Calendar",
+        "today": "Today",
+        "print":"Print schedule",
+        "section": {
+            "title": "Section",
+            "descr": "Selected section"
+        },
+        "setup":"Click on any empty timeslot to create an appointment",
+        "clinic":{
+            "def":"My clinic",
+            "add":{
+                "title":"Add clinic",
+                "descr":"Enter clinic name"
+            }
+        },
+        "del_section":{
+            "title":"Delete section?",
+            "descr":"After this, visits that belongs to this section may not be viewable on the calendar"
+        },
+        "cabinet":{
+            "all":"All sections",
+            "add":{
+                "title":"Add section",
+                "descr":"Enter section name"
+            }
+        },
+        "fd":{
+            "tasks":"Tasks",
+            "invoices":"Invoices"
+        },
+        "widget":{
+            "title":"Online booking",
+            "newpt":"A new patient record will be created",
+            "oldpt":"We found a patient with this phone number in the database"
+        },
+        "tab":{
+            "appt":"Appointment",
+            "task":"Task",
+            "note":"Note"
+        },
+        "workhours":{
+            "title":"Set workhours",
+            "title2":"Edit providers workhours",
+            "delete":{
+                "title":"Delete timeslot?",
+                "descr":"This timeslot will be deleted"
+            },
+            "button":"Edit workhours",
+            "descr":"Select desired timeslots to reserve for this doctor. Click close button when you finished.",
+            "wrong":{
+                "title":"Please note!",
+                "descr":"This timeslot was assigned with another dentist."
+            }
+        },
+        "withoutpt":{
+            "title":"Without patient",
+            "title2":"Empty appointment",
+            "descr":"Just add simple note into calendar"
+        },
+        "no_access":{
+            "title":"Access denied",
+            "descr":"You can't create new appointments"
+        },
+        "no_invoice":{
+            "descr":"You haven't created an invoice for this appointment. To create a new one click on the right button.",
+            "btn":"Create an invoice"
+        },
+        "not_sel_appt": "Not selected",
+        "cancel": "Cancel appointment",
+        "save": "Save",
+        "status": {
+            "title": "Status",
+            "descr": "Appt status",
+            "conf": "Confirmed",
+            "sched": "Scheduled",
+            "del":"Deleted",
+            "compl": "Completed",
+            "noshow":"No show"
+        },
+        "delete":{
+            "title":"Cancel appointment?",
+            "descr":"This appointment will be canceled and removed from calendar"
+        },
+        "invoices": {
+            "title": "Invoices",
+            "descr": "Appt invoices"
+        },
+        "new_appt": {
+            "title": "New appointment",
+            "confirm": "Create appointment"
+        },
+        "note": {
+            "title": "Note",
+            "descr": "Appointment note",
+            "ph": "Write some note ..."
+        },
+        "notify_create": {
+            "title": "Notify on create",
+            "descr": "We will send notification to patient in the next 20 mins"
+        },
+        "notify_before": {
+            "title": "Notify before appt",
+            "descr": "Notify the patient on the day before appointment"
+        },
+        "date_time": {
+            "title": "Day",
+            "descr": "Date and time",
+            "from": "from",
+            "to": "to"
+        },
+        "settings": {
+            "title":"Params",
+            "descr":"Scheduler params",
+            "save": "Save settings",
+            "workhours": {
+                "title": "Operating hours",
+                "descr": "This interval will be available for scheduling"
+            },
+            "dur":{
+                "title":"Scale",
+                "descr":"Interval between cells"
+            },
+            "week_start": {
+                "title": "First day of week",
+                "descr": "The day of the week that will be displayed first"
+            },
+            "sections": {
+                "title": "Sections",
+                "ph":"Enter the section name...",
+                "descr": "Multiple visits at the same time"
+            }
+        }
+    },
+    "analyt": {
+        "title": "Analytics",
+        "all_org": "All providers",
+        "dl_report": "Download report",
+        "list":"List",
+        "appt_period": {
+            "title": "Appointments for the period",
+            "title_axis": "Appointments",
+            "label": {
+                "total": "Total",
+                "compl": "Successful",
+                "conf": "Confirmed",
+                "cancel": "Canceled"
+            }
+        },
+        "proc_period":{
+            "title":"Procedures list",
+            "not_found":{
+                "title":"Procedures not found",
+                "descr":"Procedures for this period not found"
+            }
+        },
+        "init_appt": {
+            "title": "Initial appointments",
+            "label":{
+                "total":"All",
+                "cancel":"Cancelled",
+                "rate":"Drop-outs"
+            }
+        },
+        "paym_period": {
+            "title": "Payments",
+            "label": {
+                "inc": "Payments",
+                "disc": "Discounts",
+                "debt": "Debts",
+                "tax":"Tax"
+            }
+        },
+        "inv_period":{
+            "title":"Invoices"
+        },
+        "tasks_period":{
+            "title":"Tasks for the period"
+        },
+        "paym_type": {
+            "title": "Payments type"
+        },
+        "proc_type": {
+            "title": "Invoiced procedures"
+        },
+        "doc_workhours": {
+            "title": "Working hours",
+            "label":{
+                "total":"Total, h",
+                "appts":"Appts, h",
+                "load":"Occupancy "
+            }
+        },
+        "new_patients":{
+            "title":"New patients",
+            "axis":"Patients"
+        },
+        "age":{
+            "title":"Patients age",
+            "label":{
+                "under18":"0-18 yo",
+                "under24":"18-24 yo",
+                "under35":"24-35 yo",
+                "under46":"35-46 yo",
+                "under60":"46-60 yo",
+                "above60":"60+ yo"
+            }
+        },
+        "source":{
+            "title":"Patients source"
+        }
+    },
+    "tutorials":{
+        "calendarComponent":{
+            "content":{
+                "1":"Hi there👋👋",
+                "2":"Here you can schedule your patients, add your working hours, use tasks for follow-on visits, and customize your calendar. Check out our tutorial to learn more!",
+                "3":"Or talk to us, we are here for you! 🙌 💻 📲"
+            }            
+        },
+        "patientsComponent":{
+            "content":{
+                "1":"This is your patients list ❤️❤️",
+                "2":"Here you can add new records, search for patients and sort your records. Freemium version already included 100 free patients records.",
+                "3":"Its so easy to get started here right now! 👩‍💻 👨‍💻"
+            }            
+        },
+        "profileComponent":{
+            "content":{
+                "1":"How do you feel about the patient profile? 👩‍🔬",
+                "2":"We divided it into two sections, office tasks on the left, practice tasks on the right. Let's get started by adding new procedures and diagnoses!",
+                "3":"To learn more, check that video tutorial below 👇👇"
+            }            
+        },
+        "buttons":{
+            "tutorial":"Watch tutorial",
+            "chat":"Chat with us!"
+        },
+        "patients":{
+            "1":{
+                "title":"Create fast",
+                "text":"Click on the \"Create\" button in the top menu to create a patient card. It’s enough to fill in the name and phone fields to create a new patient."
+            },
+            "2":{
+                "title":"Patient Search",
+                "text":"Use the search field on the right to find a patient by name or phone number. Just enter the first 3 letters or 3 digits for the phone number."
+            },
+            "3":{
+                "title":"Basic Filters",
+                "text":"Convenient search by category - primary, debtors and archived patients. The options are located in the top menu of the page."
+            }
+        },
+        "profile":{
+            "1":{
+                "title":"Profile",
+                "text":"All basic information about the patient is stored here, you can add arbitrary fields - phone number, date, address or text."
+            },
+            "2":{
+                "title":"Tasks",
+                "text":"Use this section to store reminders, such as repeat visits or calls. These reminders are displayed on the calendar."
+            },
+            "3":{
+                "title":"Документы",
+                "text":"Fast documents creation - treatment consent agreements, personal data agreements etc. You must add your own document templates before you begin."
+            },
+            "4":{
+                "title":"Notes",
+                "text":"This section is used for internal notes about the patient, for example, here you can write a brief result of a telephone conversation with the patient."
+            },
+            "5":{
+                "title":"Treatments",
+                "text":"All visits are stored under the visits tab. To suggest one or more treatment plans, click on the new plan button. All created plans will be displayed under the \"Select plan \" tab."
+            },
+            "6":{
+                "title":"History",
+                "text":"Notes for visits - history, complaints, research results, etc. Set up a convenient format for templates for your clinic. These notes will be displayed in a printed patient card."
+            },
+            "7":{
+                "title":"Billing",
+                "text":"Patient summary - the amount of bills, paid bills and debts. Quickly create a new account and a list of completed procedures for which an account has not yet been created."
+            },
+            "8":{
+                "title":"Files",
+                "text":"Store any patient files - X-ray, 3D images, acts of completed work, and any other files of arbitrary size."
+            }
+        }
+    },
+    "booking":{
+        "welcome":"Hi! Welcome to my schedule. Please follow the instructions below to make your dental appointment.",
+        "no_slot":"Can't find timeslot that fits you? Please call us {{phone}} or send us an email to {{email}}",
+        "select":{
+            "date":"Select a date",
+            "time":"Select a time"
+        },
+        "btn":{
+            "back":"Back",
+            "next":"Next"
+        },
+        "online":{
+            "explain":"Provide this link to your patients, so they will be able to schedule their appointments online."
+        },
+        "confirm":"Confirm appointment",
+        "confirmed":{
+            "title":"Appointment confirmed",
+            "1":"Thank you, your appointment at {{name}} was scheduled. We might call you back soon to confirm date and time of your visit.",
+            "2":{
+                "1":"We are looking forward to see you on",
+                "2":"at",
+                "3":"Our address is {{address}}"
+            },
+            "3":"If you can't attend for any reason or would like to reschedule please call now {{phone}}"
+        },
+        "name":{
+            "title":"Name",
+            "descr":"Your name"
+        },
+        "phone":{
+            "title":"Phone",
+            "descr":"Phone number"
+        },
+        "note":{
+            "title":"Note",
+            "descr":"Notes (if any)"
+        }
+    }
+
+}

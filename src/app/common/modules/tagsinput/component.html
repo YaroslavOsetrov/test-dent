@@ -1,0 +1,36 @@
+<div class="tags-input">
+    <span class="tags-input__tag label label-primary" *ngFor="let tag of tags">
+        {{tag[displayField]}}
+        <span *ngIf="isDeleteable(tag)" role="button" class="tags-input__tag-remove-btn" (click)="removeTag(tag)" (touch)="removeTag(tag)">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+        </span>
+    </span>
+    <input
+        *ngIf="options === null" 
+        class="tags-input__input-field" 
+        type="text" 
+        (keydown)="validateLength($event)"
+        placeholder="{{ getPlaceHolder() }}"
+        name="tags"
+        (keyup.enter)="addTag(tagInput)" (keydown.backspace)="removeLastTag(tagInput)"
+        [disabled]="maximumOfTagsReached()"
+        [hidden]="maximumOfTagsReached()"
+        #tagInput />
+    <input
+        *ngIf="options !== null" 
+        class="tags-input__input-field" 
+        type="text" 
+        placeholder="{{ getPlaceHolder() }}"
+        name="tags"
+        (keydown)="validateLength($event)"
+        (keydown.backspace)="removeLastTag(tagInput)"
+        [(ngModel)]="selected" 
+        [typeahead]="options"
+        [typeaheadOptionField]="displayField"
+        (typeaheadOnSelect)="typeaheadOnSelect($event)"
+        (typeaheadNoResults)="typeaheadOnNoMatch($event)"
+        [disabled]="maximumOfTagsReached()"
+        [hidden]="maximumOfTagsReached()"
+        #tagInput />
+</div>

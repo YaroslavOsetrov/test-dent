@@ -1,0 +1,47 @@
+<div bsModal #paymentModal="bs-modal" class="modal zoom">
+    <div class="modal-dialog-custom modal-dialog modal-mds">
+        <div class="modal-content modal-primary">
+            <div class="modal-header descr2">
+                {{'analyt.paym_period.title'|translate}}
+                <button (click)="paymentModal.hide()" type="button" class="close">
+                    <span>×</span>
+                </button>
+            </div>
+            <div class="modal-body" *ngIf="!isLoaded">
+                <div class="py25" *ngFor="let i of [1,2,3,4,5,6]">
+                    <div class="animated-background text"></div>
+                    <div class="animated-background text-sm"></div>
+                </div>
+            </div>
+            <div class="modal-body" *ngIf="isLoaded && payments.length == 0">
+                <div class="fullpage-message">
+                    <span class="sl sl-icon-wallet"></span>
+                    <h3 class="title">
+                        No payments
+                    </h3>
+                    <p class="text-muted">
+                        You don't have payments for this period
+                    </p>
+                </div>
+            </div>
+            <div class="modal-body pa0" *ngIf="isLoaded">
+                <table class="container-light table-responsive table-wide table table-wide table-hover table-no-first-border mb0">
+                    <tbody>
+                        <tr [hidden]="payment.patient_id == null" *ngFor="let payment of payments">
+                            <td class="cell-avatar">
+                                <div class="avatar-letters">{{payment.fullname|nameLetters}}</div>
+                            </td>
+                            <td class="td-cut">
+                                <a class="no-decor" target="_blank" [routerLink]="['/patients/' + payment.patient_id]">{{payment.fullname}}</a>
+                            </td>
+                            <td class="payment-date text-muted text-right" colspan="2">
+                                <i class="sl sl-icon-clock"></i> {{payment.date_day|datex:'short2'}}
+                            </td>
+                            <td class="text-right">{{payment.paid_amt|myCurrency}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

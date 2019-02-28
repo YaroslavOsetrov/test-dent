@@ -1,0 +1,32 @@
+{
+    "subtitle":"Welcome to DentalTap",
+    "title":"GET STARTED NOW",
+    "subject":"DentalTap - Get started now",
+    "button":"My Dashboard",
+    "descr":"Hi %fullname%, thanks for signing up for DentalTap. In this Email newsletter we will tell you more about our product and how you we can help you grow your dental practice with it.",
+    
+    "pm.title":"A simple Practice Management workflow",
+    "pm.descr":"Start your practice management today, just follow the 3 steps below",
+    "pm.step1.title":"SCHEDULING",
+    "pm.step1.descr":"Create patient and schedule an appointment",
+    "pm.step2.title":"TREATMENTS",
+    "pm.step2.descr":"Chart a treatment and current state",
+    "pm.step3.title":"BILLING",
+    "pm.step3.descr":"Create an invoice and accept payments",
+
+    "watch.descr1":"WATCH IT",
+    "watch.descr2":"IN ACTION",
+
+    "free.title":"Use for free up to 100 patients!",
+    "free.descr":"Software prices are listed below, for solo dental practices we are offering unlimited freemium version",
+
+    "price.solo.title":"SOLO",
+    "price.solo.descr":"For solo dental practices, including all features except collaboration. Easy to upgrade to clinic plan",
+    "price.clinic.title":"CLINIC",
+    "price.clinic.descr":"For dental clinics of different size and shape, invite your colleagues and set the access rules",
+    "price.subscribe":"Subscribe",
+
+    "more.title":"Want to know more?",
+    "more.descr":"Would you like to schedule a phone call within next couple days with us to know more? We will answer all your questions and offer the best price for your clinic!",
+    "more.button":"Contact us"    
+}

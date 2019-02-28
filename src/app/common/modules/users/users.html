@@ -1,0 +1,54 @@
+ <!--<div *ngIf="totalRows>4">
+    <input [(ngModel)]="search" class="form-control pl15 nobg" (keyup)="0" placeholder="{{'common.form.search'|translate}}"/>
+ </div>-->
+
+<ul [ngClass]="{'users-scroll':totalRows>4}" class="list-modern" #scrollElement>
+    <li *ngIf="allButton" (click)="switchProvider(null)">
+        <a class="link">
+            <div class="avatar-letters">
+                <span class="sl sl-icon-layers"></span>
+            </div>
+            {{'analyt.all_org'|translate}}
+        </a>
+    </li>
+    <li [hidden]="onlyProviders && !item.user_roles[0].is_doctor" 
+        (click)="switchProvider(i)" 
+        *ngFor="let item of users | userSort | userSearch:search; let i = index">
+        <a class="link">
+            <div class="avatar-letters">{{item.fullname|nameLetters}}</div>
+            {{item.fullname}}
+        </a>
+        <div class="actions">
+            <a href="" class="btn btn-sm">
+            <!--    <span class="sl sl-icon-link"></span>-->
+            </a>
+        </div>
+    </li>
+</ul>
+<!--
+ <div [ngClass]="{'users-scroll':totalRows>4}" #scrollElement>
+     <table class="table-hover pointer table table-users-min mb0 table-no-border">
+       
+        <tr [hidden]="!allButton" (click)="switchProvider(null)">
+            <td class="cell-avatar">
+                <div class="avatar-letters">
+                    <span class="sl sl-icon-layers"></span>
+                </div>
+            </td>
+            <td>
+                {{'analyt.all_org'|translate}}
+            </td> 
+        </tr>
+        <tr>
+            <td class="cell-avatar">
+                <div class="avatar-letters">{{item.fullname|nameLetters}}</div>
+            </td>
+            <td *ngIf="item.fullname != 'fullname'" class="td-cut" style="max-width: 165px;">
+                {{item.fullname}}
+            </td>
+            <td *ngIf="item.fullname == 'fullname'" class="td-cut" style="max-width: 165px;">
+                {{item.email}}
+            </td>
+        </tr>
+    </table>
+</div>-->

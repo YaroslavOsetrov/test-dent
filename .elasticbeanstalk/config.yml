@@ -1,0 +1,42 @@
+branch-defaults:
+  master:
+    environment: dentaltapuniversal-dev
+environment-defaults:
+  dentaltap-prod:
+    branch: master
+    repository: DentalTapRepository
+  dentaltap-production:
+    branch: master
+    repository: DentalTapRepository
+  dentaltap-stage:
+    branch: master
+    repository: DentalTapUniversalAppRepository
+  dentaltapuniversal-dev:
+    branch: master
+    repository: DentalTapUniversalAppRep
+  dentaltapuniversal-prod:
+    branch: null
+    repository: null
+  prod:
+    branch: master
+    repository: DentalTapUniversalApp
+  production:
+    branch: null
+    repository: null
+  staging:
+    branch: null
+    repository: null
+global:
+  application_name: DentalTapUniversal
+  branch: master
+  default_ec2_keyname: DentalTapUniversal
+  default_platform: Node.js
+  default_region: ap-southeast-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: DentalTapRepository
+  sc: git
+  workspace_type: Application

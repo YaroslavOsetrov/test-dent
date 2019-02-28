@@ -1,0 +1,20 @@
+<ul class="nav navbar-nav">
+    <li>
+        <a (click)="addTasksModal.show()"><span class="sl sl-icon-plus"></span> {{'patient.profile.tabs.tasks.new'|translate}}</a>
+    </li>
+</ul>
+<div class="task-list">
+    <section *ngFor="let key of tasks|keys">
+        <div class="task-section">{{'task.section.'+key|translate}}</div>
+        <div (click)="detailTaskModal.show(item)" class="task-item" *ngFor="let item of tasks[key]" [ngClass]="{'text-danger':key=='due', 'text-success':item.is_completed}" >
+            <div class="task-details">
+                <span class="task-title">{{item.title}}</span>
+                <small class="user" *ngIf="item.provider" [ngClass]="{'text-muted':key=='upcoming'}">{{item.provider.fullname}}, {{item.date|datex:'full'}}</small>
+                 <small class="user" *ngIf="item.provider2" [ngClass]="{'text-muted':key=='upcoming'}">{{item.provider2.fullname}}, {{item.date|datex:'full'}}</small>
+            </div>
+        </div>
+    </section>
+   
+</div>
+<addTasks-modal (taskAdded)="onTaskAdded($event)" #addTasksModal></addTasks-modal>
+<detailTask-modal (taskDeleted)="onTaskDeleted($event)" (taskSaved)="onTaskSaved($event)" #detailTaskModal></detailTask-modal>

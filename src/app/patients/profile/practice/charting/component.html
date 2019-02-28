@@ -1,0 +1,80 @@
+<ul class="nav navbar-nav nav-sub navbar-dropdown-alt">
+    <li>
+        <a [ngClass]="{'active':openedTab=='plan'}" (click)="openedTab= (openedTab=='plan')?null:'plan'">
+            <span [ngClass]="{'sl-icon-arrow-up-circle':openedTab=='plan', 'sl-icon-arrow-down-circle':openedTab!='plan'}" class="sl "></span> 
+            <span *ngIf="!selectedPlan.id">
+                {{'patient.charting.plan.def'|translate}}
+            </span>
+            <span *ngIf="selectedPlan.id">
+                {{selectedPlan.name}}
+            </span>
+        </a>
+    </li>
+
+    <li>
+        <a [ngClass]="{'active':openedTab=='proc'}" (click)="openedTab= (openedTab=='proc')?null:'proc'">
+            <span [ngClass]="{'sl-icon-arrow-up-circle':openedTab=='proc', 'sl-icon-arrow-down-circle':openedTab!='proc'}" class="sl "></span> 
+            {{'patient.charting.sel_proc.add'|translate}}
+        </a>
+    </li>
+    <li>
+        <a [ngClass]="{'active':openedTab=='diag'}" (click)="openedTab= (openedTab=='diag')?null:'diag'">
+            <span [ngClass]="{'sl-icon-arrow-up-circle':openedTab=='diag', 'sl-icon-arrow-down-circle':openedTab!='diag'}" class="sl"></span> 
+            {{'patient.charting.sel_diag.add'|translate}}
+        </a>
+    </li>
+
+    <li *ngIf="selectedPlan.id && selectedPlan.status != 1">
+        <a (click)="updatePlanStatus(1)" class="success-btn">
+             <span class="sl sl-icon-check"></span> {{'patient.charting.plan.conf.title'|translate}}
+        </a>
+    </li>
+    <li class="navbar-text text-success" *ngIf="selectedPlan.id && selectedPlan.status == 1">
+        <span class="sl sl-icon-check"></span> {{'patient.charting.plan.conf.title2'|translate}}
+    </li>
+    <li class="navbar-text" *ngIf="selectedPlan.is_default">
+        
+    </li>
+    <li class="navbar-text pull-right">
+         {{'patient.charting.kid_teeth'|translate}}
+        <div class="input-switch input-switch-1">
+            <input [(ngModel)]="is_child" (ngModelChange)="savePatient()" class="input" type="checkbox" id="isChild">
+            <label class="switch" for="isChild"></label>
+        </div>
+    </li>
+</ul>
+<section class="panel-alt" *ngIf="openedTab =='proc'">
+    <procedures-list
+        #proceduresList
+        [plan]="selectedPlan"
+        (proceduresAdded)="($event.is_default)?defaultPlan.dental_chart = $event.dental_chart : selectedPlan.dental_chart = $event.dental_chart; selectedTeeth = [];"
+        [selectedTeeth]="selectedTeeth"></procedures-list>
+</section>
+<section class="panel-alt" *ngIf="openedTab =='plan'">
+     <plans-list 
+        #plansListComponent
+        (planSelected)="selectPlan($event); openedTab=null"
+        [plans]="treatmentPlans"></plans-list>
+</section>
+<section class="panel-alt" *ngIf="openedTab=='diag'">
+    <add-diagnosis [plan]="selectedPlan" [selectedTeeth]="selectedTeeth"></add-diagnosis>
+</section>
+<section class="panel-content">
+    <!--<add-procedures 
+        [selectedTeeth]="selectedTeeth" 
+        [plan]="selectedPlan"
+        (unselectTeeth)="selectedTeeth = []"
+    ></add-procedures>-->
+    <section>
+        <teeth 
+            (uniNotationSelected)="uniNotation=$event"
+            [uniNotation]="uniNotation"
+            [plan]="selectedPlan"
+            [dentalChart]="selectedPlan.dental_chart"
+            [isChild]="is_child" 
+            [selectedTeeth]="selectedTeeth"
+            (teethSelected)="selectedTeeth = $event">
+        </teeth>
+    </section>
+    <procedures [uniNotation]="uniNotation" #proceduresComponent [defaultPlan]="defaultPlan" [isLoaded]="isLoaded" [plan]="selectedPlan"></procedures>
+</section>

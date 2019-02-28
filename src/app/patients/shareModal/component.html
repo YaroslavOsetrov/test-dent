@@ -1,0 +1,46 @@
+<div bsModal #shareModal="bs-modal" class="modal center zoom">
+    <div class="modal-dialog-custom modal-dialog modal-sms">
+        <div class="modal-content modal-primary">
+            <div class="modal-header">
+                {{'patient.share.title'|translate}}
+                <button (click)="shareModal.hide()" type="button" class="close">
+                    <span>×</span>
+                </button>
+            </div>
+            <div class="modal-body pa0" style="min-height: 300px">
+                 <table class="table table-users-min mb0 table-no-border">
+                    <tbody *ngIf="!isLoaded">
+                        <tr *ngFor="let i of [1,2,3]">
+                            <td>
+                                <div class="animated-background text"></div>
+                                <div class="animated-background text-sm"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tbody *ngIf="isLoaded"> 
+                        <tr [hidden]="i==0" *ngFor="let item of users; let i = index">
+                                <td class="cell-avatar">
+                                <div class="avatar-letters">{{item.fullname|nameLetters}}</div>
+                            </td>
+                            <td *ngIf="item.fullname != 'fullname'" class="td-cut" style="max-width: 165px;">
+                                {{item.fullname}}
+                            </td>
+                            <td *ngIf="item.fullname == 'fullname'" class="td-cut" style="max-width: 165px;">
+                                {{item.email}}
+                            </td>
+                            <td [ngClass]="{'el-disabled':patient?.create_user_id == item.id}" class="action-toggle">
+                                <div class="input-switch input-switch-1">
+                                    <input (change)="toggleUser(item.id)" [checked]="selectedIds.indexOf(item.id) != -1" type="checkbox" id="user-{{i+1}}" class="input" />
+                                    <label for="user-{{i+1}}" class="switch"></label>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button [ladda]="isSaving" (click)="save()" class="btn btn-primary">{{'common.form.save'|translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>

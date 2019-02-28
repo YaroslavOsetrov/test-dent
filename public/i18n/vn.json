@@ -1,0 +1,1045 @@
+{
+    
+    "widget":{
+        "next":"Next",
+        "confirm":"Confirm",
+        "st1":{
+            "title":"Select a dentist",
+            "bot":"Don't know which dentist to choose? Just skip this step"
+        },
+        "st2":{
+            "title":"Select a procedure",
+            "bot":"Don't know which procedure to choose? Just skip this step"
+        },
+        "st3":{
+            "title":"Contact details",
+            "urgent":{
+                "title":"Urgent appointment",
+                "descr":"Schedule on the nearest date?"
+            }
+        },
+        "st4":{
+            "title":"Appointment confirmed",
+            "descr":"Your request has been sent"
+        }
+    },
+     "logs":{
+        "appt_widget":{
+            "t1":"with the phone number",
+            "t2":"requested an appointment from the website.",
+            "urg":"urgent",
+            "pt_ph":"Patient with the phone",
+            "found":"was found in database"
+        }
+    },
+    "ch":{
+         "diag":{
+            "c":"Sâu răng",
+            "pt":"Bệnh nha chu",
+            "ws":"Khuyết tật răng có hình V",
+            "z":"Sỏi răng",
+            "gv":"Viêm lợi",
+            "lp":"Viêm nha chu",
+            "ht":"Các mô cứng xác định",
+            "op":"Chỉnh nha khoa"
+        },
+        "proc":{
+            "blank": "Uncharted",
+            "miss": "Mất răng",
+            "intact": "Phủ sứ",
+            "other": "Khác",
+            "watch": "Xem xét",
+            "resto": "Khôi phục",
+            "rct": "Chữa tủy",
+            "hyg":"Cleaning",
+            "rctpc": "Chữa tủy",
+            "rctpc2":"Chốt sợi & tái tạo cùi",
+            "seal": "Trám răng",
+            "ven": "Mặt dán sứ",
+            "cr": "Mão răng",
+            "imp": "Cấy ghép",
+            "cr34": "Mão răng 3/4",
+            "ext": "Xóa",
+            "res": "Cắt nướu",
+            "sin": "Nâng khoang mũi",
+            "whit": "Làm trắng",
+            "retainer":"Thân răng",
+            "retainer2":"Cầu răng",
+            "resto_code": {
+                "mesial": "Medial",
+                "oclusial": "Chụp X-quang cắn",
+                "distal": "Kìm cắt xa",
+                "lingual": "Niềng răng mặt trong",
+                "buccal": "Chằng nha"
+            }
+        },
+        "proc_cat":{
+            "surg": "Nhổ răng khôn",
+            "orthop": "Chỉnh nha",
+            "ther": "Nội nha",
+            "common": "Nha khoa tổng quát"
+        }
+    },
+
+    "common": {
+        "time": "Time",
+        "init_load": {
+            "title": "Khởi tạo ...",
+            "descr": "Đang cài đặt chương trình, vui lòng đợi trong giây lát..."
+        },
+        "time_pick": "Chọn thời gian thuận tiện",
+        "date_range": {
+            "t": "Hôm nay",
+            "w": "Tuần",
+            "m": "Tháng"
+        },
+        "proc_stat": {
+            "tp": "Điều trị",
+            "c": "Hoàn thành",
+            "e": "Thoát"
+        },
+        "click_to_ed": "Biên tập lại",
+        "form": {
+            "create":"Tạo nên",
+            "del": "Xóa",
+            "save": "Lưu",
+            "add": "Thên",
+            "copy": "Copy",
+            "err":"Lỗi",
+            "conf":"Xác nhận",
+            "canc":"Hoàn tác"
+        },
+        "weekday":{
+            "mo":"Thứ hai",
+            "sa":"Thứ bảy",
+            "su":"Chủ nhật"
+        },
+        "appt": "Appt",
+        "sel": "Chọn",
+        "sel_file": "Chọn tệp tin",
+        "treatment_book": {
+            "complaints": "Khiếu nại",
+            "investigations": "Tiền sử bệnh",
+            "observations": "Quan sát",
+            "diagnoses": "Triệu chứng",
+            "ph": "Add notes...",
+            "treatments": "Điều trị",
+            "recommendations": "Giới thiệu"
+        },
+        "errors": {
+            "FILE_NOT_FOUND": "Không tìm thấy tệp",
+            "BIG_FILE_SIZE": "Tệp tin quá lớn",
+            "INVITATION_NOT_FOUND": "Không tìm thấy lời mời",
+            "ALREADY_CONFIRMED": "Người dùng đã xác minh",
+            "INVALID_TOKEN": "Phím bấm không đúng",
+            "USER_NOT_BELONGS": "Không tìm thấy tổ chức ",
+            "INCORRECT_PASSWORD": "Mật khẩu không giá trị ",
+            "RECOVERY_NOT_FOUND": "Không tìm thấy yêu cầu phục hồi mật khẩu",
+            "INVALID_INVITATION": "Không thể thêm lời mời ",
+            "ALREADY_INVITED": "Lời mời đã được xác nhận ",
+            "NO_ACCESS": "Hạn chế truy cập",
+            "EXCEEDED_USERS_COUNT": "Không thể thêm người dùng ",
+            "NO_NEED_RENEW": "Đăng ký đang hoạt động",
+            "ALREADY_SUBSCRIBED": "Đăng ký được tạo ra ",
+            "UNABLE_TO_UPDATE": "Lỗi cập nhật",
+            "UNABLE_TO_DESTROY": "Lỗi cài đặt",
+            "PATIENT_NOT_FOUND": "Không tìm thấy bệnh nhân",
+            "PATIENT_ID_NOT_VALID": "Mã bệnh nhân không hợp lệ",
+            "BAD_REQUEST": "Yêu cầu thất bại",
+            "INVALID_DATA": "Dự liệu không đúng",
+            "APPT_NOT_FOUND": "Không tìm thấy",
+            "INVALID_INVOICE": "Không thể tạo hóa đơn",
+            "INVALID_PAYMENTS_DATA": "Không thể hoàn tất thanh toán",
+            "ALREADY_PAID": " Tài khoản đã được thanh toán",
+            "INVALID_PLAN_DATA": " Định dạng dữ liệu không đúng ",
+            "INVALID_PROCEDURE_DATA": " Định dạng thủ tục không đúng ",
+            "REACH_PATIENTS_LIMIT": "Số bệnh nhân vượt quá giới hạn",
+            "UNABLE_TO_SORT": "Lỗi sắp xếp",
+            "UNDEFINED_PROVIDER": "Không tìm thấy nha sĩ",
+            "USER_INVALID_CONFIRMATION_CODE": " Mã xác minh không hợp lệ "
+        }
+    },
+    "organization":{
+        "name":{
+            "title":"Tên",
+            "descr":"Tên Phòng Khám"
+        },
+        "unconfirmed":{
+            "title":"Email của bạn",
+            "title2":"chưa được xác nhận. Vui lòng kiểm tra hộp thư đến của bạn hoặc nhấp để gửi lại xác nhận",
+            "submit":"Gửi xác nhận"
+        },
+        "tax":{
+            "title":"Thuế",
+            "descr":"Thuế mặc định",
+            "ph":"Thuế suất,%"
+        },
+        "phone":{
+            "title":"Điện Thoại",
+            "descr":"Điện Thoại Liên Lạc"
+        },
+        "address":{
+            "title":"Địa Chỉ",
+            "ph":"Địa Chỉ Phòng Khám",
+            "descr":"Địa Chỉ Phòng Khám"
+        },
+        "url":{
+            "title":"URL",
+            "descr":"Website Phòng Khám"
+        },
+        "email":{
+            "title":"Email",
+            "descr":"Địa Chỉ Email"
+        },
+        "currency":{
+            "title":"Ngoại Tệ",
+            "descr":"Ngoại Tệ Ứng Dụng"
+        },
+        "timezone":{
+            "title":"Múi Giờ",
+            "descr":"Múi Giờ Của Bạn"
+        }
+    },
+    "tags":{
+        "patient":{
+            "name":"Họ tên",
+            "phone":"Điện thoại",
+            "birthday":"Sinh nhật",
+            "address":"Địa chỉ",
+            "code":"Hồ sơ y tế #",
+            "email":"Email",
+            "doc":{
+                "no":"Số tài liệu",
+                "iss":"Ngày phát hành tài liệu",
+                "exp":"Ngày hết hạn của tài liệu",
+                "auth":"Căn cứ tài liệu"
+            }
+        },
+        "clinic":{
+            "name":"Tên",
+            "phone":"Điện thoại",
+            "address":"Địa chỉ ",
+            "url":"Trang web",
+            "email":"Email"
+        },
+        "other":{
+            "today":{
+                "date":"Ngày hiện tại",
+                "time":"Thời điểm hiện tại"
+            }
+        }
+    },
+    "settings": {
+        "title": "Cài đặt",
+        "menu": {
+            "acc": "Tài khoản",
+            "org": "Nha khoa",
+            "sub": "Đăng ký",
+            "collab": "Hợp tác",
+            "tpl": "Mẫu",
+            "exit":"Đăng xuất"
+        },
+        "organization":{
+            "title":"Nha khoa",
+            "widget":{
+                "title":"Online booking",
+                "link_descr":"Embedded link for appointment booking form",
+                "enable":{
+                    "title":"Enable?",
+                    "descr":"Enable widget"
+                },
+                "success_text":{
+                    "title":"Success message",
+                    "descr":"This message will be desplayed after success appointment request",
+                    "ph":"Enter the message..."
+                }
+            }
+        },
+        "account": {
+            "title": "Tài khoản",
+            "change_pass": {
+                "title": "Đổi mật khẩu",
+                "ex": {
+                    "title": "Mật khẩu",
+                    "descr": "Mật khẩu hiện nay"
+                },
+                "new": {
+                    "title": "Mật khẩu mới",
+                    "descr": "Nhập mật khẩu mới"
+                },
+                "new2": {
+                    "title": "Nhập lại mật khẩu",
+                    "descr": "Nhập lại"
+                }
+            }
+        },
+        "collaboration": {
+            "title": "Hợp tác",
+            "invited": "Mời",
+            "unable": "Nếu không thể mời đồng nghiệp mới, hãy chỉnh lại đăng ký để thêm tài khoản mới. ",
+            "status": {
+                "act": "Kích hoạt",
+                "pend": "Chờ"
+            },
+            "invite": {
+                "submit": "Mời",
+                "descr": "Mời đồng nghiệp cùng phòng khám để làm việc với nhau."
+            },
+            "access": {
+                "title": "Quyền hạn",
+                "title2": "Quyền truy cập",
+                "close":{
+                    "title":"Remove user?",
+                    "descr":"This user will be removed from organization "
+                },
+                "rules":{
+                    "is_doctor":"Dentist premissions",
+                    "is_doctor.descr":"Allow to schedule patients with this user",
+                    "view_analytics":"View analytics",
+                    "view_analytics.descr":"Allow to view analytics and report of all clinic",
+                    "view_patient":"View patients",
+                    "view_patient.descr":"Allow to view and modify all patients records",
+                    "edit_appt":"Schedule an appointments",
+                    "edit_appt.descr":"Allow to schedule and make changes to appointments",
+                    "edit_payment":"Accept payments",
+                    "edit_payment.descr":"Allow to accept and modify payments from patients",
+                    "edit_price":"Edit price",
+                    "edit_price.descr":"Allow to modify price list",
+                    "add_task":"Tasks assigning",
+                    "add_task.descr":"Allow to assign tasks with other users and modify it",
+                    "access_subscription":"Subscription",
+                    "access_subscription.descr":"Allow to access to clinic subscription",
+                    "access_collaboration":"Collaboration",
+                    "access_collaboration.descr":"Allow to manage and invite other people to collaborate",
+                    "access_templates":"Templates",
+                    "access_templates.descr":"Allow to modify SMS notifications and document tempaltes",
+                    "share_patient":"Patient sharing",
+                    "share_patient.descr":"Allow to share patient records with another dentists",
+                    "edit_patient":"Edit patients",
+                    "edit_patient.descr":"Allow to modify patient information",
+                    "delete_patient":"Delete patients",
+                    "delete_patient.descr":"Allow to delete existing patients profiles",
+                    "create_patient":"Create patient",
+                    "create_patient.descr":"Allow to create new patients"
+                }
+            },
+            "del": "Xóa"
+        },
+        "subscription": {
+            "topup": "Điền lại",
+            "title": "Đăng ký và Dịch vụ",
+            "save": "Lưu đăng ký",
+            "price_mo": "Chi phí hàng tháng",
+            "start": "Đăng ký bắt đầu",
+            "next_pay": "Đợt thanh toán tiếp theo",
+            "categories":{
+                "sms":"SMS",
+                "storage":"Lưu trữ",
+                "subscription":"Đăng ký"
+            },
+            "sms": {
+                "title": "Tin nhắn SMS",
+                "available": "Đã gửi",
+                "confirm":{
+                    "title":"Thêm SMS?",
+                    "descr":"Chúng tôi sẽ thêm {{number}} SMS vào tài khoản của bạn và tính phí thẻ của bạn {{amt}}?"
+                },
+                "no_card":"Để bắt đầu gửi thông báo SMS cho khách hàng của bạn vui lòng đính kèm thẻ thanh toán của bạn."
+            },
+            "storage": {
+                "mb": "MB",
+                "title": " Kho Vault",
+                "available": "Ghi lại",
+                "confirm":{
+                    "title":"Mở rộng bộ nhớ?",
+                    "descr":"Chúng tôi sẽ thêm {{number}} Mb lưu trữ vào tài khoản của bạn và tăng chi phí thuê bao hàng tháng của bạn lên {{amt}}?"
+                }
+            },
+            "history": {
+                "title": "Lịch sử thanh toán ",
+                "no_title":"Không thanh toán",
+                "no_descr":"Tất cả thanh toán của bạn sẽ được hiển thị ở đây"
+            },
+            "create": {
+                "title": "Đăng ký mới",
+                "descr": "Để mở khóa phiên bản đầy đủ của sản phẩm và sử dụng các dịch vụ bổ sung như SMS và bộ nhớ bạn cần đăng ký bằng cách đính kèm thẻ thanh toán của mình."
+            },
+            "edit": {
+                "title": "Đăng ký lại ",
+                "descr": "Điền mẫu bên dưới để cập nhật thông tin thanh toán. Để trống thì lưu thông tin thanh toán hiện tại.",
+                "descr_add": "Xác định số lượng tài khoản bổ sung cho phòng khám",
+                "monthly_fee": ""
+            },
+            "card": {
+                "no": "Số thẻ",
+                "expired": "Ngày hết hạn",
+                "cvv": "Mã CVV ",
+                "owner": "Chủ thẻ",
+                "owner_title": "Tên chủ thẻ"
+            }
+        },
+        "templates": {
+            "mess": {
+                "title": "Thông báo bổ nhiệm",
+                "create_appt": {
+                    "title": "Tạo tài khoản thẻ visa",
+                    "descr": "Một thông báo được gửi khi bạn tạo một chuyến thăm"
+                },
+                "confirm_appt": {
+                    "title": "Xác nhận lượng thăm khám",
+                    "descr": "Một tin nhắn được gửi đi một ngày trước chuyến thăm"
+                },
+                "edit_appt": {
+                    "title": "Thay đổi ngày thăm khám",
+                    "descr": "Thông báo khi thay đổi ngày / giờ của cuộc hẹn"
+                },
+                "cancel_appt": {
+                    "title": "Hủy lượt thăm khám",
+                    "descr": "Thông báo khi hủy cuộc hẹn"
+                }
+            }
+        }
+    },
+    "patient":{
+        "title": "Bệnh nhân",
+        "create": "Tạo",
+        "search": "Tìm bệnh nhân ...",
+        "cat": {
+            "active": "Tất cả bệnh nhân",
+            "shared": "Hợp tác",
+            "primary": "Quan trọng",
+            "debts": "Nợ",
+            "archived": "Lưu trữ"
+        },
+         "limit":{
+            "title":"Xin lưu ý, bạn đang sử dụng phiên bản miễn phí bước đầu với hồ sơ bệnh nhân hạn chế. Để mở khóa phiên bản đầy đủ hãy đính kèm thẻ thanh toán của bạn",
+            "title2":{
+                "p1":"Bạn đã tạo",
+                "p2":"trong",
+                "p3":"hồ sơ bệnh nhân có sẵn "
+            }
+        },
+        "print":{
+            "title":"In tiền sử",
+            "descr":"Đang chuẩn bị in tiền sử ... vui lòng đợi ..."
+        },
+        "detail": {
+            "title": "Chi tiết"
+        },
+        "last_appt": {
+            "title": "Lần truy cập mới nhất"
+        },
+        "edit":{
+            "title":"Chỉnh sửa hồ sơ"
+        },
+        "note":{
+            "title":"Thêm ghi chú",
+            "submit":"Thêm",
+            "ph":"Thêm ghi chú của bạn ...",
+            "empty":{
+                "title":"Không có ý kiến",
+                "descr":"Thêm một số nhận xét quan trọng cho bệnh nhân này"
+            }
+        },
+        "balance": {
+            "title": "Cân bằng"
+        },
+        "doc": {
+            "ready":{
+                "title":"Tài liệu đã sẵn sàng",
+                "descr":"Tài liệu của bạn đã sẵn sàng, nhấp vào nút bên dưới để tải xuống",
+                "btn":"Tải về"
+            },
+            "number": {
+                "title": "Tài liệu",
+                "descr": "Tài liệu số"
+            },
+            "issued": {
+                "title": "Ngày phát hành",
+                "descr": ""
+            },
+            "expired": {
+                "title": "Hiệu lực đến"
+            },
+            "authority": {
+                "title": "Ban hành",
+                "descr": "Người ban hành",
+                "descr2": "Tên đơn vị"
+            },
+            "delete":{
+                "title":"Xóa tài liệu?",
+                "descr":"Mẫu tài liệu này sẽ bị xóa"
+            }
+        },
+        "reference": {
+            "title": "Nguồn Source of the parish",
+            "descr": ""
+        },
+        "card": {
+            "title": "Bản đồ",
+            "descr": "Số thẻ"
+        },
+        "not_found": {
+            "title": "Không tìm thấy bệnh nhân",
+            "descr": "Nhấp vào nút trên cùng của trang để thêm bệnh nhân mới "
+        },
+        "new": {
+            "submit": "Tạo tệp bệnh nhân",
+            "title": "Bệnh nhân mới",
+            "dont_close": {
+                "title": "Đừng đóng tệp",
+                "descr": "Thêm bệnh nhân khác "
+            },
+            "shared": {
+                "title": "Chia sẻ",
+                "descr": "Cho phép truy cập tất cả người dùng "
+            }
+        },
+        "share": {
+            "title": "Chia sẻ"
+        },
+        "delete": {
+            "title": "Xóa"
+        },
+        "archived": {
+            "title": "Lưu trữ",
+            "descr": "Đã lưu trữ thông tin bệnh nhân. Nhấp vào nút bên dưới để phục hồi thông tin bệnh nhân ",
+            "restore": "Phục hồi",
+            "confirm":{
+                "title":"Lưu giữ bệnh nhân?",
+                "descr":"Bệnh nhân này sẽ được đánh dấu là lưu trữ"
+            }
+        },
+        "profile": {
+             "title": "Hồ sơ",
+             "title2": "Hồ sơ bệnh nhân",
+             "treat": {
+                 "title": "Điều trị",
+                 "not_found": "Không có điều trị nào ",
+                 "add": "Lập kế hoạch "
+             },
+             "task": {
+                 "title": "Công việc",
+                 "not_found": "Không có công việc",
+                 "add": "Tạo công việc"
+             },
+             "bill": {
+                 "title": "Tài khoản",
+                 "not_found": "Không có tài khoản",
+                 "add": "Tạo công việc"
+             },
+             "appt": {
+                 "title": "Lượt thăm khám",
+                 "not_found": "Không có lượt thăm khám nào",
+                 "add": "Tạo lượt thăm khám"
+             }
+         },
+        "charting": {
+            "title": "Điều trị",
+             "sel_plan":"Chọn một kế hoạch",
+            "sel_proc":"Lập biểu thủ tục",
+            "sel_diag":"Lập biểu chẩn đoán",
+            "sel_title":"Chọn răng để lập biểu đồ",
+            "plan": {
+                "add": "Kế hoạch mới",
+                "def": "Kế hoạch chính",
+                "sel": "Chọn trạng thái",
+                "conf": {
+                    "title": "Xác nhận kế hoạch ",
+                    "descr": " Chọn trạng thái này nếu kế hoạch điều trị đã được bệnh nhân chấp thuận",
+                    "descr2": " Các thủ tục điều trị sẽ có trong kế hoạch chính"
+                },
+                "cancel": {
+                    "title": "Kế hoạch bị từ chối",
+                    "descr": "Chọn trạng thái này nếu bệnh phân từ chối kế hoạch điều trị "
+                },
+                "delete":{
+                    "title":"Xóa kế hoạch?",
+                    "descr":"Kế hoạch này sẽ bị xóa, nhưng tất cả các thủ tục lập hóa đơn vẫn còn"
+                },
+                "new":{
+                    "title":"Kế hoạch mới",
+                    "descr":"Nhập tên kế hoạch mới"
+                }
+            },
+            "appts":{
+                "not_found":{
+                    "title":"Không có cuộc hẹn",
+                    "descr":"Không tìm thấy các cuộc hẹn cho bệnh nhân này"
+                }
+            },
+            "kid_teeth": "Răng sữa",
+            "tab": {
+                "procedures": "Thủ tục điều trị",
+                "book": "Nhật ký",
+                "no_appt": "Không truy cập"
+            },
+            "procedures": {
+                "selected": "Chọn liệu trình điều trị ",
+                "inv": "Tạo tài khoản ",
+                "compl": "Thực hiện",
+                "move": "Chuyển",
+                "add_appt": "Thêm lượt thăm khám",
+                "del": "Xóa",
+                "not_found": {
+                    "title": "Không tìm thấy thủ tục điều trị ",
+                    "descr": "Chọn số răng và loại điều trị ở bên phải để thêm vào liệu trình điều trị "
+                },
+                "unass": {
+                    "title": "Không liên quan",
+                    "descr": "Thêm thủ tục này vào lượt thăm khám của bệnh nhân"
+                }
+            }
+            
+        },
+        "billing": {
+            "title": "Tài khoản",
+            "inv": "Tài khoản",
+            "tab": {
+                "det": "Chi tiết",
+                "paym": "Thanh toán",
+                "del": "Xóa",
+                "print": "In"
+            },
+            "status": {
+                "pend": "Chờ",
+                "paid": "Trả",
+                "unpaid": "Hết hạn"
+            },
+            "pay_t":{
+                "balance":"Tài khoản trả trước",
+                "cash":"Thẻ",
+                "card":"Tiền mặt"
+            },
+            "create": "Tạo tài khoản",
+            "add_proc": "Thêm thủ tục",
+            "total_sum": "Tổng số tiền",
+            "note": "Ghi chú...",
+            "tax": "Thuế VAT",
+            "disc": "Ưu đãi",
+            "paid": "Trả",
+            "remained": "Còn lại",
+            "to_pay": "Thanh toán",
+            "no_access":"Bạn không được phép tải hóa đơn này",
+            "new": {
+                "title": "Tài khoản mới"
+            },
+            "no": {
+                "title": "Số tài khoản"
+            },
+            "delete": {
+                "descr": "This invoice will be deleted but the procedures in dental chart will be saved",
+                "title": "Delete invoice?"
+            },
+            "sum": {
+                "title": "Tổng",
+                "descr": "Số tiền thanh toán"
+            },
+            "type": {
+                "title": "Hình thức",
+                "descr": "Hình thức thanh toán"
+            },
+            "pay": "Trả",
+            "unass": {
+                "title": "Những thủ tục không có tài khoảnProcedures without an account"
+            },
+            "topup": {
+                "title": "Nhập lại",
+                "descr": "Với những hóa đơn chưa thanh toán, tổng số tiền sẽ tự động đưa chia ra theo liệu trình điều trị "
+            },
+            "print":{
+                "title":"In ra hoá đơn",
+                "descr":"Đang chuẩn bị hoá đơn in ... vui lòng đợi ..."
+            },
+            "cat": {"all": "Tất cả tài khoản", "disc": "Giảm giá", "debt": "Nợ"},
+            "tot_due": "Nợ",
+            "due_date": "Tổng thanh toán",
+            "create_date": "Ngày lập phiếu"
+        },
+        "files": {
+             "title": "Tệp tin",
+             "upload": "Tải",
+             "selected": "Các tập tin được chọn",
+             "search": "Tìm kiếm tệp tin ...",
+             "types": {
+                 "all": "Tất cả tệp tin",
+                 "img": "Hình ảnh",
+                 "doc": "Tài liệu",
+                 "3d": "3d shots"
+             },
+             "ren": "Đổi tên",
+             "dl": "Tải",
+             "document": {
+                "no_tpl":{
+                    "title":"No templates",
+                    "descr":"Click on bottom button to add a new template"
+                },
+                "create":{
+                    "title":"Tài liệu mới",
+                    "name":{
+                        "title":"Tiêu đề tài liệu",
+                        "ph":"Tiêu đề này sẽ được hiển thị khi in tài liệu ..."
+                    },
+                    "preview":"Xem trước",
+                    "confirm":"Tạo tài liệu",
+                    "tags":{
+                        "title":"Thẻ",
+                        "descr":"Đặt các thẻ này vào mẫu tài liệu, thẻ này sẽ được tự động thay thế bằng các giá trị trong khi tạo tài liệu",
+                        "pt":"Bệnh nhân",
+                        "cl":"Nha Khoa",
+                        "ot":"Khác"
+                    }
+                },
+                "options": {
+                    "back": "Chọn một",
+                    "file": {
+                        "descr": "Tùy chỉnh tên tệp",
+                        "ph": "Thêm tên tệp tuỳ chỉnh",
+                        "title": "Tên tệp"
+                    },
+                    "new": "Bản mâu mơi",
+                    "proc": {
+                        "attach": "Thủ tục đính kèm",
+                        "descr": "Đính kèm thủ tục",
+                        "select": "Chọn thủ tục",
+                        "title": "Thủ tục"
+                    },
+                    "submit": "Tạo tài liệu",
+                    "title": "Tùy chọn tài liệu"
+                },
+                "select": {
+                    "title": "Chọn mẫu"
+                }
+            },
+            "generate": "Tạo tài liệu",
+            "not_found": {
+                "descr": "Nhấp vào nút Tải lên để thêm tập tin mới cho bệnh nhân này",
+                "title": "Không tìm thấy tệp nào"
+            },
+             "del": "Xóa"
+         }
+    },
+
+    "price": {
+        "title": "Bảng giá",
+        "procedure": {
+            "code": "Mã",
+            "name": "Tên của điều trị",
+            "fee": "Giá",
+            "qty":"số"
+        },
+        "find": "Tìm điều trị ...",
+        "new": "Thêm điều trị",
+        "no_proc": {
+            "title": "Danh sách trống",
+            "descr": "Thủ tục cho danh mục này chưa được tạo "
+        },
+        "proc": {
+            "diag": "Chẩn đoán",
+            "resto": "Phục hồi",
+            "rct": "Chữa tủy",
+            "hyg": "Cạo vôi răng",
+            "white": "Tẩy trắng răng",
+            "proth": "Phục hình nha",
+            "implant": "Cấy ghép Implants",
+            "braces": "Chỉnh nha",
+            "extr": "Nhổ răng khôn"
+        }
+    },
+    "signup": {
+        "title": "",
+        "submit": "Tạo tài khoản"
+    },
+
+    "register": {
+        "title": "Đăng ký tài khoản",
+        "title2": "Sẵn sàng!",
+        "conf": {
+            "p1":  "Vui lòng xác nhận trong email đăng ký –",
+            "p2": "Nhập 6 mã số xác nhận bên dưới để hoàn tất việc đăng ký."
+        },
+        "code": {
+            "title": "Mã xác nhận",
+            "descr": "Mã 6 số trong email "
+        },
+        "submit": "Đăng ký",
+        "email": {
+            "descr": "Thông báo xác nhận được gửi trong email "
+        },
+        "alr_acc": "Đã có tài khoản??",
+        "alr_acc.go": "Đăng nhập",
+        "complete": "Bắt đầu!",
+        "no_letter": "Nếu bạn chưa nhận được thư xác nhận, vui lòng email cho chúng tôi tại info@dentaltap.com để hoàn thành đăng ký."
+    },
+    "login": {
+        "title": "Đăng nhập tài khoản",
+        "submit": "Đăng nhập",
+        "new_acc": "Tài khoản đăng ký",
+        "email": {
+            "title": "Email",
+            "descr": "Email của bạn, đăng ký "
+        },
+        "pass": {
+            "title": "Mật khẩu",
+            "descr": "Mật khẩu từ 6 đến 16 ký tự",
+            "recovery": "Quên mật khẩu?"
+        },
+         "confirm": {
+            "descr": "We've sent you a confirmation message, please check your mailbox",
+            "title": "Confirmation sent"
+        },
+        "confirmed": {
+            "descr": "Your email address was confirmed",
+            "title": "Email confirmed"
+        },
+        "organization": {
+            "title": "Chọn một phòng khám",
+            "noname": "Không tiêu đề",
+            "your": "Phòng khám của bạn Your organization"
+        },
+        "invite": {
+            "title": "Xác nhận lời mời",
+            "confirm": " Xác nhận lời mời ",
+            "descr": "Người dùng mời bạn đến phòng khám để cùng làm việc. Điền mẫu bên dưới để tiếp tục "
+        },
+        "recovery": {
+            "title": "Khôi phục mật khẩu",
+            "submit": "Mật khẩu khôi phục",
+            "descr": "Đường dẫn khôi phục mật khẩu được gửi đến email đăng ký của bạn ",
+            "new_password": {
+                "title": "Mật khẩu mới",
+                "descr": "Nhập mật khẩu mới"
+            },
+            "confirmed": {
+                "descr": "You can login with your new password now",
+                "title": "Password changed"
+            },
+            "requested": {
+                "descr": "We've sent an instructions on your Email to recover password",
+                "title": "Request sent"
+            },
+            "check": {
+                "title": "Kiểm tra đơn đăng ký"
+            }
+        }
+    },
+
+   "user": {
+        "title": "Bệnh nhân",
+        "email": {
+            "title": "Email",
+            "descr": "Địa chỉ Email "
+        },
+        "photo": {
+            "title": "Hình ảnh",
+            "descr": "Tải ảnh lên"
+        },
+        "fulln": {
+            "title": "Tên",
+            "descr": "Họ tên",
+            "ph": "Nhập tên ..."
+        },
+        "dob": {
+            "title": "Sinh nhật:"
+        },
+        "lang": {
+            "title": "Ngôn ngữ",
+            "descr": "Ngôn ngữ giao diện"
+        },
+        "address": {
+            "title": "Địa chỉ",
+            "descr": "Địa chỉ cư trú",
+            "ph":"Địa chỉ của bạn..."
+        },
+        "pt_fulln": {
+            "title": "Bệnh nhân",
+            "descr": "Họ tên",
+            "descr2":"Tên và điện thoại"
+        },
+        "pass": {
+            "title": "Mật khẩu",
+            "descr": "Mật khẩu từ 6 đến 16 ký tự",
+            "descr2": "Nhập lại mật khẩu"
+        },
+        "phone": {
+            "title": "Điện thoại",
+            "descr": "Điện thoại liên lạc",
+            "ph": "Nhập số điện thoại ...",
+            "descr2": "Thêm số điện thoại"
+        }
+    },
+    "task": {
+        "title":"Nhiệm vụ",
+        "new":"Nhiệm vụ mới",
+        "search":"Tìm kiếm theo nhiệm vụ...",
+        "not_found": {
+            "title": "Không công việc",
+            "descr": "Bạn không có việc gì trong lúc này "
+        },
+        "empty_note": "Trống công việc",
+        "section": {
+            "expired": "Quá hạn",
+            "upcomingWeek": "Tuần",
+            "upcomingMonth": "Tháng"
+        },
+        "type":{
+            "title":"Loại",
+            "descr":"Loại công việc"
+        },
+        "note":{
+            "title":"Chú thích",
+            "descr":"Ghi chú công việc",
+            "ph":"Viết một số lưu ý ..."
+        },
+        "result":{
+            "title":"Kết quả",
+            "descr":"Kết quả công việc",
+            "ph":"Ghi chú kết quả..."
+        },
+        "save":"Lưu công việc",
+        "complete":"Hoàn thành",
+        "delete":"Xóa bỏ",
+        "delete_conf":{
+            "title":"Xóa công việc?",
+            "descr":"Công việc này sẽ bị xóa"
+        },
+        "detail":{
+            "title":"Chi tiết công việc"
+        },
+        "selected": "Chọn công việc",
+        "submit":"Thêm nhiệm vụ",
+        "create":{
+            "title":"Create a task"
+        },
+        "detail":{
+            "title":"Tạo một công việc"
+        }
+    },
+    "invoice": {
+        "from": "từ",
+        "not_found": {
+            "title": "Không tìm thấy tài khoản",
+            "unpaid_descr": ""
+        },
+        "unpayed": {
+            "title": ""
+        }
+    },
+
+    "provider": {
+        "title": "Nha sĩ",
+        "descr": "Nha sĩ tham gia"
+    },
+    "cal": {
+        "title": "Lịch",
+        "section": {
+            "title": "Buồng điều trị",
+            "descr": "Chọn văn phòng",
+            "ph":"Nhập tên của phần..."
+        },
+         "withoutpt":{
+            "title":"Không có bệnh nhân",
+            "title2":"Cuộc hẹn trống",
+            "descr":"Chỉ cần thêm lưu ý đơn giản vào lịch"
+        },
+        "not_sel_appt": "Không chọn",
+        "cancel": "Hủy thăm khám",
+        "save": "Lưu lượt thăm khám",
+        "status": {
+            "title": "Trạng thái thăm khám",
+            "descr": " Trạng thái thăm khám ",
+            "conf": "Xác nhận",
+            "del": "Deleted",
+            "sched": "Chỉ định",
+            "compl": "Hoàn thành"
+        },
+        "invoices": {
+            "title": "Tài khoản",
+            "descr": "Tài khoản lập hóa đơn"
+        },
+        "new_appt": {
+            "title": "Lượt thăm khám mới",
+            "confirm": "Gửi cho tiếp tân"
+        },
+        "note": {
+            "title": "Ghi chú",
+            "descr": "Nhận xét về lượt thăm khám",
+            "ph": "Nội dung nhận xét ..."
+        },
+        "notify_create": {
+            "title": "Thông báo về tạo lượt thăm khám",
+            "descr": "Thông báo tạo lượt thăm khám sẽ được gửi trong vòng 20 phút "
+        },
+        "notify_before": {
+            "title": "Ghi chú trước khi đến ",
+            "descr": "Thông báo cho bệnh nhân trước một ngày"
+        },
+        "date_time": {
+            "title": "Ngày",
+            "descr": "Thời gian đến",
+            "from": "c",
+            "to": "trước"
+        },
+        "delete": {
+            "descr": "Cuộc hẹn này sẽ bị xóa",
+            "title": "Xóa cuộc hẹn?"
+        },
+        "no_access": {
+            "descr": "You can't create new appointments",
+            "title": "Access denied"
+        },
+        "settings": {
+            "title": "Cài đặt lịch",
+            "title2":"Cài đặt",
+            "save": "Lưu cài đặt",
+            "workhours": {
+                "title": "Giờ làm việc",
+                "descr": "Tiếp tân đã ghi lại khoảng thời gian này"
+            },
+            "week_start": {
+                "title": "Đầu tuần",
+                "descr": "Ngày hiển thị đầu tiên"
+            },
+            "sections": {
+                "title": "Phòng khám",
+                "descr": "Sử dụng mục này nếu bạn có vài buồng khám trong phòng mạch. Bạn có thể thêm 8 buồng "
+            }
+        }
+    },
+    "analyt": {
+        "title": "Phân tích",
+        "all_org": "Toàn bộ phòng mạch",
+        "dl_report": "Tải báo cáo",
+        "list":"Danh sách",
+        "appt_period": {
+            "title": "Lượt thăm khám trong khoảng thời gian",
+            "title_axis": "Lượt thăm khám",
+            "label": {
+                "total": "Tổng cộng",
+                "compl": "Thành công",
+                "conf": "Xác nhận",
+                "cancel": "Hủy"
+            }
+        },
+        "init_appt": {
+            "title": "Lượt khám chính"
+        },
+        "paym_period": {
+            "title": "Khoản thanh toán trong kỳ",
+            "label": {
+                "inc": "Tổng tiền thanh toán",
+                "disc": "Số tiền chiết khấu",
+                "debt": "Số còn nợ"
+            }
+        },
+        "paym_type": {
+            "title": "Hình thức thanh toán"
+        },
+        "proc_type": {
+            "title": "Loại thủ tục"
+        },
+        "doc_workhours": {
+            "title": "Giờ làm việc"
+        }
+    }
+}

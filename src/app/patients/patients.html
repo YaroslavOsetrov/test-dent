@@ -1,0 +1,142 @@
+<tutorials [buttons]="{'tutorial':'https://www.youtube.com/watch?v=VKDUYQY9fZA', 'chat':true}" component="patientsComponent"></tutorials>
+<section class="container-light">
+    <nav class="navbar navbar-title navbar-sm">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand" href="#">
+                    {{'patient.title'|translate}}
+                </span>
+            </div>
+            <ul *ngIf="account.role.patients" class="nav navbar-nav">
+                <li>
+                    <a (click)="addPatientModal.show()">
+                        <span class="sl sl-icon-plus"></span> 
+                        {{'patient.create'|translate}}
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left-margin">
+                <li *ngFor="let group of patientGroups">
+                    <a [ngClass]="{'active':searchOptions.patientsGroup == group}" (click)="applyGroup(group)">{{'patient.cat.'+group|translate}}</a>
+                </li>
+            </ul>
+            <div class="navbar-form navbar-right">
+                <div class="input-group input-group-underline">
+                    <div class="input-group-addon pr0 pl0">
+                        <i class="sl sl-icon-magnifier"></i>
+                    </div>
+                    <input (keyup)="resetSearch($event)" #search (input)="performSearch($event)" type="text" class="form-control nobg" placeholder="{{'patient.search'|translate}}">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="alert alert-warning ba0 br0 mb0" *ngIf="patientStats?.created > 30 && patientStats?.created && patientStats?.available != 0">
+        <div class="row">
+            <div class="col-md-6">
+                <p>
+                    {{'patient.limit.title2.p1'|translate}} <strong>{{patientStats?.created}}</strong> {{'patient.limit.title2.p2'|translate}} <strong>{{patientStats?.available}}</strong> {{'patient.limit.title2.p3'|translate}}
+                </p>
+            </div>
+            <div class="col-md-6 text-left">
+                <a class="btn btn-warning btn-sm" href="/settings/subscription" target="_blank">{{'patient.limit.btn'|translate}}</a>
+                <a href="https://dentaltap.com/contact" target="_blank" class="alert-link">{{'patient.limit.quest'|translate}}</a>
+            </div>
+        </div>                            
+    </div>
+</section>
+<div class="row">
+    <div class="col-md-12">
+        <div *ngIf="searchOptions.isSorting || searchOptions.isSearching" class="loader-hor-wrapper loader-page-table">
+            <div class="loader loader-center"></div>
+        </div>
+        <table class="enlarge container-light table-responsive table-wide table table-wide table-hover table-no-first-border mb0">
+            <thead>
+                <tr>
+                    <th style="width:30px;">
+                    </th>
+                    <th (click)="applySort('fullname')" class="th-sortable" style="max-width: 300px;">
+                        {{'user.fulln.descr'|translate}}
+                        <span 
+                            [ngClass]="{
+                                'sl-icon-arrow-down':(searchOptions.sort.field == 'fullname' && searchOptions.sort.type != 'asc') || searchOptions.sort.field != 'fullname', 
+                                'sl-icon-arrow-up':searchOptions.sort.field == 'fullname' && searchOptions.sort.type == 'asc'
+                            }"
+                            class="sl"></span>
+                    </th>
+                    <th (click)="applySort('birthday')" class="th-sortable">
+                        {{'user.dob.title'|translate}}
+                        <span
+                            [ngClass]="{
+                                'sl-icon-arrow-down':(searchOptions.sort.field == 'birthday' && searchOptions.sort.type != 'asc') || searchOptions.sort.field != 'birthday', 
+                                'sl-icon-arrow-up':searchOptions.sort.field == 'birthday' && searchOptions.sort.type == 'asc'
+                            }"
+                            class="sl sl-icon-arrow-down"></span>
+                    </th>
+                    <th style="max-width: 220px;">
+                        {{'user.phone.title'|translate}}
+                    </th>
+                    <th (click)="applySort('last_appt')" class="th-sortable">
+                        {{'patient.last_appt.title'|translate}}
+                        <span 
+                            [ngClass]="{
+                                'sl-icon-arrow-down':(searchOptions.sort.field == 'last_appt' && searchOptions.sort.type != 'asc') || searchOptions.sort.field != 'last_appt', 
+                                'sl-icon-arrow-up':searchOptions.sort.field == 'last_appt' && searchOptions.sort.type == 'asc'
+                            }"
+                            class="sl sl-icon-arrow-down"></span>
+                    </th>
+                    <th (click)="applySort('total_debts')"class="th-sortable">
+                        {{'patient.balance.title'|translate}}
+                        <span 
+                        [ngClass]="{
+                            'sl-icon-arrow-down':(searchOptions.sort.field == 'total_debts' && searchOptions.sort.type != 'asc') || searchOptions.sort.field != 'total_debts', 
+                            'sl-icon-arrow-up':searchOptions.sort.field == 'total_debts' && searchOptions.sort.type == 'asc'
+                        }"
+                        class="sl sl-icon-arrow-down"></span>
+                    </th>
+                </tr>
+            </thead>
+            <tbody [ngClass]="{'section-muted':searchOptions.isSorting || searchOptions.isSearching}">
+                <tr [routerLink]="[item.id]" [ngClass]="{'active': activatedRowIndex == i,  'table-success':item.is_new}" *ngFor="let item of patients; let i = index">
+                    <td class="cell-avatar">
+                        <div class="avatar-letters">{{item.patient_user.fullname|nameLetters}}</div>
+                     
+                    </td>
+                    <td class="td-cut">
+                        <a style="font-weight: 600" class="no-decor">{{item.patient_user.fullname}}</a>
+                    </td>
+                    <td>{{item.patient_user.birthday|datex:'full'}}</td>
+                    <td>{{item.patient_user.phone}}</td>
+                    <td>{{item.patient_appointments[0]?.date|datex:'full'}}</td>
+                    <td *ngIf="item.total_debts<=0">{{item.balance|myCurrency}}</td>
+                    <td *ngIf="item.total_debts>0">-{{item.total_debts|myCurrency}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="!searchOptions.isSearching && patients.length == 0">
+            <div class="col-xs-12 col-md-8 col-md-offset-1 text-center">
+                <div class="fullpage-message">
+                    <img style="width:200px" src="/public/illustrations/empty-patients.svg"/>
+                    <h3 class="text-left">{{'patient.empty.title'|translate}}</h3>
+                    <ul class="steps">
+                        <li *ngFor="let i of [1,2,3]">
+                            <span class="sl sl-icon-check"></span>
+                            <span class="caption">{{'patient.empty.'+i |translate}}</span>
+                        </li>
+                    </ul>    
+                </div>
+            </div>
+           <!-- <section>
+                <span class="sl sl-icon-people"></span>
+                <h3 class="title">{{'patient.not_found.title'|translate}}</h3>
+                <p class="descr" *ngIf="searchOptions.patientsGroup == 'active' && search.value.length == 0">{{'patient.not_found.descr'|translate}}</p>
+                <p class="descr" *ngIf="searchOptions.patientsGroup != 'active' || search.value.length != 0">{{'patient.not_found.descr2'|translate}}</p>
+            </section>-->
+        </div>
+        <div *ngIf="searchOptions.isSearchingMore" style="height:60px;" class="table-footer">
+            <div class="loader-hor-wrapper">
+                <div class="loader loader-center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<addPatient-modal (patientAdded)="onPatientAdded($event)" #addPatientModal></addPatient-modal>

@@ -1,0 +1,66 @@
+<ul class="nav navbar-nav">
+    <li dropdown [dropup]="true">
+         <a dropdownToggle>
+            <span class="sl sl-icon-arrow-up-circle"></span> 
+            <span *ngIf="selectedOffice">
+                {{selectedOffice.name}}
+            </span>
+            <span *ngIf="!selectedOffice">
+                {{'cal.clinic.def'|translate}}
+            </span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown-modern dropup dropdown-menu-left">
+            <div class="title">
+                Select an office
+            </div>
+            <div class="dropdown-menu-scroll">
+                <ul class="list-modern">
+                    <li (click)="selectOffice(item)" [hidden]="item.is_deleted" *ngFor="let item of offices; let i = index">
+                        <a class="link">
+                            {{item.name}}
+                        </a>
+                        <div class="actions">
+                            <a *ngIf="i > 0" (click)="$event.preventDefault; $event.stopPropagation(); deleteItem('section_sub_index', j)" class="btn btn-sm">
+                                <span class="sl sl-icon-trash"></span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--
+            <table class="table table-hover table-no-border table-users-min mb0">
+                <tbody >
+                <tr class="pointer">
+                    <td>
+                        <a class="no-decor">{{item.name}}</a>
+                    </td>
+                    <td [ngClass]="{'el-disabled':i == 0}" (click)="$event.preventDefault; $event.stopPropagation(); deleteItem('section_index', i)" class="action">
+                        <a>
+                            <span class="sl sl-icon-trash"></span>
+                        </a>
+                    </td>
+                </tr>
+              <!--  <tr class="pointer" (click)="changeSection('section_sub_index', i)" *ngFor="let sectionSub of calendarSettings.sections[i].section_sub; let j = index">
+                    <td>
+                        {{sectionSub}}
+                    </td>
+                    <td (click)="$event.preventDefault; $event.stopPropagation(); deleteItem('section_sub_index', j)" class="action">
+                        <a>
+                            <span class="sl sl-icon-trash"></span>
+                        </a>
+                    </td>
+                </tr>-/->
+                </tbody>
+                <tbody>
+                    <tr class="pointer" (click)="addItem('section')">
+                        <td colspan="2">
+                            <a class="no-decor">
+                                <span class="sl sl-icon-plus"></span> {{'common.form.add'|translate}}
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>-->
+        </div>
+    </li>
+</ul>

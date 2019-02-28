@@ -1,0 +1,103 @@
+<table class="table table-fullwidth table-price-icons mb0">
+    <tr>
+        <td (click)="selectCategory(i)" [ngClass]="{'active':selectedCategoryId==i+1}" *ngFor="let item of categories; let i = index">
+            <i class="tp tp-icon-{{item.icon}}"></i> 
+            <span>{{item.translate_code|translate}}</span>
+        </td>
+    </tr>
+</table>
+<table class="table-pricelist table-price table table-wide table-no-first-border mb0">
+    <thead>
+        <tr>
+            <th class="td-code">{{'price.procedure.code'|translate}}</th>
+            <th>{{'price.procedure.name'|translate}}</th>
+            <th class="price">
+                {{'price.procedure.fee'|translate}}
+            </th>
+            <th class="action procedure-add">
+                <a (click)="addProcedure()">
+                    <span class="sl sl-icon-plus"></span>
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody *ngIf="procedures[selectedCategoryId].length == 0">
+        <tr>
+            <td colspan="4">
+                <div class="fullpage-message med">
+                    <section>
+                        <span class="sl sl-icon-list"></span><h3 class="title">
+                            {{'price.no_proc.title'|translate}}
+                        </h3>
+                        <p class="descr">
+                            {{'price.no_proc.descr'|translate}}
+                        </p>
+                    </section>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tbody [ngClass]="{'expanded':item.is_expanded}" *ngFor="let item of procedures[selectedCategoryId]; let i = index">
+        <tr *ngIf="!item.id || item.is_edit" class="editable">
+            <td class="check">
+                <input placeholder="..." required class="form-control form-control-td" [(ngModel)]="item.code"/>
+            </td>
+            <td>
+                <input placeholder="..." required class="form-control form-control-td" [(ngModel)]="item.name"/>
+            </td>
+            <td class="count-addon price">
+                <div class="input-group">
+                <input placeholder="..." required
+                   
+                    class="form-control form-control-td" 
+                    mask="0*.99"
+                    [(ngModel)]="item.fee"/>
+                    <div class="input-group-addon input-group-addon-td input-group-addon-sm">
+                        {{0|myCurrency:null:true}}
+                    </div>
+                </div>
+            </td>
+            <td class="action el-disabled">
+                <span class="sl sl-icon-arrow-down-circle"></span> {{item.procedure_inventory?.length}}
+            </td>
+        </tr>
+        <tr (click)="editProcedure(i)" *ngIf="item.id && !item.is_edit">
+            <td class="check">
+                {{item.code}}
+            </td>
+            <td title="{{item.name}}" class="name">{{item.name}}</td>
+            <td class="price">{{item.fee|myCurrency}}</td>
+            <td (click)="$event.stopPropagation(); item.is_expanded = !item.is_expanded" class="action td-slide-wrapper">
+                <span 
+                    [ngClass]="{'sl-icon-arrow-down-circle':!item.is_expanded, 'sl-icon-arrow-up-circle':item.is_expanded}" 
+                    class="sl"></span> {{item.procedure_inventory?.length}}
+            </td>
+        </tr>
+        <tr class="expanded-row" *ngIf="item.id && item.is_expanded">
+            <td colspan="4">
+                <inventory-table (inventoryChanged)="_updateProcedures(); item.is_expanded = false" [procedure]="item" #inventoryModal></inventory-table>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="floated-controls-wrapper" [ngClass]="{'active':isChanged}">
+    <div class="floated-controls">
+        <div class="controls">
+             <ul class="nav navbar-nav">
+                 <li class="navbar-text title">
+                    {{'common.form.changed'|translate}}
+                </li>
+                <li>
+                    <a (click)="save()">{{'common.form.save'|translate}}</a>
+                </li>
+                <li>
+                    <a (click)="reset()">{{'common.form.canc'|translate}}</a>
+                </li>
+                <li>
+                    <a (click)="deleteSelected()"><span class="sl sl-icon-trash"></span> {{'common.form.del_sel'|translate}}</a>
+                </li>
+             </ul>
+        </div>
+       
+    </div>
+</div>

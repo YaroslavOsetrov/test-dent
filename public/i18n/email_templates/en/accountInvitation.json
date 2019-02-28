@@ -1,0 +1,8 @@
+{
+    "subject":"You've got an invite",
+    "title":"Invitation to collaborate",
+    "content.title":"You're invited!",
+    "content.descr1":"%fullname% sent you an invite to collaborate",
+    "content.descr2":"If you haven't sign up yet we will ask you to fill in the form. If you already have an account just click on button below to confirm the invitation.",
+    "content.button":"Join this organization"
+}

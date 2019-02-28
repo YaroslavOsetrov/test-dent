@@ -1,0 +1,607 @@
+<html>
+    <head>
+        <style>
+            
+
+.teeth-wrapper{
+  min-width:820px;
+}
+
+.tooth-extraction{
+    width: 100%;
+    height: 210px;
+    position: absolute;
+    z-index: 11;
+}
+
+.teeth-bottom .tooth-extraction{
+    margin-top:-60px;
+}
+
+.tooth-extraction div{
+    width: 5px;
+    height: 100%;
+    background: red;
+    float:left;
+    margin-left:35%;
+}
+.tooth-extraction div:last-child{
+    margin-left:20%;
+}
+
+.teeth-bottom .bridge-pontic.surface, .teeth-bottom .bridge-retainer.surface{
+    margin-top:-42px;
+}
+.teeth-top .bridge-pontic, .teeth-top .bridge-retainer{
+    margin-top:115px;
+}
+
+.teeth-top .bridge-pontic.surface, .teeth-top .bridge-retainer.surface{
+    margin-top:175px !important;
+}
+
+.bridge-pontic{
+    position: absolute;
+    width: 50%;
+    height: 60px;
+    z-index:11;
+}
+
+.bridge-pontic.bridge-pontic-end{
+    right:0;
+}
+
+.bridge-retainer{
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    z-index:11;
+}
+
+.bridge-retainer div, .bridge-pontic div{
+    height:5px;
+}
+
+.bridge-retainer div:last-child, .bridge-pontic div:last-child{
+    margin-top:10px;
+}
+
+
+.teeth-top .left .tooth, .teeth-bottom .left .tooth{
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+
+.teeth-top{
+    height:280px;
+}
+.teeth-bottom{
+    height:140px;
+}
+
+.tooth{
+    float:left;
+    position:relative;
+    height:150px;
+}
+
+.tooth .tooth-surface{
+    width: 80%;
+    position: relative;
+    height: 49px;
+    margin: 0 auto;
+    display: block;
+
+}
+.teeth-top .tooth .tooth-surface{
+    top:160px;
+}
+.teeth-top .tooth:hover{
+
+}
+
+.teeth-top .left .tooth-number, .teeth-bottom .left .tooth-number{
+    -moz-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -ms-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+}
+.teeth-top .tooth-number, .teeth-bottom .tooth-number{
+    position:relative;
+    text-align:center;
+    color: #7d7d7d;
+    font-weight: 700;
+}
+
+.teeth-top .tooth-number{
+    
+}
+.teeth-top .tooth-t-4 .tooth-number{
+    margin-top: -156px;
+}
+.teeth-top .tooth-t-2 .tooth-number{
+    margin-top: -164px;
+}
+.teeth-top .tooth-t-1 .tooth-number{
+    margin-top:-157px;
+}
+
+.teeth-bottom .tooth-number{
+    margin-top: 30px;
+}
+.teeth-bottom .tooth-b-7 .tooth-number{
+    margin-top: 18px;
+}
+.teeth-bottom .tooth-b-5 .tooth-number, .teeth-bottom .tooth-b-4 .tooth-number{
+    margin-top: 26px;
+}
+.teeth-bottom .tooth-b-3 .tooth-number, .teeth-bottom .tooth-b-2 .tooth-number, .teeth-bottom .tooth-b-1 .tooth-number,{
+    margin-top: 23px;
+}
+
+.hint-circle-md{
+    width:24px;
+    height:24px;
+    line-height:22px;
+}
+.hint-solid.green{
+    background:#46c35f;
+}
+.hint-solid.red{
+    background:#fa424a;
+}
+.hint-solid.blue{
+    background:#00a8ff;
+}
+.teeth-top .tooth-molar .tooth-root-canal{
+    width: 77%;
+    -moz-transform: scale(1, 1) !important;
+    -webkit-transform: scale(1, 1)!important;
+    -o-transform: scale(1, 1) !important;
+    -ms-transform: scale(1, 1) !important;
+    transform: scale(1, 1) !important;
+    margin-top: -11px;
+    left: 8px;
+}
+
+
+.tooth-t-5 .tooth-root-canal{
+    margin-top:11px !important;
+    height:81px !important;
+}
+
+
+.teeth-top .tooth-root-canal {
+    -moz-transform: scale(1, -1);
+    -webkit-transform: scale(1, -1);
+    -o-transform: scale(1, -1);
+    -ms-transform: scale(1, -1);
+    transform: scale(1, -1);
+}
+
+.tooth-root-canal{
+    position: absolute;
+}
+.tooth-post-core{
+    position: absolute;
+    z-index: 10;
+    width: 53%;
+}
+
+.teeth-top .tooth-center .tooth-post-core, .teeth-top .tooth-premolar .tooth-post-core{
+    left: 9px;
+    top: 33px;
+}
+.tooth-t-2 .tooth-post-core{
+    left: 13px !Important;
+}
+
+.tooth-t-6 .tooth-post-core{
+    top: 34px;
+    left: 16px;
+    width: 51%;
+}
+
+.tooth-t-7 .tooth-post-core{
+    top: 35px;
+    left: 12px;
+    width: 58%!important;
+}
+
+.tooth-t-8 .tooth-post-core{
+    left: 20px;
+    top: 35px;
+    width: 40%;
+}
+
+.tooth-t-6 .tooth-root-canal{
+    margin-top: -10px !important;
+    width: 91% !important;
+    left: 3px !important;
+}
+
+.teeth-top .tooth-center .tooth-root-canal{
+    top: 10px;
+
+}
+
+.teeth-bottom .tooth-center .tooth-root-canal{
+    width: 64%;
+    height: 81px;
+    margin-top: 44px;
+    margin-left: 6px;
+}
+
+.teeth-bottom .tooth-center .tooth-post-core, .teeth-bottom .tooth-premolar .tooth-post-core{
+    top: -30px;
+    transform: rotate(180deg);
+    left: 8px;
+}
+
+.tooth-t-2 .tooth-root-canal{
+    margin-left:13px !important;
+}
+
+.teeth-top .tooth-center .tooth-root-canal{
+    width: 60%;
+    height: 49px;
+    margin-top: 43px;
+    margin-left: 10px;
+}
+.teeth-top .tooth-premolar .tooth-root-canal{
+    width: 60%;
+    height: 66px;
+    margin-top: 25px;
+    margin-left: 7px;
+}
+
+
+.tooth-t-1 .tooth-root-canal{
+    margin-left:6px !important;
+}
+
+.tooth-t-3 .tooth-root-canal{
+    height: 66px !important;
+    margin-top: 29px !important;
+    margin-left:6px !important;
+}
+.tooth-t-4 .tooth-root-canal{
+
+    width: 85% !important;
+    margin-left: 2px !important;
+}
+
+.teeth-bottom .tooth-premolar .tooth-root-canal{
+    height: 125px;
+    width: 6px;
+    margin-top: 16px;
+    margin-left: 16px;
+}
+.tooth-b-5 .tooth-root-canal{
+    margin-left: 19px !important;
+}
+.tooth-b-4 .tooth-root-canal{
+    margin-left: -5px;
+}
+
+.tooth-b-6 .tooth-root-canal{
+    width: 67%;
+    left: 3px;
+    margin-top: 7px;
+}
+
+.tooth-b-6 .tooth-post-core{
+    transform: scale(-1, -1);
+    margin-top: -32px;
+    left: 12px;
+    width: 45%;
+}
+
+.tooth-b-7 .tooth-post-core{
+    transform: scale(-1,-1);
+    margin-top: -32px;
+    left: 19px;
+    width: 48%;
+}
+
+.tooth-b-7 .tooth-root-canal{
+    width: 73%;
+    left: 13px;
+    top: 12px;
+}
+
+.tooth-b-8 .tooth-root-canal{
+    top: 5px;
+    width: 73%;
+    left: 10px;
+}
+.tooth-b-8 .tooth-post-core{
+    transform: scale(-1,-1);
+    margin-top: -37px;
+    left: 15px;
+    width: 49%;
+}
+
+.tooth .tooth-surface-bg{
+    width: 82%;
+    height: 68px;
+    background-repeat: no-repeat !important;
+}
+
+.teeth-bottom .tooth-surface{
+    top: -55px;
+}
+.tooth-t-1 .tooth-surface{
+    margin-left:2px;
+}
+
+.teeth-top .tooth-molar .tooth-surface-bg{
+    width:75%;
+    margin:45px auto;
+}
+
+.tooth-t-1 .tooth-surface-bg{
+    margin:55px auto !important;
+}
+
+.teeth-top .tooth-center .tooth-surface-bg{
+    margin: 50px auto;
+    width:85%;
+}
+
+.tooth-t-4 .tooth-surface-bg{
+    margin: 30px auto;
+}
+
+.tooth-t-5 .tooth-surface-bg{
+    margin: 50px auto;
+}
+
+.tooth-t-6 .tooth-surface-bg{
+    margin: 55px auto;
+}
+.tooth-molar {
+    width:65px;
+}
+.tooth-premolar {
+    width:45px;
+}
+.tooth-center{
+    width:40px;
+}
+.tooth .tooth-root, .tooth .tooth-crown{
+    width:100%;
+}
+.tooth .tooth-crown {
+    position:absolute;
+}
+
+.tooth-crown-main, .tooth-surface-main{
+    fill:#fafafa;
+}
+.teeth-top .tooth .tooth-crown{
+    bottom:0;
+}
+.teeth-bottom .tooth .tooth-crown{
+    top:0;
+}
+
+.teeth-top .tooth-molar .tooth-root{
+    height:100px;
+    margin-top:-36px;
+}
+
+.teeth-top .tooth-molar .tooth-crown{
+    height:55px;
+}
+
+.teeth-bottom .tooth-molar .tooth-root{
+    height: 77px;
+    margin-top: -6px;
+}
+
+.teeth-bottom .tooth-molar .tooth-crown{
+    height:55px;
+}
+
+.teeth-bottom .tooth-premolar .tooth-root{
+    height: 77px;
+    margin-top: -2px;
+}
+
+.teeth-bottom .tooth-center .tooth-root{
+    margin-top:-3px;
+    height: 81px;
+    margin-left: 0;
+}
+
+.teeth-top .tooth-premolar .tooth-root{
+    height:109px;
+    margin-top:-45px;
+}
+
+.tooth-premolar .tooth-crown{
+    height:55px;
+}
+
+.tooth-center .tooth-root{
+    height:109px;
+}
+
+.tooth-center .tooth-crown{
+    height:55px;
+}
+
+.tooth-b-7 .tooth-root{
+    height: 89px !important;
+    margin-left: 5px;
+}
+
+.tooth-b-6 .tooth-root{
+    margin-left: -7px;
+}
+
+.tooth-b-4 .tooth-root{
+    height: 82px;
+    margin-left: -2px;
+}
+
+.tooth-b-1 .tooth-root{
+    margin-left: -1px;
+}
+
+.tooth-t-3 .tooth-root{
+    height: 88px;
+    margin-top: -24px;
+}
+.tooth-t-4 .tooth-root{
+    height: 88px !important;
+    margin-top: -28px !important;
+}
+
+.tooth-t-2 .tooth-root{
+    height: 80px;
+    margin-top: -12px;
+    margin-left: 3px;
+}
+.tooth-t-1 .tooth-root{
+    height: 67px;
+    margin-top: -6px;
+}
+.gum-top{
+    position: absolute;
+    margin-top: 91px;
+    z-index: 11;
+    width: 805px;
+    height: 0;
+    padding-left: 7px;
+}
+.gum-bottom{
+    position: absolute;
+    margin-top: 34px;
+    z-index: 11;
+    width: 805px;
+    height: 0;
+    padding-left: 5px;
+}
+
+.btn-svg-square{
+    width:50px;
+    height:50px;
+}
+.btn-svg-square svg{
+    width:36px;
+    height:36px;
+    margin-left: -13px;
+    margin-top: -6px;
+}
+.surface-map:hover{
+    fill-opacity:1;
+    stroke-opacity: 1;
+}
+.dropdown-menu-svgicons a:hover svg use{
+    fill:#00a8ff;
+}
+.noarr .dropdown-toggle::after {
+    display:none !important;
+}
+.tooth{
+}
+.tooth:hover{
+    cursor:pointer;
+}
+.tooth:hover tooth-number span{
+        color: #16b4fc !important;
+        border: 1px solid #16b4fc !important;
+}
+
+.teeth-top .tooth-number{
+    margin-top:-160px;
+}
+.tooth-number:before{
+        content:" ";
+        width:1px;
+        height: 50px;
+        position:absolute;
+}
+.tooth-number .hint-circle{
+    width: 24px;
+    height: 24px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 30px;
+    line-height: 35px;
+    border-radius: 50% 50% 0% 50%;
+    border: 2px solid transparent;
+    transform: rotate(45deg);
+    color: #eee;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.teeth-bottom .tooth-number .hint-circle{
+    border-radius: 0% 50% 50% 50%;
+}
+        </style>
+    </head>
+    <body>
+        <h1>*|TITLE|*</h1>
+        
+        <div class="teeth-wrapper teeth-resizeable">
+            <div class="teeth-top">
+                <!--<div class="gum-top">
+                    <img style="width:600px;" src="https://new.dentaltap.com/public/teeth/gum-top-primary.svg">
+                </div>-->
+                <div class="left">
+                    <tooth18>
+                    <tooth17>
+                    <tooth16>
+                    <tooth15>
+                    <tooth14>
+                    <tooth13>
+                    <tooth12>
+                    <tooth11>
+                </div>
+                <div class="right">
+                    <tooth21>
+                    <tooth22>
+                    <tooth23>
+                    <tooth24>
+                    <tooth25>
+                    <tooth26>
+                    <tooth27>
+                    <tooth28>
+                </div>
+            </div>
+            <div class="teeth-bottom">
+               <!-- <div class="gum-bototm">
+                    <img style="width:820px;" src="https://new.dentaltap.com/public/teeth/gum-bottom-primary.svg">
+                </div>-->
+                <div class="left">
+                    <tooth48>
+                    <tooth47>
+                    <tooth46>
+                    <tooth45>
+                    <tooth44>
+                    <tooth43>
+                    <tooth42>
+                    <tooth41>
+                </div>
+                <div class="right">
+                    <tooth31>
+                    <tooth32>
+                    <tooth33>
+                    <tooth34>
+                    <tooth35>
+                    <tooth36>
+                    <tooth37>
+                    <tooth38>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

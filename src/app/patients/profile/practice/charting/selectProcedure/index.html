@@ -1,0 +1,24 @@
+<div class="typeahead-wrapper dropdown-menu-left">
+     <ng-template #customItemTemplate let-model="item" let-index="index">
+         <div class="typeahead-procedure">
+            <div class="price">
+                {{model.fee|myCurrency}}
+            </div>
+            <div class="detail">
+                <span class="code">
+                    {{model.code}}
+                </span>
+                {{model.name}}
+            </div>
+         </div>
+    </ng-template>
+    <input 
+        (input)="onInput($event)"
+        [(ngModel)]="value"
+        [typeahead]="priceList"
+        (typeaheadOnSelect)="selectItem($event)"
+        typeaheadOptionField="namefull"
+        placeholder="{{placeholder}}"
+        [typeaheadItemTemplate]="customItemTemplate"
+        class="form-control">
+</div>

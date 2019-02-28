@@ -1,0 +1,29 @@
+<ul class="nav navbar-nav">
+    <li dropdown [dropup]="true" [isOpen]="false">
+       <a dropdownToggle>
+            <span class="sl sl-icon-arrow-up-circle"></span>
+            {{'patient.profile.task.title'|translate}} 
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown-modern dropup dropdown-menu-left">
+            <div class="title">
+                {{'patient.profile.task.title'|translate}} 
+                <a (click)="addTasksModal.show()">
+                    {{'patient.profile.tabs.tasks.new'|translate}}
+                </a>
+            </div>
+            <div class="dropdown-menu-scroll">
+                <ul class="list-modern">
+                    <li (click)="detailTaskModal.show(item)" *ngFor="let item of tasks.due.concat(tasks.upcoming)">
+                        <a>
+                            {{item.title}}
+                            <small class="user text-muted">{{item.patient.patient_user.fullname}}, {{item.date|datex:'full'}}</small>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </li>
+</ul>
+
+<addTasks-modal (taskAdded)="onTaskAdded($event)" [selectPatient]="true" #addTasksModal></addTasks-modal>
+<detailTask-modal [showPatient]="true" [hideUser]="true" (taskDeleted)="onTaskDeleted($event)" (taskSaved)="onTaskSaved($event)" #detailTaskModal></detailTask-modal>

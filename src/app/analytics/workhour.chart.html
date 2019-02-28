@@ -1,0 +1,43 @@
+<div class="panel panel-chart">
+    <div class="panel-heading panel-heading-btn">
+        {{'analyt.doc_workhours.title'|translate}}
+    </div>
+    <div class="panel-body">
+        <div class="row row-vcenter">
+            <div class="col-md-12">
+                <div id="workhours_chart" style="width: 100%; height: 200px;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer stats-numbers ba0">
+        <div class="row">
+            <div class="col-md-4 item text-center">
+                <div class="title text-info">
+                    {{'analyt.doc_workhours.label.total'|translate}}
+                </div>
+                <div class="number text-info">
+                    {{ceil(workhoursStats.total/60)}}
+                </div>
+            </div>
+            <div class="col-md-4 item text-center">
+                <div class="title text-primary">
+                    {{'analyt.doc_workhours.label.appts'|translate}}
+                </div>
+                <div class="number text-primary">
+                    {{ceil(workhoursStats.appts/60)}}
+                </div>
+            </div>
+            <div class="col-md-4 item text-center">
+                <div class="title">
+                    {{'analyt.doc_workhours.label.load'|translate}}
+                </div>
+                <div class="number" *ngIf="workhoursStats.total!=0">
+                    {{ceil(workhoursStats.appts*100/workhoursStats.total)}}%
+                </div>
+                <div class="number" *ngIf="workhoursStats.total==0">
+                    -
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="auth-box-w">
+    <language-dropdown></language-dropdown>
+    <div class="logo-w">
+        <a href="https://dentaltap.com" target="_blank"><img style="width:200px" src="/public/logo-active.png"></a>
+    </div>
+    <h4 class="auth-header">{{'login.invite.title'|translate}}</h4>
+    <div class="form-group">
+        <p>
+            {{'login.invite.descr'|translate}}
+        </p>
+    </div>
+    <form (ngSubmit)="save()" [formGroup]="loginInviteForm">
+        <div class="form-group">
+            <label for="email">
+                {{'user.fulln.title'|translate}} <sup>*</sup>
+            </label>
+            <div class="pre-icon sl sl-icon-user"></div>
+            <small class="label-descr">
+                {{'user.fulln.descr'|translate}}
+            </small>
+            <input name="fullname" formControlName="fullname" class="form-control"/> 
+        </div>
+        <div class="form-group">
+            <label for="email">
+                {{'user.phone.title'|translate}} <sup>*</sup>
+            </label>
+            <div class="pre-icon sl sl-icon-phone"></div>
+            <small class="label-descr">
+                {{'user.phone.descr'|translate}}
+            </small>
+            <input phoneLookup name="phone" formControlName="phone" class="form-control"/> 
+        </div>
+        <div class="form-group">
+            <label for="email">
+                {{'user.pass.title'|translate}} <sup>*</sup>
+            </label>
+            <div class="pre-icon sl sl-icon-lock"></div>
+            <small class="label-descr">
+                {{'user.pass.descr'|translate}}
+            </small>
+            <input name="password" type="password" formControlName="password" class="form-control"  />
+        </div>
+        <div class="form-group">
+            <div class="buttons-w">
+                <button [ladda]="isProcessing" type="submit" class="btn btn-primary">
+                    {{'signup.submit'|translate}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

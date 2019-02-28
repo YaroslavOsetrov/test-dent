@@ -1,0 +1,138 @@
+<table class="table table-fullwidth table-price-icons mb0">
+    <tr>
+        <td (click)="selectCategory(i)" [ngClass]="{'active':selectedCategoryIndex==i}" *ngFor="let item of categories; let i = index">
+            <i class="tp tp-icon-{{item.icon}}"></i> 
+            <span>{{item.translate_code|translate}}</span>
+        </td>
+    </tr>
+</table>
+<table class="table-pricelist table-price table table-wide table-no-first-border mb0">
+    <thead>
+        <tr>
+            <th class="td-code">{{'inventory.item.code'|translate}}</th>
+            <th>{{'inventory.item.name'|translate}}</th>
+            <th class="fee">
+                {{'price.procedure.fee'|translate}}
+            </th>
+            <th class="unit">
+                {{'inventory.item.count_one'|translate}}
+            </th>
+            <th dropdown class="cell-dropdown">
+                <a dropdownToggle>
+                    <span class="sl sl-icon-arrow-down-circle"></span> {{selectedOffice?.name}}
+                </a>
+                <ul *dropdownMenu class="dropdown-menu dropdown-menu-left">
+                    <li *ngFor="let item of offices" (click)="selectOffice(item)">
+                        <a>{{item.name}}</a>
+                    </li>
+                </ul>
+            </th>
+            <th class="action procedure-add">
+                <a (click)="addInventory()">
+                    <span class="sl sl-icon-plus"></span>
+                </a>
+            </th>
+        </tr>
+    </thead>
+    <tbody [hidden]="isLoaded">
+        <tr *ngFor="let i of [1,2,3]">
+            <td *ngFor="let i of [1,2]">
+                <div class="loader">
+                    <div class="animated-background text"></div>
+                </div>
+            </td>
+            <td colspan="4"></td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="inventory[selectedCategoryId].length == 0" [hidden]="!isLoaded">
+        <tr>
+            <td colspan="6">
+                <div class="fullpage-message med">
+                    <section>
+                        <span class="sl sl-icon-list"></span><h3 class="title">
+                            {{'price.no_proc.title'|translate}}
+                        </h3>
+                        <p class="descr">
+                            {{'price.no_proc.descr'|translate}}
+                        </p>
+                    </section>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tbody *ngFor="let item of inventory[selectedCategoryId]; let i = index" [hidden]="!isLoaded">
+        <tr *ngIf="!item.id || item.is_edit" class="editable">
+            <td>
+                <input placeholder="{{'inventory.item.code'|translate}}" required class="form-control form-control-td" [(ngModel)]="item.code"/>
+            </td>
+            <td>
+                <input placeholder="{{'inventory.item.name'|translate}}" required class="form-control form-control-td" [(ngModel)]="item.name"/>
+            </td>
+            <td class="count-addon price">
+                <div class="input-group">
+                <input placeholder="Price" required pattern="[0-9.]+" class="form-control form-control-td" 
+                    [(ngModel)]="item.fee"/>
+                    <div class="input-group-addon input-group-addon-td input-group-addon-sm">
+                        {{0|myCurrency:null:true}}
+                    </div>
+                </div>
+            </td>
+            <td class="count-addon unit">
+                <div class="input-group">
+                <input placeholder="Count" required pattern="[0-9.]+" class="form-control form-control-td" 
+                    [(ngModel)]="item.count_one"/>
+                    <div class="input-group-addon input-group-addon-td input-group-addon-sm">
+                        <select [(ngModel)]="item.unit">
+                            <option value="{{unit}}" *ngFor="let unit of units">{{'inventory.unit.'+unit|translate}}</option>
+                        </select>
+                    </div>
+                </div>
+            </td>
+            <td>{{item.offices[selectedOffice?.id]}} {{'inventory.unit.'+item.unit|translate}}</td>
+            <td class="action el-disabled">
+                {{'inventory.proc.add'|translate}} <span class="sl sl-icon-arrow-right-circle"></span>
+            </td>
+        </tr>
+        <tr (click)="editInventory(i)" *ngIf="item.id && !item.is_edit">
+            <td>{{item.code}}</td>
+            <td title="{{item.name}}" class="name">{{item.name}}</td>
+            <td>
+                {{item.fee|myCurrency}}
+            </td>
+            <td class="unit">{{item.count_one}} {{'inventory.unit.' + item.unit|translate}}</td>
+            <td>{{item.offices[selectedOffice?.id]}} {{'inventory.unit.'+item.unit|translate}}</td>
+            <td [ngClass]="{'active':toggleIds[item.id]}" class="action td-slide-wrapper">
+                <div (click)="$event.preventDefault(); $event.stopPropagation();" class="td-slide" [ngClass]="{'opened':toggleIds[item.id]}">
+                    <input [(ngModel)]="item.addedCount" class="form-control" placeholder="Added, {{item.unit}}." />
+                </div>
+                <a (click)="$event.preventDefault(); $event.stopPropagation(); toggleMenu(item)" class="link link-light link-primary">
+                    <span *ngIf="!toggleIds[item.id]">{{'inventory.proc.add'|translate}} &nbsp;</span> 
+                    <span *ngIf="toggleIds[item.id]">{{'common.form.conf'|translate}} &nbsp;</span>
+                    <i class="sl sl-icon-arrow-right-circle"></i>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="floated-controls-wrapper" [ngClass]="{'active':isChanged}">
+
+    <div class="floated-controls">
+          <div class="controls">
+             <ul class="nav navbar-nav">
+                 <li class="navbar-text title">
+                    {{'common.form.changed'|translate}}
+                </li>
+                <li>
+                    <a (click)="save()">{{'common.form.save'|translate}}</a>
+                </li>
+                <li>
+                    <a (click)="reset()">{{'common.form.canc'|translate}}</a>
+                </li>
+                <li>
+                    <a (click)="deleteSelected()"><span class="sl sl-icon-trash"></span> {{'common.form.del_sel'|translate}}</a>
+                </li>
+             </ul>
+        </div>       
+    </div>
+</div>
+            

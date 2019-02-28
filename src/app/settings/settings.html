@@ -1,0 +1,63 @@
+<section class="section-page">
+    <nav class="navbar navbar-title navbar-sm container-light">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand" href="#">
+                    {{'settings.title'|translate}}
+                </span>
+            </div>
+            <ul class="nav navbar-nav">
+               
+                <li>
+                    <a href="https://dentaltap.com/en/knowledge-base" target="_blank"><span class="sl sl-icon-arrow-right-circle"></span> {{'settings.links.base'|translate}}</a>
+                </li>
+            </ul>
+            <div class="navbar-text navbar-right text-muted">{{'settings.import'|translate}}</div>    
+        </div>
+    </nav>
+    <aside class="section-aside2 aside-settings">
+        <ul class="vertical-tab-menu">
+                <li [routerLinkActive]="['active']" >
+                    <a [routerLinkActive]="['active']" [routerLink]="['account']">
+                        <span class="sl sl-icon-user"></span>
+                        {{'settings.menu.acc'|translate}}
+                    </a>
+                </li>
+                <li [routerLinkActive]="['active']" *ngIf="users[0].is_founder || users[0].user_roles[0].settings">
+                    <a [routerLinkActive]="['active']" [routerLink]="['organization']">
+                        <span class="sl sl-icon-home"></span>
+                        {{'settings.menu.org'|translate}}
+                    </a>
+                </li>
+                 <li [routerLinkActive]="['active']">
+                    <a [routerLinkActive]="['active']" [routerLink]="['services']">
+                        <span class="sl sl-icon-list"></span>
+                        {{'settings.menu.services'|translate}}
+                    </a>
+                </li>
+                <li [routerLinkActive]="['active']" *ngIf="users[0].is_founder || users[0].user_roles[0].settings">
+                    <a [routerLinkActive]="['active']" [routerLink]="['subscription']">
+                        <span class="sl sl-icon-wallet"></span>
+                        {{'settings.menu.sub'|translate}}
+                    </a>
+                </li>
+                <li [routerLinkActive]="['active']" *ngIf="users[0].is_founder || users[0].user_roles[0].settings">
+                    <a [routerLinkActive]="['active']" [routerLink]="['collaboration']">
+                        <span class="sl sl-icon-share"></span>
+                        {{'settings.menu.collab'|translate}}
+                    </a>
+                </li>
+                <li [routerLinkActive]="['active']" *ngIf="users[0].is_founder || users[0].user_roles[0].settings">
+                    <a [routerLinkActive]="['active']" [routerLink]="['notifications']">
+                        <span class="sl sl-icon-note"></span>
+                        {{'settings.menu.tpl'|translate}}
+                    </a>
+                </li>
+            </ul>
+    </aside>
+    <section class="section-content2 container-light">
+        
+    <router-outlet></router-outlet>
+    </section>
+
+</section>

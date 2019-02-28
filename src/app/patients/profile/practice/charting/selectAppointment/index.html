@@ -1,0 +1,17 @@
+<div class="dropdown-menu dropdown-menu-left pt0 dropdown-menu-component" [ngClass]="{'dropup':isDropup}">
+    <ul style="width:300px; height:300px; overflow-y:scroll;" >
+        <li (click)="selectAppt(i, item)" *ngFor="let item of appts; let i = index" [hidden]="item?.is_unscheduled || item?.is_deleted || item?.is_noshow">
+            <a *ngIf="!item.provider_id">
+                {{'cal.not_sel_appt'|translate}}
+            </a>
+            <a *ngIf="item.provider_id">
+                {{item.date|datex:'full2'}}
+                <div>
+                    <small class="text-muted">
+                        {{users[item.provider_id]?.fullname}}
+                    </small>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,23 @@
+<div class="container-fluid settings-layout">
+    <div class="row row-no-padding">
+        <div class="col-md-10 col-md-offset-1 settings-container">
+            <div class="row row-title">
+                <div class="col-md-4 pl0">
+                    <legend class="ba0">
+                        {{'settings.menu.services'|translate}}
+                    </legend>
+                </div>
+            </div>
+            <div class="panel-links-btn">
+                <a [ngClass]="{'active':tab==1}" (click)="tab=1">{{'settings.menu.price'|translate}}</a>
+                <a [ngClass]="{'active':tab==2}" (click)="tab=2">{{'settings.services.inventory.title'|translate}}</a>
+            </div>
+            <section [hidden]="tab!=1">
+                <procedures></procedures>
+            </section>
+            <section [hidden]="tab!=2">
+                <inventory></inventory>
+            </section>
+        </div>
+    </div>
+</div>

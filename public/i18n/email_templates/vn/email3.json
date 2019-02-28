@@ -1,0 +1,29 @@
+{
+    "subtitle":"Are your patients drop-out?",
+    "title":"INCREASE PATIENTS RETENTION ",
+    "subject":"DentalTap - Increase patients retention",
+    "button":"My Dashboard",
+    "descr":"In this Email you will know how DentalTap can help you increase patient satisfaction and reduce drop-outs",
+
+
+    "more.title":"Want to know more?",
+    "more.descr":"Would you like to schedule a phone call within next couple days with us to know more? We will answer all your questions and offer the best price for your clinic!",
+    "more.button":"Contact us",
+
+    "tasks.title":"Use tasks in your daily workflow",
+    "tasks.descr":"We recomend you to use tasks for recalls, follow ups and other reminders for patients. For example, create a follow up task for patient to visit your clinic after 6 months for prophy.",
+    "tasks.button":"Create a task",
+
+    "sms.title":"Connect the SMS notifications",
+    "sms.descr":"Connect SMS notifications for your patients. We will automatically notify your patients about upcoming appointments and any changes, no more manual phone calls",
+    "sms.button":"Connect SMS",
+
+    "tp.title":"Present your treatment plans",
+    "tp.descr":"Presentation of your treatment plans is essential for your practice success. Create a beautiful-designed treatment plan, present it on any device or print it to your patient",
+    "tp.button":"Create a plan",
+
+    "ret.title":"80% of retention",
+    "ret.descr":"Based on collected data, on average we can see that 80% of the patients are coming back to clinics who using our software",
+    "ret.button":"Have a questions?"
+
+}

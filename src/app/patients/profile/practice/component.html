@@ -1,0 +1,39 @@
+<div class="panel panel-custom panel-default" *ngIf="patient">
+    <div class="panel-inside">
+        <tabset type="pills">
+            <tab (select)="trackTab('charting'); loadedTabs.charting = true">
+                <ng-template tabHeading>
+                    {{'patient.charting.title'|translate}}
+                </ng-template>
+                <section *ngIf="loadedTabs.charting">
+                    <charting (defaultPlanLoaded)="defaultPlan = $event"></charting>
+                </section>
+            </tab>
+            <tab (select)="trackTab('progress'); loadedTabs.notes = true; loadedTabs.charting = false">
+                <ng-template tabHeading>
+                    {{'patient.charting.prog'|translate}}
+                </ng-template>
+                <section *ngIf="loadedTabs.notes">
+                    <notes></notes>
+                </section>
+            </tab>
+            <tab (select)="trackTab('billing'); loadedTabs.billing = true; loadedTabs.charting = false">
+                <ng-template tabHeading>
+                    {{'patient.billing.title'|translate}}
+                    <label *ngIf="patient?.total_debts > 0" class="sm"></label>
+                </ng-template>
+                <section *ngIf="loadedTabs.billing">
+                    <billing></billing>
+                </section>
+            </tab>
+            <tab (select)="trackTab('storage'); loadedTabs.storage = true; loadedTabs.charting = false">
+                <ng-template tabHeading>
+                    {{'patient.files.title'|translate}}
+                </ng-template>
+                <section *ngIf="loadedTabs.storage">
+                    <storage></storage>
+                </section>
+            </tab>
+        </tabset>
+    </div>
+</div>

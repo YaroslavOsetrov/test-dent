@@ -1,0 +1,59 @@
+<!--<div bsModal #tutorialModal="bs-modal" class="modal center zoom">
+    <div class="modal-dialog-custom modal-dialog modal-mds">
+        <div class="modal-content out-close modal-primary">
+            <button (click)="tutorialModal.hide()" class="close" type="button">
+                <span>×</span>
+            </button>
+            <div class="modal-header modal-header-tutorial-img">
+                <img widt src="/public/icons/tutorials/{{tutorial?.imgName}}.svg" />
+            </div>
+            <div class="modal-body">
+                <section *ngFor="let item of tutorial.contentTranslate; let i = index">
+                    <h4 [ngClass]="{'pt15':i>0}">
+                        <span style="font-weight:600" class="sl sl-icon-{{item.slIcon}}"></span> 
+                        {{'tutorials.'+type+'.'+item.title|translate}}
+                    </h4>
+                    <p>
+                        {{'tutorials.'+type+'.'+item.text|translate}}
+                    </p>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a style="    background: white;
+    display: block;
+    z-index: 1040;
+    border-radius: 7px;
+    text-align: center;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    width: 130px;
+    left: 50%;
+    margin-left: -65px;
+    text-decoration: none;" (click)="tutorialModal.show()">
+    {{'tutorials.btn'|translate}} 
+</a>-->
+<div class="floated-popup" *ngIf="!hidden && isFirstLogin">
+    <div (click)="hide()" class="close">×</div>
+    <div class="avatars">
+        <img src="https://dentaltap.com/wp-content/uploads/2017/10/152_940_827.png"/>
+        <img src="https://dentaltap.com/wp-content/uploads/2018/09/Lesha_Ax_DTap.png"/>
+        <img src="http://dentaltap.com/wp-content/uploads/2017/10/150_940_827.png"/>
+    </div>
+    
+    <p *ngFor="let i of tutorial.showParagraphs; let i = index">{{'tutorials.'+component+'.content.'+i|translate}}</p>
+   
+    <p class="pt15">
+        <a target="_blank" href="{{(tutorial.tutorialLink[language])?tutorial.tutorialLink[language]:tutorial.tutorialLink['en']}}" *ngIf="buttons?.tutorial" class="btn btn-primary btn-sm">
+            <span class="sl sl-icon-control-play"></span> {{'tutorials.buttons.tutorial'|translate}}
+        </a>
+        <a href="{{(tutorial.chatLink[language])?tutorial.chatLink[language]:tutorial.chatLink['en']}}" *ngIf="buttons?.chat" class="pl15">{{'tutorials.buttons.chat'|translate}}</a>
+    </p>
+</div>

@@ -1,0 +1,66 @@
+<div bsModal #accessModal="bs-modal" class="modal zoom right">
+    <div class="modal-dialog modal-mdss">
+        <div class="modal-content modal-custom">
+            <div class="modal-header modal-header-light">
+                {{user?.fullname}}
+                <div class="mt15">
+                    <a class="btn btn-sm pl0">
+                        {{'settings.collaboration.access.title2'|translate}}
+                    </a>
+                </div>
+              <!--  <div dropdown class="btn-group ml10">
+                    <a class="btn btn-primary btn-sm dropdown-toggle" dropdownToggle>
+                        <span *ngIf="profile">
+                            {{'settings.collaboration.profile.'+profile|translate}}
+                        </span>
+                        <span *ngIf="!profile">
+                            {{'settings.collaboration.profile.custom'|translate}}
+                        </span>
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu dropdown-menu-left" *dropdownMenu>
+                        <li *ngFor="let item of ['dentist', 'frontDesk', 'admin']" (click)="setProfile(item)">
+                            <a>{{'settings.collaboration.profile.'+item|translate}}</a>
+                        </li>
+                    </ul>
+                </div>
+                 <button (click)="accessModal.hide()" class="close" type="button">
+                    <span>×</span>
+                </button>-->
+            </div>
+            <div class="modal-body pa0">
+                <div class="container-form-min">
+                    <div class="form-group-message mb0" style="background: #dedede;padding-top: 20px;">
+                        <div class="alert alert-default ba0 br0 mb0">
+                            {{'settings.collaboration.access.rules.is_doctor'|translate}}
+                            <div class="input-switch input-switch-1">
+                                <input (change)="toggleRole('is_doctor')" [checked]="userRole['is_doctor']" class="input" type="checkbox" id="is-doctor">
+                                <label class="switch" for="is-doctor"></label>
+                            </div>                         
+                        </div>
+                        <div style="padding:15px">
+                            <a href="https://new.dentaltap.com/book/{{userRole?.organization_id}}-{{user?.id}}">https://new.dentaltap.com/book/{{userRole?.organization_id}}-{{user?.id}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div (click)="toggleRole(rule)" *ngFor="let rule of rules; let i = index" style="padding-bottom:0;" class="form-group form-group-inline form-group-inline-toggles p15">
+                    <div class="section-label">
+                        <label>{{'settings.collaboration.access.rules.'+rule|translate}}</label>
+                        <span class="label-descr">
+                            {{'settings.collaboration.access.rules.'+rule+'.descr'|translate}}
+                        </span>
+                    </div>
+                    <div class="section-input">
+                        <div class="input-switch input-switch-1" (click)="$event.preventDefault()">
+                            <input [checked]="userRole[rule]" class="input" type="checkbox" id="rule-{{i}}">
+                            <label class="switch" for="rule-{{i}}"></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer relative modal-footer-links">
+                <button [ladda]="isLoading" (click)="save()" class="btn btn-primary pull-left">{{'common.form.save'|translate}}</button>
+                <button (click)="deleteUser()" class="btn btn-primary outline pull-left">{{'common.form.del'|translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>

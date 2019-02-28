@@ -1,0 +1,17 @@
+<ul class="nav navbar-nav">
+    <li dropdown [dropup]="true">
+        <a dropdownToggle>
+            <span class="sl sl-icon-arrow-up-circle"></span> 
+            <span *ngIf="!selectedProvider"> {{'cal.workhours.title'|translate}}</span>
+            <span *ngIf="selectedProvider"> {{selectedProvider?.fullname}}</span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown-modern dropup dropdown-menu-left">
+            <div class="title">
+                Select a provider
+            </div>
+            <div class="dropdown-menu-scroll">
+                <users-list [onlyProviders]="true" (userSelected)="onProviderSelected($event)"></users-list>
+            </div>
+        </div>
+    </li>
+</ul>

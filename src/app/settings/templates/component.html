@@ -1,0 +1,69 @@
+<div class="container-fluid settings-layout">
+    <div class="row row-no-padding">
+        <div class="col-md-10 col-md-offset-1 settings-container">
+            <legend class="ba0">
+                {{'settings.templates.mess.title'|translate}}
+            </legend>
+            <form [formGroup]="notificationForm" (ngSubmit)="save()" class="mb0 container-inline-form">
+                <section *ngFor="let i of ['create_appt', 'confirm_appt', 'cancel_appt', 'upcoming_birthday']" >
+                    <div class="form-group form-group-inline form-group-inline-toggles">
+                        <div class="section-label">
+                            <label>{{'settings.templates.mess.' + i + '.title'|translate}}</label>
+                            <small class="label-descr">
+                                {{'settings.templates.mess.' + i + '.descr'|translate}}
+                            </small>
+                        </div>
+                        <div (click)="toggleNotification(i); $event.preventDefault()" class="section-input">
+                            <div class="input-switch input-switch-1">
+                                <input [checked]="notificationForm.value['is_'+i]" class="input" type="checkbox" id="rule-{{i}}">
+                                <label class="switch" for="rule-{{i}}"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" autoresize *ngIf="isLoaded" [formControlName]="i"></textarea>
+                    </div>
+                    <!--
+                    <div class="form-group form-group-inline-min form-group-inline-toggles form-group-inline ba0 mb15">
+                        <div class="section-label">
+                            <span *ngIf="limits[i] > 1" class="label label-warning filled pull-right">
+                                {{limits[i]}} SMS
+                            </span>
+                            <label>{{'settings.templates.mess.' + i + '.title'|translate}}</label>
+                            <small class="label-descr">
+                                {{'settings.templates.mess.' + i + '.descr'|translate}}
+                            </small>
+                        </div>
+                        <div (click)="toggleNotification(i); $event.preventDefault()" class="section-input">
+                            <div class="input-switch input-switch-1">
+                                <input [checked]="notificationForm.value['is_'+i]" class="input" type="checkbox" id="rule-{{i}}">
+                                <label class="switch" for="rule-{{i}}"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-textarea ba0 mb0">
+                        <div [ngClass]="{'el-disabled':!notificationForm.value['is_'+i]}" class="section-input pa0">
+                            <tagsarea  *ngIf="isLoaded" (onTemplateChanged)="notificationForm.controls[i].setValue($event)" [template]="notificationForm.value[i]" [tags]="{fullname:messageBlank.fullname, 'time':messageBlank.time, 'date':messageBlank.date}">
+                                    
+                            </tagsarea>
+                            <div style="height:110px;" class="animated-background input" *ngIf="!isLoaded"></div>
+                        </div>
+                    </div>-->
+                </section>
+                <div class="form-group text-right mb0">
+                    <button [ladda]="isSaving" type="submit" class="btn btn-primary">{{'common.form.save'|translate}}</button>
+                </div>
+           <!--     <div class="col-md-4">
+                    <h5>{{'settings.templates.notes.tags.title'|translate}}</h5>
+                    <p class="text-muted container-spacing-big">
+                        {{'settings.templates.notes.tags.descr'|translate}}
+                    </p>
+                    <h5>{{'settings.templates.notes.sms_length.title'|translate}}</h5>
+                    <p class="text-muted">
+                        {{'settings.templates.notes.sms_length.descr'|translate}}
+                    </p>
+                </div>-->
+            </form>
+        </div>
+    </div>
+</div>

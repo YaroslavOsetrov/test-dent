@@ -1,0 +1,64 @@
+<div *ngIf="!organizationSelection" class="auth-box-w wider">
+    <div class="row row-eq-height">
+        <div class="col-md-6 pr0">
+             <h4 class="auth-header">
+                {{'login.title'|translate}}
+                <span class="text-muted">
+                    {{'login.descr'|translate}}
+                </span>
+            </h4>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="email">
+                        {{'login.email.title'|translate}} <sup>*</sup>
+                    </label>
+                    <small class="label-descr">
+                        {{'login.email.descr'|translate}}
+                    </small>
+                    <input name="email" class="form-control" formControlName="email" />
+                    <validation-message [control]="loginForm.controls.email"></validation-message>
+                </div>
+                <div class="form-group">
+                    <label for="password">  
+                        {{'login.pass.title'|translate}} <sup>*</sup>
+                    </label>
+                    <small class="label-descr">
+                        {{'login.pass.descr'|translate}}
+                    </small>
+                    <input type="password" name="password" class="form-control" formControlName="password" />
+                    <validation-message [control]="loginForm.controls.password"></validation-message>
+                </div>
+                <div class="form-group">
+                    <div class="buttons-w">
+                        <button [ladda]="isProcessing" type="submit" class="btn btn-primary">{{'login.submit'|translate}}</button>
+                    </div>
+                    <p class="mt30">
+                        <a [routerLink]="['/login/recovery']">{{'login.pass.recovery'|translate}}</a>
+                        <a class="pl15" [routerLink]="['/register']">{{'login.new_acc'|translate}}</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6 signup-services" style="padding-top:200px">
+            <div *ngFor="let item of ['graduation', 'question']; let i = index" class="col-subs-service">
+                <div class="row">
+                    <div class="col-md-2 icon">
+                        <span class="sl sl-icon-{{item}}"></span>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="descr">
+                            <h5>{{'login.serv.'+(i+1)+'.title'|translate}}</h5>
+                            <p class="text-muted">
+                                {{'login.serv.'+(i+1)+'.descr'|translate}}
+                            </p>
+                            <a target="_blank" href="https://www.youtube.com/channel/UCbNAJgwV6gHXqnLmNJTwERw" class="btn btn-primary btn-sm">
+                                {{'login.serv.'+(i+1)+'.btn'|translate}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<login-confirm [organizationSelection]="organizationSelection" *ngIf="organizationSelection"></login-confirm>

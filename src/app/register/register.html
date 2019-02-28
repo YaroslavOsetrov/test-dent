@@ -1,0 +1,69 @@
+
+<div *ngIf="!confirmationWait" class="fullpage-split">
+    <div class="split-wrap">
+        <div class="split">
+            <ul class="nav navbar-nav-min">
+                <li class="special">
+                    <a class="navbar-brand" href="https://dentaltap.com" target="_blank">
+                        <img src="/public/logo-active.png"/>
+                    </a>
+                </li>
+                <li class="language-switcher navbar-right">
+                    <language-dropdown [hideLabel]="false"></language-dropdown>
+                </li>
+            </ul>
+            <register-initial (userCreated)="onUserCreated($event)"></register-initial>
+        </div>
+        <div class="split alt">
+            <div class="top-caption">
+                <p>
+                    {{'register.alr_acc'|translate}} &nbsp;
+                    <a class="btn btn-primary outline" [routerLink]="['/login']">{{'register.alr_acc.go'|translate}}</a>
+                </p>
+            </div>
+        </div>
+    </div><!--
+    <div class="row row-eq-height">
+        <div class="col-md-6 side">
+            <section [hidden]="isUserCreated">
+                
+            </section>
+            <!--
+            <section [hidden]="!isUserCreated">
+                <register-confirm [createdUserResponse]="createdUserResponse" (userCreated)="onUserCreated($event)"></register-confirm>
+            </section>-/->
+        </div>
+        <div class="col-md-6 side alt" style="padding-top:100px">
+             <div *ngFor="let item of ['paper-plane', 'speedometer', 'cloud-upload', 'globe']; let i = index" class="col-subs-service">
+                <div class="row">
+                    <div class="col-md-2 icon">
+                        <span class="sl sl-icon-{{item}}"></span>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="descr">
+                            <h5>{{'register.serv.'+(i+1)+'.title'|translate}}</h5>
+                            <p class="text-muted">
+                                {{'register.serv.'+(i+1)+'.descr'|translate}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  <!--  <language-dropdown></language-dropdown>
+    <div class="logo-w">
+        <div class="logo-icon">
+            <span class="sl sl-icon-cursor"></span>
+        </div>
+    </div>
+    <section [hidden]="isUserCreated">
+        <register-initial (userCreated)="onUserCreated($event)"></register-initial>
+    </section>-->
+  <!--  <section [hidden]="!isUserCreated">
+         <register-confirm [createdUserResponse]="createdUserResponse" (userCreated)="onUserCreated($event)"></register-confirm>
+    </section>-->
+</div>
+<div *ngIf="confirmationWait">
+    Confirmed! Please go to another page
+</div>

@@ -1,0 +1,152 @@
+[
+    {
+        "value": 720,
+        "text": "(UTC-12:00) International Date Line West"
+    },
+    {
+        "value": 660,
+        "text": "(UTC-11:00) Coordinated Universal Time-11"
+
+    },
+    {
+        "value": 600,
+        "text": "(UTC-10:00) Aleutian Islands, Hawaii"
+    },
+    {
+        "value": 570,
+        "text": "(UTC-9:30) Marquesas Islands"
+    },
+    {
+        "value": 540,
+        "text": "(UTC-9:00) Alaska"
+    },
+
+    {
+        "value": 480,
+        "text": "(UTC-8:00) Pacific Time (US & Canada)"
+    },
+    {
+        "value": 420,
+        "text": "(UTC-7:00) Arizona, Mountain Time (US & Canada)"
+    },
+    {
+        "value": 360,
+        "text": "(UTC-6:00) Central Time (US & Canada), Mexico City,"
+    },
+    {
+        "value": 300,
+        "text": "(UTC-5:00) Eastern Time (US & Canada), Haiti, Havana"
+    },
+    {
+        "value": 240,
+        "text": "(UTC-4:00) Atlantic Time (Canada), Santiago, Georgetown"
+    },
+    {
+        "value": 210,
+        "text": "(UTC-3:30) Newfoundland"
+    },
+    {
+        "value": 180,
+        "text": "(UTC-3:00) Greenland, Brasilia, City of Buenos Aires"
+    },
+    {
+        "value": 120,
+        "text": "(UTC-2:00) Coordinated Universal Time-02"
+    },
+    {
+        "value": 60,
+        "text": "(UTC-1:00) Azores, Cabo Verde Is."
+    },
+    {
+        "value": 0,
+        "text": "(UTC+0:00) Dublin, London, Monrovia, Reykjavik"
+    },
+    {
+        "value": -60,
+        "text": "(UTC+1:00) Amsterdam, Budapest, Copenhagen, Warsaw"
+    },
+    {
+        "value": -120,
+        "text": "(UTC+2:00) Amman, Athens, Cairo, Helsinki, Kyiv, Istanbul"
+    },
+    {
+        "value": -180,
+        "text": "(UTC+3:00) Kuwait, Riyadh, Minsk, Moscow, St. Petersburg"
+    },
+    {
+        "value": -240,
+        "text": "(UTC+4:00) Abu Dhabi, Muscat, Astrakhan, Ulyanovsk, Baku"
+    },
+    {
+        "value": -300,
+        "text": "(UTC+5:00) Ashgabat, Islambad, Ekaterinburg"
+    },
+    {
+        "value": -330,
+        "text": "(UTC+5:30) Chennai, Kolkata, Mumbai, New Delhi"
+    },
+    {
+        "value": -345,
+        "text": "(UTC+5:45) Kathmandu"
+    },
+    {
+        "value": -360,
+        "text": "(UTC+6:00) Astana, Dhaka, Novosibirsk"
+    },
+    {
+        "value": -390,
+        "text": "(UTC+6:30) Yangon (Rangoon)"
+    },
+    {
+        "value": -420,
+        "text": "(UTC+7:00) Bangkok, Hanoi, Barnaul, Krasnoyarsk"
+    },
+    {
+        "value": -480,
+        "text": "(UTC+8:00) Beijing, Irkutsk, Singapore, Perth"
+    },
+    {
+        "value": -510,
+        "text": "(UTC+8:30) Pyongyang"
+    },
+    {
+        "value": -525,
+        "text": "(UTC+8:45) Eucla"
+    },
+    {
+        "value": -540,
+        "text": "(UTC+9:00) Chita, Yakutsk, Osaka, Seoul"
+    },
+    {
+        "value": -570,
+        "text": "(UTC+9:30) Adelaide, Darwin"
+    },
+    {
+        "value": -600,
+        "text": "(UTC+10:00) Melbourne, Sydney, Vladivostok"
+    },
+    {
+        "value": -630,
+        "text": "(UTC+10:30) Lord Howe Island"
+    },
+    {
+        "value": -660,
+        "text": "(UTC+11:00) Bougainville Island, Magadan, Sakhhalin, Chokurdakh, Norfolk"
+    },
+    {
+        "value": -720,
+        "text": "(UTC+12:00) Petropavlovsk-Kamchatsky, Auckland, Wellington, Fiji"
+    },
+    {
+        "value": -765,
+        "text": "(UTC+12:45) Chatham Islands"
+    },
+    {
+        "value": -780,
+        "text": "(UTC+13:00) Samoa, Nuku alofa"
+    },
+    {
+        "value": -840,
+        "text": "(UTC+14:00) Kiritimati Island"
+    }
+]

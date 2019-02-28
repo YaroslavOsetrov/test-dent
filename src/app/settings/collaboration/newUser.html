@@ -1,0 +1,12 @@
+ <form [formGroup]="newUser" class="mb0" (ngSubmit)="onSubmit()">
+    <div class="form-inline input-line">
+        <p>
+            
+        </p>
+        <div class="form-group validation-popup">
+            <input placeholder="{{'user.email.descr'|translate}}" formControlName="email" class="form-control"/>
+            <validation-message [control]="newUser.controls.email"></validation-message>
+        </div>
+        <button [ladda]="isLoading" type="submit" class="btn btn-primary">{{'settings.collaboration.invite.submit'|translate}}</button>
+    </div>
+</form>

@@ -1,0 +1,187 @@
+<ul class="nav navbar-nav">
+    <li>
+        <a (click)="custmoFieldsModal.show()"><span class="sl sl-icon-equalizer"></span> {{'patient.profile.tabs.general.custom_fields.set'|translate}}</a>
+    </li>
+</ul>
+<form [formGroup]="patientGeneralForm" class="container-form-min">
+    <div class="form-group">
+        <div class="section-label">
+            <label for="email">
+                {{'user.fulln.title'|translate}} <sup>*</sup>
+            </label>
+        </div>
+        <div *ngIf="isLoaded" class="section-input">
+            <input [readonly]="!account.role.patient_profile" placeholder="{{'user.fulln.descr'|translate}}" formControlName="fullname" name="fullname" class="form-control" />
+            <validation-message [control]="patientGeneralForm.controls.fullname"></validation-message>
+        </div>
+        <div class="section-input" *ngIf="!isLoaded">
+            <div class="loader">
+                <div class="animated-background input"></div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="section-label">
+            <label for="email">
+                {{'user.phone.title'|translate}} <sup>*</sup>
+            </label>
+        </div>
+        <div class="section-input" *ngIf="isLoaded">
+            <input [readonly]="!account.role.patient_profile" placeholder="{{'user.phone.descr'|translate}}" phoneLookup formControlName="phone" name="phone" class="form-control" />
+            <validation-message [control]="patientGeneralForm.controls.phone"></validation-message>
+        </div>
+        <div class="section-input" *ngIf="!isLoaded">
+            <div class="loader">
+                <div class="animated-background input"></div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="section-label">
+            <label for="dob">
+                {{'user.dob.title'|translate}}
+            </label>
+        </div>
+        <div class="section-input" *ngIf="isLoaded">
+            <input
+                [readonly]="!account.role.patient_profile"  
+                [mask]="localeFormat.date_input_mask"
+                placeholder="{{localeFormat.date_input_mask_ph}}"
+                formControlName="birthday" name="birthday" class="form-control" />
+            <validation-message [control]="patientGeneralForm.controls.birthday"></validation-message>
+        </div>
+        <div class="section-input" *ngIf="!isLoaded">
+            <div class="loader">
+                <div class="animated-background input"></div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="section-label">
+            <label for="email">
+                {{'patient.reference.title'|translate}}
+            </label>
+        </div>
+        <div class="section-input" *ngIf="isLoaded">
+            <input 
+                [readonly]="!account.role.patient_profile" 
+                placeholder="{{'patient.reference.descr'|translate}}" formControlName="reference_from" name="reference_from" class="form-control" />
+            <validation-message [control]="patientGeneralForm.controls.reference_from"></validation-message>
+        </div>
+        <div class="section-input" *ngIf="!isLoaded">
+            <div class="loader">
+                <div class="animated-background input"></div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="section-label">
+            <label for="email">
+                {{'user.address.title'|translate}}
+            </label>
+        </div>
+        <div class="section-input" *ngIf="isLoaded">
+            <input googleplace [readonly]="!account.role.patient_profile" placeholder="{{'user.address.descr'|translate}}" formControlName="address" name="address" class="form-control" />
+            <validation-message [control]="patientGeneralForm.controls.address"></validation-message>
+        </div>
+        <div class="section-input" *ngIf="!isLoaded">
+            <div class="loader">
+                <div class="animated-background input"></div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="section-label">
+            <label for="email">
+                {{'user.email.title'|translate}}
+            </label>
+        </div>
+        <div class="section-input" *ngIf="isLoaded">
+            <input 
+                [readonly]="!account.role.patient_profile" 
+                placeholder="Email" formControlName="email" name="email" class="form-control" />
+            <validation-message [control]="patientGeneralForm.controls.email"></validation-message>
+        </div>
+        <div class="section-input" *ngIf="!isLoaded">
+            <div class="loader">
+                <div class="animated-background input"></div>
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let field of customFields; let i = index"  class="form-group">
+        <div class="section-label">
+            <label for="{{field.field_name_internal}}">
+                {{field.field_name}}
+            </label>
+        </div>
+        <div class="section-input" *ngIf="isLoaded">
+             <input 
+                *ngIf="field.field_type == 'text'"
+                [readonly]="!account.user_roles[0].patient_profile" 
+                [(ngModel)]="customFieldsValue[field.field_name_internal]"
+                (ngModelChange)="isChanged = true"
+                [ngModelOptions]="{standalone: true}"
+                name="{{field.field_name_internal}}" 
+                placeholder="{{field.field_name}}" class="form-control" />
+            <input
+                *ngIf="field.field_type == 'date'"
+                [readonly]="!account.user_roles[0].patient_profile"  
+                [(ngModel)]="customFieldsValue[field.field_name_internal]"
+                [ngModelOptions]="{standalone: true}"
+                (ngModelChange)="isChanged = true"
+                [mask]="localeFormat.date_input_mask"
+                placeholder="{{localeFormat.date_input_mask_ph}}"
+                name="{{field.field_name_internal}}" 
+                class="form-control" />
+            <input
+                *ngIf="field.field_type == 'phone'"
+                [readonly]="!account.user_roles[0].patient_profile"  
+                [(ngModel)]="customFieldsValue[field.field_name_internal]"
+                (ngModelChange)="isChanged = true"
+                [ngModelOptions]="{standalone: true}"
+                phoneLookup
+                placeholder="{{field.field_name}}"
+                name="{{field.field_name_internal}}" 
+                class="form-control" />
+            <input
+                *ngIf="field.field_type == 'address'"
+                [readonly]="!account.user_roles[0].patient_profile"
+                [(ngModel)]="customFieldsValue[field.field_name_internal]"
+                (ngModelChange)="isChanged = true"
+                [ngModelOptions]="{standalone: true}"
+                googleplace
+                placeholder="{{field.field_name}}"
+                name="{{field.field_name_internal}}" 
+                class="form-control" />
+        </div>
+        <div class="section-input" *ngIf="!isLoaded">
+            <div class="loader">
+                <div class="animated-background input"></div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="floated-controls-wrapper" [ngClass]="{'active':isChanged}">
+    <div class="floated-controls">
+        <div class="controls">
+            <ul class="nav navbar-nav">
+                <li class="navbar-text title">
+                    {{'common.form.changed'|translate}}
+                </li>
+                <li>
+                    <a (click)="save()">
+                        {{'common.form.save'|translate}}
+                    </a>
+                </li>
+                <li>
+                    <a (click)="reset()">
+                        {{'common.form.canc'|translate}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<custom-fields #custmoFieldsModal (fieldsChanged)="onFieldsChanged($event)"></custom-fields>

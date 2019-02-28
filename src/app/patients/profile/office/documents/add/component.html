@@ -1,0 +1,52 @@
+<div bsModal [config]="{ignoreBackdropClick:true}" #addDocumentModal="bs-modal" class="modal center zoom">
+    <div class="modal-dialog-custom modal-dialog modal-lg">
+        <div class="modal-content modal-custom2 out-close">
+            <button (click)="addDocumentModal.hide()" class="close" type="button">
+                <span>×</span>
+            </button>
+            <div class="modal-header modal-header-light">
+                <input 
+                    style="height: 58px;font-weight: 600; float:none"
+                    [(ngModel)]="document.title"
+                    placeholder="{{'patient.files.document.create.name.ph'|translate}}"
+                    class="form-control"/>
+                <div *ngIf="document.id" class="mt15">
+                    <a (click)="generate()" class="btn btn-sm pl0">
+                        <span class="sl sl-icon-arrow-right-circle"></span>
+                        {{'patient.files.document.submit'|translate}}
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body medium-editor-wrapper">
+                 <medium-editor
+                    [(editorModel)]="document.text"
+                    [editorPlaceholder]="'...'"
+                    [editorOptions]="mediumOptions"
+                    ></medium-editor>
+              <!--  <ngx-trumbowyg-editor [(ngModel)]="document.text"></ngx-trumbowyg-editor>-->
+            </div>
+            <div (click)="toggleTags = !toggleTags" class="btn contenteditable-tags-expand">
+                <span class="sl sl-icon-arrow-down-circle"></span> {{'patient.files.document.create.tags.title'|translate}}
+            </div>
+            <div *ngIf="toggleTags" class="modal-body pa0 contenteditable-tags-area">
+                 <table class="table table-no-border table-tags table-hover mb0 ba0">
+                    <tbody *ngFor="let tab of ['PATIENT', 'CLINIC', 'SYSTEM']">
+                        <tr>
+                            <th colspan="2">{{tab}}</th>
+                        </tr>
+                        <tr *ngFor="let item of tagsList[tab]">
+                            <th style="width:300px" class="text-primary ba0">**{{tab}}-{{item.tag}}**</th>
+                            <td>
+                                {{item.translate_code|translate}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="clearfix"></div>
+            <div class="modal-footer-links modal-footer">
+                <a *ngIf="document.id" (click)="delete()"><i class="sl sl-icon-trash"></i> {{'common.form.del'|translate}}</a>
+                <button (click)="save()" [ladda]="isSaving" class="btn btn-primary">{{'common.form.save'|translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+{
+    "company":"Dental Cloud, Inc.",
+
+    "links.about":"About us",
+    "links.product":"Product",
+    "links.contact":"Contact us",
+    "links.privacy":"Privacy",
+    "links.price":"Price",
+
+    "heart":"Sincerely yours,",
+    "heart.team":"DentalTap Team",
+    "question":"Please contact us if you have any questions -",
+    "question.email":"Send an email",
+    "question.chat":"Chat online",
+
+    "unsubscribe":"You received this email because you signed up for DentalTap. To unsubscribe just send a response to this message."
+}

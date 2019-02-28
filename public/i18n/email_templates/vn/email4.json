@@ -1,0 +1,25 @@
+{
+    "subtitle":"Work together with your colleagues",
+    "title":"COLLABORATION",
+    "subject":"DentalTap - Collaborate with your colleagues",
+    "button":"My Dashboard",
+    "descr":"Invite your colleagues and digitize your clinic completely, so anyone in your clinic can benefit of digital practice management",
+
+
+    "staff.title":"For all clinic staff",
+    "staff.descr":"Suitable for dentists, front desk managers, assistants and clinic managers",
+    "staff.button":"Invite now",
+
+    "rule.title":"Setup an access rules",
+    "rule.descr":"Set the access rules for each of your employee depending on their role in dental clinic",
+    "rule.button":"Read more",
+
+    "comm.title":"Communications",
+    "comm.descr":"Easy dental case-sharing and patient record transfer between dentists, receptionists and all clinic staff",
+    "comm.button":"Check it out",
+
+    "more.title":"Want to know more?",
+    "more.descr":"Lets schedule a quick call and we will explain how you can work with all of your colleagues and simplify your daily workflow",
+    "more.button":"Schedule a call"  
+
+}

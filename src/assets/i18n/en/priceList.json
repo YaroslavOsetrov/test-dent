@@ -1,0 +1,42 @@
+{
+    "fee_labels":["Цена"],
+    "data":[
+        [
+            {
+                "name": "Watch",
+                "price": [0],
+                "code": "N123354"
+            },
+            {
+                "name": "Watch surface",
+                "price": [0],
+                "code": "N122254"
+            }
+        ],
+        [
+            {
+                "name": "Watch",
+                "price": [0],
+                "code": "N125554"
+            },
+            {
+                "name": "Watch surface",
+                "price": [0],
+                "code": "N126654"
+            }
+        ],
+        [
+            {
+                "name": "Watch",
+                "price": [0],
+                "code": "N123454"
+            },
+            {
+                "name": "Watch surface",
+                "price": [0],
+                "code": "N1456254"
+            }
+        ]
+       
+    ]
+}

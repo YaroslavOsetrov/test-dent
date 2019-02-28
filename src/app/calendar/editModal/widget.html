@@ -1,0 +1,76 @@
+<div class="modal-header modal-header-light" *ngIf="!appointment?.patient">
+    {{'cal.widget.title'|translate}}
+    <div class="mt15">
+        <a class="btn btn-sm pl0">
+            {{appointment?.date|datex:'full'}}, {{'cal.date_time.from'|translate}}
+            <span>
+                {{appointment?.start_time|datex:'time'}}
+            </span>   
+        </a>
+    </div>
+</div>
+<div class="modal-header modal-header-light" *ngIf="appointment?.patient">
+    {{appointment?.date|datex:'full'}}, {{'cal.date_time.from'|translate}} {{appointment?.start_time|datex:'time'}}
+    <div class="mt15">
+        <a target="_blank" href="/patients/{{appointment?.patient.id}}" class="btn btn-sm pl0">
+            <span class="sl sl-icon-arrow-right-circle"></span> {{'patient.profile.title'|translate}}
+        </a>
+    </div>
+</div>
+
+<div class="modal-body pa0 patient-treatment">
+    <div class="panel panel-custom panel-default">
+        <div class="panel-inside">
+            <div class="form-group-message mb0">
+                <div *ngIf="!appointment?.patient" class="alert alert-default ba0 br0 mb0">
+                    {{'cal.widget.newpt'|translate}}
+                </div>
+                <div *ngIf="appointment?.patient" class="alert alert-default ba0 br0 mb0">
+                    {{'cal.widget.oldpt'|translate}}
+                </div>
+            </div>
+            <div class="panel-content">
+            <div class="container-form-min appt-details-form">
+                <div class="form-group">
+                    <div class="section-label">
+                        <label for="email">
+                            {{'user.pt_fulln.title'|translate}}
+                        </label>
+                    </div>
+                    <div class="section-input">
+                        <p>
+                            {{appointment?.widget.fullname}}
+                        </p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="section-label">
+                        <label for="email">
+                            {{'user.phone.title'|translate}}
+                        </label>
+                    </div>
+                    <div class="section-input">
+                        <p>
+                            {{appointment?.widget.phone}}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="form-group ba0">
+                    <div class="section-label">
+                        <label>{{'cal.note.title'|translate}}</label>
+                    </div>
+                        <div class="section-input">
+                        <input maxlength="100" placeholder="{{'cal.note.ph'|translate}}" [(ngModel)]="appointment.widget.note" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <div class="modal-footer ba0">
+    <button [ladda]="isSubmitted" (click)="save()" type="submit" class="btn btn-primary pull-left">{{'common.form.save'|translate}}</button>&nbsp;
+    <button (click)="cancel()" class="btn btn-primary outline pull-left">{{'common.form.del'|translate}}</button>
+</div>

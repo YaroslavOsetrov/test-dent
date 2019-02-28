@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-md-7">
+        <section *ngIf="tab==1">
+            <h1 class="title">
+                {{'register.title'|translate}}.
+                <span class="text-muted">
+                    {{'register.descr'|translate}}
+                </span>
+            </h1>
+            <form [formGroup]="registerInitialForm" (ngSubmit)="onSubmitInitial()">
+                <div class="form-group">
+                    <label for="email">
+                        {{'user.email.title'|translate}} <sup>*</sup>
+                    </label>
+                    <small class="label-descr">
+                        {{'register.email.descr'|translate}}
+                    </small>
+                    <input name="email" class="form-control" formControlName="email" />
+                    <validation-message [control]="registerInitialForm.controls.email"></validation-message> 
+                </div>
+                <div class="form-group">
+                    <label for="password">  
+                        {{'user.pass.title'|translate}} <sup>*</sup>
+                    </label>
+                    <small class="label-descr">
+                        {{'user.pass.descr'|translate}} 
+                    </small>
+                    <input type="password" name="password" class="form-control" formControlName="password" />
+                    <validation-message [control]="registerInitialForm.controls.password"></validation-message>
+                </div>
+                <div class="form-group">
+                    <div class="buttons-w">
+                        <button [ladda]="isProcessing" type="submit" class="btn btn-primary">{{'register.submit'|translate}} 🡒</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+        <section *ngIf="tab == 2">
+            <h1 class="title">
+                {{'register.title2'|translate}}
+                <span class="text-muted">
+                    {{'register.descr2'|translate}}
+                </span>
+            </h1>
+            <form [formGroup]="registerConfirmForm" (ngSubmit)="onSubmitConfirm()">
+                <div class="form-group">
+                    <label for="email">
+                        {{'user.fulln.title'|translate}} <sup>*</sup>
+                    </label>
+                    <small class="label-descr">
+                        {{'user.fulln.descr'|translate}}
+                    </small>
+                    <input name="fullname" class="form-control" formControlName="fullname" />
+                    <validation-message [control]="registerConfirmForm.controls.fullname"></validation-message> 
+                </div>
+                <div class="form-group">
+                    <label for="password">  
+                        {{'user.phone.title'|translate}} <sup>*</sup>
+                    </label>
+                    <small class="label-descr">
+                        {{'user.phone.descr'|translate}} 
+                    </small>
+                    <div class="input-group">
+                        <div style="padding:15px" class="input-group-addon">
+                            <img width="20" src="/public/icons/countries/{{countryCode}}.png"/>
+                        </div>
+                        <input name="phone" (countrySetted)="onCountrySetted($event)" phoneLookup class="form-control pl0" formControlName="phone" />
+                    </div>
+                    <validation-message [control]="registerConfirmForm.controls.phone"></validation-message>
+                </div>
+                <div class="form-group">
+                    <div class="buttons-w">
+                        <button [ladda]="isProcessing" type="submit" class="btn btn-primary">{{'register.complete'|translate}} 🡒</button>
+                       <!-- <p class="mt30">
+                            {{'register.alr_acc'|translate}}
+                            <a [routerLink]="['/login']">{{'register.alr_acc.go'|translate}}</a>
+                        </p>-->
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+<boot #boot></boot>

@@ -1,0 +1,94 @@
+<div class="auth-box-w wider">
+    <div class="row row-eq-height">
+        <div class="col-md-6 pr0">
+            <h4 class="auth-header" *ngIf="!confirmationToken">
+                {{'login.recovery.title'|translate}}
+                <span class="text-muted">
+                    {{'login.recovery.descr'|translate}}
+                </span>
+            </h4>
+            <h4 class="auth-header" *ngIf="confirmationToken">
+                {{'login.recovery.new_password.title'|translate}}
+            </h4>                
+            <form  *ngIf="!confirmationToken" [formGroup]="loginRecoveryRequest" (ngSubmit)="onSubmitRequest()">
+                <div class="form-group">
+                    <label for="email">
+                        {{'login.email.title'|translate}} <sup>*</sup>
+                    </label>
+                    <small class="label-descr">
+                        {{'login.email.descr'|translate}}
+                    </small>
+                    <input name="email" formControlName="email" class="form-control"/> 
+                </div>
+                <div class="form-group">
+                    <div class="buttons-w">
+                        <button [ladda]="isSubmitRequest" type="submit" class="btn btn-primary">
+                            {{'login.recovery.submit'|translate}}
+                        </button>
+                    </div>
+                    <p class="mt30">
+                        <a [routerLink]="['/login']">{{'register.alr_acc.go'|translate}}</a>
+                    </p>
+                </div>
+            </form>
+            <form *ngIf="confirmationToken" [formGroup]="loginRecoveryConfirm" (ngSubmit)="onSubmitConfirm()">
+                <div class="form-group">
+                    <p>
+                        {{'login.recovery.new_password.descr'|translate}}
+                    </p>
+                </div>
+                <section formGroupName="matchingPassword">
+                    <div class="form-group">
+                        <label for="email">
+                            {{'user.pass.title'|translate}}
+                        </label>
+                        <div class="pre-icon sl sl-icon-lock"></div>
+                        <small class="label-descr">
+                            {{'user.pass.descr'|translate}}
+                        </small>
+                        <input type="password" formControlName="password_new" placeholder="••••••••••••" class="form-control"/>
+                        <validation-message [control]="loginRecoveryConfirm.controls.matchingPassword.controls.password_new"></validation-message>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            {{'user.pass.title'|translate}}
+                        </label>
+                        <div class="pre-icon sl sl-icon-lock"></div>
+                        <small class="label-descr">
+                            {{'user.pass.descr2'|translate}}
+                        </small>
+                        <input type="password" formControlName="password_new2" placeholder="••••••••••••" class="form-control"/>
+                        <validation-message [control]="loginRecoveryConfirm.controls.matchingPassword.controls.password_new2"></validation-message>
+                    </div>
+                    <div class="form-group">
+                        <div class="buttons-w">
+                            <button [ladda]="isSubmitConfirm" type="submit" class="btn btn-primary">
+                                {{'login.recovery.submit'|translate}}
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+        <div class="col-md-6 signup-services" style="padding-top:100px">
+            <div *ngFor="let item of ['graduation', 'question']; let i = index" class="col-subs-service">
+                <div class="row">
+                    <div class="col-md-2 icon">
+                        <span class="sl sl-icon-{{item}}"></span>
+                    </div>
+                    <div class="col-md-10">
+                        <div class="descr">
+                            <h5>{{'login.serv.'+(i+1)+'.title'|translate}}</h5>
+                            <p class="text-muted">
+                                {{'login.serv.'+(i+1)+'.descr'|translate}}
+                            </p>
+                            <a target="_blank" href="https://www.youtube.com/channel/UCbNAJgwV6gHXqnLmNJTwERw" class="btn btn-primary btn-sm">
+                                {{'login.serv.'+(i+1)+'.btn'|translate}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

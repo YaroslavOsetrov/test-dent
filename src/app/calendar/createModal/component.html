@@ -1,0 +1,147 @@
+<div bsModal #createModal="bs-modal" class="modal right">
+    <div class="modal-dialog modal-mdss modal-appointment">
+        <div class="modal-content modal-custom">
+            <div class="modal-header modal-header-light">
+                 {{apptInterval?.date|datex:'short2'}} {{apptInterval?.start_time}} - {{apptInterval?.end_time}}
+                 <div class="mt15">
+                    <a class="btn btn-sm pl0">
+                        {{selectedOffice?.name}} / {{selectedRoom?.name}}
+                    </a>
+                </div>
+            </div>
+<!--<div bsModal #createModal="bs-modal" class="modal center zoom">
+    <div class="modal-dialog-custom modal-dialog modal-mds">
+        <div class="modal-content out-close modal-primary">
+            <button (click)="createModal.hide()" class="close" type="button">
+                <span>×</span>
+            </button>
+            <div class="modal-header modal-header-form">
+                {{apptInterval?.date|datex:'short2'}} {{apptInterval?.start_time}} - {{apptInterval?.end_time}}
+            </div>-->
+            <appt (apptAdded)="appointmentCreated.emit($event); createModal.hide()" [appt]="appt" [defaultPatient]="defaultPatient"></appt>
+           
+          
+
+            <!--
+            <form [formGroup]="newAppointment" (ngSubmit)="onSubmit()">
+            <div class="modal-body modal-appointment pa0">
+                <div class="panel-footer panel-footer-icon-links links-3 pa0">
+                    <a class="active"><i class="sl sl-icon-calendar"></i> Appointment</a>
+                    <a><i class="sl sl-icon-fire"></i> Task</a>
+                    <a><i class="sl sl-icon-note"></i> Note</a>
+                </div>
+                <div class="user-details-col container-inline-form">
+                    <section *ngIf="defaultProviderId && appt.provider_id != defaultProviderId">
+                        <div class="alert alert-warning ba0 br0 mb0">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <strong>{{'cal.workhours.wrong.title'|translate}}</strong> {{'cal.workhours.wrong.descr'|translate}}
+                                </div>
+                            </div>                            
+                        </div>
+                    </section>
+                 <!--   <div style="background:#f8f8f8;" class="form-group form-group-inline form-group-inline-toggles">
+                        <div class="section-label">
+                            <label>
+                                {{'cal.withoutpt.title'|translate}}
+                            </label>
+                            <small class="label-descr">
+                                {{'cal.withoutpt.descr'|translate}}
+                            </small>
+                        </div>
+                        <div class="section-input">
+                            <div class="input-switch input-switch-1">
+                                <input (change)="withoutPatient = !withoutPatient" [checked]="withoutPatient" class="input" type="checkbox" id="without-pt">
+                                <label class="switch" for="without-pt"></label>
+                            </div>
+                        </div>
+                    </div>-/->
+                    <section *ngIf="!withoutPatient">
+                   <!-- <div class="form-group-message mb0" *ngIf="subscription && subscription?.card_last4 == null">
+                        <div class="alert alert-warning mb0 br0">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    {{'settings.subscription.sms.no_card'|translate}}
+                                </div>
+                                <div class="col-md-4 pt5 text-right">
+                                    <a href="/settings/subscription" target="_blank" class="btn btn-warning btn-sm">{{'settings.subscription.create.title'|translate}}</a>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>-/->
+                    <div class="form-group form-group-inline form-group-inline-div mb0 bt0">
+                        <div class="section-label">
+                            <label>
+                                {{'provider.title'|translate}} <sup>*</sup>
+                            </label>
+                            <small class="label-descr">
+                                {{'provider.descr'|translate}}
+                            </small>
+                        </div>
+                        <div class="section-input">
+                            <section class="selection-container" dropdown>
+                                <a dropdownToggle class="selection-item">
+                                    <span class="sl sl-icon-arrow-down-circle"></span>
+                                    {{appt?.provider.fullname}}</a>
+                                <div *dropdownMenu class="dropdown-md-box dropdown-menu dropdown-menu-left userlist-wrapper">
+                                   <users-list [onlyProviders]="true" (userSelected)="switchProvider($event)"></users-list>
+                                 </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div *ngIf="selectedPatient && selectedPatient.balance < 0" class="form-group-message">
+                        <div class="alert alert-danger ba0 br0 mb0">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    {{'patient.have_debts'|translate}} <strong>{{selectedPatient.balance|myCurrency}}</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-inline form-group-inline-div mb0 ba0">
+                        <div class="section-label">
+                            <label>
+                                {{'user.pt_fulln.title'|translate}} <sup>*</sup>
+                            </label>
+                            <small class="label-descr">
+                                {{'user.pt_fulln.descr'|translate}}
+                            </small>
+                        </div>
+                        <div class="section-input pull-right">
+                            <patient-select [isExisting]="selectedPatient!=null" formControlName="fullname" (patientSelected)="onPatientSelected($event)"></patient-select>
+                        </div>
+                    </div>
+                    <div class="form-group form-group-inline mb0">
+                        <div class="section-label">
+                            <label>
+                                {{'user.phone.title'|translate}} <sup>*</sup>
+                            </label>
+                            <small class="label-descr">
+                                {{'user.phone.descr'|translate}}
+                            </small>
+                        </div>
+                        <div class="section-input">
+                            <input placeholder="+" formControlName="phone" required phoneLookup name="phone" class="form-control" />
+                        </div>
+                    </div>
+                    </section>
+                    <div class="form-group form-group-inline mb0 ba0">
+                        <div class="section-label">
+                            <label>{{'cal.note.title'|translate}}</label>
+                            <small class="label-descr">
+                                {{'cal.note.descr'|translate}}
+                            </small>
+                        </div>
+                        <div class="section-input">
+                            <input placeholder="{{'cal.note.ph'|translate}}" formControlName="note" class="form-control" />
+                        </div>
+                    </div>    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button [ladda]="isLoading" type="submit" class="btn btn-primary">{{'cal.new_appt.confirm'|translate}}</button>
+            </div>
+            </form>-->
+        </div>
+    </div>
+</div>

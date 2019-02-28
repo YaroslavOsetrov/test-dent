@@ -1,0 +1,88 @@
+<table class="table table-fullwidth table-wide table-price-sub mb0">
+    <tbody *ngIf="!isLoaded">
+        <tr>
+             <td>
+                <div class="loader">
+                    <div class="animated-background text"></div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="isLoaded">
+        <tr *ngFor="let item of procedure.procedure_inventory; let i = index">
+            <td class="name">
+                {{item.inventory?.name}} ({{item.inventory?.count_one}} {{item.inventory?.unit}})
+            </td>
+            <td class="count">
+                <input [(ngModel)]="item.qty" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control"/>
+            </td>
+            <td>
+                <button (click)="deleteInventory(item)" class="btn btn-sm btn-primary"><span class="sl sl-icon-trash"></span></button>
+            </td>
+        </tr>
+        <tr>
+            <td class="name-input">
+                <inventory-select (inventorySelected)="onInventorySelected($event)"></inventory-select>
+            </td>
+            <td class="count">
+                <!--<input value="1" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control"/>
+            -->
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <button [ladda]="isSaving" class="btn btn-sm btn-primary" (click)="save()">{{'common.form.save'|translate}}</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!--<div bsModal #inventoryModal="bs-modal" class="modal right">
+    <div class="modal-dialog modal-mdss">
+        <div class="modal-content modal-custom">
+            <div class="modal-header modal-header-light">
+                {{procedure?.name}}
+            </div>
+            <div class="modal-body pa0">
+                <div class="container-form-min">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="section-label">
+                                    <label for="email">
+                                        Inventory
+                                    </label>
+                                </div>
+                                <div class="section-input">
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div style="margin-top:25px;" class="section-button pull-right">
+                                    <button (click)="addSelectedInventory()" class="btn btn-primary btn-sm">Add</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" *ngFor="let item of inventory">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <div class="section-label">
+                                    <label for="email">
+                                        {{item.code}}
+                                    </label>
+                                </div>
+                                <div class="section-input">
+                                    {{item.name}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->

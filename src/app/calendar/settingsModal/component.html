@@ -1,0 +1,183 @@
+<div bsModal #settingsModal="bs-modal" class="modal right">
+    <div class="modal-dialog modal-mdss">
+        <div class="modal-content modal-custom">
+            <div class="modal-header modal-header-light">
+                {{'cal.settings.descr'|translate}}
+            </div>
+            <div class="modal-body pa0">
+                <div class="container-form-min">
+                    <div class="form-group ba0">
+                        <table>
+                            <tr>
+                                <td style="padding-right: 10px" *ngFor="let item of range; let i = index">
+                                    <div class="checkbox-btn" (click)="hiddenDays[i] = !hiddenDays[i]">
+                                        <input [checked]="hiddenDays[i]" type="checkbox" name="weekday-{{i}}"/>
+                                        <label for="is-separated">{{item|datex:'ddd'}}</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="form-group ba0">
+                        <div class="section-label">
+                            <label>
+                                {{'cal.settings.dur.title'|translate}}
+                            </label>
+                            <small class="text-muted">{{'cal.settings.dur.descr'|translate}}</small>
+                        </div>
+                        <div class="section-input pt10">
+                            <select [(ngModel)]="calendarSettings.slot_duration" class="full-width">
+                                <option value="{{item}}" *ngFor="let item of [15, 20, 30]; let i = index">{{item}} {{'common.min'|translate}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group ba0 mt15">
+                        <div class="section-label">
+                            <label>
+                                {{'cal.settings.week_start.title'|translate}}
+                            </label>
+                            <small class="text-muted">{{'cal.settings.week_start.descr'|translate}}</small>
+                        </div>
+                        <div class="section-input pt10">
+                            <select [(ngModel)]="calendarSettings.first_day_index" class="full-width">
+                                <option value="{{i}}" *ngFor="let item of weekdays; let i = index" [hidden]="i!=0 && i!=1 && i!=6">{{item|translate}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group ba0 mt15">
+                        <div class="section-label">
+                            <label>
+                                {{'cal.settings.workhours.title'|translate}}
+                            </label>
+                            <small class="text-muted">{{'cal.settings.workhours.descr'|translate}}</small>
+                        </div>
+                        <div class="section-input pt10">
+                            <select [(ngModel)]="calendarSettings.start_hour" class="half-width">
+                                <option value="{{i}}" *ngFor="let item of hoursList; let i = index">{{item}}</option>
+                            </select>
+                            <select [(ngModel)]="calendarSettings.end_hour" class="half-width">
+                                <option value="{{i}}" *ngFor="let item of hoursList; let i = index">{{item}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group ba0 mt15">
+                        <div class="section-label">
+                            <label>
+                                {{'cal.settings.sections.title'|translate}}
+                            </label>
+                            <small class="text-muted">{{'cal.settings.sections.descr'|translate}}</small>
+                        </div>
+                        <div class="section-input pt10" *ngFor="let item of office.rooms" [hidden]="item.is_deleted">
+                            <div class="input-group">
+                                <input
+                                    placeholder="{{'cal.settings.sections.ph'|translate}}" 
+                                    [(ngModel)]="item.name"
+                                    class="form-control default" />
+                                <span (click)="deleteRoom(item)" class="input-group-addon">
+                                    <span class="sl sl-icon-trash pointer"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="section-input pt10">
+                            <div class="input-group" *ngIf="maxSections != office.rooms.length">
+                                <input
+                                    placeholder="{{'cal.settings.sections.ph'|translate}}" 
+                                    [(ngModel)]="newRoom"
+                                    class="form-control default" />
+                                <span (click)="addRoom()" class="input-group-addon pointer">
+                                    <span class="sl sl-icon-plus"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer relative ba0">
+                <button (click)="save()" type="submit" class="btn btn-primary pull-left">{{'common.form.save'|translate}}</button>&nbsp;
+                <button (click)="settingsModal.hide()" class="btn btn-primary outline pull-left">{{'common.form.close'|translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+<div class="sidebar" [class.open]="isOpen">
+    <div class="sidebar-bg" (click)="toggle()"></div>
+    <aside class="sidebar-right">
+        <div class="panen panel-custom">
+            <div class="panel-heading">
+                {{intervalFormatted}}
+                <button (click)="toggle()" type="button" class="close">
+                    <span>×</span>
+                </button>
+             <!--   <ul class="nav nav-tabs">
+                    <li [ngClass]="{'active':tab==1}">
+                        <a [ngClass]="{'notify':content['invoices'].length > 0}" (click)="tab=1">
+                            {{'patient.profile.bill.title'|translate}}
+                        </a>
+                    </li>
+                    <li [ngClass]="{'active':tab==2}">
+                        <a [ngClass]="{'notify':content['tasks'].length > 0}" (click)="tab=2">
+                            {{'patient.profile.task.title'|translate}}
+                        </a>
+                    </li>
+                    <li [ngClass]="{'active':tab==3}">
+                        <a (click)="tab=3">
+                            {{'cal.settings.title'|translate}}
+                        </a>
+                    </li>
+                </ul>-/->
+            </div>
+<!--
+            <div class="panel-body" *ngIf="tab==1">
+                <ul class="list-sidebar">
+                    <li *ngFor="let item of content['invoices']" (click)="detailInvoiceModal.show(item, item.patient_id)">
+                        <span class="text-primary">
+                            {{'patient.billing.inv'|translate}}
+                            <span *ngIf="item.code" class="control-text">
+                                #{{item.code}},
+                            </span>
+                            <span *ngIf="!item.code" class="control-text">
+                                #{{item.internal_number}},
+                            </span>    
+                        </span>
+                        <label class="label label-danger filled">
+                            {{item.total_amt + item.tax*item.total_amt/100 - item.discount*item.total_amt/100 -item.payed_amt|myCurrency}}
+                        </label>
+                        <div class="pt5">
+                             <small class="text-muted">
+                                {{item.patient.patient_user.fullname}}
+                            </small>
+                        </div>
+                    </li>
+                   
+                </ul>
+            </div>
+            <div class="panel-body" *ngIf="tab==2">
+                 <ul class="list-sidebar">
+                     <li [ngClass]="{'done':item.is_completed}" *ngFor="let item of content['tasks']" (click)="detailTaskModal.show(item)">
+                        <div (click)="$event.preventDefault(); $event.stopPropagation(); completeTask(item); detailTaskModal.quickSave(item); taskEdited.emit(item)" class="checkbox-btn">
+                            <input [checked]="item.is_completed" name="share_all" type="checkbox">
+                            <label for="share_all">
+                                {{item.title}}
+                            </label>
+                        </div>
+                        <small class="text-muted">
+                            {{item.patient.patient_user.fullname}}
+                        </small>
+                    </li>
+                </ul>
+            </div>-/->
+            <div class="panel-body container-form-min" *ngIf="tab==3">
+                <settings [calendarSettings]="calendarSettings" (calendarSettingsUpdated)="settingsUpdated.emit($event)" [sectionIndex]="section_index"></settings>
+            </div>
+        </div>
+    </aside>
+</div>
+<!--
+<detailInvoice-modal 
+    (paymentAdded)="onPaymentAdded($event)"
+    (invoiceDeleted)="onInvoiceDeleted($event)"
+    #detailInvoiceModal="detailInvoiceModal"></detailInvoice-modal>
+
+<detailTask-modal 
+    #detailTaskModal="detailTaskModal"></detailTask-modal>-->

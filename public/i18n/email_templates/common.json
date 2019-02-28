@@ -1,0 +1,30 @@
+{
+    "company.name":"Dental Cloud, Inc.",
+    "company.address":{
+        "ru":"178 Синичкина",
+        "en":"329 Hoang Dieu",
+        "vn":"131 Ayer Rajah"
+    },
+    "company.privacy":{
+        "ru":"Privacy Policy",
+        "en":"Privacy policy",
+        "vn":"Privacy policy"
+    },
+    "company.heart":{
+        "ru":"Всегда ваша,",
+        "en":"Sincerely yours,"
+    },
+    "company.heart.team":{
+        "ru":"Команда DentalTap",
+        "en":"DentalTap Team"        
+    },
+    "company.question":{
+        "ru":"По любым вопросам пишите на ",
+        "en":"Contact us if you have any questions",
+        "vn":""
+    },
+    "company.links.privacy":{
+        "ru":"Privacy Policy",
+        "en":"Privacy Policy"
+    }
+}

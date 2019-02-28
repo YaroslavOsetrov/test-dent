@@ -1,0 +1,62 @@
+<a (click)="openCreateInvoice.emit()" *ngIf="isLoaded && appointmentInvoices.length==0" class="btn btn-sm pl0">
+    <span class="sl sl-icon-arrow-right-circle"></span> {{'cal.no_invoice.btn'|translate}}
+</a>
+<a (click)="openInvoice.emit(appointmentInvoices[0])" *ngIf="isLoaded && appointmentInvoices.length > 0" class="btn btn-sm pl0">
+    <span class="sl sl-icon-arrow-right-circle"></span> {{'patient.billing.inv'|translate}} ({{getTotalAmt(appointmentInvoices[0])|myCurrency}})
+</a>
+<!--<div class="form-group-message mb0" *ngIf="isLoaded && appointmentInvoices.length==0">
+    <div class="alert alert-warning ba0 br0 mb0">
+        <div class="row">
+            <div class="col-md-8">
+                {{'cal.no_invoice.descr'|translate}}
+            </div>
+            <div class="col-md-4 pt5 text-right">
+                <a (click)="openCreateInvoice.emit()" target="_blank" class="btn btn-warning btn-sm">{{'cal.no_invoice.btn'|translate}}</a>
+            </div>
+        </div>                            
+    </div>
+</div>
+
+<table class="table-invoices table table-wide table-no-border mb0">
+    <tbody *ngIf="!isLoaded">
+        <tr>
+            <td>
+                <div class="animated-background text"></div>
+                <div class="animated-background text-sm"></div>
+            </td>
+        </tr>
+    </tbody>
+    <tbody *ngIf="isLoaded && appointmentInvoices.length > 0">
+    <tr
+        [ngClass]="{
+            'el-disabled':!isAllowEdit,
+            'bg-warning':getStatus(invoice) != 'paid',
+            'bg-success':getStatus(invoice) == 'paid'
+        }" *ngFor="let invoice of appointmentInvoices">
+        <td class="icon">
+            <span *ngIf="getStatus(invoice) != 'paid'" class="sl sl-icon-wallet text-warning"></span>
+            <span *ngIf="getStatus(invoice) == 'paid'" class="sl sl-icon-wallet"></span>
+        </td>
+        <td>
+            {{'patient.billing.inv'|translate}} 
+            <span *ngIf="invoice.code" class="control-text">
+                #{{invoice.code}}
+            </span>
+            <span *ngIf="!invoice.code" class="control-text">
+                #{{invoice.internal_number}}
+            </span>
+            <span class="td-descr">
+                {{'invoice.from'|translate}} {{invoice.createdAt|datex:'full2'}}
+            </span>
+        </td>
+        <td class="text-right" *ngIf="getStatus(invoice)!='paid'">
+            {{getDebts(invoice)|myCurrency}}
+        </td>
+        <td class="text-right" *ngIf="getStatus(invoice)=='paid'">
+            {{getTotalAmt(invoice)|myCurrency}}
+        </td>
+        <td class="text-right">
+            <button [ngClass]="{'btn-warning':getStatus(invoice) != 'paid', 'btn-success':getStatus(invoice) == 'paid'}" (click)="openInvoice.emit(invoice)" class="btn btn-sm">{{'patient.billing.tab.det'|translate}}</button>
+        </td>
+    </tr>
+</table>-->

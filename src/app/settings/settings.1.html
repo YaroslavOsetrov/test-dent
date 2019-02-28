@@ -1,0 +1,36 @@
+<section class="container-light section-topbar">
+    <nav class="navbar navbar-title">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand" href="#">
+                    {{'settings.title'|translate}}
+                </span>
+            </div>
+            <ul class="nav navbar-nav navbar-tab-menu">
+                <li>
+                    <a [routerLinkActive]="['active']" [routerLink]="['account']">
+                        {{'settings.menu.acc'|translate}}
+                    </a>
+                </li>
+                <li *ngIf="users[0].is_founder || users[0].access_subscription">
+                    <a [routerLinkActive]="['active']" [routerLink]="['organization']">
+                        {{'settings.menu.org'|translate}}
+                    </a>
+                </li>
+                <li *ngIf="users[0].is_founder || users[0].access_subscription">
+                    <a [routerLinkActive]="['active']" [routerLink]="['subscription']">
+                        {{'settings.menu.sub'|translate}}
+                    </a>
+                </li>
+                <li *ngIf="users[0].is_founder || users[0].access_collaboration">
+                    <a [routerLinkActive]="['active']" [routerLink]="['collaboration']">
+                        {{'settings.menu.collab'|translate}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</section>
+<div class="pt15">
+    <router-outlet></router-outlet>
+</div>

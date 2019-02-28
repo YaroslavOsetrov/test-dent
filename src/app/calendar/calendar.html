@@ -1,0 +1,122 @@
+<tutorials [buttons]="{'tutorial':true, 'chat':true}" component="calendarComponent"></tutorials>
+<section class="container-light section-topbar">
+<nav class="navbar navbar-title navbar-sm">
+    <div class="container-fluid">
+         <div class="navbar-header ">
+            <span (click)="stats.toggle()" class="navbar-brand expandable" [ngClass]="{'expanded':stats.expanded}">
+                <span [ngClass]="{'sl-icon-arrow-down-circle':!stats.expanded, 'sl-icon-arrow-up-circle':stats.expanded}" class="sl sl-icon-arrow-down-circle"></span>
+                {{'cal.title'|translate}}
+            </span>
+        </div>
+        <div id="step1" class="navbar-nav nav">
+            <ul class="nav navbar-nav ba0 pr0 navbar-left">
+                <li class="active">
+                    <a (click)="calPrev()"><span class="sl sl-icon-arrow-left"></span> </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav">
+                <li class="active noselect">
+                    <a (click)="todayDate()">{{'cal.today'|translate}}</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav ba0 pr0 navbar-left">
+                <li class="active">
+                    <a (click)="calNext()"><span class="sl sl-icon-arrow-right"></span> </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav">
+                <li style="height:1px;">
+                    <input [bsConfig]="{showWeekNumbers:false, containerClass:'cal-header'}" (bsValueChange)="onDatepickerChange($event)" style="visibility: hidden;height:75px;width:1px;padding:0;" class="form-control" #dp="bsDatepicker" bsDatepicker [(ngModel)]="calDate">
+                </li>
+                <li (click)="dp.toggle()" class="active noselect">
+                    <a (click)="todayDate()"><span class="sl sl-icon-arrow-down-circle"></span> {{calInterval}}</a>
+                </li>
+            </ul>     
+        </div>
+        
+
+        <!--<workhours-select [fullcalendar]="fullCalendar" (providerSelected)="fc.hideEvents()" [loadedEvents]="loadedEvents" #workhoursSelect></workhours-select>-->
+        <ul class="nav navbar-nav navbar-right pa0 ba0 hidden-sm">
+            <li>
+                <a id="step4" (click)="settingsModal.show()">
+                    <span class="sl sl-icon-equalizer"></span>
+                    {{'cal.settings.title'|translate}}
+                </a>
+            </li>
+        </ul>
+      
+    <!--    <ul class="nav navbar-nav navbar-buttons navbar-left-bordered ba0 navbar-right pr0">
+            
+            <li (click)="patientInvoicesModal.show()">
+                <a><span class="sl sl-icon-wallet"></span> </a>
+            </li>
+            <li style="height:1px">
+                <input [bsConfig]="{showWeekNumbers:false, containerClass:'r30'}" (bsValueChange)="onDatepickerChange($event)" style="visibility: hidden;height:75px;width:1px;padding:0;" class="form-control" #dp="bsDatepicker" bsDatepicker [(ngModel)]="calDate">
+            </li>
+            <li (click)="patientTasksModal.show()">
+                <a><span class="sl sl-icon-fire"></span> </a>
+            </li>
+        </ul>-->
+    </div>
+</nav>
+</section>
+<stats #stats></stats>
+<div [hidden]="!isLoading" class="loader-hor-wrapper fullpage">
+    <div class="loader"></div>
+</div>
+<section style="padding-bottom:50px" [ngClass]="{'fc-workhours-layout':workhoursSelect.selectedProvider}">
+<fullcalendar #fc (currentProviders)="currentProviders = $event" [options]="calOpts"></fullcalendar>
+</section>
+<create-modal [defaultPatient]="defaultPatient" (taskCreated)="onTaskAdded($event)" (appointmentCreated)="appointmentCreated($event)" [sections]="calendarSettings?.sections" #createModal="createModal"></create-modal>
+<edit-modal (invoiceAdded)="onInvoiceAdded($event)" (appointmentEdited)="onAppointmentEdited($event)" (appointmentDeleted)="onAppointmentDeleted($event)" #editModal="editModal"></edit-modal>
+
+<div class="floated-controls-fix"  [ngClass]="{'hidden':!defaultPatient}" style="position: relative;padding-bottom: 50px;"></div>
+<!--<div class="floated-controls-wrapper">
+    <div class="floated-controls fullsize-btn">
+        <div class="title">
+            {{defaultPatient?.patient_user.fullname}}, {{defaultPatient?.patient_user.phone}}
+        </div>
+        <div class="floated-controls">
+            <div class="controls">
+                <button class="btn btn-primary mr15">asdjfk</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<div class="floated-controls-wrapper" [ngClass]="{'active':defaultPatient}">
+    <div class="title"> Выберите ячейку календаря чтобы записать пациента </div>
+    <div class="floated-controls">
+        <div class="controls">
+            <button (click)="defaultPatient = null" class="btn btn-primary outline">
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="floated-controls-wrapper active"  [ngStyle]="{'bottom':showBottomTabs ? 0 : '-70px' }">
+    <div class="floated-controls">
+        <div class="controls">
+           
+            <office-select [offices]="offices" (officeSelected)="onOfficeSelected($event)"></office-select>
+            <workhours-select [fullcalendar]="fullCalendar" (providerSelected)="fc.hideEvents()" [loadedEvents]="loadedEvents" #workhoursSelect></workhours-select>
+            <task-box #taskBox (tasksLoaded)="fc.initExternalEvents()" [interval]="intervalNow"></task-box>
+        </div>
+    </div>
+</div>
+<div class="floated-controls-fix"  [ngClass]="{'hidden':!providerId && !workhoursSelect.selectedProvider}" style="position: relative;padding-bottom: 50px;"></div>
+<div class="floated-controls-wrapper" [ngClass]="{'active':workhoursSelect.selectedProvider}">
+    <div class="floated-controls">
+        <div class="controls">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a (click)="workhoursSelect.exit(); fc.showEvents()">{{'common.form.close'|translate}}</a>
+                </li>
+                <li class="navbar-text title">
+                    {{'cal.workhours.descr'|translate}}
+                </li>
+             </ul>
+        </div>
+    </div>
+</div>
+<settings-modal [office]="selectedOffice" [calendarSettings]="calendarSettings" #settingsModal [sectionIndex]="selected.section_index" (settingsUpdated)="onCalendarSettingsUpdated($event)"></settings-modal>

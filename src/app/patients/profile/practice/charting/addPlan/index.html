@@ -1,0 +1,8 @@
+<div class="input-group">
+    <input [(ngModel)]="newPlanName" placeholder="{{'patient.charting.plan.new.descr'|translate}}" class="form-control"/>
+    <div class="input-group-addon">
+        <a (click)="submit()" class="btn btn-primary btn-sm">
+            <span class="sl sl-icon-plus"></span> {{'patient.charting.plan.add'|translate}}
+        </a>
+    </div>
+</div>

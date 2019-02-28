@@ -1,0 +1,7 @@
+{
+    "create_appt":"*|fullname|*, your appointmentwas scheduled on *|date|* at *|time|*",
+    "confirm_appt":"*|fullname|*, your appointment was scheduled on tomorrow, *|date|* at *|time|*. If for any reasons you can't attend, please contact us",
+    "edit_appt":"",
+    "cancel_appt":"*|fullname|*, your appointment on *|date|* was cancelled. We will contact you to reschedule it.",
+    "upcoming_birthday":"*|fullname|*, Happy Birthday! All the best!"
+}

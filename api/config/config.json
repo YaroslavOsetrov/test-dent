@@ -1,0 +1,99 @@
+{
+    "default":{
+        "language":"en",
+        "phone_code":"1",
+        "subscription":{
+            "currency_code":"USD",
+            "trial_days":14,
+            "monthly_fee":15.00,
+            "monthly_fee_base":35.00,
+            "sms_fee":0.08,
+            "sms_units":0,
+            "storage_size":200,
+            "storage_units":1024,
+            "storage_fee":0.01,
+            "user_discount_percent":0
+        },
+        "limit":{
+            "patients_count":50,
+            "storage_size":200,
+            "sms_count":0
+        },
+        "jwt_salt":"4890sdfjj43"
+    },
+    "database":{
+        "development": {
+            "username": "sa",
+            "password": "1234",
+            "name": "dentaltap_dev",
+            "host": "DESKTOP-79L4KV8",
+            "dialect": "mssql"
+        },
+        "staging": {
+            "username": "root",
+            "password": null,
+            "name": "database_test",
+            "host": "127.0.0.1",
+            "dialect": "mssql"
+        },
+        "production": {
+            "username": "",
+            "password": "",
+            "name": "",
+            "port":"",
+            "host": "",
+            "dialect": ""
+        }
+    },
+    "azure_storage":{
+        "development":{
+            "account":"",
+            "key":""
+        }
+    },
+    "hubspot":"",
+    "aws":{
+        "development":{
+            "public_key":"",
+            "secret_key":""
+        },
+        "production":{
+            "public_key":"",
+            "secret_key":""
+        }
+    },
+    "stripe":{
+        "development":{
+            "public_key": "",
+            "secret_key": ""
+        },
+        "production":{
+            "public_key": "",
+            "secret_key": ""
+        }
+    },
+    "app_route":{
+        "development":"http://localhost:8000/",
+        "staging":"",
+        "production":"http://new.dentaltap.com/"
+    },
+    "twilio":{
+
+    },
+    "recaptcha":{
+        "development":{
+            "site_key":"",
+            "secret_key":"PliB"
+        },
+        "production":{
+            "site_key":"Yh85x",
+            "secret_key":""
+        }
+    },
+    "noreply_email":{
+        "user"     : "",
+        "password" : "",
+        "host"     : "",
+        "ssl"      : true
+    }
+}

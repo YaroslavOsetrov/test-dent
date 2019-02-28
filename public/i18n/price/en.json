@@ -1,0 +1,416 @@
+[
+    {
+        "static_category_id":1,
+        "code":"1(1)",
+        "name":"Consultation and treatment plan",
+        "fee":0
+    },
+    {
+        "static_category_id":1,
+        "code":"1(2)",
+        "name":"Periapical X-Ray",
+        "fee":0
+    },
+    {
+        "static_category_id":1,
+        "code":"1(3)",
+        "name":"Bitewing X-Ray",
+        "fee":0
+    },
+    {
+        "static_category_id":1,
+        "code":"1(4)",
+        "name":"Panoramic X-Ray",
+        "fee":15
+    },
+    {
+        "static_category_id":1,
+        "code":"1(5)",
+        "name":"Cephalometric X-ray",
+        "fee":15
+    },
+    {
+        "static_category_id":1,
+        "code":"1(6)",
+        "name":"ConeBeam CT X-ray (1 jaw)",
+        "fee":30
+    },
+    {
+        "static_category_id":1,
+        "code":"1(7)",
+        "name":"ConeBeam CT X-ray (2 jaw)",
+        "fee":40
+    },
+    {
+        "static_category_id":1,
+        "code":"1(8)",
+        "name":"Blood test",
+        "fee":25
+    },
+    {
+        "static_category_id":2,
+        "code":"2(1)",
+        "name":"Composite filling (minimal)",
+        "fee":15
+    },
+    {
+        "static_category_id":2,
+        "code":"2(2)",
+        "name":"Composite filling (moderate)",
+        "fee":30
+    },
+    {
+        "static_category_id":2,
+        "code":"2(3)",
+        "name":"Composite filling (enlarged)",
+        "fee":40
+    },
+    {
+        "static_category_id":2,
+        "code":"2(4)",
+        "name":"Composite filling (extensive)",
+        "fee":50
+    },
+    {
+        "static_category_id":2,
+        "code":"2(5)",
+        "name":"Cosmetic Composite resin restoration",
+        "fee":40
+    },
+    {
+        "static_category_id":2,
+        "code":"2(6)",
+        "name":"Tooth gap filling",
+        "fee":50
+    },
+    {
+        "static_category_id":2,
+        "code":"2(7)",
+        "name":"Sealant",
+        "fee":15
+    },
+    {
+        "static_category_id":2,
+        "code":"2(8)",
+        "name":"Composite veneer",
+        "fee":100
+    },
+    {
+        "static_category_id":2,
+        "code":"2(9)",
+        "name":"Dental dam",
+        "fee":15
+    },
+    {
+        "static_category_id":3,
+        "code":"3(1)",
+        "name":"Root canal treatment (anterior)",
+        "fee":100
+    },
+    {
+        "static_category_id":3,
+        "code":"3(2)",
+        "name":"Root canal treatment (premolar)",
+        "fee":150
+    },
+    {
+        "static_category_id":3,
+        "code":"3(3)",
+        "name":"Root canal treatment (molar)",
+        "fee":200
+    },
+    {
+        "static_category_id":3,
+        "code":"3(4)",
+        "name":"Root canal re-treatment (anterior)",
+        "fee":150
+    },
+    {
+        "static_category_id":3,
+        "code":"3(5)",
+        "name":"Root canal re-treatment (premolar)",
+        "fee":200
+    },
+    {
+        "static_category_id":3,
+        "code":"3(6)",
+        "name":"Root canal re-treatment (molar)",
+        "fee":250
+    },
+    {
+        "static_category_id":3,
+        "code":"3(7)",
+        "name":"Direct pulp capping",
+        "fee":50
+    },
+    {
+        "static_category_id":3,
+        "code":"3(8)",
+        "name":"Abscess drainage/Abscess treatment",
+        "fee":50
+    },
+    {
+        "static_category_id":4,
+        "code":"4(1)",
+        "name":"Cleaning and polishing (Mild calculus)",
+        "fee":15
+    },
+    {
+        "static_category_id":4,
+        "code":"4(2)",
+        "name":"Cleaning and polishing (Moderate calculus)",
+        "fee":20
+    },
+    {
+        "static_category_id":4,
+        "code":"4(3)",
+        "name":"Cleaning and polishing (Heavy calculus)",
+        "fee":25
+    },
+    {
+        "static_category_id":4,
+        "code":"4(4)",
+        "name":"Teeth cleaning and polishing under local anesthetics",
+        "fee":100
+    },
+    {
+        "static_category_id":4,
+        "code":"4(5)",
+        "name":"Periodontal pocket treatment (non-surgical)",
+        "fee":10
+    },
+    {
+        "static_category_id":4,
+        "code":"4(6)",
+        "name":"Operculectomy",
+        "fee":25
+    },
+    {
+        "static_category_id":4,
+        "code":"4(7)",
+        "name":"Gum contouring surgery",
+        "fee":100
+    },
+    {
+        "static_category_id":4,
+        "code":"4(8)",
+        "name":"Gum grafting",
+        "fee":300
+    },
+    {
+        "static_category_id":5,
+        "code":"5(1)",
+        "name":"At-home whitening kit (Zoom)",
+        "fee":100
+    },
+    {
+        "static_category_id":5,
+        "code":"5(2)",
+        "name":"In-office laser whitening with Zoom 2",
+        "fee":250
+    },
+    {
+        "static_category_id":5,
+        "code":"5(3)",
+        "name":"Whitening Combination Package",
+        "fee":280
+    },
+    {
+        "static_category_id":5,
+        "code":"5(4)",
+        "name":"Internal bleaching",
+        "fee":100
+    },
+    {
+        "static_category_id":6,
+        "code":"6(1)",
+        "name":"Crown removal",
+        "fee":15
+    },
+    {
+        "static_category_id":6,
+        "code":"6(2)",
+        "name":"Temporary crown (PMMA)",
+        "fee":20
+    },
+    {
+        "static_category_id":6,
+        "code":"6(3)",
+        "name":"Re-cement crown",
+        "fee":25
+    },
+    {
+        "static_category_id":6,
+        "code":"6(4)",
+        "name":"Composite inlay",
+        "fee":100
+    },
+    {
+        "static_category_id":6,
+        "code":"6(5)",
+        "name":"All-porcelain inlay (Emax CAD)",
+        "fee":200
+    },
+    {
+        "static_category_id":6,
+        "code":"6(6)",
+        "name":"Composite onlay",
+        "fee":100
+    },
+    {
+        "static_category_id":6,
+        "code":"6(7)",
+        "name":"All-porcelain onlay (Emax CAD)",
+        "fee":350
+    },
+    {
+        "static_category_id":6,
+        "code":"6(8)",
+        "name":"All-porcelain overlay (Emax CAD)",
+        "fee":400
+    },
+    {
+        "static_category_id":6,
+        "code":"6(9)",
+        "name":"Porcleain fused to titanium crown (CAD/CAM)",
+        "fee":350
+    },
+    {
+        "static_category_id":7,
+        "code":"7(1)",
+        "name":"Nobel Biocare/SGS Switzerland dental implant",
+        "fee":1500
+    },
+    {
+        "static_category_id":7,
+        "code":"7(2)",
+        "name":"Bone grafting",
+        "fee":600
+    },
+    {
+        "static_category_id":7,
+        "code":"7(3)",
+        "name":"Guided bone regeneration membrane",
+        "fee":400
+    },
+    {
+        "static_category_id":7,
+        "code":"7(4)",
+        "name":"Sinus augmentation (Closed)",
+        "fee":300
+    },
+    {
+        "static_category_id":7,
+        "code":"7(5)",
+        "name":"Sinus augmentation (Open)",
+        "fee":600
+    },
+    {
+        "static_category_id":7,
+        "code":"7(6)",
+        "name":"All on 8 (Nobel Biocare/SGS Switzerland dental implant)",
+        "fee":13000
+    },
+    {
+        "static_category_id":7,
+        "code":"7(7)",
+        "name":"All on 6 (Nobel Biocare/SGS Switzerland dental implant)",
+        "fee":10000
+    },
+    {
+        "static_category_id":8,
+        "code":"8(1)",
+        "name":"Traditional metal braces - Simple case: no extraction required",
+        "fee":1500
+    },
+    {
+        "static_category_id":8,
+        "code":"8(2)",
+        "name":"Traditional metal braces - Requires extraction (fee for extraction is not included)",
+        "fee":1750
+    },
+    {
+        "static_category_id":8,
+        "code":"8(3)",
+        "name":"Traditional metal braces - Complicated case: lost of molar, root treated teeth etc",
+        "fee":2500
+    },
+    {
+        "static_category_id":8,
+        "code":"8(4)",
+        "name":"Traditional ceramic braces - Simple case: no extraction required",
+        "fee":2000
+    },
+    {
+        "static_category_id":8,
+        "code":"8(5)",
+        "name":"Traditional ceramic braces - Requires extraction (fee for extraction is not included",
+        "fee":2590
+    },
+    {
+        "static_category_id":8,
+        "code":"8(6)",
+        "name":"Traditional ceramic braces - Complicated case: lost of molar, root treated teeth etc",
+        "fee":2800
+    },
+    {
+        "static_category_id":8,
+        "code":"8(7)",
+        "name":"Invisalign ClinCheck",
+        "fee":250
+    },
+    {
+        "static_category_id":8,
+        "code":"8(8)",
+        "name":"Invisalign",
+        "fee":4500
+    },
+    {
+        "static_category_id":8,
+        "code":"8(9)",
+        "name":"Functional appliance",
+        "fee":300
+    },
+    {
+        "static_category_id":9,
+        "code":"9(1)",
+        "name":"Permanent tooth extraction",
+        "fee":80
+    },
+    {
+        "static_category_id":9,
+        "code":"9(2)",
+        "name":"Wisdom tooth extraction (upper jaw)",
+        "fee":100
+    },
+    {
+        "static_category_id":9,
+        "code":"9(3)",
+        "name":"Wisdom tooth extraction (lower jaw)",
+        "fee":125
+    },
+    {
+        "static_category_id":9,
+        "code":"9(4)",
+        "name":"Surgical tooth extraction",
+        "fee":175
+    },
+    {
+        "static_category_id":9,
+        "code":"9(5)",
+        "name":"Tooth extraction with bone grafting",
+        "fee":500
+    },
+    {
+        "static_category_id":9,
+        "code":"9(6)",
+        "name":"Crown lengthening surgery",
+        "fee":100
+    },
+    {
+        "static_category_id":9,
+        "code":"9(7)",
+        "name":"Gum contouring surgery",
+        "fee":150
+    }
+]

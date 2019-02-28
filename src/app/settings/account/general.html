@@ -1,0 +1,104 @@
+<div class="row row-no-padding">
+            <div class="col-md-10 col-md-offset-1 settings-container">
+                <legend>
+                    Profile
+                </legend>  
+                <form [formGroup]="form" (ngSubmit)="save()" class="mb0">
+                    <div class="col-md-12 container-inline-form label-right">
+                        <div class="form-group form-group-inline">
+                            <div class="section-label">
+                                <label>{{'user.photo.title'|translate}}</label>
+                                <small class="label-descr">
+                                    {{'user.photo.descr'|translate}}
+                                </small>
+                            </div>
+                            <div class="section-input loader" *ngIf="!isLoaded">
+                                <div class="avatar-section ml0">
+                                    <div class="animated-background avatar"></div>
+                                </div>
+                            </div>
+                            <div class="section-input" *ngIf="isLoaded">
+                                <div class="avatar-section">
+                                    <img *ngIf="account.photo" src="{{environmentConfig.storageUrl + account.photo}}"/>
+                                    <div *ngIf="!account.photo" class="avatar-letters">{{account.fullname|nameLetters}}</div>
+                                </div>
+                                <button [ladda]="isPhotoUploading" class="btn btn-default file-upload">
+                                    {{'common.sel_file'|translate}}
+                                    <input type="file"
+                                        ngFileSelect
+                                        (uploadOutput)="onUploadOutput($event)" 
+                                        [uploadInput]="uploadInput"
+                                        class="upload">
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-inline">
+                            <div class="section-label">
+                                <label>{{'user.fulln.title'|translate}}</label>
+                                <small class="label-descr">
+                                    {{'user.fulln.descr'|translate}}
+                                </small>
+                            </div>
+                            <div class="section-input" *ngIf="isLoaded">
+                                <input formControlName="fullname" placeholder="{{'user.fulln.ph'|translate}}" class="form-control"/>
+                                <validation-message [control]="form.controls.fullname"></validation-message>
+                            </div>
+                            <div class="section-input loader" *ngIf="!isLoaded">
+                                <div class="animated-background input"></div>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-inline">
+                            <div class="section-label">
+                                <label>{{'user.phone.title'|translate}}</label>
+                                <small class="label-descr">
+                                    {{'user.phone.descr'|translate}}
+                                </small>
+                            </div>
+                            <div class="section-input" *ngIf="isLoaded">
+                                <input phoneLookup formControlName="phone" placeholder="{{'user.phone.ph'|translate}}" class="form-control"/>
+                                <validation-message [control]="form.controls.phone"></validation-message>
+                            </div>
+                            <div class="section-input loader" *ngIf="!isLoaded">
+                                <div class="animated-background input"></div>
+                            </div>
+                            <div class="section-label"></div>
+                            <div class="section-input pt10">
+                                <small class="text-muted">{{'user.phone.explain'|translate}}</small>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-inline">
+                            <div class="section-label">
+                                <label> {{'user.address.title'|translate}}</label>
+                                <small class="label-descr">
+                                        {{'user.address.descr'|translate}}
+                                </small>
+                            </div>
+                            <div class="section-input" *ngIf="isLoaded">
+                                <input googleplace formControlName="address" placeholder="{{'user.address.ph'|translate}}" class="form-control"/>
+                            </div>
+                            <div class="section-input loader" *ngIf="!isLoaded">
+                                <div class="animated-background input"></div>
+                            </div>
+                            <div class="section-label"></div>
+                            <div class="section-input pt10">
+                                <small class="text-muted">{{'user.address.explain'|translate}}</small>
+                            </div>
+                        </div>
+                        <div class="form-group form-group-inline">
+                            <div *ngIf="isLoaded">
+                                 <a href="{{environmentConfig.appUrl}}book/{{orgId}}-{{account.id}}?lang={{language}}">{{environmentConfig.appUrl}}book/{{orgId}}-{{account.id}}?lang={{language}}</a>
+                            </div>
+                            <div class="loader" *ngIf="!isLoaded">
+                                <div class="animated-background input"></div>
+                            </div>
+                            <div class="pt10">
+                                <small class="text-muted">{{'booking.online.explain'|translate}}</small>
+                            </div>
+                        </div>
+                        <div class="form-group text-right mb0">
+                            <button type="submit" [ladda]="isSaving" class="btn btn-primary">{{'common.form.save'|translate}}</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    </div>

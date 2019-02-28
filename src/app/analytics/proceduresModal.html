@@ -1,0 +1,64 @@
+<div bsModal #proceduresModal="bs-modal" class="modal zoom">
+    <div class="modal-custom modal-dialog modal-lg">
+        <div class="modal-content modal-primary out-close modal-custom2">
+            <button (click)="proceduresModal.hide()" type="button" class="close">
+                <span>×</span>
+            </button>
+            <div class="modal-header modal-header-light">
+                {{'analyt.proc_period.title'|translate}}
+                <div class="mt15" *ngIf="interval?.start && interval?.end">
+                    <a [bsConfig]="{showWeekNumbers:false, containerClass:'l10modal'}" (bsValueChange)="onIntervalChanged($event)" #drp="bsDaterangepicker" bsDaterangepicker class="btn btn-sm pl0">
+                        <span class="sl sl-icon-arrow-down-circle"></span>  {{interval.start|datex:'short'}} {{interval.start|datex:'YYYY'}} - {{interval.end|datex:'short'}} {{interval.end|datex:'YYYY'}}
+                    </a>
+                </div>
+            </div>
+            <div class="modal-body" *ngIf="!isLoaded">
+                <div class="py25" *ngFor="let i of [1,2,3,4,5,6]">
+                    <div class="animated-background text"></div>
+                    <div class="animated-background text-sm"></div>
+                </div>
+            </div>
+            <div class="modal-body modal-body-table pa0" *ngIf="isLoaded">
+                <table class="container-light table-responsive table-wide table table-wide table-hover table-no-first-border mb0">
+                    <thead>
+                        <tr>
+                            <th>
+                                {{'price.procedure.name'|translate}}
+                            </th>
+                            <th>
+                                {{'price.procedure.qty'|translate}}
+                            </th>
+                            <th>
+                                {{'patient.billing.total_sum'|translate}}
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of procedures">
+                            <td>
+                                {{item.price_name}}
+                            </td>
+                            <td class="align-middle">
+                                {{item.qty}}
+                            </td>
+                            <td class="align-middle">
+                                {{item.procedure_price|myCurrency}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-body" *ngIf="isLoaded && procedures.length == 0">
+                <div class="fullpage-message">
+                    <span class="sl sl-icon-menu"></span>
+                    <h3 class="title">
+                        {{'analyt.proc_period.not_found.title'|translate}}
+                    </h3>
+                    <p class="text-muted">
+                        {{'analyt.proc_period.not_found.descr'|translate}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

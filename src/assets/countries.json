@@ -1,0 +1,46 @@
+{
+    "ua":{
+        "currency_code":"uah",
+        "currency_symbol":"грн.",
+        "is_currency_preffix":false,
+        "phone_code":"380",
+        "to_usd_rate":"22",
+        "locale_format":{
+            "first_day_index":1,
+            "date_short":"DD MMM",
+            "date_month":"MMM, YYYY",
+            "date_short2":"DD MMMM",
+            "date_full":"DD MMM YYYY",
+            "date_full2":"DD MMMM YYYY",
+            "date_input":"DD MM YYYY",
+            "date_input_mask_mom":"DD.MM.YYYY",
+            "time_mom":"HH:mm",
+            "date_input_mask":"00.00.0000",
+            "date_input_mask_ph":"ДД.ММ.ГГГГ",
+            "is_24h":true,
+            "cal_col":"dddd, DD"
+        }
+    },
+    "vn":{
+        "currency_code":"vnd",
+        "currency_symbol":"₫",
+        "is_currency_preffix":false,
+        "phone_code":"84",
+        "to_usd_rate":"0.00004",
+        "locale_format":{
+            "first_day_index":1,
+            "date_short":"DD MMM",
+            "date_month":"MMM, YYYY",
+            "date_short2":"DD MMMM",
+            "date_full":"DD MMM YYYY",
+            "date_full2":"DD MMMM YYYY",
+            "date_input":"DD MM YYYY",
+            "date_input_mask_mom":"DD.MM.YYYY",
+            "time_mom":"HH:mm",
+            "date_input_mask":"00.00.0000",
+            "date_input_mask_ph":"ДД.ММ.ГГГГ",
+            "is_24h":true,
+            "cal_col":"dddd, DD"
+        }
+    }
+}

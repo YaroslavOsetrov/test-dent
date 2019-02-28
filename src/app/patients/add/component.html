@@ -1,0 +1,66 @@
+<div bsModal #addPatientModal="bs-modal" class="modal right">
+    <div class="modal-dialog modal-mdss">
+        <div class="modal-content modal-custom">
+            <div class="modal-header modal-header-light">
+                {{'patient.new.title'|translate}}
+            </div>
+            <form (ngSubmit)="submit()" [formGroup]="newPatient" class="mb0 pb0">
+                <div class="modal-body pa0">
+                    <div class="container-form-min">
+                        <div class="form-group">
+                            <div class="section-label">
+                                <label for="email">
+                                    {{'user.fulln.title'|translate}} <sup>*</sup>
+                                </label>
+                            </div>
+                            <div class="section-input">
+                                <input placeholder="{{'user.fulln.descr'|translate}}" formControlName="fullname" name="fullname" class="form-control" />
+                                <validation-message [control]="newPatient.controls.fullname"></validation-message>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="section-label">
+                                <label for="email">
+                                    {{'user.phone.title'|translate}} <sup>*</sup>
+                                </label>
+                            </div>
+                            <div class="section-input">
+                                <input placeholder="{{'user.phone.descr'|translate}}" formControlName="phone" required phoneLookup name="phone" class="form-control" />
+                                <validation-message [control]="newPatient.controls.phone"></validation-message>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="section-label">
+                                <label for="dob">
+                                    {{'user.dob.title'|translate}}
+                                </label>
+                            </div>
+                            <div class="section-input">
+                                <input
+                                    [mask]="localeFormat.date_input_mask"
+                                    placeholder="{{localeFormat.date_input_mask_ph}}"
+                                    formControlName="birthday" name="birthday" class="form-control" />
+                                <validation-message [control]="newPatient.controls.birthday"></validation-message>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="section-label">
+                                <label for="email">
+                                    {{'patient.reference.title'|translate}}
+                                </label>
+                            </div>
+                            <div class="section-input">
+                                <input 
+                                    placeholder="{{'patient.reference.descr'|translate}}" formControlName="reference_from" name="reference_from" class="form-control" />
+                                <validation-message [control]="newPatient.controls.reference_from"></validation-message>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer ba0">
+                    <button type="submit" [ladda]="isSaving" class="btn btn-primary pull-left">{{'common.form.create'|translate}}</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

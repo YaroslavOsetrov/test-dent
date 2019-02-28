@@ -1,0 +1,21 @@
+{
+    "required": true,
+    "type": "array",
+    "items":{
+        "required": true,
+        "type":"object",
+        "properties":{
+            "title":{
+                "type":"string",
+                "required": true
+            },
+            "templates":{
+                "type":"array",
+                "items":{
+                    "type":"string"
+                },
+                "minItems": 0
+            }
+        }
+    }
+}

@@ -1,0 +1,191 @@
+<div bsModal #customFieldsModal="bs-modal" class="modal right">
+    <div class="modal-dialog modal-mdss">
+        <div class="modal-content modal-custom">
+            <div class="modal-header modal-header-light">
+                {{'patient.profile.tabs.general.custom_fields.empty.title'|translate}}
+            </div>
+            <div class="modal-body pa0">
+                <p class="p15 text-muted">{{'patient.profile.tabs.general.custom_fields.empty.descr'|translate}}</p>
+                <table class="table table-modal table-no-first-border">
+                    <tr *ngFor="let field of fields; let i = index">
+                        <td>
+                            <input 
+                                [(ngModel)]="field.field_name"
+                                placeholder="{{'patient.profile.tabs.general.custom_fields.name.ph'|translate}}"
+                                class="form-control" />
+                        </td>
+                        <td>
+                            <select [(ngModel)]="field.field_type" class="select">
+                                <option value="{{i}}" *ngFor="let i of fieldTypes">
+                                    {{'patient.profile.tabs.general.custom_fields.type.'+i|translate}}
+                                </option>
+                            </select>
+                        </td>
+                        <td class="action-btn">
+                            <a class="link link-light link-primary" (click)="deleteField(i)">
+                                <i class="sl sl-icon-close"></i> {{'common.form.del'|translate}}
+                            </a>
+                        </td>
+                    </tr>
+                    <tr [ngClass]="{'el-disabled':fields.length >= maxFields}">
+                        <td class="action-btn ba0" colspan="3">
+                            <a class="link link-primary" (click)="addField()">
+                                <i class="sl sl-icon-plus"></i> {{'patient.profile.tabs.general.custom_fields.title'|translate}}
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer ba0">
+                <button [ladda]="isSaving" (click)="save()" class="btn btn-primary pull-left">{{'common.form.save'|translate}}</button>
+                <button (click)="reset(); customFieldsModal.hide()" class="btn btn-primary outline pull-left">{{'common.form.close'|translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<div *ngFor="let field of customFields; let i = index" class="form-group form-group-custom-field">
+    <section *ngIf="!editableIndexes[i]">
+        <div class="section-label">
+            <label for="{{field.field_name_internal}}">
+                {{field.field_name}}
+            </label>
+        </div>
+        <div class="btn btn-group" *ngIf="isLoaded">
+            <a (click)="toggle_edit(i)" class="btn btn-primary"><span class="sl sl-icon-note"></span></a>
+            <a (click)="delete_field(i)" class="btn btn-primary"><span class="sl sl-icon-trash"></span></a>
+        </div>
+        <div class="section-input" *ngIf="isLoaded">
+            <input 
+                *ngIf="field.field_type == 'text'"
+                [readonly]="!account.user_roles[0].edit_patient" 
+                [(ngModel)]="customFieldsValue[field.field_name_internal]"
+                (ngModelChange)="isChanged = true"
+                [ngModelOptions]="{standalone: true}"
+                name="{{field.field_name_internal}}" 
+                placeholder="{{field.field_name}}" class="form-control" />
+            <input
+                *ngIf="field.field_type == 'date'"
+                [readonly]="!account.user_roles[0].edit_patient"  
+                [(ngModel)]="customFieldsValue[field.field_name_internal]"
+                [ngModelOptions]="{standalone: true}"
+                (ngModelChange)="isChanged = true"
+                [mask]="localeFormat.date_input_mask"
+                placeholder="{{localeFormat.date_input_mask_ph}}"
+                name="{{field.field_name_internal}}" 
+                class="form-control" />
+            <input
+                *ngIf="field.field_type == 'phone'"
+                [readonly]="!account.user_roles[0].edit_patient"  
+                [(ngModel)]="customFieldsValue[field.field_name_internal]"
+                (ngModelChange)="isChanged = true"
+                [ngModelOptions]="{standalone: true}"
+                phoneLookup
+                placeholder="{{field.field_name}}"
+                name="{{field.field_name_internal}}" 
+                class="form-control" />
+            <input
+                *ngIf="field.field_type == 'address'"
+                [readonly]="!account.user_roles[0].edit_patient"
+                [(ngModel)]="customFieldsValue[field.field_name_internal]"
+                (ngModelChange)="isChanged = true"
+                [ngModelOptions]="{standalone: true}"
+                googleplace
+                placeholder="{{field.field_name}}"
+                name="{{field.field_name_internal}}" 
+                class="form-control" />
+        </div>
+        <div class="section-input" *ngIf="!isLoaded">
+            <div class="loader">
+                <div class="animated-background input"></div>
+            </div>
+        </div>
+    </section>
+    <section *ngIf="editableIndexes[i]">
+        <div class="section-label multiple">
+            <a [ngClass]="{'active':field.field_type == i}" (click)="field.field_type = i" *ngFor="let i of fieldTypes">
+                <label>
+                    {{'patient.profile.tabs.general.custom_fields.type.'+i|translate}}
+                </label>
+            </a>
+        </div>
+        <div class="btn btn-group">
+            <a (click)="update_field(i)" class="btn btn-primary"><span class="sl sl-icon-check"></span></a>
+        </div>
+        <div class="section-input">
+            <input 
+                [(ngModel)]="field.field_name"
+                placeholder="{{'patient.profile.tabs.general.custom_fields.name.ph'|translate}}"
+                class="form-control" />
+        </div>
+    </section>
+</div>
+<div *ngFor="let field of customFieldsAdded; let ind = index" class="form-group form-group-custom-field form-group-new">
+    <div class="section-label multiple">
+        <a [ngClass]="{'active':field.field_type == i}" (click)="field.field_type = i" *ngFor="let i of fieldTypes">
+            <label>
+                {{'patient.profile.tabs.general.custom_fields.type.'+i|translate}}
+            </label>
+        </a>
+    </div>
+    <div class="btn btn-group">
+        <a (click)="saveField(ind)" class="btn btn-primary"><span class="sl sl-icon-check"></span></a>
+    </div>
+    <div class="section-input">
+        <input 
+            [(ngModel)]="field.field_name"
+            placeholder="{{'patient.profile.tabs.general.custom_fields.name.ph'|translate}}"
+            class="form-control" />
+    </div>
+  
+</div>
+<!--<div bsModal #customFieldsModal="bs-modal" class="modal center zoom">
+    <div class="modal-dialog-custom modal-dialog modal-mds">
+        <div class="modal-content modal-primary">
+            <div class="modal-header">
+                {{'patient.profile.tabs.general.custom_fields.title'|translate}}
+                <button (click)="customFieldsModal.hide()" type="button" class="close">
+                    <span>×</span>
+                </button>
+            </div>
+            <div class="modal-body pa0" style="min-height: 300px">
+                <table  class="table table-custom-fields mb0">
+                    <tr *ngFor="let field of fields; let fieldIndex = index">
+                        <td>
+                            <span class="td-caption">
+                                <label>{{'patient.profile.tabs.general.custom_fields.name.title'|translate}}</label> <sup>*</sup>
+                            </span>
+                            <input [(ngModel)]="field.field_name" class="form-control" />
+                        </td>
+                        <td style="width:160px">
+                            <span class="td-caption">
+                                <label>{{'patient.profile.tabs.general.custom_fields.type.title'|translate}}</label>
+                            </span>
+                            
+                        </td>
+                        <td (click)="deleteField(fieldIndex)" class="action">
+                            <a><span class="sl sl-icon-trash"></span></a>
+                        </td>
+                    </tr>
+                     <tr class="procedure-add">
+                        <td colspan="3" class="ba0 pa0">
+                            <a (click)="addField()">
+                                <span class="sl sl-icon-plus"></span>
+                            </a>
+                        </td>
+                    </tr>
+               </table>
+               <div *ngIf="fields.length == 0" class="fullpage-message col-md-8 col-md-offset-2">
+                    <h3 class="title">
+                        {{'patient.profile.tabs.general.custom_fields.empty.title'|translate}}
+                    </h3>
+                    <p class="text-muted descr">
+                        {{'patient.profile.tabs.general.custom_fields.empty.descr'|translate}}
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button [ladda]="isSaving" (click)="save()" class="btn btn-primary">{{'common.form.save'|translate}}</button>
+            </div>
+        </div>
+    </div>
+</div>-->

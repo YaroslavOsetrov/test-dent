@@ -1,0 +1,27 @@
+<div class="modal-header modal-header-light modal-header-def">
+    {{'cal.withoutpt.title'|translate}}
+    <div class="mt15">
+        <a class="btn btn-sm pl0">
+            {{appointment?.date|datex:'full'}}, {{'cal.date_time.from'|translate}}
+            <span>
+                {{appointment?.start_time|datex:'time'}} {{'cal.date_time.to'|translate}} {{appointment?.end_time|datex:'time'}}
+            </span>   
+        </a>
+    </div>
+</div>
+<div class="modal-body pa0">
+    <div class="container-form-min appt-details-form">
+        <div class="form-group ba0">
+            <div class="section-label">
+                <label>{{'cal.note.title'|translate}}</label>
+            </div>
+                <div class="section-input">
+                <input maxlength="100" placeholder="{{'cal.note.ph'|translate}}" [(ngModel)]="appointment.note" class="form-control" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer ba0">
+    <button [ladda]="isSubmitted" (click)="save()" type="submit" class="btn btn-primary pull-left">{{'common.form.save'|translate}}</button>&nbsp;
+    <button (click)="cancel()" class="btn btn-primary outline pull-left">{{'common.form.del'|translate}}</button>
+</div>

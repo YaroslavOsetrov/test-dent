@@ -1,0 +1,129 @@
+<div class="booking-layout">
+    <div class="cover">
+        <language-dropdown [hideLabel]="false"></language-dropdown>
+        <div class="header">
+            <div class="header-inner row">
+                <div class="col-sm-12 user">
+                    <div *ngIf="!provider?.photo">
+                        <div class="avatar-letters">{{provider?.fullname|nameLetters}}</div>
+                    </div>
+                    <img *ngIf="provider?.photo" src="{{environmentConfig.storageUrl + provider.photo}}" />
+                    <div class="name">
+                        <p>{{provider?.fullname}}</p>
+                        <small>
+                            {{organization?.phone}}
+                        </small>
+                    </div>
+                </div>
+                <div class="col-sm-12 descr">
+                    <p>{{'booking.welcome'|translate}}</p>
+                </div>
+            </div>
+            <div class="dates-wrapper" *ngIf="appointment.date && !isConfirmed">
+                <a class="back" (click)="back()">
+                    <span class="sl sl-icon-arrow-left-circle"></span> {{'booking.btn.back'|translate}}
+                </a>
+                <span *ngIf="!appointment.time">
+                    {{'booking.select.time'|translate}}
+                </span>
+                <span *ngIf="appointment.time">
+                    {{appointment.date|datex:'DD MMMM YYYY'}} at {{appointment.time.time}}
+                </span>
+                
+            </div>
+            <div class="dates-wrapper" *ngIf="!appointment.date && !isConfirmed">
+                {{'booking.select.date'|translate}}
+            </div>
+            <div class="dates-wrapper" *ngIf="isConfirmed">
+                {{'booking.confirmed.title'|translate}}
+            </div>
+        </div>
+
+    </div>
+    <div class="booking-container confirm-form" *ngIf="isConfirmed">
+        <p>{{'booking.confirmed.1'|translate: {name:organization?.name} }}</p>
+        <p>{{'booking.confirmed.2.1'|translate}} <strong>{{appointment.date|datex:'dddd, DD MMM YYYY'}}</strong> {{'booking.confirmed.2.2'|translate}} <strong>{{appointment.time.time}}</strong>. {{'booking.confirmed.2.3'|translate: {address:organization?.address} }}. 
+        {{'booking.confirmed.3'|translate: {phone:organization?.phone} }}</p>
+        <!--
+        <p style="margin-top:40px">
+            <a style="font-weight:700" class="btn btn-primary" href="">
+                <span style="font-weight:700" class="sl sl-icon-calendar"></span> Add into Google Calendar
+            </a>&nbsp;
+            <a style="font-weight:700" class="btn btn-primary outline" href=""><span style="font-weight:700" class="sl sl-icon-map"></span> Direction</a>
+        </p>-->
+        <p style="margin-top:60px">See you!<br/>{{provider?.fullname}}</p>
+    </div>
+    <div class="booking-container" [ngClass]="{'expanded':!appointment.date}" *ngIf="!isConfirmed">
+        <section *ngIf="!appointment.time">
+        <div class="dates-wrapper" *ngIf="!appointment.date">
+            <div class="dates">
+                <div [ngClass]="{'el-disabled':loadedSlots[dateInterval.viewFormatted[i]]?.length == 0, 'active':appointment.date == dateInterval.viewFormatted[i]}" (click)="selectDate(dateInterval.viewFormatted[i])" class="date" *ngFor="let date of dateInterval.view; let i = index">
+                    <span class="week">
+                        {{date|datex:'ddd'}}
+                    </span>
+                    <span class="month">
+                        {{date|datex:'DD'}} {{date|datex:'MMM'}}
+                    </span>
+                </div>
+            </div>
+            <a *ngIf="page > 0" (click)="prev()" class="btn prev"><span class="sl sl-icon-arrow-left-circle"></span> {{'booking.btn.back'|translate}}</a>
+            <a *ngIf="page <= 3" (click)="next()" class="btn next">{{'booking.btn.next'|translate}} <span class="sl sl-icon-arrow-right-circle"></span></a>
+        </div>
+        <div class="body">
+            <div class="slots row" *ngIf="loadedSlots[appointment.date]?.length > 0">
+                <div *ngFor="let i of loadedSlots[appointment.date]" class="col-md-12 slot">
+                    <div (click)="selectTime(i)" class="inner">
+                        {{i.time}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer" *ngIf="organization?.phone && organization?.email">
+            {{'booking.no_slot'|translate: {phone:'organization?.phone', email:organization?.email} }}
+           
+        </div>
+        </section>
+        <section *ngIf="appointment.time">
+            <div class="body pa0">
+                <div class="container-form-min">
+                    <div class="form-group">
+                        <div class="section-label">
+                            <label>{{'booking.name.title'|translate}}</label>
+                        </div>
+                        <div class="section-input">
+                            <input [(ngModel)]="patient.fullname" class="form-control" placeholder="{{'booking.name.descr'|translate}}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="section-label">
+                            <label>{{'booking.phone.title'|translate}}</label>
+                        </div>
+                        <div class="section-input">
+                            <input phoneLookup [(ngModel)]="patient.phone" class="form-control" placeholder="{{'booking.phone.descr'|translate}}" />
+                        </div>
+                    </div>
+                    <div class="form-group ba0">
+                        <div class="section-label">
+                            <label>{{'booking.note.title'|translate}}</label>
+                        </div>
+                        <div class="section-input">
+                            <input [(ngModel)]="patient.note" class="form-control" placeholder="{{'booking.note.title'|translate}}" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer pa0">
+                <div class="text-center">
+                    <button [ladda]="isSubmitted" (click)="save()" class="btn btn-primary">
+                        {{'booking.confirm'|translate}}
+                    </button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="caption">
+        <p class="text-center">{{organization?.name}}</p>
+        <p class="text-center">{{organization?.address}}</p>
+    </div>
+    
+</div>

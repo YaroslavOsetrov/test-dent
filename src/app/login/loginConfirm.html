@@ -1,0 +1,36 @@
+<div class="auth-box-w">
+    <div class="logo-w">
+        <a href="https://dentaltap.com" target="_blank"><img style="width:200px" src="/public/logo-active.png"></a>
+    </div>
+    <h4 class="auth-header">{{'login.organization.title'|translate}}</h4>
+
+    <div *ngIf="isLoading" style="height:60px;" class="table-footer">
+        <div class="loader-hor-wrapper">
+            <div class="loader loader-center"></div>
+        </div>
+    </div>
+    <ul class="organizations-list">
+        <li (click)="selectOrganization(organization)" 
+            *ngFor="let organization of organizationSelection.organizations">
+            <div class="sl sl-icon-grid">
+
+            </div>
+            <div class="title">
+                <span *ngIf="organization.name">
+                    {{organization.name}}
+                </span>
+                <span *ngIf="!organization.name">
+                    {{'login.organization.noname'|translate}}
+                </span>
+                <div *ngIf="organizationSelection.account_id != organization.create_user_id" class="descr">
+                    {{organization.organization_user.fullname}}
+                </div>
+                <div *ngIf="organizationSelection.account_id == organization.create_user_id" class="descr">
+                    {{'login.organization.your'|translate}}
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<boot #boot></boot>

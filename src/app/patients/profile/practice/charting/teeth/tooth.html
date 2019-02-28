@@ -1,0 +1,137 @@
+<div class="tooth-wrap {{toothType}}-r {{toothType}}-r-{{toothId}}">
+    <!-- tooltip="{{diagnoses[diagnosis]}}"-->
+        <div [className]="toothClass">
+            <div *ngIf="pontic" [ngClass]="{'bridge-pontic-end':end}"  class="bridge-pontic">
+                <div [ngStyle]="{'background': colors[retainer]}"></div>
+                <div [ngStyle]="{'background': colors[retainer]}"></div>
+            </div>
+            <div *ngIf="pontic" [ngClass]="{'bridge-pontic-end':end}"  class="bridge-pontic surface">
+                <div [ngStyle]="{'background': colors[retainer]}"></div>
+                <div [ngStyle]="{'background': colors[retainer]}"></div>
+            </div>
+            <div *ngIf="retainer" class="bridge-retainer">
+                <div [ngStyle]="{'background': colors[retainer]}"></div>
+                <div [ngStyle]="{'background': colors[retainer]}"></div>
+            </div>
+            <div *ngIf="retainer" class="bridge-retainer surface">
+                <div [ngStyle]="{'background': colors[retainer]}"></div>
+                <div [ngStyle]="{'background': colors[retainer]}"></div>
+            </div>
+            <svg *ngIf="rootcanal && (toothClassPreffix.indexOf('8')!=-1 || toothClassPreffix.indexOf('7')!=-1 || toothClassPreffix.indexOf('6')!=-1)" class="tooth-root-canal">
+                <use attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-root-canal" x="0" y="0" attr.fill="{{(postcore)?colors[postcore]:colors[rootcanal]}}" attr.stroke="{{(postcore)?colors[postcore]:colors[rootcanal]}}" stroke-width="0.5">
+                </use>
+            </svg>
+            <svg *ngIf="rootcanal && (toothClassPreffix.indexOf('8')==-1 && toothClassPreffix.indexOf('7')==-1 && toothClassPreffix.indexOf('6')==-1)" class="tooth-root-canal">
+                <use xlink:href="/public/teeth/teeth.svg#root-canal" x="0" y="0" attr.fill="{{(postcore)?colors[postcore]:colors[rootcanal]}}" attr.stroke="{{(postcore)?colors[postcore]:colors[rootcanal]}}" stroke-width="0.5">
+                </use>
+            </svg>
+            
+            <svg *ngIf="postcore && (toothClassPreffix.indexOf('8')!=-1 || toothClassPreffix.indexOf('7')!=-1 || toothClassPreffix.indexOf('6')!=-1)" class="tooth-post-core">
+                <use xlink:href="/public/teeth/teeth.svg#post-core-molar" x="0" y="0" attr.fill="{{(postcore)?colors[postcore]:colors[rootcanal]}}" attr.stroke="{{colors[postcore]}}" stroke-width="0.5">
+                </use>
+            </svg>
+            <svg *ngIf="postcore && (toothClassPreffix.indexOf('8')==-1 && toothClassPreffix.indexOf('7')==-1 && toothClassPreffix.indexOf('6')==-1)" class="tooth-post-core">
+                <use xlink:href="/public/teeth/teeth.svg#post-core" x="0" y="0" attr.fill="{{(postcore)?colors[postcore]:colors[rootcanal]}}" attr.stroke="{{colors[postcore]}}" stroke-width="0.5">
+                </use>
+            </svg>
+            <div *ngIf="extraction" class="tooth-extraction">
+                <div></div>
+                <div></div>
+            </div>
+            
+            <svg  [ngStyle]="{'opacity':(missing)?0.01:1}" class="tooth-surface">
+                <use class="tooth-surface-main" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-surface" x="0" y="0" attr.fill="url({{url}}#ToothBackground)" stroke="#a7a9ac" stroke-alignment="inner" stroke-width="0.3">
+                </use>
+                <use *ngIf="sealant &&  (toothId.toString()[0] == '2' || toothId.toString()[0] == '3' || toothId.toString()[0] == '6' || toothId.toString()[0] == '7')" 
+                    xlink:href="/public/teeth/teeth.svg#sealant" x="0" y="0" attr.fill="{{colors[sealant]}}" stroke-width="1">
+                </use>
+                <use *ngIf="sealant &&  (toothId.toString()[0] == '1' || toothId.toString()[0] == '4' || toothId.toString()[0] == '5' || toothId.toString()[0] == '8')" 
+                    xlink:href="/public/teeth/teeth.svg#sealant-reflect" x="0" y="0" attr.fill="{{colors[sealant]}}" stroke-width="1">
+                </use>
+                
+               
+                <use *ngFor="let surf of surface" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-surface-{{(surf.code) ? surf.code.toLowerCase() : 'k'}}" x="0" y="0" 
+                    attr.fill="{{colors[resto]}}" 
+                    attr.stroke="{{colors[resto]}}" 
+                    stroke-width="0.5">
+                </use>
+                
+                <!--
+                <use *ngIf="crown == 'pfm'" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-surface" x="0" y="0" 
+                    attr.fill="url({{url}}#diagonalHatch_{{crownStatus}})"
+                    attr.stroke="{{colors[crownStatus]}}" 
+                    stroke-alignment="inner" stroke-width="0.3">
+                </use>
+                <use *ngIf="crown == 'metal'" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-surface" x="0" y="0" 
+                    attr.fill="{{colors[crownStatus]}}"
+                    attr.stroke="{{colors[crownStatus]}}" 
+                    stroke-alignment="inner" stroke-width="0.3">
+                </use>-->
+                <use *ngIf="crown" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-surface" x="0" y="0" 
+                    attr.stroke="{{colors[crown]}}" 
+                    attr.fill="{{fillColorBase}}"
+                    stroke-alignment="inner" stroke-width="0.5">
+                </use>
+                
+                
+            </svg>
+            <svg [ngStyle]="{'opacity':(missing)?0.01:1}" class="tooth-crown">
+                <use class="tooth-crown-main" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-crown" x="0" y="0" attr.fill="url({{url}}#ToothBackground)" attr.stroke="{{(colors[crown])? colors[crown] : '#a7a9ac'}}" stroke-alignment="inner" stroke-width="0.3"></use>
+                <!--
+                <use *ngIf="crown34 && crown == 'pfm'" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-crown34" x="0" y="0" 
+                    attr.fill="url({{url}}#diagonalHatch_{{crownStatus}})"
+                    attr.stroke="{{colors[crownStatus]}}"
+                    stroke-alignment="inner" stroke-width="0.3" >
+                </use>
+                <use *ngIf="crown34 && crown == 'metal'" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-crown34" x="0" y="0" 
+                    attr.fill="{{colors[crownStatus]}}"
+                    attr.stroke="{{colors[crownStatus]}}" 
+                    stroke-alignment="inner" stroke-width="0.3" >
+                </use>
+                <use *ngIf="crown34 && crown == 'porcelain'" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-crown34" x="0" y="0" 
+                    attr.stroke="{{colors[crownStatus]}}" 
+                    attr.fill="url({{url}}#ToothBackground)"
+                    stroke-alignment="inner" stroke-width="0.3" >
+                </use>
+                
+                --><!--
+                <use *ngIf="!crown34 && crown == 'pfm'" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-crown" x="0" y="0" 
+                    attr.fill="url({{url}}#diagonalHatch_{{crownStatus}})"
+                    attr.stroke="{{colors[crownStatus]}}"
+                    stroke-alignment="inner" stroke-width="0.3" >
+                </use>
+                <use *ngIf="!crown34 && crown == 'metal'" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-crown" x="0" y="0" 
+                    attr.fill="{{colors[crownStatus]}}"
+                    attr.stroke="{{colors[crownStatus]}}"
+                    stroke-alignment="inner" stroke-width="0.3" >
+                </use>-->
+                <use *ngIf="retainer" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-crown" x="0" y="0" 
+                    attr.fill="{{fillColorBase}}"
+                    attr.stroke="{{colors[retainer]}}"
+                    stroke-alignment="inner" stroke-width="0.5" >
+                </use>
+
+                <use *ngIf="veneer" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-crown-veneer" x="0" y="0"
+                     attr.fill="{{colors[veneer]}}"
+                     attr.stroke="{{colors[veneer]}}" 
+                     stroke-alignment="inner" stroke-width="0.3">
+                </use>
+            </svg>
+            <svg  class="tooth-root" [ngStyle]="{'opacity':(missing)?0.01:1, 'transform': (implant && isTop) ? 'rotate(180deg)' : ''}">
+                <use *ngIf="!implant && missing!='root'" attr.xlink:href="/public/teeth/teeth.svg#{{toothClassPreffix}}-root" fill="#f2ecbe" stroke="#a7a9ac" stroke-alignment="inner" stroke-width="0.3"></use>
+                <use *ngIf="implant" xlink:href="/public/teeth/teeth.svg#implant" attr.fill="{{colors[implant]}}"></use>
+            </svg>
+            <div class="tooth-number">
+                <div class="hint-circle">
+                    <span>
+                        {{toothId|uniNotation}}
+                    </span>
+                </div>
+            </div>
+            <div *ngIf="diagnosis" class="tooth-diagnosis">
+                <span>
+                    {{diagnosis}}
+                </span>
+            </div>
+        </div>
+        </div>

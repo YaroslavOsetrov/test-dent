@@ -1,0 +1,25 @@
+<div class="panel panel-custom panel-default ba0">
+    <div class="panel-inside">
+        <tabset type="pills">
+            <tab (select)="trackTab('general')" heading="{{'patient.profile.tabs.general.title'|translate}}">
+                <general></general>
+            </tab>
+            <tab (select)="trackTab('tasks')">
+                <ng-template tabHeading>
+                    {{'patient.profile.tabs.tasks.title'|translate}} 
+                    <label *ngIf="count.dueTasks" class="sm"></label>
+                </ng-template>
+                <tasks (dueTasks)="onDueTasks($event)"></tasks>
+            </tab>
+            <tab (select)="trackTab('documents')">
+                <ng-template tabHeading>
+                    {{'patient.files.types.doc'|translate}}
+                </ng-template>
+                <documents></documents>
+            </tab>
+            <tab (select)="trackTab('notes')" heading="{{'patient.note.title'|translate}}">
+                <notes></notes>
+            </tab>
+        </tabset>
+    </div>
+</div>

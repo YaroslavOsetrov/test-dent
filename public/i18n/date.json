@@ -1,0 +1,37 @@
+{
+    "en":{
+        "day_names":["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "day_names_short":["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "day_names_min":["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+        "months_names":["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "months_names_short":["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    },
+     "pt":{
+        "day_names":["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "day_names_short":["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "day_names_min":["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+        "months_names":["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "months_names_short":["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    },
+    "fr":{
+        "day_names":["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "day_names_short":["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        "day_names_min":["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+        "months_names":["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "months_names_short":["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    },
+    "vn":{
+        "day_names":["Chủ Nhật", "Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu", "Thứ Bảy"],
+        "day_names_short":["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+        "day_names_min":["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
+        "months_names":["Tháng Một", "Tháng Hai", "Tháng Ba", "Tháng Tư", "Tháng Năm", "Tháng Sáu", "Tháng Bảy", "Tháng Tám", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
+        "months_names_short":["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    },
+    "ru":{
+        "day_names":["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"],
+        "day_names_short":["Вск", "Пон", "Вто", "Сре", "Чет", "Пят", "Суб"],
+        "day_names_min":["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+        "months_names":["Января", "Февраля", "Марта", "Апреля", "Мая", "Июня", "Июля", "Августа", "Сентября", "Октября", "Ноября", "Декабря"],
+        "months_names_short":["Янв", "Фев", "Мар", "Апр", "Мая", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"]
+    }
+}

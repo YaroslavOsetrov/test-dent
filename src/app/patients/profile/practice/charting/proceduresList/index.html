@@ -1,0 +1,192 @@
+<!--<div class="header-summary">
+    <div class="row">
+    <!--
+    <div class="mt15">
+        <span class="toggles" 
+    </div>-/->
+        <div class="col-md-4">
+          
+        </div>
+       
+    </div>
+</div>-->
+<section class="dropdown-procedure-select">
+    <div class="actions row">
+        <div class="form-group mb0 col-md-3">
+            <label class="caption">{{'cal.status.title'|translate}}</label>
+            <div class="input-group">
+                <div [ngClass]="{'active':procedureStatus==i}" (click)="procedureStatus = i" *ngFor="let i of ['tp', 'c']" class="select-option pointer">
+                    {{'common.proc_stat.' + i |translate}}
+                </div>
+            </div>
+        </div>
+        <div class="form-group mb0 col-md-2" *ngIf="selectedTeeth.length > 0">
+            <label class="caption">{{'patient.charting.sel_title'|translate}}</label>
+            <div class="input-group">
+                <div class="select-option pointer">
+                    <span *ngFor="let i of selectedTeeth">#{{i|uniNotation}} </span>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="apptList.length > 1 && plan.is_default" class="form-group mb0 col-md-7">
+            <label class="caption">{{'common.appt'|translate}}</label>
+            <div class="input-group">
+                <div [ngClass]="{'active':appointment.id == item.id}" (click)="setDate(item)" class="select-option pointer" *ngFor="let item of apptList; let i = index" [hidden]="i >3 || item.date == null">
+                    {{item.date|datex:'DD'}} {{item.date|datex:'MMMM'}}
+                </div>
+            </div>
+        </div>
+       
+        <div *ngIf="!plan.is_default" class="form-group mb0 col-md-7">
+            <label class="caption">{{'common.appt'|translate}}</label>
+            <div class="input-group">
+                <div [ngClass]="{'active': appointment.index == i}" (click)="appointment.index = i" class="select-option pointer"  *ngFor="let item of plan?.procedures; let i = index">
+                    # {{i+1}}
+                </div>
+                <div class="select-option pointer" [ngClass]="{'active': appointment.index == plan.procedures.length}" (click)="appointment.index = plan.procedures.length">
+                    # {{plan?.procedures.length + 1}}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 form-group mb0" *ngIf="categoriesSub.hasOwnProperty(selectedProcedure.code)">
+            <div class="input-group">
+                <div class="select-option pointer" [ngClass]="{'active':selectedProcedure.subCategoriesCodes.indexOf(item.code)!=-1}" (click)="chartSubCategory(item)" *ngFor="let item of categoriesSub[selectedProcedure.code]">
+                    {{item.translate_code|translate}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <input (input)="searchProcedure($event)" class="form-control pa0" style="height:30px; background:transparent; color:white;" placeholder="{{'common.form.search'|translate}}"/>
+    </div>
+    <table class="table table-fullwidth table-price-icons mb0">
+        <tbody>
+            <tr>
+                <td [ngClass]="{'active':selectedCategoryIndex == i+1}"  (click)="selectCategory(i)" [ngClass]="{'active':selectedCategoryId==i+1}" *ngFor="let item of categories; let i = index">
+                    <i class="tp tp-icon-{{item.icon}}"></i> 
+                    <span>{{item.translate_code|translate}}</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="procedure-list" style="width:100%">
+    <table class="table" [hidden]="!search.query">
+        <tr class="pointer" [ngClass]="{'active':selectedProcedures.ids[item.id]}" (click)="selectProcedure(item)" *ngFor="let item of search.results; let i = index">
+            <td title="{{item.name}}" class="name">
+                <small>{{item.code}}</small>
+                {{item.name}}
+            </td>
+            <td *ngIf="selectedProcedures.ids[item.id]" class="price" style="width:70px">
+                <input [(ngModel)]="item.qty" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control"/>
+            </td>
+            <td *ngIf="!selectedProcedures.ids[item.id]"></td>
+            <td class="price">
+                <div class="input-group">
+                    <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="item.fee" placeholder="..." class="form-control" />
+                    <span class="input-group-addon">{{0|myCurrency:'':true}}</span>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="table" [hidden]="search.query">
+        <tr class="pointer" [ngClass]="{'active':selectedProcedures.ids[item.id]}" (click)="selectProcedure(item); $event.stopPropagation(); $event.preventDefault()" *ngFor="let item of procedures[selectedCategoryIndex]; let i = index">
+            <td title="{{item.name}}" class="name">
+                <small>{{item.code}}</small>
+                {{item.name}}
+            </td>
+            <td *ngIf="selectedProcedures.ids[item.id]" class="price" style="width:70px">
+                <input (click)="$event.stopPropagation()" [(ngModel)]="item.qty" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control"/>
+            </td>
+            <td *ngIf="!selectedProcedures.ids[item.id]"></td>
+            <td class="price">
+                <div class="input-group">
+                    <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="item.fee" placeholder="..." class="form-control" />
+                    <span class="input-group-addon">{{0|myCurrency:'':true}}</span>
+                </div>
+            </td>
+        </tr>
+    </table>
+    </div>
+
+    <!--
+<div class="procedure-select-wrapper">
+     <div *ngIf="tab==2" class="bg-default actions row">
+            <div class="form-group mb0 col-md-5">
+                <label class="caption">{{'cal.status.title'|translate}}</label>
+                <div class="input-group">
+                    <div [ngClass]="{'active':procedureStatus==i}" (click)="procedureStatus = i" *ngFor="let i of ['tp', 'c']" class="select-option pointer">
+                        {{'common.proc_stat.' + i |translate}}
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="apptList.length > 1" class="form-group mb0 col-md-7">
+                <label class="caption">{{'common.appt'|translate}}</label>
+                <div class="input-group">
+                    <div [ngClass]="{'active':appointment.id == item.id}" (click)="setDate(item)" class="select-option pointer" *ngFor="let item of apptList; let i = index" [hidden]="i >3 || item.date == null">
+                        {{item.date|datex:'DD'}} {{item.date|datex:'MMMM'}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div *ngIf="tab==2" class="procedure-select-wrapper-scroll" #scrollElement>
+        <div class="procedure-list" style="width:100%">
+            <table class="table">
+                <tr class="pointer" *ngFor="let item of selectedProcedures.procedures; let i = index">
+                    <td title="{{item.name}}" class="name">
+                        <small class="text-muted">{{item.code}}</small>
+                        {{item.name}}
+                    </td>
+                    <td class="price" style="width:70px">
+                        <input [(ngModel)]="item.qty" type="number" onkeypress="return event.charCode >= 48 && event.charCode <= 57" class="form-control"/>
+                    </td>
+                    <td class="price">
+                        <div class="input-group">
+                            <input onkeypress="return event.charCode >= 48 && event.charCode <= 57" [(ngModel)]="item.fee" placeholder="..." class="form-control" />
+                            <span class="input-group-addon">{{0|myCurrency:'':true}}</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div *ngIf="tab==1" class="procedure-select-wrapper-scroll"  #scrollElement>
+        <div class="procedure-categories">
+            <ul>
+                <li>
+                    <input (input)="searchProcedure($event)" class="form-control pa0" style="height:30px" placeholder="{{'common.form.search'|translate}}"/>
+                </li>
+                <li [ngClass]="{'active':selectedCategoryIndex == i+1}" *ngFor="let item of categories; let i = index" (click)="selectCategory(i)">
+                    <span class="tp tp-icon-{{item.icon}}"></span> {{item.translate_code|translate}}
+                    <div [hidden]="selectedProcedure.code != item.code" class="toggles" *ngIf="categoriesSub.hasOwnProperty(selectedProcedure.code)">
+                        <span [ngClass]="{'active':selectedProcedure.subCategoriesCodes.indexOf(item.code)!=-1}" (click)="chartSubCategory(item)" *ngFor="let item of categoriesSub[selectedProcedure.code]" class="btn btn-sm">
+                            {{item.translate_code|translate}}
+                        </span>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+        <div class="procedure-list">
+           
+           
+        </div>
+    </div>
+</div>-->
+<div class="footer text-right p15">
+    <!--<div class="select-option" *ngFor="let item of apptList; let i = index" [hidden]="i >3">
+        <span class="day">{{item.date|datex:'DD'}}</span>
+        <span class="month"> {{item.date|datex:'MMMM'}}</span>
+    </div>-->
+    <div class="pull-left text-left" *ngIf="selectedTeeth.length > 0">
+        <div class="checkbox-btn" (click)="isSeparated = !isSeparated; $event.stopPropagation()">
+            <input [checked]="isSeparated" type="checkbox" name="check-proc-1">
+            <label style="color:white;" for="check-proc-1">
+                {{'patient.charting.keep_sep.descr'|translate}}
+            </label>
+        </div>
+    </div>
+    <button (click)="submit()" [ladda]="isSubmitted" class="btn btn-primary btn-sm">
+        {{'patient.charting.sel_proc.add'|translate}} ({{selectedProcedures.procedures.length}})
+    </button>
+</div>
+</section>

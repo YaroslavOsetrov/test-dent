@@ -1,0 +1,59 @@
+<!--<div class="panel panel-custom panel-default mb0 ba0">
+    <div class="panel-heading nobg">
+        {{'patient.charting.sel_plan'|translate}}
+    </div>
+    <div class="panel-body">
+        
+    </div>
+    <div class="p15">
+        <button (click)="addPlan()" class="btn btn-primary"> {{'patient.charting.plan.add'|translate}}</button>
+    </div>
+</div>-->
+<table class="table-plans table table-no-border">
+    <tbody>
+        <tr (click)="planSelected.emit(null)">
+            <td colspan="3" class="plan-name">
+                <span>
+                    {{'patient.charting.plan.def'|translate}}
+                </span>
+                <div>
+                    <small class="text-muted">
+                        {{'patient.charting.gen_plan'|translate}}
+                    </small>
+                </div>
+            </td>
+        </tr>
+        <tr (click)="planSelected.emit(plan)" *ngFor="let plan of plans; let i = index">
+            <td class="plan-name">
+                <span>{{plan.name}}</span>
+                <div>
+                    <small class="text-muted">
+                        {{plan.procedures_sum|myCurrency}}
+                    </small>
+                </div>
+            </td>
+            
+            <td (click)="$event.stopPropagation(); print(plan.id); " class="action">
+                <a style="color:#fff">
+                    <span class="sl sl-icon-printer"></span>
+                </a>
+            </td>
+            <td (click)="$event.stopPropagation(); delete(plan.id); " class="action">
+                <a style="color:#fff">
+                    <span class="sl sl-icon-trash"></span>
+                </a>
+            </td>
+          
+        </tr>
+         <tr>
+            <td colspan="3">
+                 <add-plan [plans]="plans" (planAdded)="onPlanAdded($event)"></add-plan>
+            </td>
+        </tr>
+      <!--  <tr class="special">
+            <td class="plan-name">
+                <button (click)="addPlan()" class="btn btn-primary btn-sm"> {{'patient.charting.plan.add'|translate}}</button>
+            </td>
+        </tr>-->
+    </tbody>
+</table>
